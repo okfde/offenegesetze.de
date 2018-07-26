@@ -3,11 +3,11 @@ import React from 'react';
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
-const Nav = () => (
+const Nav = ({ isRoot }) => (
   <nav className="navbar is-fixed-top is-transparent">
     <div className="container">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
+        <a className="navbar-item" href="/">
           <img
             src="https://static.frag-den-staat.de/static/img/logo/logo.5a7991d73eb7.svg"
             alt="OffeneGesetze"
@@ -27,56 +27,25 @@ const Nav = () => (
 
       <div id="navbarExampleTransparentExample" className="navbar-menu">
         <div className="navbar-start">
-          <a className="navbar-item" href="https://bulma.io/">
+          <a className="navbar-item" href="/">
             OffeneGesetze.de
           </a>
-          <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link" href="/documentation/overview/start/">
-              Docs
-            </a>
-            <div className="navbar-dropdown is-boxed">
-              <a className="navbar-item" href="/documentation/overview/start/">
-                Overview
-              </a>
-              <a
-                className="navbar-item"
-                href="https://bulma.io/documentation/modifiers/syntax/"
-              >
-                Modifiers
-              </a>
-              <a
-                className="navbar-item"
-                href="https://bulma.io/documentation/columns/basics/"
-              >
-                Columns
-              </a>
-              <a
-                className="navbar-item"
-                href="https://bulma.io/documentation/layout/container/"
-              >
-                Layout
-              </a>
-              <a
-                className="navbar-item"
-                href="https://bulma.io/documentation/form/general/"
-              >
-                Form
-              </a>
-              <hr className="navbar-divider" />
-              <a
-                className="navbar-item"
-                href="https://bulma.io/documentation/elements/box/"
-              >
-                Elements
-              </a>
-              <a
-                className="navbar-item is-active"
-                href="https://bulma.io/documentation/components/breadcrumb/"
-              >
-                Components
-              </a>
+          {!isRoot && (
+            <div className="navbar-item">
+              <div className="field has-addons">
+                <div className="control is-expanded">
+                  <input
+                    className="input"
+                    type="text"
+                    placeholder="Find a repository"
+                  />
+                </div>
+                <div className="control">
+                  <a className="button">Search</a>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <div className="navbar-end">
@@ -97,23 +66,19 @@ const Nav = () => (
                   <span>Tweet</span>
                 </a>
               </p>
-              <p className="control">
-                <a
-                  className="button is-primary"
-                  href="https://github.com/jgthms/bulma/releases/download/0.7.1/bulma-0.7.1.zip"
-                >
-                  <span className="icon">
-                    <i className="fas fa-download" />
-                  </span>
-                  <span>Download</span>
-                </a>
-              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    {/* <style jsx>{`
+      .navbar.is-transparent,
+      .navbar .button,
+      .navbar input {
+        background-color: transparent;
+        background-image: none;
+      }
+    `}</style> */}
   </nav>
 );
-
 export default Nav;
