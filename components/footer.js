@@ -51,10 +51,10 @@ const Footer = () => (
               <a href="/api">API</a>
             </li>
             <li>
-              <a>Kontakt</a>
+              <a href="/feeds">RSS-Feeds</a>
             </li>
             <li>
-              <a>Datenschutzerklärung</a>
+              <a href="/api">E-Mail-Benachrichtigungen</a>
             </li>
           </ul>
         </div>

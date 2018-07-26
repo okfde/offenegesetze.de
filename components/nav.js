@@ -2,6 +2,7 @@ import React from 'react';
 
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
+import SearchBox from '../components/search-box';
 
 const Nav = ({ isRoot }) => (
   <nav className="navbar is-fixed-top is-transparent">
@@ -32,18 +33,7 @@ const Nav = ({ isRoot }) => (
           </a>
           {!isRoot && (
             <div className="navbar-item">
-              <div className="field has-addons">
-                <div className="control is-expanded">
-                  <input
-                    className="input"
-                    type="text"
-                    placeholder="Find a repository"
-                  />
-                </div>
-                <div className="control">
-                  <a className="button">Search</a>
-                </div>
-              </div>
+              <SearchBox />
             </div>
           )}
         </div>
