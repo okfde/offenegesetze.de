@@ -4,7 +4,7 @@ import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import SearchBox from '../components/search-box';
 
-const Nav = ({ isRoot }) => (
+const Nav = ({ hideSearch }) => (
   <nav className="navbar is-fixed-top is-transparent">
     <div className="container">
       <div className="navbar-brand">
@@ -31,7 +31,7 @@ const Nav = ({ isRoot }) => (
           <a className="navbar-item" href="/">
             OffeneGesetze.de
           </a>
-          {!isRoot && (
+          {!hideSearch && (
             <div className="navbar-item">
               <SearchBox />
             </div>

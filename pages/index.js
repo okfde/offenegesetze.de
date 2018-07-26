@@ -6,7 +6,7 @@ import Recent from '../components/recent';
 import SearchBox from '../components/search-box';
 
 const IndexPage = ({ items }) => (
-  <Base isRoot>
+  <Base hideSearch>
     <section className="hero">
       <div className="hero-body">
         <div className="container">
