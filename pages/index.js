@@ -11,7 +11,7 @@ const IndexPage = ({ items }) => (
       <div className="hero-body">
         <div className="container">
           <h1 className="title">OffeneGesetze.de</h1>
-          <h2 className="subtitle">Wir. öffnen. Deutschlands. Daten.</h2>
+          <h2 className="subtitle">Wir öffnen das Bundesgesetzblatt</h2>
         </div>
       </div>
     </section>
@@ -26,18 +26,24 @@ const IndexPage = ({ items }) => (
             molestiae!
           </p>
           <br />
-          <SearchBox />
         </section>
       </div>
-      <div className="column">{<Recent items={items} />}</div>
+      <div className="column">
+        <SearchBox />
+        {<Recent items={items} />}
+      </div>
     </div>
   </Base>
 );
 
 IndexPage.getInitialProps = async ({ req }) => {
-  const res = await fetch('https://fragdenstaat.de/api/v1/request/');
+  const res = await fetch('http://api.offenegesetze.de/v1/bgbl/?format=json');
   const json = await res.json();
-  return { items: json.objects };
+
+  return {
+    // items: json.map(({ entries }) => entries).reduce((a, b) => a.concat(b, [])),
+    items: json,
+  };
 };
 
 export default IndexPage;
