@@ -16,7 +16,7 @@ class Nav extends React.Component {
     const { isActive } = this.state;
     const { hideSearch } = this.props;
     return (
-      <nav className="navbar is-fixed-top is-transparent">
+      <nav className="navbar is-fixed-top">
         <div className="container">
           <div className="navbar-brand">
             <a className="navbar-item" href="/">

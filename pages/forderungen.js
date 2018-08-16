@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Base from '../components/base';
+import BaseContent from '../components/base-content';
 import PricingTable from '../components/pricing-table';
 
 const Ueber = () => (
-  <Base>
+  <BaseContent>
     <h1 className="title">Unsere Forderungen</h1>
     <p>
       Das BGBl ist das Veröffentlichungsblatt (Gazette) der BRD. Es enthält
@@ -31,7 +31,7 @@ const Ueber = () => (
     <p>
       <a href="/ueber">Mehr über unsere Forderungen</a>
     </p>
-  </Base>
+  </BaseContent>
 );
 
 export default Ueber;

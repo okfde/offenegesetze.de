@@ -1,13 +1,12 @@
 import React from 'react';
 
-import Base from '../components/base';
-import PricingTable from '../components/pricing-table';
+import BaseContent from '../components/base-content';
 
 const Ueber = () => (
-  <Base>
+  <BaseContent>
     <h1 className="title">Über uns</h1>
     <p>Wir sind coole Typen.</p>
-  </Base>
+  </BaseContent>
 );
 
 export default Ueber;
