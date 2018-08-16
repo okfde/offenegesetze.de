@@ -53,7 +53,7 @@ class Nav extends React.Component {
               <a className="navbar-item" href="/veröffentlichung">
                 Veröffentlichung
               </a>
-              <a className="navbar-item" href="/ueber">
+              <a className="navbar-item" href="/forderungen">
                 Unsere Forderung
               </a>
             </div>
