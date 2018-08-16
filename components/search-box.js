@@ -6,11 +6,27 @@ class SearchBox extends React.Component {
     super(props);
     this.state = {
       value: props.q || '',
+      suggestions: ['Mord', 'Stefan', 'Arne', 'Nadine'],
+      loading: false,
     };
   }
 
   _onSelect = value => {
     window.location.assign(`/suche?q=${value}`);
+  };
+
+  _onChange = async e => {
+    const value = e.target.value;
+    this.setState({ value });
+    const res = await fetch(
+      `https://fds-proxy.app.vis.one/api/v1/request/search?q=${value}`
+    );
+    const json = await res.json();
+    if (json.objects[0]) {
+      this.setState({
+        suggestions: json.objects[0].description.split(' '),
+      });
+    }
   };
 
   render() {
@@ -19,11 +35,7 @@ class SearchBox extends React.Component {
         <div className="field has-addons">
           <div className="control is-expanded">
             <ReactAutocomplete
-              items={[
-                { id: 'foo', label: 'foo' },
-                { id: 'bar', label: 'bar' },
-                { id: 'baz', label: 'baz' },
-              ]}
+              items={this.state.suggestions.map(x => ({ id: x, label: x }))}
               shouldItemRender={(item, value) =>
                 item.label.toLowerCase().indexOf(value.toLowerCase()) > -1
               }
@@ -39,7 +51,7 @@ class SearchBox extends React.Component {
                 </div>
               )}
               value={this.state.value}
-              onChange={e => this.setState({ value: e.target.value })}
+              onChange={this._onChange}
               onSelect={this._onSelect}
               inputProps={{
                 name: 'q',
