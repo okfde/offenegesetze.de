@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 
-const ListItem = ({ title, subtitle, id }) => (
-  <li>
-    <Link href={`/gesetz/${id}`}>
+const ListItem = ({ title, subtitle, href, key }) => (
+  <li key={key}>
+    <Link href={href}>
       <a>
         <div>{title}</div>
         <div>{subtitle}</div>

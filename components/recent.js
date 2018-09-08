@@ -26,7 +26,13 @@ const Recent = ({ items }) => (
               {titleDate}, Nr. {x.number}, {x.year}, {x.kind}
             </p>
             <br />
-            {x.entries.map(en => <ListItem key={en.title} title={en.title} />)}
+            {x.entries.map(en => (
+              <ListItem
+                key={en.title}
+                title={en.title}
+                href={`/amtsblatt/${x.id}${en.anchor}`}
+              />
+            ))}
           </div>
         );
       })}
