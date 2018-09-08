@@ -4,7 +4,8 @@ import dayjs from 'dayjs';
 import ListItem from './list-item';
 
 const Recent = ({ items }) => (
-  <section className="section">
+  <div style={{ paddingBottom: '2rem' }}>
+    <br />
     <h2 className="subtitle">Letzte Veröffentlichungen</h2>
     <ul>
       {items.map(x => {
@@ -12,24 +13,25 @@ const Recent = ({ items }) => (
         const date = dayjs(x.date);
         const now = dayjs();
         const dateDiff = now.diff(date, 'days');
-        console.log(dateDiff);
         if (dateDiff < 1) {
-          titleDate = `vor ${now.diff(date, 'minutes')} Minuten`;
+          titleDate = `vor ${now.diff(date, 'hours')} Stunden`;
         } else if (dateDiff < 31) {
           titleDate = `vor ${now.diff(date, 'days')} Tagen`;
         } else {
           titleDate = `am ${date.format('DD.MM.YYYY')}`;
         }
-        console.log(x);
         return (
-          <div>
-            <p>{titleDate}</p>
-            {x.entries.map(en => <ListItem title={en.title} />)}
+          <div className="box" key={x.number + x.year + x.kind}>
+            <p>
+              {titleDate}, Nr. {x.number}, {x.year}, {x.kind}
+            </p>
+            <br />
+            {x.entries.map(en => <ListItem key={en.title} title={en.title} />)}
           </div>
         );
       })}
     </ul>
-  </section>
+  </div>
 );
 
 export default Recent;
