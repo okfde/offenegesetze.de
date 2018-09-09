@@ -62,6 +62,7 @@ IndexPage.getInitialProps = async ({ req }) => {
   try {
     const res = await fetch('https://api.offenegesetze.de/v1/amtsblatt/');
     const json = await res.json();
+    json.length = 3; // limit to only 3 recent publication
     return {
       // items: json.map(({ entries }) => entries).reduce((a, b) => a.concat(b, [])),
       items: json,

@@ -50,8 +50,8 @@ class Nav extends React.Component {
             </div>
 
             <div className="navbar-end">
-              <a className="navbar-item" href="/veröffentlichung">
-                Veröffentlichung
+              <a className="navbar-item" href="/neueste">
+                Veröffentlichungen
               </a>
               <a className="navbar-item" href="/forderungen">
                 Unsere Forderung
