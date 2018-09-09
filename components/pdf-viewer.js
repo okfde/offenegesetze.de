@@ -23,6 +23,17 @@ class PDFViewer extends React.Component {
     const { numPages } = this.state;
     const { document_url, viewPdf, content } = this.props;
 
+    const titleNumbeer = x => (
+      <ScrollableAnchor id={(x + 1).toString()}>
+        <h2
+          className="title is-2 has-text-centered"
+          style={{ paddingBottom: '1rem', paddingTop: '5rem' }}
+        >
+          {x + 1}
+        </h2>
+      </ScrollableAnchor>
+    );
+
     return (
       <div>
         {viewPdf && (
@@ -31,15 +42,8 @@ class PDFViewer extends React.Component {
             onLoadSuccess={this.onDocumentLoadSuccess}
           >
             {[...Array(numPages).keys()].map(x => (
-              <div>
-                <ScrollableAnchor id={x + 1}>
-                  <h2
-                    className="title is-2 has-text-centered"
-                    style={{ paddingBottom: '1rem', paddingTop: '5rem' }}
-                  >
-                    {x + 1}
-                  </h2>
-                </ScrollableAnchor>
+              <div key={x}>
+                {titleNumbeer(x)}
                 <LazyLoad height={500} once>
                   <Page key={x} pageNumber={x + 1} />
                 </LazyLoad>
@@ -49,16 +53,8 @@ class PDFViewer extends React.Component {
         )}
         {!viewPdf &&
           [...Array(numPages).keys()].map(x => (
-            <div>
-              <ScrollableAnchor id={x + 1}>
-                <h2
-                  className="title is-2 has-text-centered"
-                  style={{ paddingBottom: '1rem', paddingTop: '5rem' }}
-                >
-                  {x + 1}
-                </h2>
-              </ScrollableAnchor>
-
+            <div key={x}>
+              {titleNumbeer(x)}
               {content[x]}
             </div>
           ))}
