@@ -3,9 +3,9 @@ import React from 'react';
 import Footer from './footer';
 import Nav from './nav';
 
-const Base = ({ children, hideSearch }) => (
+const Base = ({ navItems, children, hideSearch }) => (
   <div>
-    <Nav hideSearch={hideSearch} />
+    <Nav hideSearch={hideSearch} navItems={navItems} />
     <div className="container">{children}</div>
     <Footer />
   </div>

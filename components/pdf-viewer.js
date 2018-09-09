@@ -6,7 +6,6 @@ import React from 'react';
 class PDFViewer extends React.Component {
   state = {
     numPages: null,
-    pageNumber: 1,
   };
 
   componentDidMount() {
@@ -21,20 +20,42 @@ class PDFViewer extends React.Component {
 
   render() {
     const { numPages } = this.state;
-    const { document_url } = this.props;
+    const { document_url, viewPdf, content } = this.props;
 
     return (
       <div>
-        <Document
-          file={document_url}
-          onLoadSuccess={this.onDocumentLoadSuccess}
-        >
-          {[...Array(numPages).keys()].map(x => (
-            <LazyLoad height={500} once>
-              <Page key={x} pageNumber={x + 1} />
-            </LazyLoad>
+        {viewPdf && (
+          <Document
+            file={document_url}
+            onLoadSuccess={this.onDocumentLoadSuccess}
+          >
+            {[...Array(numPages).keys()].map(x => (
+              <div>
+                <h2
+                  className="title is-2 has-text-centered"
+                  style={{ paddingBottom: '1rem', paddingTop: '5rem' }}
+                >
+                  {x + 1}
+                </h2>
+                <LazyLoad height={500} once>
+                  <Page key={x} pageNumber={x + 1} />
+                </LazyLoad>
+              </div>
+            ))}
+          </Document>
+        )}
+        {!viewPdf &&
+          [...Array(numPages).keys()].map(x => (
+            <div>
+              <h2
+                className="title is-2 has-text-centered"
+                style={{ paddingBottom: '1rem', paddingTop: '5rem' }}
+              >
+                {x + 1}
+              </h2>
+              {content[x]}
+            </div>
           ))}
-        </Document>
       </div>
     );
   }

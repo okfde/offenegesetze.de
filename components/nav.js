@@ -14,7 +14,7 @@ class Nav extends React.Component {
 
   render() {
     const { isActive } = this.state;
-    const { hideSearch } = this.props;
+    const { hideSearch, navItems } = this.props;
     return (
       <nav className="navbar is-fixed-top">
         <div className="container">
@@ -47,6 +47,7 @@ class Nav extends React.Component {
                   <SearchBox />
                 </div>
               )}
+              {navItems}
             </div>
 
             <div className="navbar-end">
