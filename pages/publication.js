@@ -27,30 +27,21 @@ class Publication extends React.Component {
     const pubDate = dayjs(date);
 
     const titleDate = `am ${pubDate.format('DD.MM.YYYY')}`;
-    let comp;
-    if (viewPdf) {
-      comp = (
-        <div className="navbar-item">
-          <a
-            className="button is-primary"
-            onClick={() => this.setState({ viewPdf: !viewPdf })}
-          >
-            PDF
-          </a>
-        </div>
-      );
-    } else {
-      comp = (
-        <div className="navbar-item">
-          <a
-            className="button"
-            onClick={() => this.setState({ viewPdf: !viewPdf })}
-          >
-            Text
-          </a>
-        </div>
-      );
-    }
+    const comp = [
+      <div className="navbar-item">
+        <a
+          className={viewPdf ? 'button is-primary' : 'button'}
+          onClick={() => this.setState({ viewPdf: !viewPdf })}
+        >
+          {viewPdf ? 'Text' : 'PDF'}
+        </a>
+      </div>,
+      <div className="navbar-item">
+        <a href={document_url} className="button" target="_blank">
+          Download
+        </a>
+      </div>,
+    ];
 
     return (
       <BaseContent navItems={comp}>
