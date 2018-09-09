@@ -23,7 +23,7 @@ app.prepare().then(() => {
 
   server.get('/amtsblatt/:id', (req, res) => {
     const queryParams = { id: req.params.id };
-    renderAndCache(req, res, '/gesetz', queryParams);
+    renderAndCache(req, res, '/publication', queryParams);
   });
 
   server.get('*', (req, res) => {
