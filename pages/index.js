@@ -60,12 +60,12 @@ const IndexPage = ({ items }) => (
 
 IndexPage.getInitialProps = async ({ req }) => {
   try {
-    const res = await fetch('https://api.offenegesetze.de/v1/amtsblatt/');
+    const res = await fetch(
+      'https://api.offenegesetze.de/v1/amtsblatt/?limit=3'
+    );
     const json = await res.json();
-    json.length = 3; // limit to only 3 recent publication
     return {
-      // items: json.map(({ entries }) => entries).reduce((a, b) => a.concat(b, [])),
-      items: json,
+      items: json.results,
     };
   } catch (error) {
     console.log(error);
