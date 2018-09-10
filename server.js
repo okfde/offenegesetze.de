@@ -22,7 +22,7 @@ app.prepare().then(() => {
   });
 
   server.get('/amtsblatt/:id', (req, res) => {
-    const queryParams = { id: req.params.id };
+    const queryParams = { id: req.params.id, q: req.query.q };
     renderAndCache(req, res, '/publication', queryParams);
   });
 

@@ -19,7 +19,7 @@ class SearchBox extends React.Component {
     const value = e.target.value;
     this.setState({ value });
     const res = await fetch(
-      `https://fds-proxy.app.vis.one/api/v1/request/search?q=${value}`
+      `https://api.offenegesetze.de/v1/amtsblatt?q=${value}`
     );
     const json = await res.json();
     if (json.objects[0]) {

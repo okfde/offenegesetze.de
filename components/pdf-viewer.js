@@ -22,8 +22,8 @@ class PDFViewer extends React.Component {
 
   render() {
     const { numPages, pageHeight } = this.state;
-    const { document_url, viewPdf, content } = this.props;
-
+    const { document_url, viewPdf, content, q } = this.props;
+    console.log(q);
     return (
       <div>
         {viewPdf && (
@@ -42,10 +42,25 @@ class PDFViewer extends React.Component {
                       this.myPage = ref;
                     }}
                     onRenderSuccess={() => {
-                      if (pageHeight !== 500) {
+                      if (pageHeight !== this.myPage.clientHeight) {
                         this.setState({ pageHeight: this.myPage.clientHeight });
                       }
                     }}
+                    customTextRenderer={textItem =>
+                      textItem.str
+                        .split(q)
+                        .reduce(
+                          (strArray, currentValue, currentIndex) =>
+                            currentIndex === 0
+                              ? [...strArray, currentValue]
+                              : [
+                                  ...strArray,
+                                  <mark key={currentIndex}>{q}</mark>,
+                                  currentValue,
+                                ],
+                          []
+                        )
+                    }
                   />
                 </LazyLoad>
               </div>

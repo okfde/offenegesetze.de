@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 
 import ListItem from './list-item';
 
-const ListItemPublication = ({ date, number, year, kind, entries, id }) => {
+const ListItemPublication = ({ date, number, year, kind, entries, id, q }) => {
   let titleDate = '';
   const pubDate = dayjs(date);
   const now = dayjs();
@@ -26,7 +26,7 @@ const ListItemPublication = ({ date, number, year, kind, entries, id }) => {
           <ListItem
             key={en.title}
             title={en.title}
-            href={`/amtsblatt/${id}${en.anchor}`}
+            href={`/amtsblatt/${id}${en.anchor}` + (q ? `?q=${q}` : '')}
           />
         ))}
       </ul>

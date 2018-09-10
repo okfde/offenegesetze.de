@@ -24,6 +24,7 @@ class Publication extends React.Component {
       page,
       document_url,
       entries,
+      q,
     } = this.props;
     const { viewPdf } = this.state;
 
@@ -52,20 +53,19 @@ class Publication extends React.Component {
           {titleDate}, Nr. {number}, {year}, {kind}
         </h1>
         <div>
-          {entries.map((x, index) => {
-            return (
-              <div>
-                <a key={x.order} href={x.anchor}>
-                  {index + '. ' + x.title}
-                </a>
-              </div>
-            );
-          })}
+          {entries.map((x, index) => (
+            <div>
+              <a key={x.order} href={x.anchor}>
+                {index + '. ' + x.title}
+              </a>
+            </div>
+          ))}
         </div>
         <PDFViewer
           document_url={document_url}
           viewPdf={viewPdf}
           content={content}
+          q={q}
         />
         <noscript>
           <div>
@@ -84,10 +84,10 @@ class Publication extends React.Component {
 
 Publication.getInitialProps = async ({ query }) => {
   const res = await fetch(
-    'https://api.offenegesetze.de/v1/amtsblatt/' + query.id
+    `https://api.offenegesetze.de/v1/amtsblatt/${query.id}`
   );
   const json = await res.json();
-  return { ...json };
+  return { ...json, q: query.q };
 };
 
 export default Publication;
