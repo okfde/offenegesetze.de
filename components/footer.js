@@ -60,8 +60,9 @@ const Footer = () => (
         </div>
         <div className="column">
           <img
-            src="https://okfn.de/static/images/logo_black.svg"
+            src="/static/okf.svg"
             alt="OKF logo"
+            style={{ width: '20rem' }}
           />
         </div>
       </div>
