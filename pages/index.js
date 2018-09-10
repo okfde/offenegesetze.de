@@ -7,18 +7,21 @@ import SearchBox from '../components/search-box';
 import PricingTable from '../components/pricing-table';
 
 const IndexPage = ({ items }) => (
-  <Base hideSearch>
-    <div className="hero">
-      <div className="hero-body">
+  <Base>
+    <div className="hero is-primary is-bold">
+      <div className="hero-body ">
         <div className="container">
-          <h1 className="title">OffeneGesetze.de</h1>
-          <h2 className="subtitle">Wir öffnen das Bundesgesetzblatt</h2>
+          <h1 className="title">Wir öffnen das Bundesgesetzblatt.</h1>
+          <h2 className="subtitle">
+            Wir brechen das Gesetz um dir offene Gesetz zu geben.
+          </h2>
         </div>
       </div>
     </div>
     <div className="columns is-desktop">
       <div className="column">
         <div className="div">
+          <br />
           <h2 className="subtitle">Was gibt's hier?</h2>
           <p>
             Das BGBl ist das Veröffentlichungsblatt (Gazette) der BRD. Es
@@ -45,15 +48,14 @@ const IndexPage = ({ items }) => (
           <PricingTable />
           <br />
           <p>
-            <a href="/forderungen">Mehr über unsere Forderungen</a>
+            <a className="button is-primary" href="/forderungen">
+              Mehr über unsere Forderungen
+            </a>
           </p>
           <br />
         </div>
       </div>
-      <div className="column">
-        <SearchBox />
-        {<Recent items={items} />}
-      </div>
+      <div className="column">{<Recent items={items} />}</div>
     </div>
   </Base>
 );

@@ -6,7 +6,7 @@ class SearchBox extends React.Component {
     super(props);
     this.state = {
       value: props.q || '',
-      suggestions: ['Mord', 'Stefan', 'Arne', 'Nadine'],
+      suggestions: [],
       loading: false,
     };
   }
@@ -22,7 +22,7 @@ class SearchBox extends React.Component {
       `https://api.offenegesetze.de/v1/amtsblatt?q=${value}`
     );
     const json = await res.json();
-    if (json.objects[0]) {
+    if (json.results[0]) {
       this.setState({
         suggestions: json.objects[0].description.split(' '),
       });
@@ -31,7 +31,7 @@ class SearchBox extends React.Component {
 
   render() {
     return (
-      <form action="/suche">
+      <form action="/suche" style={{ width: '100%' }}>
         <div className="field has-addons">
           <div className="control is-expanded">
             <ReactAutocomplete
@@ -57,14 +57,17 @@ class SearchBox extends React.Component {
                 name: 'q',
                 className: 'input',
                 type: 'text',
-                placeholder: 'In Veröffentlichungen suchen. z.B. Mord',
+                placeholder:
+                  'Suche in über 8000 Amtsblättern. Zum Beispiel "Drogen", "Münzen", "Geld"',
               }}
               wrapperStyle={{ display: 'inline' }}
             />
           </div>
           <div className="control">
             <button type="submit" className="button is-primary">
-              Suche
+              <span class="icon is-small">
+                <i class="fas fa-search" />
+              </span>
             </button>
           </div>
         </div>

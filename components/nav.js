@@ -20,7 +20,8 @@ class Nav extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <a className="navbar-item" href="/">
-              § OffeneGesetze.de
+              <span style={{ marginRight: '0.5rem' }}>⚖️</span>{' '}
+              <b>OffeneGesetze.de</b>
             </a>
             <div
               className={
@@ -41,9 +42,12 @@ class Nav extends React.Component {
             id="navbarExampleTransparentExample"
             className={isActive ? 'navbar-menu is-active' : 'navbar-menu'}
           >
-            <div className="navbar-start">
+            <div
+              className="navbar-start"
+              style={{ flexGrow: 1, flexShrink: 1 }}
+            >
               {!hideSearch && (
-                <div className="navbar-item">
+                <div className="navbar-item is-expanded">
                   <SearchBox />
                 </div>
               )}
