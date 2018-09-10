@@ -1,8 +1,8 @@
 import { Document, Page, setOptions } from 'react-pdf';
-import LazyLoad from 'react-lazyload';
-import ScrollableAnchor from 'react-scrollable-anchor';
-
 import React from 'react';
+import LazyLoad from 'react-lazyload';
+
+import PageNumber from './page-number';
 
 class PDFViewer extends React.Component {
   state = {
@@ -23,17 +23,6 @@ class PDFViewer extends React.Component {
     const { numPages } = this.state;
     const { document_url, viewPdf, content } = this.props;
 
-    const titleNumbeer = x => (
-      <ScrollableAnchor id={(x + 1).toString()}>
-        <h2
-          className="title is-2 has-text-centered"
-          style={{ paddingBottom: '1rem', paddingTop: '5rem' }}
-        >
-          {x + 1}
-        </h2>
-      </ScrollableAnchor>
-    );
-
     return (
       <div>
         {viewPdf && (
@@ -43,7 +32,7 @@ class PDFViewer extends React.Component {
           >
             {[...Array(numPages).keys()].map(x => (
               <div key={x}>
-                {titleNumbeer(x)}
+                <PageNumber numPage={x} />
                 <LazyLoad height={500} once>
                   <Page key={x} pageNumber={x + 1} />
                 </LazyLoad>
@@ -54,7 +43,7 @@ class PDFViewer extends React.Component {
         {!viewPdf &&
           [...Array(numPages).keys()].map(x => (
             <div key={x}>
-              {titleNumbeer(x)}
+              <PageNumber numPage={x} />
               {content[x]}
             </div>
           ))}

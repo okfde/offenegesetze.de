@@ -4,6 +4,8 @@ import dynamic from 'next/dynamic';
 import dayjs from 'dayjs';
 
 import BaseContent from '../components/base-content';
+import PageNumber from '../components/page-number';
+
 const PDFViewer = dynamic(import('../components/pdf-viewer'), { ssr: false });
 
 class Publication extends React.Component {
@@ -65,7 +67,16 @@ class Publication extends React.Component {
           viewPdf={viewPdf}
           content={content}
         />
-        <div> {content} </div>
+        <noscript>
+          <div>
+            {content.map((x, index) => (
+              <div>
+                <PageNumber numPage={index} />
+                {x}
+              </div>
+            ))}
+          </div>
+        </noscript>
       </BaseContent>
     );
   }
