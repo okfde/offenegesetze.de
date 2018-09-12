@@ -63,7 +63,7 @@ const IndexPage = ({ items }) => (
 IndexPage.getInitialProps = async ({ req }) => {
   try {
     const res = await fetch(
-      'https://api.offenegesetze.de/v1/amtsblatt/?limit=3'
+      'https://api.offenegesetze.de/v1/veroeffentlichung/?limit=3'
     );
     const json = await res.json();
     return {

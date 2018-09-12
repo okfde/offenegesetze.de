@@ -19,7 +19,7 @@ class SearchBox extends React.Component {
     const value = e.target.value;
     this.setState({ value });
     const res = await fetch(
-      `https://api.offenegesetze.de/v1/amtsblatt?q=${value}`
+      `https://api.offenegesetze.de/v1/veroeffentlichung/?q=${value}`
     );
     const json = await res.json();
     if (json.results[0]) {

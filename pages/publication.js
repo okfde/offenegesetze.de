@@ -84,7 +84,7 @@ class Publication extends React.Component {
 
 Publication.getInitialProps = async ({ query }) => {
   const res = await fetch(
-    `https://api.offenegesetze.de/v1/amtsblatt/${query.id}`
+    `https://api.offenegesetze.de/v1/veroeffentlichung/${query.id}/`
   );
   const json = await res.json();
   return { ...json, q: query.q };

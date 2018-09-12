@@ -53,7 +53,7 @@ class RecentPublications extends React.Component {
 
 RecentPublications.getInitialProps = async () => {
   const res = await fetch(
-    `https://api.offenegesetze.de/v1/amtsblatt/?limit=${LIMIT}`
+    `https://api.offenegesetze.de/v1/veroeffentlichung/?limit=${LIMIT}`
   );
   const resJson = await res.json();
   return { initialItems: resJson.results, next: resJson.next };

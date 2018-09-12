@@ -21,7 +21,7 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/');
   });
 
-  server.get('/amtsblatt/:id', (req, res) => {
+  server.get('/veroeffentlichung/:id/', (req, res) => {
     const queryParams = { id: req.params.id, q: req.query.q };
     renderAndCache(req, res, '/publication', queryParams);
   });

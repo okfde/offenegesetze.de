@@ -64,7 +64,7 @@ class Search extends React.Component {
 
 Search.getInitialProps = async ({ query }) => {
   const res = await fetch(
-    `https://api.offenegesetze.de/v1/amtsblatt?q=${query.q}&limit=10`
+    `https://api.offenegesetze.de/v1/veroeffentlichung/?q=${query.q}&limit=10`
   );
   const { results: initialItems, count, next } = await res.json();
   return { initialItems, count, next, query: query.q };

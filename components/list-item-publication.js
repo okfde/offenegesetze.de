@@ -26,7 +26,7 @@ const ListItemPublication = ({ date, number, year, kind, entries, id, q }) => {
           <ListItem
             key={en.title}
             title={en.title}
-            href={`/amtsblatt/${id}${en.anchor}` + (q ? `?q=${q}` : '')}
+            href={`/veroeffentlichung/${id}/` + (q ? `?q=${q}` : '')}
           />
         ))}
       </ul>
