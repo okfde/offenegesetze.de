@@ -65,8 +65,8 @@ class SearchBox extends React.Component {
           </div>
           <div className="control">
             <button type="submit" className="button is-primary">
-              <span class="icon is-small">
-                <i class="fas fa-search" />
+              <span className="icon is-small">
+                <i className="fas fa-search" />
               </span>
             </button>
           </div>
