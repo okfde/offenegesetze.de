@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 
 import ListItem from './list-item';
 
-const ListItemPublication = ({ date, number, year, kind, entries, id, q }) => {
+const ListItemPublication = ({ date, number, year, kind, title, id, q }) => {
   let titleDate = '';
   const pubDate = dayjs(date);
   const now = dayjs();
@@ -22,13 +22,11 @@ const ListItemPublication = ({ date, number, year, kind, entries, id, q }) => {
       </p>
       <br />
       <ul>
-        {entries.map(en => (
-          <ListItem
-            key={en.title}
-            title={en.title}
-            href={`/veroeffentlichung/${id}/` + (q ? `?q=${q}` : '')}
-          />
-        ))}
+        <ListItem
+          key={title}
+          title={title}
+          href={`/veroeffentlichung/${id}/` + (q ? `?q=${q}` : '')}
+        />
       </ul>
     </div>
   );
