@@ -41,7 +41,7 @@ class Search extends React.Component {
         <InfiniteScroll
           pageStart={0}
           loadMore={this.loadFunc}
-          hasMore={items.length && next !== null}
+          hasMore={!!items.length && next !== null}
           loader={
             <div className="loader" style={{ margin: '0 auto' }} key={0} />
           }
