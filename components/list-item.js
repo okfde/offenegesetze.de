@@ -2,7 +2,16 @@ import React from 'react';
 import dayjs from 'dayjs';
 import Link from 'next/link';
 
-const ListItem = ({ date, number, year, kind, title, id, q }) => {
+const ListItem = ({
+  date,
+  number,
+  year,
+  kind,
+  title,
+  id,
+  q,
+  content__highlight: results,
+}) => {
   let titleDate = '';
   const pubDate = dayjs(date);
   const now = dayjs();
@@ -26,6 +35,15 @@ const ListItem = ({ date, number, year, kind, title, id, q }) => {
           {titleDate}, Nr. {number} ({year}), {kind}
         </small>
       </p>
+      {results &&
+        results.map(x => (
+          <div>
+            <small
+              className="content"
+              dangerouslySetInnerHTML={{ __html: x }}
+            />
+          </div>
+        ))}
     </div>
   );
 };
