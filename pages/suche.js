@@ -2,7 +2,7 @@ import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import ListItemPublication from '../components/list-item-publication';
+import ListItem from '../components/list-item';
 import SearchBox from '../components/search-box';
 import BaseContent from '../components/base-content';
 
@@ -48,7 +48,7 @@ class Search extends React.Component {
         >
           {(items || initialItems).map(x => (
             <div>
-              <ListItemPublication {...x} q={query} />
+              <ListItem {...x} q={query} />
               <div
                 className="content"
                 dangerouslySetInnerHTML={{ __html: x.content__highlight }}

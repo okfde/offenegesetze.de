@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import BaseContent from '../components/base-content';
-import ListItemPublication from '../components/list-item-publication';
+import ListItem from '../components/list-item';
 
 const LIMIT = 10;
 
@@ -44,7 +44,7 @@ class RecentPublications extends React.Component {
             <div className="loader" style={{ margin: '0 auto' }} key={0} />
           }
         >
-          {(items || initialItems).map(x => <ListItemPublication {...x} />)}
+          {(items || initialItems).map(x => <ListItem {...x} />)}
         </InfiniteScroll>
       </BaseContent>
     );

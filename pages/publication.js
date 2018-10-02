@@ -23,7 +23,9 @@ class Publication extends React.Component {
       date,
       page,
       document_url,
-      entries,
+      anchor,
+      order,
+      title,
       q,
     } = this.props;
     const { viewPdf } = this.state;
@@ -53,13 +55,12 @@ class Publication extends React.Component {
           {titleDate}, Nr. {number}, {year}, {kind}
         </h1>
         <div>
-          {entries.map((x, index) => (
-            <div>
-              <a key={x.order} href={x.anchor}>
-                {index + '. ' + x.title}
-              </a>
-            </div>
-          ))}
+          <div>
+            <a key={order} href={anchor}>
+              {`${order}. ${title}`}
+            </a>
+          </div>
+          ))
         </div>
         <PDFViewer
           document_url={document_url}
