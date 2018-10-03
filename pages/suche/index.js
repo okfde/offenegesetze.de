@@ -3,34 +3,24 @@ import fetch from 'isomorphic-unfetch';
 import InfiniteScroll from 'react-infinite-scroller';
 import InputRange from 'react-input-range';
 
-import ListItem from '../components/list-item';
-import SearchBox from '../components/search-box';
-import BaseContent from '../components/base-content';
+import ListItem from '../../components/list-item';
+import SearchBox from '../../components/search-box';
+import BaseContent from '../../components/base-content';
 
 import './style.css';
 import 'react-input-range/lib/css/index.css';
 
 class Search extends React.Component {
-  state = {
-    next: null,
-    items: [],
-    dateRange: { min: 1999, max: 2000 },
-    firstYear: 1999,
-    lastYear: 2000,
-  };
+  constructor(props) {
+    super(props);
 
-  componentDidMount() {
-    const { initialItems, next, facets } = this.props;
-    this.setState({ items: initialItems, next });
-
-    const firstYear = parseInt(facets.date[0].value.split('-')[0]);
-    const lastYear = parseInt(facets.date.slice(-1)[0].value.split('-')[0]);
-
-    this.setState({
+    // init state with props created on the server
+    const { initialItems: items, next, firstYear, lastYear } = this.props;
+    this.state = {
+      next,
+      items,
       dateRange: { min: firstYear, max: lastYear },
-      lastYear,
-      firstYear,
-    });
+    };
   }
 
   loadFunc = () => {
@@ -46,8 +36,15 @@ class Search extends React.Component {
   };
 
   render() {
-    const { query, initialItems, count, facets } = this.props;
-    const { items, next, firstYear, lastYear, dateRange } = this.state;
+    const {
+      query,
+      initialItems,
+      count,
+      facets,
+      firstYear,
+      lastYear,
+    } = this.props;
+    const { items, next, dateRange } = this.state;
 
     return (
       <BaseContent hideSearch>
@@ -110,7 +107,18 @@ Search.getInitialProps = async ({ query }) => {
     x.year = parseInt(x.value.split('-')[0]);
   });
 
-  return { initialItems, count, next, query: query.q, facets };
+  const firstYear = facets.date[0].year;
+  const lastYear = facets.date.slice(-1)[0].year;
+
+  return {
+    initialItems,
+    count,
+    next,
+    query: query.q,
+    facets,
+    firstYear,
+    lastYear,
+  };
 };
 
 export default Search;
