@@ -8,7 +8,7 @@ import SearchBox from '../../components/search-box';
 import BaseContent from '../../components/base-content';
 
 import './style.css';
-import 'react-input-range/lib/css/index.css';
+import YearRangeFacet from '../../components/year-range-facet';
 
 class Search extends React.Component {
   constructor(props) {
@@ -51,32 +51,15 @@ class Search extends React.Component {
         <h1 className="title is-1">Suche</h1>
         <SearchBox q={query} />
         <div>{count} Ergbenisse</div>
-        <br />
-        <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-          {facets.date.map(x => (
-            <div
-              style={{
-                height: `${x.count}px`,
-                backgroundColor:
-                  x.year >= dateRange.min && x.year <= dateRange.max
-                    ? 'blue'
-                    : 'grey',
-                width: 1,
-                flexGrow: 1,
-                transition: 'background-color 500ms linear',
-              }}
-            />
-          ))}
-        </div>
-        <br />
 
-        <InputRange
-          maxValue={lastYear}
-          minValue={firstYear}
-          value={this.state.dateRange}
+        <YearRangeFacet
+          value={dateRange}
+          min={firstYear}
+          max={lastYear}
+          bars={facets.date}
           onChange={dateRange => this.setState({ dateRange })}
+          containerStyle={{ padding: '0.5rem', marginBottom: '1rem' }}
         />
-        <br />
 
         <InfiniteScroll
           pageStart={0}
