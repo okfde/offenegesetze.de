@@ -36,8 +36,7 @@
     "react-infinite-scroller": "^1.2.0",
     "react-input-range": "^1.3.0",
     "react-lazyload": "^2.3.0",
-    "react-pdf": "^3.0.5",
-    "react-scrollable-anchor": "^0.6.1"
+    "react-pdf": "^3.0.5"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",

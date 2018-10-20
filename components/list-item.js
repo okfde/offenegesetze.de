@@ -2,6 +2,8 @@ import React from 'react';
 import dayjs from 'dayjs';
 import Link from 'next/link';
 
+import { dict } from '../config';
+
 const ListItem = ({
   date,
   number,
@@ -10,6 +12,7 @@ const ListItem = ({
   title,
   id,
   q,
+  pdf_page: pdfPage,
   content__highlight: results,
 }) => {
   let titleDate = '';
@@ -25,14 +28,16 @@ const ListItem = ({
   }
   return (
     <div className="box" key={number + year + kind}>
-      <Link href={`/veroeffentlichung/${id}/${q ? `?q=${q}` : ''}`}>
+      <Link
+        href={`/veroeffentlichung/${id}/?page=${pdfPage}${q ? `&q=${q}` : ''}`}
+      >
         <a>
           <div>{title}</div>
         </a>
       </Link>
       <p>
         <small className="has-text-grey">
-          {titleDate}, Nr. {number} ({year}), {kind}
+          {titleDate}, Nr. {number} ({year}), {dict[kind]}
         </small>
       </p>
       {results &&

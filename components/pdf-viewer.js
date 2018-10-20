@@ -14,6 +14,18 @@ class PDFViewer extends React.Component {
     setOptions({
       workerSrc: '/static/pdf.worker.js',
     });
+
+    if (this.props.page != null) {
+      // wait until the ID is avaiable
+      const inter = setInterval(() => {
+        const hash = '#p' + this.props.page;
+        const elem = document.querySelector(hash);
+        if (elem != null) {
+          clearInterval(inter);
+          elem.scrollIntoView(true);
+        }
+      }, 1000);
+    }
   }
 
   onDocumentLoadSuccess = ({ numPages }) => {
@@ -23,7 +35,6 @@ class PDFViewer extends React.Component {
   render() {
     const { numPages, pageHeight } = this.state;
     const { document_url, viewPdf, content, q } = this.props;
-    console.log(q);
     return (
       <div>
         {viewPdf && (
@@ -34,7 +45,7 @@ class PDFViewer extends React.Component {
             {[...Array(numPages).keys()].map(x => (
               <div key={x}>
                 <PageNumber numPage={x} />
-                <LazyLoad height={pageHeight} once>
+                <LazyLoad height={pageHeight} once offset={500} resize>
                   <Page
                     key={x}
                     pageNumber={x + 1}

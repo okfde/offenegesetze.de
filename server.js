@@ -22,7 +22,11 @@ app.prepare().then(() => {
   });
 
   server.get('/veroeffentlichung/:id/', (req, res) => {
-    const queryParams = { id: req.params.id, q: req.query.q };
+    const queryParams = {
+      id: req.params.id,
+      q: req.query.q,
+      page: req.query.page,
+    };
     renderAndCache(req, res, '/publication', queryParams);
   });
 
