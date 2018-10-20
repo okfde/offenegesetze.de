@@ -44,7 +44,7 @@ class Publication extends React.Component {
       </div>,
       <div className="navbar-item">
         <a href={document_url} className="button is-primary" target="_blank">
-          Download
+          PDF-Download
         </a>
       </div>,
     ];
@@ -54,8 +54,18 @@ class Publication extends React.Component {
         <h1 className="title is-2">
           {dict[kind]}: Nr. {number} ({year})
         </h1>
-        <h2 className="subtitle">{titleDate}</h2>
+        <h2 className="subtitle">
+          {titleDate}
+          <small>
+            ,{' '}
+            <a href={document_url} target="_blank">
+              PDF downloaden.
+            </a>
+          </small>
+        </h2>
         <div>
+          Eine Übersicht über alle Veröffentlichungen in diesem Blatt:
+          <br />
           {toc.map(x => (
             <div>
               <small>

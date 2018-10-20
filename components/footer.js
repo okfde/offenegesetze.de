@@ -53,9 +53,9 @@ const Footer = () => (
             <li>
               <a href="/feeds">RSS-Feeds</a>
             </li>
-            <li>
+            {/* <li>
               <a href="/api">E-Mail-Benachrichtigungen</a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="column">
