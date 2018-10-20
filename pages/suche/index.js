@@ -9,6 +9,8 @@ import BaseContent from '../../components/base-content';
 
 import './style.css';
 
+import { MAX_YEAR, MIN_YEAR } from '../../config';
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -64,7 +66,6 @@ class Search extends React.Component {
 
   _onDateRangeChange = dateRange => {
     this.setState({ dateRange });
-    // this._updateFilters(this.props.kind, dateRange.min, dateRange.max);
   };
 
   _onDateRangeChangeFinal = dateRange => {
@@ -104,6 +105,8 @@ class Search extends React.Component {
           min={firstYear}
           max={lastYear}
           bars={facets.date}
+          beforeBars={facets.beforeDate}
+          afterBars={facets.afterDate}
           onChange={this._onDateRangeChange}
           onChangeComplete={this._onDateRangeChangeFinal}
           containerStyle={{ padding: '0.5rem', marginBottom: '1rem' }}
@@ -143,10 +146,25 @@ class Search extends React.Component {
   }
 }
 
+const addMissingValues = (array, from, to) => {
+  const years = array.map(x => x.year);
+  const res = array;
+  let year = parseInt(from, 10);
+
+  while (year <= parseInt(to)) {
+    if (!years.includes(year)) {
+      res.push({ year, count: 0 });
+    }
+    year += 1;
+  }
+
+  return res.sort((x, y) => x.year - y.year);
+};
+
 Search.getInitialProps = async ({ query }) => {
   const { q, kind, from, to } = query;
 
-  let paramsString = '';
+  let paramsStringBase = '';
   const params = {};
 
   if (q != null) params.q = q;
@@ -154,7 +172,7 @@ Search.getInitialProps = async ({ query }) => {
   if (kind) {
     if (Array.isArray(kind)) {
       const arrStr = kind.map(x => `&kind=${x}`).join('');
-      paramsString += arrStr;
+      paramsStringBase += arrStr;
     } else {
       params.kind = kind;
     }
@@ -164,20 +182,90 @@ Search.getInitialProps = async ({ query }) => {
     params.year = `${from}-${to}`;
   }
 
-  paramsString += Object.keys(params)
-    .map(x => `&${x}=${params[x]}`)
-    .join('');
+  let paramsString =
+    paramsStringBase +
+    Object.keys(params)
+      .map(x => `&${x}=${params[x]}`)
+      .join('');
 
   const res = await fetch(
     `https://api.offenegesetze.de/v1/veroeffentlichung/?limit=10${paramsString}`
   );
   const { results: initialItems, count, next, facets } = await res.json();
+
+  // ugly code start
+  if (from != null && from != MIN_YEAR) {
+    const fromFixed = Math.max(parseInt(from, 10) - 1, MIN_YEAR);
+    params.year = `-${fromFixed}`;
+
+    paramsString =
+      paramsStringBase +
+      Object.keys(params)
+        .map(x => `&${x}=${params[x]}`)
+        .join('');
+    const res2 = await fetch(
+      `https://api.offenegesetze.de/v1/veroeffentlichung/?limit=10${paramsString}`
+    );
+
+    const jsres = await res2.json();
+    if ('facets' in jsres) {
+      const {
+        facets: { date: beforeDate },
+      } = jsres;
+      facets.beforeDate = beforeDate;
+      facets.beforeDate.forEach(x => {
+        x.year = parseInt(x.value.split('-')[0]);
+      });
+      facets.beforeDate = addMissingValues(
+        facets.beforeDate,
+        MIN_YEAR,
+        fromFixed
+      );
+    } else {
+      facets.beforeDate = addMissingValues([], MIN_YEAR, fromFixed);
+    }
+  }
+
+  if (to != null && to != MAX_YEAR) {
+    const toFixed = Math.min(parseInt(to, 10) + 1, MAX_YEAR);
+    params.year = `${toFixed}-`;
+
+    paramsString =
+      paramsStringBase +
+      Object.keys(params)
+        .map(x => `&${x}=${params[x]}`)
+        .join('');
+
+    const res3 = await fetch(
+      `https://api.offenegesetze.de/v1/veroeffentlichung/?limit=10${paramsString}`
+    );
+
+    const jsres = await res3.json();
+    if ('facets' in jsres) {
+      const {
+        facets: { date: afterDate },
+      } = jsres;
+
+      facets.afterDate = afterDate;
+      facets.afterDate.forEach(x => {
+        x.year = parseInt(x.value.split('-')[0]);
+      });
+      facets.afterDate = addMissingValues(facets.afterDate, toFixed, MAX_YEAR);
+    } else {
+      facets.afterDate = addMissingValues([], toFixed, MAX_YEAR);
+    }
+  }
+
+  // ugly code end
+
   facets.date.forEach(x => {
     x.year = parseInt(x.value.split('-')[0]);
   });
 
-  const firstYear = facets.date[0].year;
-  const lastYear = facets.date.slice(-1)[0].year;
+  facets.date = addMissingValues(facets.date, from || MIN_YEAR, to || MAX_YEAR);
+
+  const firstYear = from || MIN_YEAR;
+  const lastYear = to || MAX_YEAR;
 
   return {
     initialItems,
