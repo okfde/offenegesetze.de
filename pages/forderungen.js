@@ -7,24 +7,20 @@ const Ueber = () => (
   <BaseContent>
     <h1 className="title">Unsere Forderungen</h1>
     <p>
-      Das BGBl ist das Veröffentlichungsblatt (Gazette) der BRD. Es enthält
-      sozusagen alle Änderungen an der aktuelle Gesetzes- und Verordnungslage (=
-      menschen-lesbare Commits/Diffs), die mit Veröffentlichung in Kraft treten.
-      In einer idealen Welt, gibt es kein BGBl, sondern nur Commits auf ein
-      Gesetzes-Repo (Idee von Bundes-Git). Das ist leider gerade unrealistisch.
-      Stattdessen sollten wir das aktuelle Angebot verbessern. Die Phrase "tritt
-      mit Veröffentlichung in Kraft" stammt aus einer analogen Zeit. Früher hieß
-      das: wenn es ausgedruckt und ausgehängt ist. Der Begriff
-      "Veröffentlichung" hat sich aber seitdem stark verändert. Der
-      Bundesanzeigerverlag "veröffentlicht" das BGBl unter bgbl.de zwar im
-      Internet, aber in der schlechtest vorstellbaren Form. Wir erwarten mehr
-      von einer Veröffentlichung, gerade wenn diese den Effekt hat, die Regeln
-      unseres Zusammenlebens – unsere Gesetzeslage – zu verändern. Aktueller
-      Stand der Veröffentlichung Unter bgbl.de stellt der Bundesanzeiger Verlag
-      das BGBl in einer "kostenlosen Bürgerversion" zur Verfügung, allerdings
-      mit Einschränkungen: PDFs sind gesperrt (kein kopieren, kein Drucken)
-      ältere Ausgaben sind nur Bild-PDFs (kein Text) keine Suche (nur im
-      Abonnement) keine Permalinks keine Daten expliziter Urheberrechtshinweis
+    Im Jahr 2006 wurde der staatliche Bundesanzeiger-Verlag privatisiert. In einem umstrittenen Verfahren sicherte sich der Dumont-Verlag
+    das Unternehmen und damit die Veröffentlichung aller Gesetze im Bundesgesetzblatt. Seither erhielt der Verlag ohne Ausschreibung auch 
+    den Auftrag zum Betrieb von anderen staatlichen Plattformen.
+  
+    Das Bundesgesetzblatt ist für den Bundesanzeiger-Verlag lukrativ. Er verlangt für grundlegende Funktionen, zum Beispiel die 
+    Durchsuchbarkeit oder das Drucken von Gesetzblättern Gebühren. Mit dieser Plattform ändern wir das. Alle Gesetzblätter sind auf 
+    offenegesetze.de frei zugänglich.
+    
+    Die Bundesregierung muss dafür sorgen, dass private Verlage nicht das Urheberrecht auf staatliche Dokumente beanspruchen dürfen.
+    Amtliche Dokumente müssen frei und kostenlos online für die gesamte Öffentlichkeit zugänglich sein! 
+    Monopolisten dürfen nicht für den Zugang zu staatlichen Daten zur Kasse bitten!
+    Das Urheberrecht muss geändert werden, damit zentrale Dokumente der Demokratie offen bereitstehen!
+
+
     </p>
     <PricingTable />
     <br />
