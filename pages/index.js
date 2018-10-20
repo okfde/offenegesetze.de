@@ -19,7 +19,7 @@ const IndexPage = ({ items }) => (
             <h2 className="subtitle">Wir öffnen das Bundesgesetzblatt</h2>
           </div>
         </div>
-        <h2 className="subtitle">Was gibt's hier?</h2>
+        <h2 className="subtitle">Was gibt es hier?</h2>
         <p>
           Im Bundesgesetzblatt (BGBl) werden alle Gesetze der Bundesrepublik
           Deutschland veröffentlicht. Gesetze treten erst in Kraft, wenn sie
