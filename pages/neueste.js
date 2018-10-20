@@ -34,7 +34,7 @@ class RecentPublications extends React.Component {
     const { initialItems } = this.props;
     const { items, next } = this.state;
     return (
-      <BaseContent>
+      <BaseContent hideFooter>
         <h1 className="title is-1">Neueste Veröffentlichungen</h1>
         <InfiniteScroll
           pageStart={0}

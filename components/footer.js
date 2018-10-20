@@ -40,7 +40,7 @@ const Footer = () => (
                 <a href="/kontakt">Kontakt</a>
               </li>
               <li>
-                <a href="/datenschutz">Datenschutzerklärung</a>
+                <a href="/datenschutz">Datenschutz</a>
               </li>
             </ul>
           </div>
@@ -59,11 +59,13 @@ const Footer = () => (
           </ul>
         </div>
         <div className="column">
-          <img
-            src="/static/okf.svg"
-            alt="OKF logo"
-            style={{ width: '20rem' }}
-          />
+          <a href="https://okfn.de/">
+            <img
+              src="/static/okf.svg"
+              alt="OKF logo"
+              style={{ width: '20rem' }}
+            />
+          </a>
         </div>
       </div>
     </div>

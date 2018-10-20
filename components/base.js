@@ -5,11 +5,13 @@ import Nav from './nav';
 
 import './styles.css';
 
-const Base = ({ navItems, children, hideSearch }) => (
+const Base = ({ navItems, children, hideSearch, hideFooter }) => (
   <div>
     <Nav hideSearch={hideSearch} navItems={navItems} />
-    <div className="container">{children}</div>
-    <Footer />
+    <div style={{ minHeight: '40rem' }} className="container">
+      {children}
+    </div>
+    {!hideFooter && <Footer />}
   </div>
 );
 

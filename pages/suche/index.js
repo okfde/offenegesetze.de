@@ -97,7 +97,7 @@ class Search extends React.Component {
     const { items, next, dateRange } = this.state;
 
     return (
-      <BaseContent hideSearch>
+      <BaseContent hideSearch hideFooter>
         <h1 className="title is-1">Suche</h1>
         <SearchBox q={query} />
         <br />
