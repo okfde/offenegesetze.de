@@ -4,7 +4,7 @@ import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
 const Footer = () => (
-  <footer className="footer">
+  <footer className="footer" style={{ minHeight: '50vh' }}>
     <div className="container">
       <div className="columns is-desktop">
         <div className="column">
