@@ -6,38 +6,53 @@ const PricingTable = () => (
     <table style={{ width: '100%', textAlign: 'center' }}>
       <tr>
         <th />
-        <th>BGBL</th>
-        <th>OffeneGesetze.de</th>
+        <th>BGBl</th>
+        <th>OffeneGesetze</th>
       </tr>
       <tr>
-        <td>Alle Dokumente sind ausdruckbar</td>
-        <td>✔</td>
-        <td>✔</td>
+        <td>Dokumente druckbar</td>
+        <td>❌</td>
+        <td>✔️</td>
       </tr>
       <tr>
         <td>Volltextsuche</td>
-        <td>✔</td>
-        <td>✔</td>
+        <td>❌</td>
+        <td>✔️</td>
       </tr>
       <tr>
-        <td>RSS-Feeds</td>
-        <td />
-        <td>✔</td>
+        <td>Gesamt-Download</td>
+        <td>❌</td>
+        <td>✔️</td>
+      </tr>
+      <tr>
+        <td>Freie Weiterverwendung</td>
+        <td>❌</td>
+        <td>✔️</td>
       </tr>
       <tr>
         <td>Stabile Links</td>
-        <td />
-        <td>✔</td>
+        <td>❌</td>
+        <td>✔️</td>
       </tr>
       <tr>
-        <td>API</td>
-        <td />
-        <td>✔</td>
+        <td>RSS-Feeds</td>
+        <td>❌</td>
+        <td>✔️</td>
       </tr>
       <tr>
-        <td>Preis</td>
-        <td>99 Euro</td>
-        <td>0 Euro</td>
+        <td>Programmier-Schnittstelle</td>
+        <td>❌</td>
+        <td>✔️</td>
+      </tr>
+      <tr>
+        <td>alle Funktionen kostenlos</td>
+        <td>❌</td>
+        <td>✔️</td>
+      </tr>
+      <tr>
+        <td>gemeinnützig</td>
+        <td>❌</td>
+        <td>✔️</td>
       </tr>
     </table>
   </p>
