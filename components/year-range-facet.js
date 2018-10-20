@@ -8,6 +8,7 @@ const YearRangeFacet = ({
   min,
   max,
   onChange,
+  onChangeComplete,
   bars,
   containerStyle,
 }) => (
@@ -36,6 +37,7 @@ const YearRangeFacet = ({
       minValue={min}
       value={value}
       onChange={onChange}
+      onChangeComplete={onChangeComplete}
     />
   </div>
 );

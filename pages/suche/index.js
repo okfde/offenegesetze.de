@@ -34,7 +34,7 @@ class Search extends React.Component {
   };
 
   _onSelect = event => {
-    const { kind, query } = this.props;
+    const { kind, firstYear, lastYear } = this.props;
     const { name } = event.target;
 
     let arr = [];
@@ -48,10 +48,9 @@ class Search extends React.Component {
           arr.push(kind);
         }
       } else {
-        if (name === kind) {
-          // remove
-          arr = [];
-        } else {
+        // remove
+        arr = [];
+        if (name !== kind) {
           // add
           arr = [name, kind];
         }
@@ -60,7 +59,26 @@ class Search extends React.Component {
       arr = [name];
     }
 
-    const arrStr = arr.map(x => '&kind=' + x).join('');
+    this._updateFilters(arr, firstYear, lastYear);
+  };
+
+  _onDateRangeChange = dateRange => {
+    this.setState({ dateRange });
+    // this._updateFilters(this.props.kind, dateRange.min, dateRange.max);
+  };
+
+  _onDateRangeChangeFinal = dateRange => {
+    this._updateFilters(this.props.kind, dateRange.min, dateRange.max);
+  };
+
+  _updateFilters = (bgblArr = [], from = null, to = null) => {
+    const { query } = this.props;
+
+    let arrStr = bgblArr.map(x => `&kind=${x}`).join('');
+
+    if (from != null) arrStr += `&from=${from}`;
+    if (to != null) arrStr += `&to=${to}`;
+
     window.location.assign(`/suche?q=${query}${arrStr}`);
   };
 
@@ -86,7 +104,8 @@ class Search extends React.Component {
           min={firstYear}
           max={lastYear}
           bars={facets.date}
-          onChange={dateRange => this.setState({ dateRange })}
+          onChange={this._onDateRangeChange}
+          onChangeComplete={this._onDateRangeChangeFinal}
           containerStyle={{ padding: '0.5rem', marginBottom: '1rem' }}
         />
 
@@ -128,7 +147,9 @@ Search.getInitialProps = async ({ query }) => {
   const { q, kind, from, to } = query;
 
   let paramsString = '';
-  const params = { q };
+  const params = {};
+
+  if (q != null) params.q = q;
 
   if (kind) {
     if (Array.isArray(kind)) {
@@ -137,6 +158,10 @@ Search.getInitialProps = async ({ query }) => {
     } else {
       params.kind = kind;
     }
+  }
+
+  if (from != null && to != null) {
+    params.year = `${from}-${to}`;
   }
 
   paramsString += Object.keys(params)
