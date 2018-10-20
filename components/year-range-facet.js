@@ -16,7 +16,8 @@ const YearRangeFacet = ({
       {bars.map(x => (
         <div
           style={{
-            height: `${x.count}px`,
+            height: `${(x.count / Math.max(...bars.map(xx => xx.count))) *
+              50}px`,
             backgroundColor:
               x.year >= value.min && x.year <= value.max
                 ? '#3f51b5'
