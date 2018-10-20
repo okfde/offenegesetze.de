@@ -1,19 +1,17 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import InfiniteScroll from 'react-infinite-scroller';
-import InputRange from 'react-input-range';
 
+import YearRangeFacet from '../../components/year-range-facet';
 import ListItem from '../../components/list-item';
 import SearchBox from '../../components/search-box';
 import BaseContent from '../../components/base-content';
 
 import './style.css';
-import YearRangeFacet from '../../components/year-range-facet';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
-
     // init state with props created on the server
     const { initialItems: items, next, firstYear, lastYear } = this.props;
     this.state = {
@@ -33,6 +31,37 @@ class Search extends React.Component {
           items: this.state.items.concat(x.results),
         })
       );
+  };
+
+  _onSelect = event => {
+    const { kind, query } = this.props;
+    const { name } = event.target;
+
+    let arr = [];
+    if (kind) {
+      if (Array.isArray(kind)) {
+        if (kind.includes(name)) {
+          // remove
+          arr = kind.filter(x => x !== name);
+        } else {
+          // add
+          arr.push(kind);
+        }
+      } else {
+        if (name === kind) {
+          // remove
+          arr = [];
+        } else {
+          // add
+          arr = [name, kind];
+        }
+      }
+    } else {
+      arr = [name];
+    }
+
+    const arrStr = arr.map(x => '&kind=' + x).join('');
+    window.location.assign(`/suche?q=${query}${arrStr}`);
   };
 
   render() {
@@ -61,6 +90,21 @@ class Search extends React.Component {
           containerStyle={{ padding: '0.5rem', marginBottom: '1rem' }}
         />
 
+        <div>
+          {facets.kind.map(x => (
+            <div>
+              <input
+                name={x.value}
+                type="checkbox"
+                checked={x.selected}
+                onChange={this._onSelect}
+              />
+              {x.value}
+              {x.count}
+            </div>
+          ))}
+        </div>
+
         <InfiniteScroll
           pageStart={0}
           loadMore={this.loadFunc}
@@ -81,11 +125,28 @@ class Search extends React.Component {
 }
 
 Search.getInitialProps = async ({ query }) => {
+  const { q, kind, from, to } = query;
+
+  let paramsString = '';
+  const params = { q };
+
+  if (kind) {
+    if (Array.isArray(kind)) {
+      const arrStr = kind.map(x => `&kind=${x}`).join('');
+      paramsString += arrStr;
+    } else {
+      params.kind = kind;
+    }
+  }
+
+  paramsString += Object.keys(params)
+    .map(x => `&${x}=${params[x]}`)
+    .join('');
+
   const res = await fetch(
-    `https://api.offenegesetze.de/v1/veroeffentlichung/?q=${query.q}&limit=10`
+    `https://api.offenegesetze.de/v1/veroeffentlichung/?limit=10${paramsString}`
   );
   const { results: initialItems, count, next, facets } = await res.json();
-
   facets.date.forEach(x => {
     x.year = parseInt(x.value.split('-')[0]);
   });
@@ -97,10 +158,11 @@ Search.getInitialProps = async ({ query }) => {
     initialItems,
     count,
     next,
-    query: query.q,
+    query: q,
     facets,
     firstYear,
     lastYear,
+    kind,
   };
 };
 
