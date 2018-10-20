@@ -9,7 +9,7 @@ import BaseContent from '../../components/base-content';
 
 import './style.css';
 
-import { MAX_YEAR, MIN_YEAR } from '../../config';
+import { MAX_YEAR, MIN_YEAR, dict } from '../../config';
 
 class Search extends React.Component {
   constructor(props) {
@@ -80,7 +80,7 @@ class Search extends React.Component {
     if (from != null) arrStr += `&from=${from}`;
     if (to != null) arrStr += `&to=${to}`;
 
-    window.location.assign(`/suche?q=${query}${arrStr}`);
+    window.location.assign(`/suche?q=${query || ''}${arrStr}`);
   };
 
   render() {
@@ -98,8 +98,10 @@ class Search extends React.Component {
       <BaseContent hideSearch>
         <h1 className="title is-1">Suche</h1>
         <SearchBox q={query} />
-        <div>{count} Ergbenisse</div>
-
+        <br />
+        <div>{count} Ergebnisse</div>
+        <br />
+        {/* <br /> */}
         <YearRangeFacet
           value={dateRange}
           min={firstYear}
@@ -109,20 +111,22 @@ class Search extends React.Component {
           afterBars={facets.afterDate}
           onChange={this._onDateRangeChange}
           onChangeComplete={this._onDateRangeChangeFinal}
-          containerStyle={{ padding: '0.5rem', marginBottom: '1rem' }}
+          containerStyle={{ marginBottom: '1rem' }}
         />
 
-        <div>
+        <div style={{ margin: '2rem 0 1rem' }}>
           {facets.kind.map(x => (
             <div>
-              <input
-                name={x.value}
-                type="checkbox"
-                checked={x.selected}
-                onChange={this._onSelect}
-              />
-              {x.value}
-              {x.count}
+              <label>
+                <input
+                  name={x.value}
+                  type="checkbox"
+                  checked={!x.selected}
+                  onChange={this._onSelect}
+                />
+                {` ${dict[x.value]}`}
+                <small> ({x.count})</small>
+              </label>
             </div>
           ))}
         </div>
