@@ -69,7 +69,9 @@ class Search extends React.Component {
   };
 
   _onDateRangeChangeFinal = dateRange => {
-    this._updateFilters(this.props.kind, dateRange.min, dateRange.max);
+    let { kind } = this.props;
+    if (!Array.isArray(kind)) kind = [kind];
+    this._updateFilters(kind, dateRange.min, dateRange.max);
   };
 
   _updateFilters = (bgblArr = [], from = null, to = null) => {
@@ -99,9 +101,13 @@ class Search extends React.Component {
         <h1 className="title is-1">Suche</h1>
         <SearchBox q={query} />
         <br />
-        <div>{count} Ergebnisse</div>
+        <div>
+          <small>
+            Insgesamt gibt es {count} Ergebnisse. Suche nach
+            Veröffentlichungsjahr einschränken:
+          </small>
+        </div>
         <br />
-        {/* <br /> */}
         <YearRangeFacet
           value={dateRange}
           min={firstYear}
@@ -114,14 +120,23 @@ class Search extends React.Component {
           containerStyle={{ marginBottom: '1rem' }}
         />
 
-        <div style={{ margin: '2rem 0 1rem' }}>
+        <br />
+        <div>
+          <small>
+            Suche nach Art einschränken.{' '}
+            <a href="https://de.wikipedia.org/wiki/Bundesgesetzblatt_(Deutschland)#Teil_I">
+              Mehr Infos zu den Unterschieden
+            </a>:
+          </small>
+        </div>
+        <div style={{ margin: '1rem 0' }}>
           {facets.kind.map(x => (
             <div>
               <label>
                 <input
                   name={x.value}
                   type="checkbox"
-                  checked={!x.selected}
+                  checked={x.selected}
                   onChange={this._onSelect}
                 />
                 {` ${dict[x.value]}`}
