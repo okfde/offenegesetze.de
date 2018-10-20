@@ -1,0 +1,8 @@
+.is-primary {
+  background-color: #0069d0 !important;
+}
+
+a.button.is-primary:hover,
+button.is-primary:hover {
+  filter: brightness(120%);
+}
