@@ -50,7 +50,7 @@ class Publication extends React.Component {
     ];
 
     return (
-      <BaseContent navItems={comp} hideFooter>
+      <BaseContent navItems={comp}>
         <h1 className="title is-2">
           {dict[kind]}: Nr. {number} ({year})
         </h1>
