@@ -43,7 +43,12 @@ class Publication extends React.Component {
         </a>
       </div>,
       <div className="navbar-item">
-        <a href={document_url} className="button is-primary" target="_blank">
+        <a
+          href={document_url}
+          className="button is-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           PDF-Download
         </a>
       </div>,
@@ -58,7 +63,7 @@ class Publication extends React.Component {
           {titleDate}
           <small>
             ,{' '}
-            <a href={document_url} target="_blank">
+            <a href={document_url} target="_blank" rel="noopener noreferrer">
               PDF downloaden.
             </a>
           </small>
@@ -74,7 +79,7 @@ class Publication extends React.Component {
                   key={x.order}
                   onClick={() => {
                     document
-                      .querySelector('#p' + x.pdfPage)
+                      .querySelector(`#p${x.pdfPage}`)
                       .scrollIntoView(true);
                   }}
                 >
