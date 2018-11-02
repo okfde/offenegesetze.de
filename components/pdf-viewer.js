@@ -31,14 +31,20 @@ class PDFViewer extends React.Component {
       workerSrc: '/static/pdf.worker.js',
     });
 
-    if (this.props.page != null && this.state.jumped === false) {
-      // wait until the ID is avaiable
+    const { hash } = window.location;
+    window.location.hash = '';
+    window.location.hash = hash;
+
+    if (hash != null && this.state.jumped === false) {
+      // wait until the HTML element is rendered
       const inter = setInterval(() => {
-        const hash = `#p${this.props.page}`;
-        const elem = document.querySelector(hash);
+        const className = `.p${hash.split('=')[1]}`;
+        // this can't select ids in the format #page=5, so go over class
+        const elem = document.querySelector(className);
         if (elem != null) {
           clearInterval(inter);
-          elem.scrollIntoView(true);
+          window.location.hash = '';
+          window.location.hash = hash;
           this.setState({ jumped: true });
         }
       }, 1000);
@@ -49,7 +55,7 @@ class PDFViewer extends React.Component {
     this.setState({ numPages });
   };
 
-  renderLoad = height => <Loading height={height} />;
+  // renderLoad = height => <Loading height={height} />;
 
   render() {
     const { numPages, pageHeight } = this.state;
@@ -66,10 +72,10 @@ class PDFViewer extends React.Component {
               {[...Array(numPages).keys()].map(x => (
                 <div key={x}>
                   <PageNumber numPage={x} />
-                  <LazyLoad height={pageHeight} once offset={[500, 500]} resize>
+                  <LazyLoad height={pageHeight} once offset={[200, 200]} resize>
                     <Page
                       key={x}
-                      loading={this.renderLoad(pageHeight)}
+                      loading={<Loading height={pageHeight} />}
                       pageNumber={x + 1}
                       inputRef={ref => {
                         this.myPage = ref;

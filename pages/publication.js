@@ -71,21 +71,20 @@ class Publication extends React.Component {
         <div>
           Eine Übersicht über alle Veröffentlichungen in diesem Blatt:
           <br />
+          <br />
           {toc.map(x => (
-            <div>
-              <small>
-                {/* <a key={x.order} href={`#${x.pdfPage}`}> */}
-                <a
-                  key={x.order}
-                  onClick={() => {
-                    document
-                      .querySelector(`#p${x.pdfPage}`)
-                      .scrollIntoView(true);
-                  }}
-                >
-                  {`${x.order}. ${x.title}`}
-                </a>
-              </small>
+            <div style={{ display: 'table-row' }}>
+              <div style={{ display: 'table-cell', paddingRight: '1rem' }}>
+                {`${x.order}.`}
+              </div>
+              <div className="display: 'table-cell'">
+                <small>
+                  <a key={x.order} href={`#page=${x.pdfPage}`}>
+                    {`${x.title}`}
+                  </a>
+                </small>
+              </div>
+              <br />
             </div>
           ))}
         </div>

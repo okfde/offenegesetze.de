@@ -25,7 +25,6 @@ app.prepare().then(() => {
     const queryParams = {
       id: req.params.id,
       q: req.query.q,
-      page: req.query.page,
     };
     renderAndCache(req, res, '/publication', queryParams);
   });

@@ -29,7 +29,7 @@ const ListItem = ({
   return (
     <div className="box" key={number + year + kind}>
       <Link
-        href={`/veroeffentlichung/${id}/?page=${pdfPage}${q ? `&q=${q}` : ''}`}
+        href={`/veroeffentlichung/${id}/${q ? `&q=${q}` : ''}#page=${pdfPage}`}
       >
         <a>
           <div>{title}</div>
