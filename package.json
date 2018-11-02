@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "rm -rf .next && node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
-    "now": "now rm xyz -y && now --public"
+    "start": "NODE_ENV=production node server.js"
   },
   "repository": {
     "type": "git",
