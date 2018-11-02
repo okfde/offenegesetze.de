@@ -32,8 +32,6 @@ class PDFViewer extends React.Component {
     });
 
     const { hash } = window.location;
-    window.location.hash = '';
-    window.location.hash = hash;
 
     if (hash != null && this.state.jumped === false) {
       // wait until the HTML element is rendered
