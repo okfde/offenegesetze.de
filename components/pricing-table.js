@@ -1,61 +1,100 @@
 import React from 'react';
 
+const comparison = [
+  {
+    title: 'Dokumente druckbar',
+    bgblIcon: 'fa-times-circle',
+    bgblLabel: 'Nein',
+    ogIcon: 'fa-check',
+    ogLabel: 'Ja',
+  },
+  {
+    title: 'Volltextsuche',
+    bgblIcon: 'fa-times-circle',
+    bgblLabel: 'Nein',
+    ogIcon: 'fa-check',
+    ogLabel: 'Ja',
+  },
+  {
+    title: 'Gesamt-Download',
+    bgblIcon: 'fa-times-circle',
+    bgblLabel: 'Nein',
+    ogIcon: 'fa-check',
+    ogLabel: 'Ja',
+  },
+  {
+    title: 'Freie Weiterverwendung',
+    bgblIcon: 'fa-times-circle',
+    bgblLabel: 'Nein',
+    ogIcon: 'fa-check',
+    ogLabel: 'Ja',
+  },
+  {
+    title: 'Stabile Links',
+    bgblIcon: 'fa-times-circle',
+    bgblLabel: 'Nein',
+    ogIcon: 'fa-check',
+    ogLabel: 'Ja',
+  },
+  {
+    title: 'RSS-Feeds',
+    bgblIcon: 'fa-times-circle',
+    bgblLabel: 'Nein',
+    ogIcon: 'fa-check',
+    ogLabel: 'Ja',
+  },
+  {
+    title: 'Programmier-Schnittstelle',
+    bgblIcon: 'fa-times-circle',
+    bgblLabel: 'Nein',
+    ogIcon: 'fa-check',
+    ogLabel: 'Ja',
+  },
+  {
+    title: 'alle Funktionen kostenlos',
+    bgblIcon: 'fa-times-circle',
+    bgblLabel: 'Nein',
+    ogIcon: 'fa-check',
+    ogLabel: 'Ja',
+  },
+  {
+    title: 'gemeinnützig',
+    bgblIcon: 'fa-times-circle',
+    bgblLabel: 'Nein, profitorientiert',
+    ogIcon: 'fa-check',
+    ogLabel: 'Ja',
+  },
+];
+
 const PricingTable = () => (
-  <p>
+  <div className="content is-medium">
     <h3>Vergleich</h3>
-    <table style={{ width: '100%', textAlign: 'center' }}>
-      <tr>
-        <th />
-        <th>BGBl</th>
-        <th>OffeneGesetze</th>
-      </tr>
-      <tr>
-        <td>Dokumente druckbar</td>
-        <td>❌</td>
-        <td>✔️</td>
-      </tr>
-      <tr>
-        <td>Volltextsuche</td>
-        <td>❌</td>
-        <td>✔️</td>
-      </tr>
-      <tr>
-        <td>Gesamt-Download</td>
-        <td>❌</td>
-        <td>✔️</td>
-      </tr>
-      <tr>
-        <td>Freie Weiterverwendung</td>
-        <td>❌</td>
-        <td>✔️</td>
-      </tr>
-      <tr>
-        <td>Stabile Links</td>
-        <td>❌</td>
-        <td>✔️</td>
-      </tr>
-      <tr>
-        <td>RSS-Feeds</td>
-        <td>❌</td>
-        <td>✔️</td>
-      </tr>
-      <tr>
-        <td>Programmier-Schnittstelle</td>
-        <td>❌</td>
-        <td>✔️</td>
-      </tr>
-      <tr>
-        <td>alle Funktionen kostenlos</td>
-        <td>❌</td>
-        <td>✔️</td>
-      </tr>
-      <tr>
-        <td>gemeinnützig</td>
-        <td>❌</td>
-        <td>✔️</td>
-      </tr>
+    <table className="table">
+      <tbody>
+        <tr>
+          <th />
+          <th>
+            „Kostenloser Bürgerzugang“<br />
+            des Bundesanzeiger Verlags
+          </th>
+          <th>OffeneGesetze.de</th>
+        </tr>
+        {comparison.map(row => (
+          <tr key={row.title}>
+            <td>{row.title}</td>
+            <td>
+              <i className={`fas ${row.bgblIcon}`} />
+              &nbsp;{row.bgblLabel}
+            </td>
+            <td>
+              <i className={`fas ${row.ogIcon}`} />
+              &nbsp;{row.ogLabel}
+            </td>
+          </tr>
+        ))}
+      </tbody>
     </table>
-  </p>
+  </div>
 );
 
 export default PricingTable;
