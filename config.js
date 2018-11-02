@@ -1,5 +1,5 @@
 const MIN_YEAR = 1950;
-const MAX_YEAR = 2018;
+const MAX_YEAR = new Date().getFullYear();
 
 const dict = {
   bgbl1: 'BGBl. Teil I',
