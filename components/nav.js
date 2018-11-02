@@ -16,7 +16,7 @@ class Nav extends React.Component {
     const { isActive } = this.state;
     const { hideSearch, navItems } = this.props;
     return (
-      <nav className="navbar is-fixed-top">
+      <nav className="navbar is-fixed-top" style={{ zIndex: '1000' }}>
         <div className="container">
           <div className="navbar-brand">
             <a className="navbar-item" href="/">

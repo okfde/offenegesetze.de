@@ -2,7 +2,7 @@ import { Document, Page, setOptions } from 'react-pdf';
 import React from 'react';
 import LazyLoad from 'react-lazyload';
 import ReactLoading from 'react-loading';
-
+import { StickyContainer, Sticky } from 'react-sticky';
 import PageNumber from './page-number';
 
 // NB: height.height
@@ -57,51 +57,88 @@ class PDFViewer extends React.Component {
 
   render() {
     const { numPages, pageHeight } = this.state;
-    const { document_url, viewPdf, content, q } = this.props;
+    const { document_url, viewPdf, content, q, toc } = this.props;
+
+    const navbarHeight = document.getElementsByClassName('navbar')[0]
+      .clientHeight;
+
+    const pdfViewPageWidth = document.getElementById('pdfViewer').clientWidth;
+
     return (
       <div>
         {
-          <div style={{ display: viewPdf ? 'block' : 'none' }}>
+          <div style={{ display: viewPdf ? 'block' : 'none' }} id="xx">
             <Document
               file={document_url}
               onLoadSuccess={this.onDocumentLoadSuccess}
               loading={<Loading height={pageHeight} />}
             >
               {[...Array(numPages).keys()].map(x => (
-                <div key={x}>
-                  <PageNumber numPage={x} />
-                  <LazyLoad height={pageHeight} once offset={[200, 200]} resize>
-                    <Page
-                      key={x}
-                      loading={<Loading height={pageHeight} />}
-                      pageNumber={x + 1}
-                      inputRef={ref => {
-                        this.myPage = ref;
+                <div key={x} id={'xx' + x}>
+                  <StickyContainer>
+                    <Sticky topOffset={-navbarHeight}>
+                      {({ style }) => {
+                        return (
+                          <div
+                            style={{
+                              zIndex: '100',
+                              ...style,
+                              top: `${style.top + navbarHeight}px`,
+                              // display: 'inline-block',
+                            }}
+                          >
+                            <PageNumber
+                              numPage={x}
+                              text={(() => {
+                                const xx = toc.find(t => t.pdfPage >= x + 1);
+                                return xx != null && toc[0].pdfPage <= x + 1
+                                  ? xx.title
+                                  : '';
+                              })()}
+                            />
+                          </div>
+                        );
                       }}
-                      onRenderSuccess={() => {
-                        if (pageHeight < this.myPage.clientHeight) {
-                          this.setState({
-                            pageHeight: this.myPage.clientHeight,
-                          });
+                    </Sticky>
+                    <LazyLoad
+                      height={pageHeight}
+                      once
+                      offset={[200, 200]}
+                      resize
+                    >
+                      <Page
+                        width={pdfViewPageWidth}
+                        key={x}
+                        loading={<Loading height={pageHeight} />}
+                        pageNumber={x + 1}
+                        inputRef={ref => {
+                          this.myPage = ref;
+                        }}
+                        onRenderSuccess={() => {
+                          if (pageHeight < this.myPage.clientHeight) {
+                            this.setState({
+                              pageHeight: this.myPage.clientHeight,
+                            });
+                          }
+                        }}
+                        customTextRenderer={textItem =>
+                          textItem.str
+                            .split(q)
+                            .reduce(
+                              (strArray, currentValue, currentIndex) =>
+                                currentIndex === 0
+                                  ? [...strArray, currentValue]
+                                  : [
+                                      ...strArray,
+                                      <mark key={currentIndex}>{q}</mark>,
+                                      currentValue,
+                                    ],
+                              []
+                            )
                         }
-                      }}
-                      customTextRenderer={textItem =>
-                        textItem.str
-                          .split(q)
-                          .reduce(
-                            (strArray, currentValue, currentIndex) =>
-                              currentIndex === 0
-                                ? [...strArray, currentValue]
-                                : [
-                                    ...strArray,
-                                    <mark key={currentIndex}>{q}</mark>,
-                                    currentValue,
-                                  ],
-                            []
-                          )
-                      }
-                    />
-                  </LazyLoad>
+                      />
+                    </LazyLoad>
+                  </StickyContainer>
                 </div>
               ))}
             </Document>

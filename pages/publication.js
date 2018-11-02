@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import dynamic from 'next/dynamic';
 import dayjs from 'dayjs';
 
-import BaseContent from '../components/base-content';
+import Base from '../components/base';
 import PageNumber from '../components/page-number';
 
 import { dict } from '../config';
@@ -57,65 +57,82 @@ class Publication extends React.Component {
     ];
 
     return (
-      <BaseContent navItems={comp}>
-        <h1 className="title is-2">
-          {dict[kind]}: Nr. {number} ({year})
-        </h1>
-        <h2 className="subtitle">
-          {titleDate}
-          <small>
-            ,{' '}
-            <a href={document_url} target="_blank" rel="noopener noreferrer">
-              PDF downloaden.
-            </a>
-          </small>
-        </h2>
-        <div>
-          Eine Übersicht über alle Veröffentlichungen in diesem Blatt:
-          <br />
-          <br />
-          {toc
-            .filter((_, index) => !truncateToc || index < maxTocItems)
-            .map((x, index) => (
-              <div>
-                <div style={{ display: 'table-row' }}>
-                  <div style={{ display: 'table-cell', paddingRight: '1rem' }}>
-                    {`${index + 1}.`}
-                  </div>
-                  <div className="display: 'table-cell'">
-                    <small>
-                      <a key={x.order} href={`#page=${x.pdfPage}`}>
-                        {`${x.title}`}
-                      </a>{' '}
-                      (Seite {x.pdfPage})
-                    </small>
-                  </div>
-                  <br />
-                </div>
-                {truncateToc &&
-                  toc.length > maxTocItems &&
-                  index === maxTocItems - 1 && (
-                    <div style={{ textAlign: 'center' }}>
-                      <button
-                        className="button is-small"
-                        onClick={() => this.setState({ truncateToc: false })}
+      <Base navItems={comp}>
+        <div className="columns" style={{ padding: '1rem 0' }}>
+          <div className="column" />
+          <div className="column is-offset-1-mobile is-10-mobile is-half-desktop is-three-fifths-tablet">
+            <h1 className="title is-2">
+              {dict[kind]}: Nr. {number} ({year})
+            </h1>
+            <h2 className="subtitle">
+              {titleDate}
+              <small>
+                ,{' '}
+                <a
+                  href={document_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  PDF downloaden.
+                </a>
+              </small>
+            </h2>
+            <div>
+              Eine Übersicht über alle Veröffentlichungen in diesem Blatt:
+              <br />
+              <br />
+              {toc
+                .filter((_, index) => !truncateToc || index < maxTocItems)
+                .map((x, index) => (
+                  <div>
+                    <div style={{ display: 'table-row' }}>
+                      <div
+                        style={{ display: 'table-cell', paddingRight: '1rem' }}
                       >
-                        Zeige alle {toc.length} Einträge
-                      </button>
-                      <br />
+                        {`${index + 1}.`}
+                      </div>
+                      <div className="display: 'table-cell'">
+                        <small>
+                          <a key={x.order} href={`#page=${x.pdfPage}`}>
+                            {`${x.title}`}
+                          </a>{' '}
+                          (Seite {x.pdfPage})
+                        </small>
+                      </div>
                       <br />
                     </div>
-                  )}
-              </div>
-            ))}
+                    {truncateToc &&
+                      toc.length > maxTocItems &&
+                      index === maxTocItems - 1 && (
+                        <div style={{ textAlign: 'center' }}>
+                          <button
+                            className="button is-small"
+                            onClick={() =>
+                              this.setState({ truncateToc: false })
+                            }
+                          >
+                            Zeige alle {toc.length} Einträge
+                          </button>
+                          <br />
+                          <br />
+                        </div>
+                      )}
+                  </div>
+                ))}
+            </div>
+          </div>
+          <div className="column" />
         </div>
-        <PDFViewer
-          document_url={document_url}
-          viewPdf={viewPdf}
-          content={content}
-          q={q}
-          page={page}
-        />
+        <div id="pdfViewer">
+          <PDFViewer
+            document_url={document_url}
+            viewPdf={viewPdf}
+            content={content}
+            q={q}
+            page={page}
+            toc={toc}
+          />
+        </div>
         <noscript>
           <div>
             {content.map((x, index) => (
@@ -126,7 +143,7 @@ class Publication extends React.Component {
             ))}
           </div>
         </noscript>
-      </BaseContent>
+      </Base>
     );
   }
 }

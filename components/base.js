@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollToTop from 'react-scroll-up';
 
 import Footer from './footer';
 import Nav from './nav';
@@ -12,6 +13,11 @@ const Base = ({ navItems, children, hideSearch, hideFooter }) => (
       {children}
     </div>
     {!hideFooter && <Footer />}
+    <ScrollToTop showUnder={160} duration={1000}>
+      <span className="icon is-large">
+        <i className="fas fa-arrow-circle-up fa-2x" />
+      </span>
+    </ScrollToTop>
   </div>
 );
 
