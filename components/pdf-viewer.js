@@ -1,8 +1,22 @@
 import { Document, Page, setOptions } from 'react-pdf';
 import React from 'react';
 import LazyLoad from 'react-lazyload';
+import ReactLoading from 'react-loading';
 
 import PageNumber from './page-number';
+
+// not sure if the height is important
+const Loading = height => (
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      minHeight: height,
+    }}
+  >
+    <ReactLoading type="spin" color="#0069d0" height="20%" width="20%" />
+  </div>
+);
 
 class PDFViewer extends React.Component {
   state = {
@@ -41,6 +55,7 @@ class PDFViewer extends React.Component {
           <Document
             file={document_url}
             onLoadSuccess={this.onDocumentLoadSuccess}
+            loading={<Loading height={pageHeight} />}
           >
             {[...Array(numPages).keys()].map(x => (
               <div key={x}>
@@ -48,6 +63,7 @@ class PDFViewer extends React.Component {
                 <LazyLoad height={pageHeight} once offset={500} resize>
                   <Page
                     key={x}
+                    loading={<Loading height={pageHeight} />}
                     pageNumber={x + 1}
                     inputRef={ref => {
                       this.myPage = ref;
