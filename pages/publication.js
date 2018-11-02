@@ -10,14 +10,16 @@ import { dict } from '../config';
 
 const PDFViewer = dynamic(import('../components/pdf-viewer'), { ssr: false });
 
+const maxTocItems = 5;
+
 class Publication extends React.Component {
   state = {
     viewPdf: true,
+    truncateToc: true,
   };
 
   render() {
     const {
-      id,
       content,
       kind,
       year,
@@ -28,7 +30,7 @@ class Publication extends React.Component {
       page,
       q,
     } = this.props;
-    const { viewPdf } = this.state;
+    const { viewPdf, truncateToc } = this.state;
 
     const pubDate = dayjs(date);
 
@@ -72,21 +74,40 @@ class Publication extends React.Component {
           Eine Übersicht über alle Veröffentlichungen in diesem Blatt:
           <br />
           <br />
-          {toc.map(x => (
-            <div style={{ display: 'table-row' }}>
-              <div style={{ display: 'table-cell', paddingRight: '1rem' }}>
-                {`${x.order}.`}
+          {toc
+            .filter((_, index) => !truncateToc || index < maxTocItems)
+            .map((x, index) => (
+              <div>
+                <div style={{ display: 'table-row' }}>
+                  <div style={{ display: 'table-cell', paddingRight: '1rem' }}>
+                    {`${index + 1}.`}
+                  </div>
+                  <div className="display: 'table-cell'">
+                    <small>
+                      <a key={x.order} href={`#page=${x.pdfPage}`}>
+                        {`${x.title}`}
+                      </a>{' '}
+                      (Seite {x.pdfPage})
+                    </small>
+                  </div>
+                  <br />
+                </div>
+                {truncateToc &&
+                  toc.length > maxTocItems &&
+                  index === maxTocItems - 1 && (
+                    <div style={{ textAlign: 'center' }}>
+                      <button
+                        className="button is-small"
+                        onClick={() => this.setState({ truncateToc: false })}
+                      >
+                        Zeige alle {toc.length} Einträge
+                      </button>
+                      <br />
+                      <br />
+                    </div>
+                  )}
               </div>
-              <div className="display: 'table-cell'">
-                <small>
-                  <a key={x.order} href={`#page=${x.pdfPage}`}>
-                    {`${x.title}`}
-                  </a>
-                </small>
-              </div>
-              <br />
-            </div>
-          ))}
+            ))}
         </div>
         <PDFViewer
           document_url={document_url}
