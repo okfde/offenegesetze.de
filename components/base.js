@@ -12,8 +12,25 @@ const Base = ({ navItems, children, hideSearch, hideFooter }) => (
     <div style={{ minHeight: '50vh' }} className="container">
       {children}
     </div>
+
     {!hideFooter && <Footer />}
-    <ScrollToTop showUnder={160} duration={1000}>
+    {hideFooter && (
+      <a
+        className="is- is-hidden-touch"
+        style={{ position: 'fixed', bottom: 10, right: 10, color: 'inherit' }}
+        href="/kontakt"
+      >
+        <small>Kontakt</small>
+      </a>
+    )}
+    <ScrollToTop
+      showUnder={160}
+      duration={1000}
+      style={{
+        bottom: 30,
+        right: 10,
+      }}
+    >
       <span className="icon is-large">
         <i className="fas fa-arrow-circle-up fa-2x" />
       </span>
