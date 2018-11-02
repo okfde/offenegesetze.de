@@ -70,7 +70,7 @@ class Search extends React.Component {
 
   _onDateRangeChangeFinal = dateRange => {
     let { kind } = this.props;
-    if (!Array.isArray(kind)) kind = [kind];
+    if (kind != null && !Array.isArray(kind)) kind = [kind];
     this._updateFilters(kind, dateRange.min, dateRange.max);
   };
 
