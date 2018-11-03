@@ -9,9 +9,9 @@ import './styles.css';
 const Base = ({ navItems, children, hideSearch, hideFooter }) => (
   <div>
     <Nav hideSearch={hideSearch} navItems={navItems} />
-    <div style={{ minHeight: '50vh' }} className="container">
+    <main style={{ minHeight: '50vh' }} className="container">
       {children}
-    </div>
+    </main>
 
     {!hideFooter && <Footer />}
     {hideFooter && (

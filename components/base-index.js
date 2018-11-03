@@ -8,7 +8,7 @@ import './styles.css';
 const BaseIndex = ({ navItems, children, hideSearch, hideFooter }) => (
   <div>
     <Nav hideSearch={hideSearch} navItems={navItems} />
-    <div style={{ minHeight: '50vh' }}>{children}</div>
+    <main style={{ minHeight: '50vh' }}>{children}</main>
     {!hideFooter && <Footer />}
   </div>
 );
