@@ -9,7 +9,7 @@ const Recent = ({ items }) => (
     <ul style={{ paddingBottom: '2rem' }}>
       {items.map(x => <ListItem key={x.id} {...x} />)}
     </ul>
-    <a className="button is-primary" href="/neueste">
+    <a className="button is-primary" href="/suche">
       Mehr Veröffentlichungen ansehen
     </a>
   </div>
