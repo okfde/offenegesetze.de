@@ -82,7 +82,11 @@ class Search extends React.Component {
     if (from != null) arrStr += `&from=${from}`;
     if (to != null) arrStr += `&to=${to}`;
 
-    window.location.assign(`/suche?q=${query || ''}${arrStr}`);
+    window.location.assign(
+      `/suche${
+        query ? `?q=${query}${arrStr}` : arrStr ? '?' + arrStr.substr(1) : ''
+      }`
+    );
   };
 
   render() {
@@ -98,7 +102,7 @@ class Search extends React.Component {
 
     return (
       <BaseContent hideSearch hideFooter>
-        <h1 className="title is-1">Suche</h1>
+        <h1 className="title is-2">In Veröffentlichungen Suchen</h1>
         <SearchBox q={query} />
         <br />
         <div>
@@ -119,6 +123,41 @@ class Search extends React.Component {
           onChangeComplete={this._onDateRangeChangeFinal}
           containerStyle={{ marginBottom: '1rem' }}
         />
+        <br />
+        <div>
+          <small>Auf ein Jahr beschränken</small>
+          <div className="select is-small" style={{ paddingLeft: '1rem' }}>
+            <select
+              value={dateRange.min === dateRange.max ? dateRange.min : ''}
+              onChange={event =>
+                this._onDateRangeChangeFinal({
+                  min: parseInt(event.target.value),
+                  max: parseInt(event.target.value),
+                })
+              }
+            >
+              <option value="" />
+              {Array.from(
+                { length: MAX_YEAR - MIN_YEAR },
+                (_, i) => MAX_YEAR - i
+              ).map(x => <option value={x}>{x}</option>)}
+            </select>
+          </div>
+          {dateRange.min === dateRange.max && (
+            <button
+              type="reset"
+              className="button is-small"
+              style={{ marginLeft: '1rem' }}
+              onClick={x => {
+                this._onDateRangeChangeFinal({ min: null, max: null });
+              }}
+            >
+              <span className="icon is-small">
+                <i className="fas fa-times" />
+              </span>
+            </button>
+          )}
+        </div>
 
         <br />
         <div>
@@ -129,9 +168,9 @@ class Search extends React.Component {
             </a>:
           </small>
         </div>
-        <div style={{ margin: '1rem 0' }}>
+        <div className="field is-grouped" style={{ margin: '1rem 0' }}>
           {facets.kind.map(x => (
-            <div>
+            <p className="control">
               <label>
                 <input
                   name={x.value}
@@ -142,7 +181,7 @@ class Search extends React.Component {
                 {` ${dict[x.value]}`}
                 <small> ({x.count})</small>
               </label>
-            </div>
+            </p>
           ))}
         </div>
 
@@ -283,8 +322,8 @@ Search.getInitialProps = async ({ query }) => {
 
   facets.date = addMissingValues(facets.date, from || MIN_YEAR, to || MAX_YEAR);
 
-  const firstYear = from || MIN_YEAR;
-  const lastYear = to || MAX_YEAR;
+  const firstYear = (from && parseInt(from)) || MIN_YEAR;
+  const lastYear = (to && parseInt(to)) || MAX_YEAR;
 
   return {
     initialItems,

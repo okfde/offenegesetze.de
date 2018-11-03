@@ -19,11 +19,13 @@ const YearRangeFacet = ({
   const maxValue = Math.max(
     ...[...bars, ...beforeBars, ...afterBars].map(x => x.count)
   );
+  console.log(bars, beforeBars, afterBars, min, max);
   return (
     <div style={containerStyle}>
       <div style={{ display: 'flex', alignItems: 'flex-end' }}>
         {beforeBars.map(x => (
           <div
+            key={x.year}
             title={`${x.year}: ${x.count}`}
             style={{
               height: `${(x.count / maxValue) * 50}px`,
@@ -36,6 +38,7 @@ const YearRangeFacet = ({
         ))}
         {bars.map(x => (
           <div
+            key={x.year}
             title={`${x.year}: ${x.count}`}
             style={{
               height: `${(x.count / maxValue) * 50}px`,
@@ -51,6 +54,7 @@ const YearRangeFacet = ({
         ))}
         {afterBars.map(x => (
           <div
+            key={x.year}
             title={`${x.year}: ${x.count}`}
             style={{
               height: `${(x.count / maxValue) * 50}px`,
@@ -71,6 +75,7 @@ const YearRangeFacet = ({
         value={value}
         onChange={onChange}
         onChangeComplete={onChangeComplete}
+        allowSameValues
       />
     </div>
   );
