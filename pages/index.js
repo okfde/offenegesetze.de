@@ -57,28 +57,26 @@ const IndexPage = ({ items }) => (
             <p>
               Im Bundesgesetzblatt (BGBl) werden alle Gesetze der Bundesrepublik
               Deutschland veröffentlicht. Gesetze treten erst in Kraft, wenn sie
-              dort erscheinen.
+              dort erscheinen. Herausgeber ist der Bundesanzeiger-Verlag, der
+              2006 privatisiert wurde.
             </p>
           </div>
           <div className="column">
             <h3 className="subtitle">Der Bundesanzeiger Verlag</h3>
-            Der Bundesanzeiger-Verlag wurde 2006 privatisiert und gehört der
+            Der Bundesanzeiger-Verlag gehört der
             Dumont-Verlagsgruppe. Er erhebt Urheberrecht auf die Dokumente des
-            Bundesgesetzblatts. Sie sind zwar online auf bgbl.de einzeln
-            einsehbar, aber können nicht gedruckt oder kopiert werden. Sie sind
-            nicht durchsuchbar, der Bundesanzeiger-Verlag verbietet die
+            Bundesgesetzblatts. Diese sind zwar online auf bgbl.de einzeln
+            einsehbar, aber können nicht gedruckt, durchsucht oder kopiert werden. 
+            Der Bundesanzeiger-Verlag verbietet die
             Weiterverwendung. Wer die Gesetzblätter des Staates nutzen will,
-            muss dem privaten Verlag Abo-Gebühren zahlen. Wir glauben, dass
-            zentrale Dokumente der Demokratie offen für alle bereitstehen
-            müssen. Das Urheberrecht darf der Demokratie nicht im Wege stehen.
-            Deswegen stellen wir auf dieser Seite sämtliche Bundesgesetzblätter
-            seit 1949 frei, offen und kostenlos zur Verfügung.
+            muss dem privaten Verlag Abo-Gebühren zahlen.
           </div>
           <div className="column">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus blanditiis ex aut minima dolore voluptate exercitationem
-            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
-            mollitia vitae officiis.
+            <h3 className="subtitle">Offene Gesetze</h3>
+            Zentrale Dokumente der Demokratie müssen offen für alle bereitstehen. 
+            Das Urheberrecht darf der Demokratie nicht im Wege stehen.
+            Deswegen stellen wir auf dieser Seite sämtliche Bundesgesetzblätter
+            seit 1949 frei, offen und kostenlos zur Verfügung.
           </div>
         </div>
       </div>
