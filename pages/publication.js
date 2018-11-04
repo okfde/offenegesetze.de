@@ -6,7 +6,7 @@ import dayjs from 'dayjs';
 import Base from '../components/base';
 import PageNumber from '../components/page-number';
 
-import { dict } from '../config';
+import { KINDS } from '../config';
 
 const PDFViewer = dynamic(import('../components/pdf-viewer'), { ssr: false });
 
@@ -59,15 +59,13 @@ class Publication extends React.Component {
     return (
       <Base navItems={comp}>
         <div className="columns" style={{ padding: '1rem 0' }}>
-          <div className="column" />
-          <div className="column is-offset-1-mobile is-10-mobile is-half-desktop is-three-fifths-tablet">
+          <div className="column is-offset-1-mobile is-10-mobile is-half-desktop is-offset-one-quarter-desktop is-three-fifths-tablet is-offset-one-fifth-tablet">
             <h1 className="title is-2">
-              {dict[kind]}: Nr. {number} ({year})
+              {KINDS[kind].name}: Nr. {number} ({year})
             </h1>
             <h2 className="subtitle">
-              {titleDate}
+              {titleDate},&nbsp;
               <small>
-                ,{' '}
                 <a
                   href={document_url}
                   target="_blank"
@@ -121,7 +119,6 @@ class Publication extends React.Component {
                 ))}
             </div>
           </div>
-          <div className="column" />
         </div>
         <div id="pdfViewer">
           <PDFViewer

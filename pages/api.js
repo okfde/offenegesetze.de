@@ -2,26 +2,6 @@ import React from 'react';
 
 import BaseContent from '../components/base-content';
 
-const range = (start, stop, step) =>
-  Array.from({ length: (stop - start) / step }, (_, i) => start + i * step);
-
-const CURRENT_YEAR = new Date().getFullYear();
-
-const KINDS = [
-  {
-    name: 'BGBl Teil 1',
-    size: '~6 GB',
-    id: 'bgbl1',
-    years: range(1949, CURRENT_YEAR + 1, 1),
-  },
-  {
-    name: 'BGBl Teil 2',
-    size: '',
-    id: 'bgbl2',
-    years: range(1951, CURRENT_YEAR + 1, 1),
-  },
-];
-
 const Api = () => (
   <BaseContent>
     <h1 className="title">API und Bulk Downloads</h1>

@@ -9,7 +9,7 @@ import BaseContent from '../../components/base-content';
 
 import './style.css';
 
-import { MAX_YEAR, MIN_YEAR, dict } from '../../config';
+import { MAX_YEAR, MIN_YEAR, KINDS } from '../../config';
 
 class Search extends React.Component {
   constructor(props) {
@@ -178,7 +178,7 @@ class Search extends React.Component {
                   checked={x.selected}
                   onChange={this._onSelect}
                 />
-                {` ${dict[x.value]}`}
+                {` ${KINDS[x.value].name}`}
                 <small> ({x.count})</small>
               </label>
             </p>

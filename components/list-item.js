@@ -2,7 +2,7 @@ import React from 'react';
 import dayjs from 'dayjs';
 import Link from 'next/link';
 
-import { dict } from '../config';
+import { KINDS } from '../config';
 
 const ListItem = ({
   date,
@@ -37,12 +37,12 @@ const ListItem = ({
       </Link>
       <p>
         <small className="has-text-grey">
-          {titleDate}, Nr. {number} ({year}), {dict[kind]}
+          {titleDate}, Nr. {number} ({year}), {KINDS[kind].name}
         </small>
       </p>
       {results &&
         results.map(x => (
-          <div>
+          <div key={x}>
             <small
               className="content"
               dangerouslySetInnerHTML={{ __html: x }}
