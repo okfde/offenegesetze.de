@@ -7,8 +7,6 @@ import ListItem from '../../components/list-item';
 import SearchBox from '../../components/search-box';
 import BaseContent from '../../components/base-content';
 
-import './style.css';
-
 import { MAX_YEAR, MIN_YEAR, KINDS } from '../../config';
 
 class Search extends React.Component {

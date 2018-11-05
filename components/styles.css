@@ -9,6 +9,10 @@ button.is-primary:hover {
   filter: brightness(120%);
 }
 
+em {
+  background-color: hsl(48, 100%, 67%);
+}
+
 .hero {
   background-color: #75DAFF;
   padding-bottom: 2rem;
