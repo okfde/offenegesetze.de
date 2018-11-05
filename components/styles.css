@@ -27,5 +27,45 @@ button.is-primary:hover {
 }
 
 .hero-image {
-  position: absolute
+  position: absolute;
+  box-shadow: rgba(0,0,0,0.3) 1px -2px 8px 1px;
+
+  transition: 1s ease-in-out;
+  transform: rotate(3deg);
+}
+
+.hero-image:hover {
+  transform: rotate(3deg) translateY(-50px);
+}
+
+.page-number {
+  color: black;
+  background: rgba(255, 255, 255,  0.8);
+  padding-top: 52px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.page-number-no {
+  width: 10%;
+}
+
+.page-number-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.dina4 {
+  position: relative;
+  width: 100%;
+}
+
+.dina4-ratio {
+  padding-bottom: 141.42135624%;
+}
+
+.dina4-ratio > div {
+  position: absolute;
+  top: 0;  bottom: 0;  left: 0;  right: 0;
 }

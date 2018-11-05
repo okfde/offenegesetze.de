@@ -5,10 +5,9 @@ import dayjs from 'dayjs';
 
 import Base from '../components/base';
 import PageNumber from '../components/page-number';
+import { renderLoader } from '../components/page-loading';
 
 import { KINDS } from '../config';
-
-const PDFViewer = dynamic(import('../components/pdf-viewer'), { ssr: false });
 
 const maxTocItems = 5;
 
@@ -33,6 +32,14 @@ class Publication extends React.Component {
     const { viewPdf, truncateToc } = this.state;
 
     const pubDate = dayjs(date);
+
+    const lastToc = toc[toc.length - 1];
+    const maxPages = lastToc.pdfPage + lastToc.numPages;
+
+    const PDFViewer = dynamic(import('../components/pdf-viewer'), {
+      ssr: false,
+      loading: () => renderLoader(maxPages),
+    });
 
     const titleDate = `veröffentlicht am ${pubDate.format('DD.MM.YYYY')}`;
     const comp = [
@@ -126,6 +133,7 @@ class Publication extends React.Component {
             document_url={document_url}
             viewPdf={viewPdf}
             content={content}
+            maxPages={maxPages}
             q={q}
             page={page}
             toc={toc}
@@ -134,8 +142,8 @@ class Publication extends React.Component {
         <noscript>
           <div>
             {content.map((x, index) => (
-              <div>
-                <PageNumber numPage={index} />
+              <div key={x}>
+                <PageNumber numPage={index + 1} />
                 {x}
               </div>
             ))}
@@ -159,11 +167,14 @@ Publication.getInitialProps = async ({ query }) => {
   );
   const json2 = await res2.json();
 
-  const toc = json2.results.map(({ title, order, pdf_page: pdfPage }) => ({
-    title,
-    order,
-    pdfPage,
-  }));
+  const toc = json2.results.map(
+    ({ title, order, pdf_page: pdfPage, num_pages: numPages }) => ({
+      title,
+      order,
+      pdfPage,
+      numPages,
+    })
+  );
 
   return { ...json, q: query.q, toc, page: query.page };
 };
