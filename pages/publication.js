@@ -36,7 +36,7 @@ class Publication extends React.Component {
 
     const titleDate = `veröffentlicht am ${pubDate.format('DD.MM.YYYY')}`;
     const comp = [
-      <div className="navbar-item">
+      <div className="navbar-item" key="doc-switch">
         <a
           className={viewPdf ? 'button' : 'button'}
           onClick={() => this.setState({ viewPdf: !viewPdf })}
@@ -44,7 +44,7 @@ class Publication extends React.Component {
           {viewPdf ? 'als Text' : 'als PDF'}
         </a>
       </div>,
-      <div className="navbar-item">
+      <div className="navbar-item" key="pdf-download">
         <a
           href={document_url}
           className="button is-primary"
@@ -76,13 +76,13 @@ class Publication extends React.Component {
               </small>
             </h2>
             <div>
-              Eine Übersicht über alle Veröffentlichungen in diesem Blatt:
-              <br />
-              <br />
+              <p>
+                Eine Übersicht über alle Veröffentlichungen in diesem Blatt:
+              </p>
               {toc
                 .filter((_, index) => !truncateToc || index < maxTocItems)
                 .map((x, index) => (
-                  <div>
+                  <div key={x.order}>
                     <div style={{ display: 'table-row' }}>
                       <div
                         style={{ display: 'table-cell', paddingRight: '1rem' }}
@@ -104,6 +104,7 @@ class Publication extends React.Component {
                       index === maxTocItems - 1 && (
                         <div style={{ textAlign: 'center' }}>
                           <button
+                            type="button"
                             className="button is-small"
                             onClick={() =>
                               this.setState({ truncateToc: false })

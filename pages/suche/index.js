@@ -84,7 +84,7 @@ class Search extends React.Component {
 
     window.location.assign(
       `/suche${
-        query ? `?q=${query}${arrStr}` : arrStr ? '?' + arrStr.substr(1) : ''
+        query ? `?q=${query}${arrStr}` : arrStr ? `?${  arrStr.substr(1)}` : ''
       }`
     );
   };
@@ -140,7 +140,11 @@ class Search extends React.Component {
               {Array.from(
                 { length: MAX_YEAR - MIN_YEAR },
                 (_, i) => MAX_YEAR - i
-              ).map(x => <option value={x}>{x}</option>)}
+              ).map(x => (
+                <option value={x} key={x}>
+                  {x}
+                </option>
+              ))}
             </select>
           </div>
           {dateRange.min === dateRange.max && (
@@ -170,7 +174,7 @@ class Search extends React.Component {
         </div>
         <div className="field is-grouped" style={{ margin: '1rem 0' }}>
           {facets.kind.map(x => (
-            <p className="control">
+            <p className="control" key={x.value}>
               <label>
                 <input
                   name={x.value}
@@ -194,7 +198,7 @@ class Search extends React.Component {
           }
         >
           {(items || initialItems).map(x => (
-            <ul style={{ paddingBottom: '2rem' }}>
+            <ul style={{ paddingBottom: '2rem' }} key={x.id}>
               <ListItem {...x} q={query} />
             </ul>
           ))}
