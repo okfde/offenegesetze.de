@@ -22,9 +22,20 @@ class SearchBox extends React.Component {
       `https://api.offenegesetze.de/v1/veroeffentlichung/?q=${value}`
     );
     const json = await res.json();
-    if (json.results[0]) {
+
+    let suggestions = json.results
+      .map(x =>
+        ((x.title__highlight && x.title__highlight[0]) || '').match(
+          /<em>(.*)<\/em>/
+        )
+      )
+      .filter(x => x !== null)
+      .map(x => x[1]);
+    suggestions = Array.from(new Set(suggestions));
+
+    if (suggestions.length > 0) {
       this.setState({
-        suggestions: json.objects[0].description.split(' '),
+        suggestions,
       });
     }
   };
@@ -42,7 +53,7 @@ class SearchBox extends React.Component {
               getItemValue={item => item.label}
               renderItem={(item, highlighted) => (
                 <div
-                  key={item.id}
+                  key={`${item.id}_${highlighted}`}
                   style={{
                     backgroundColor: highlighted ? '#eee' : 'transparent',
                   }}
