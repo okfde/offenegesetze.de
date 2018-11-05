@@ -47,7 +47,7 @@ const Footer = () => (
         <div className="column">
           <ul className="menu-list">
             <li>
-              <a href="/api">API</a>
+              <a href="/daten">Daten (API)</a>
             </li>
             <li>
               <a href="/feeds">RSS-Feeds</a>
