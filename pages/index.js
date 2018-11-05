@@ -63,20 +63,20 @@ const IndexPage = ({ items }) => (
           </div>
           <div className="column">
             <h3 className="subtitle">Der Bundesanzeiger Verlag</h3>
-            Der Bundesanzeiger-Verlag gehört der
-            Dumont-Verlagsgruppe. Er erhebt Urheberrecht auf die Dokumente des
-            Bundesgesetzblatts. Diese sind zwar online auf bgbl.de einzeln
-            einsehbar, aber können nicht gedruckt, durchsucht oder kopiert werden. 
-            Der Bundesanzeiger-Verlag verbietet die
-            Weiterverwendung. Wer die Gesetzblätter des Staates nutzen will,
-            muss dem privaten Verlag Abo-Gebühren zahlen.
+            Der Bundesanzeiger-Verlag gehört der Dumont-Verlagsgruppe. Er erhebt
+            Urheberrecht auf die Dokumente des Bundesgesetzblatts. Diese sind
+            zwar online auf bgbl.de einzeln einsehbar, aber können nicht
+            gedruckt, durchsucht oder kopiert werden. Der Bundesanzeiger-Verlag
+            verbietet die Weiterverwendung. Wer die Gesetzblätter des Staates
+            nutzen will, muss dem privaten Verlag Abo-Gebühren zahlen.
           </div>
           <div className="column">
             <h3 className="subtitle">Offene Gesetze</h3>
-            Zentrale Dokumente der Demokratie müssen offen für alle bereitstehen. 
-            Das Urheberrecht darf der Demokratie nicht im Wege stehen.
-            Deswegen stellen wir auf dieser Seite sämtliche Bundesgesetzblätter
-            seit 1949 frei, offen und kostenlos zur Verfügung.
+            Zentrale Dokumente der Demokratie müssen offen für alle
+            bereitstehen. Das Urheberrecht darf der Demokratie nicht im Wege
+            stehen. Deswegen stellen wir auf dieser Seite sämtliche
+            Bundesgesetzblätter seit 1949 frei, offen und kostenlos zur
+            Verfügung.
           </div>
         </div>
       </div>
@@ -121,6 +121,57 @@ const IndexPage = ({ items }) => (
     >
       <div className="container">
         <PricingTable />
+      </div>
+    </div>
+    <div
+      style={{
+        backgroundColor: 'blue',
+        color: 'white',
+        paddingBottom: '3rem',
+        paddingTop: '3rem',
+      }}
+    >
+      <div className="container">
+        <h3 className="is-size-3 has-text-center">
+          {' '}
+          Berühmte Veröffentlichungen
+        </h3>
+        <div className="columns is-desktop">
+          <div className="column">
+            <ul>
+              <li>
+                {' '}
+                <a href="/veroeffentlichung/bgbl1-1949-1-1/">
+                  Das Grundgesetz 1949
+                </a>
+              </li>
+              <li>
+                <a href="/veroeffentlichung/bgbl1-1949-1-1/">
+                  Vergewaltigung in der Ehe ist strafbar
+                </a>
+              </li>
+              <li>
+                <a href="veroeffentlichung/bgbl1-1974-63-1/#page=1">
+                  Abtreibung ist nicht per se strafbar
+                </a>
+              </li>
+              <li>Homo-Ehe 1</li>
+              <li>Homo-Ehe 2</li>
+            </ul>
+          </div>
+          <div className="column">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+            ducimus blanditiis ex aut minima dolore voluptate exercitationem
+            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
+            mollitia vitae officiis.
+          </div>
+          <div className="column">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+            ducimus blanditiis ex aut minima dolore voluptate exercitationem
+            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
+            mollitia vitae officiis.
+          </div>
+        </div>
       </div>
     </div>
     <div style={{ backgroundColor: 'white' }}>
