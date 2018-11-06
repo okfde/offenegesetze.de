@@ -32,26 +32,21 @@ const IndexPage = ({ items }) => (
               </p>
             </div>
             <div className="column hero-image-column">
-              <img
-                className="hero-image"
-                src="/static/bgbl1_1949.png"
-                alt="Ausschnitt der 1. Ausgabe des BGBl Teil 1 vom 23. Mai 2949"
-              />
+              <div className="hero-image-wrapper">
+                <img
+                  className="hero-image"
+                  src="/static/bgbl1_1949.png"
+                  alt="Ausschnitt der 1. Ausgabe des BGBl Teil 1 vom 23. Mai 2949"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div
-      style={{
-        backgroundColor: 'lightgrey',
-        paddingBottom: '3rem',
-        paddingTop: '3rem',
-        position: 'relative',
-      }}
-    >
+    <div className="section section-info">
       <div className="container">
-        <div className="columns is-desktop content is-medium">
+        <div className="columns is-desktop content is-normal">
           <div className="column">
             <h3 className="subtitle">Das Bundesgesetzblatt</h3>
             <p>
@@ -81,16 +76,9 @@ const IndexPage = ({ items }) => (
         </div>
       </div>
     </div>
-    <div
-      style={{
-        backgroundColor: 'blue',
-        color: 'white',
-        paddingBottom: '3rem',
-        paddingTop: '3rem',
-      }}
-    >
+    <div className="section section-action">
       <div className="container">
-        <div className="columns is-desktop">
+        <div className="columns is-desktop content is-medium">
           <div className="column">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
             ducimus blanditiis ex aut minima dolore voluptate exercitationem
@@ -112,28 +100,81 @@ const IndexPage = ({ items }) => (
         </div>
       </div>
     </div>
-    <div
-      style={{
-        backgroundColor: 'grey',
-        paddingBottom: '3rem',
-        paddingTop: '3rem',
-      }}
-    >
+    <div className="section section-comparison">
       <div className="container">
         <PricingTable />
       </div>
     </div>
-    <div
-      style={{
-        backgroundColor: 'blue',
-        color: 'white',
-        paddingBottom: '3rem',
-        paddingTop: '3rem',
-      }}
-    >
+
+    <div className="section section-process">
+      <div className="container content is-normal">
+        <div className="columns is-mobile">
+          <div className="column is-full">
+            <h2>Wie tritt ein Gesetz in Kraft?</h2>
+          </div>
+        </div>
+
+        <div className="columns is-mobile">
+          <div className="column is-half">
+            <h3>1. Gesetzgebungsinitiative</h3>
+          </div>
+          <div className="column is-half">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+            ducimus blanditiis ex aut minima dolore voluptate exercitationem
+            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
+            mollitia vitae officiis.
+          </div>
+        </div>
+        <div className="columns is-mobile">
+          <div className="column is-half">
+            <h3>2. Beratung und Zustimmung</h3>
+          </div>
+          <div className="column is-half">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+            ducimus blanditiis ex aut minima dolore voluptate exercitationem
+            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
+            mollitia vitae officiis.
+          </div>
+        </div>
+        <div className="columns is-mobile">
+          <div className="column is-half">
+            <h3>3. Gegenzeichnung</h3>
+          </div>
+          <div className="column is-half">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+            ducimus blanditiis ex aut minima dolore voluptate exercitationem
+            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
+            mollitia vitae officiis.
+          </div>
+        </div>
+        <div className="columns is-mobile">
+          <div className="column is-half">
+            <h3>4. Ausfertigung</h3>
+          </div>
+          <div className="column is-half">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+            ducimus blanditiis ex aut minima dolore voluptate exercitationem
+            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
+            mollitia vitae officiis.
+          </div>
+        </div>
+        <div className="columns is-mobile">
+          <div className="column is-half">
+            <h3>5. Verkündung</h3>
+          </div>
+          <div className="column is-half">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+            ducimus blanditiis ex aut minima dolore voluptate exercitationem
+            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
+            mollitia vitae officiis.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="section">
       <div className="container">
         <h3 className="is-size-3 has-text-center">
-          {' '}
           Berühmte Veröffentlichungen
         </h3>
         <div className="columns is-desktop">
@@ -159,22 +200,11 @@ const IndexPage = ({ items }) => (
               <li>Homo-Ehe 2</li>
             </ul>
           </div>
-          <div className="column">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus blanditiis ex aut minima dolore voluptate exercitationem
-            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
-            mollitia vitae officiis.
-          </div>
-          <div className="column">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus blanditiis ex aut minima dolore voluptate exercitationem
-            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
-            mollitia vitae officiis.
-          </div>
         </div>
       </div>
     </div>
-    <div style={{ backgroundColor: 'white' }}>
+
+    <div className="section">
       <div className="container">{<Recent items={items} />}</div>
     </div>
   </BaseIndex>
