@@ -1,13 +1,19 @@
 import React from 'react';
 import ScrollToTop from 'react-scroll-up';
 
+import Head from 'next/head';
+
 import Footer from './footer';
 import Nav from './nav';
 
 import './styles.css';
 
-const Base = ({ navItems, children, hideSearch, hideFooter }) => (
+const Base = ({ title, navItems, children, hideSearch, hideFooter }) => (
   <div>
+    <Head>
+      <title>{title} - OffeneGesetze.de</title>
+    </Head>
+
     <Nav hideSearch={hideSearch} navItems={navItems} />
     <main style={{ minHeight: '50vh' }} className="container">
       {children}

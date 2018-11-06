@@ -1,21 +1,23 @@
 import React from 'react';
 
-import BaseContent from '../components/base-content';
 import { KIND_LIST } from '../config';
 
+import BaseContent from '../components/base-content';
+
 const Api = () => (
-  <BaseContent>
-    <h1 className="title">Daten per API und Download</h1>
+  <BaseContent title="API und Bulk Downloads">
+    <h1 className="title">API und Bulk Downloads</h1>
     <h2 className="subtitle">API</h2>
+    <p>Es steht eine API zur Verfügung unter:</p>
     <p>
-      Es steht eine API zur Verfügung unter:
       <code>https://api.offenegesetze.de/v1/</code>
     </p>
 
     <h2 className="subtitle">Bulk Downloads</h2>
     <p>
       Wir stellen die bereinigten, druckbaren und kopierbaren PDFs des
-      Bundesgesetzblatts Bulk Download für Teil 1 und 2 und die Jahre
+      Bundesgesetzblatts als Bulk Download für Teil&nbsp;I&nbsp;&amp;&nbsp;II
+      und für die einzelnen Jahre zur Verfügung:
     </p>
 
     <ul>
@@ -30,7 +32,7 @@ const Api = () => (
               listStyleType: 'disc',
             }}
           >
-            {kind.years.map(year => (
+            {kind.years.reverse().map(year => (
               <li key={`${kind.id}-${year}`}>
                 <a
                   href={`https://media.offenegesetze.de/${
