@@ -70,25 +70,33 @@ const PricingTable = () => (
   <div className="content is-medium">
     <h3>Vergleich</h3>
     <table className="table">
-      <tbody>
+      <thead>
         <tr>
           <th />
           <th>
             „Kostenloser Bürgerzugang“<br />
-            des Bundesanzeiger Verlags
+            des Bundes&shy;anzeiger Verlags
           </th>
-          <th>OffeneGesetze.de</th>
+          <th>Offene&shy;Gesetze.de</th>
         </tr>
+      </thead>
+      <tbody>
         {comparison.map(row => (
           <tr key={row.title}>
             <td>{row.title}</td>
             <td>
-              <i className={`fas ${row.bgblIcon}`} />
-              &nbsp;{row.bgblLabel}
+              <span className="cell-label">Bundes&shy;anzeiger Verlag</span>
+              <div className="cell-content">
+                <i className={`fas ${row.bgblIcon}`} />
+                &nbsp;{row.bgblLabel}
+              </div>
             </td>
             <td>
-              <i className={`fas ${row.ogIcon}`} />
-              &nbsp;{row.ogLabel}
+              <span className="cell-label">Offene&shy;Gesetze.de</span>
+              <div className="cell-content">
+                <i className={`fas ${row.ogIcon}`} />
+                &nbsp;{row.ogLabel}
+              </div>
             </td>
           </tr>
         ))}
