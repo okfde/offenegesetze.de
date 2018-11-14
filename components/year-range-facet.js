@@ -19,7 +19,6 @@ const YearRangeFacet = ({
   const maxValue = Math.max(
     ...[...bars, ...beforeBars, ...afterBars].map(x => x.count)
   );
-  console.log(bars, beforeBars, afterBars, min, max);
   return (
     <div style={containerStyle}>
       <div style={{ display: 'flex', alignItems: 'flex-end' }}>
@@ -44,7 +43,7 @@ const YearRangeFacet = ({
               height: `${(x.count / maxValue) * 50}px`,
               backgroundColor:
                 x.year >= value.min && x.year <= value.max
-                  ? '#3f51b5'
+                  ? '#00d1b2'
                   : '#aaaaaa',
               width: 1,
               flexGrow: 1,

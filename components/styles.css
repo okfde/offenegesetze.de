@@ -1,12 +1,17 @@
 @import '~bulma/css/bulma.css';
 
 .is-primary {
-  background-color: #0069d0 !important;
+  background-color: #00d1b2 !important;
+}
+
+.input-range__slider {
+  background-color: #00d1b2 !important;
+  border: 1px solid #00d1b2;
 }
 
 a.button.is-primary:hover,
 button.is-primary:hover {
-  filter: brightness(120%);
+  filter: brightness(110%);
 }
 
 em {
@@ -14,11 +19,16 @@ em {
 }
 
 .hero {
-  background-color: #75DAFF;
+  background-color: #75daff;
   padding-bottom: 2rem;
   padding-top: 3rem;
   color: white;
-  background-image: linear-gradient(141deg, #1BA0AB 0%, #00d1b2 60%, #00e7eb 100%);
+  background-image: linear-gradient(
+    141deg,
+    #1ba0ab 0%,
+    #00d1b2 60%,
+    #00e7eb 100%
+  );
 }
 
 .hero-body {
@@ -38,11 +48,10 @@ em {
 }
 
 .hero-image {
-  box-shadow: rgba(0,0,0,0.3) 1px -2px 8px 1px;
+  box-shadow: rgba(0, 0, 0, 0.3) 1px -2px 8px 1px;
   transition: 1s ease-in-out;
   transform: rotate(3deg) translateY(-10px);
 }
-
 
 .section-info {
   position: relative;
@@ -51,7 +60,12 @@ em {
 
 .section-action {
   position: relative;
-  background-image: linear-gradient(141deg, #1BA0AB 0%, #00d1b2 60%, #00e7eb 100%);
+  background-image: linear-gradient(
+    141deg,
+    #1ba0ab 0%,
+    #00d1b2 60%,
+    #00e7eb 100%
+  );
   color: white;
   padding-bottom: 3rem;
   padding-top: 8rem;
@@ -93,7 +107,7 @@ em {
 
 .page-number {
   color: black;
-  background: rgba(255, 255, 255,  0.8);
+  background: rgba(255, 255, 255, 0.8);
   padding-top: 52px;
   display: flex;
   justify-content: flex-start;
@@ -120,5 +134,8 @@ em {
 
 .dina4-ratio > div {
   position: absolute;
-  top: 0;  bottom: 0;  left: 0;  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
