@@ -10,7 +10,9 @@ import './styles.css';
 const BaseIndex = ({ navItems, children, hideSearch, hideFooter }) => (
   <div>
     <Head>
-      <title>OffeneGesetze.de</title>
+      <title>
+        OffeneGesetze.de – Offene Gesetze für eine offene Gesellschaft
+      </title>
     </Head>
     <Nav hideSearch={hideSearch} navItems={navItems} />
     <main style={{ minHeight: '50vh' }}>{children}</main>

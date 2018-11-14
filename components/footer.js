@@ -7,23 +7,21 @@ const Footer = () => (
     <div className="container">
       <div className="columns is-desktop">
         <div className="column">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
-          adipisci qui esse, distinctio reprehenderit cum iste labore repellat
-          fuga. Veritatis unde nobis doloremque dolores non ut provident eaque
-          necessitatibus voluptatibus!
+          OffeneGesetze.de ist eine zivilgeselschaftliche Plattsform zur
+          Verfügungstellug von amtichen Gesetzesblättern.
           <br />
           <br />
-          <a href=".">
+          <a href="https://twitter.com/offenegesetze">
             <span className="icon is-large">
               <i className="fab has-text-black fa-2x fa-twitter" />
             </span>
           </a>
-          <a href=".">
+          <a href="https://twitter.com/offenegesetze">
             <span className="icon is-large">
               <i className="fab has-text-black fa-2x fa-facebook" />
             </span>
           </a>
-          <a href=".">
+          <a href="https://github.com/topics/offene-gesetze">
             <span className="icon is-large">
               <i className="fab has-text-black fa-2x fa-github" />
             </span>
@@ -33,7 +31,7 @@ const Footer = () => (
           <div className="menu">
             <ul className="menu-list">
               <li>
-                <a href="/ueber">Über uns</a>
+                <a href="/ueber">Über OffeneGesetze.de</a>
               </li>
               <li>
                 <a href="/kontakt">Kontakt</a>
@@ -52,9 +50,9 @@ const Footer = () => (
             <li>
               <a href="/feeds">RSS-Feeds</a>
             </li>
-            {/* <li>
-              <a href="/api">E-Mail-Benachrichtigungen</a>
-            </li> */}
+            <li>
+              <a href="/unterstuetzen">Unterstützen</a>
+            </li>
           </ul>
         </div>
         <div className="column">

@@ -7,7 +7,7 @@ const Ueber = () => (
     <h1 className="title">Datenschutz</h1>
 
     <div class="lurking-header">
-      <h1>Impressum</h1>
+      <h2>Impressum</h2>
       <br />
       <dl>
         <dt>Vereinsadresse:</dt>
@@ -16,12 +16,6 @@ const Ueber = () => (
           Singerstr. 109<br />
           10179 Berlin<br />
           Deutschland<br />
-          <sub>
-            <a href="http://www.openstreetmap.org/way/29386807">
-              OpenStreetMap
-            </a>{' '}
-            - <a href="https://goo.gl/maps/aHBAbaCA35C2">Google Maps</a>
-          </sub>
           <br />
         </dd>
       </dl>
@@ -142,6 +136,7 @@ const Ueber = () => (
           </dd>
         </dl>
       </div>
+      <br />
       <p>Unser Datenschutzbeauftragter ist erreichbar unter:</p>
       <div>
         <dl>
@@ -347,7 +342,7 @@ const Ueber = () => (
         Webanalytik, welches statistische Kennwerte zur Nutzung unserer Website
         auswertet. Diese Daten können jedoch nicht einer bestimmten Person
         zugeordnet werden; der einzelne Benutzer bleibt hierbei anonym. Weitere
-        Informationen zu "Matomo" finden Sie auf der Website
+        Informationen zu "Matomo" finden Sie auf der Website{' '}
         <a href="&gt;https://matomo.org">https://matomo.org</a>.
       </p>
       <p>Zu diesen Daten gehören zum Beispiel</p>
@@ -417,7 +412,7 @@ const Ueber = () => (
         Ihrer Daten. Ihre Fragen und Kommentare zum Datenschutz sind uns
         willkommen, schreiben Sie einfach eine Mail an info@okfn.de.
       </p>
-      <p>Berlin, April 2018</p>
+      <p>Berlin, November 2018</p>
     </div>
   </BaseContent>
 );
