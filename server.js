@@ -21,6 +21,10 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/');
   });
 
+  server.get('/veroeffentlichung', (req, res) => {
+    renderAndCache(req, res, '/publicationIndex');
+  });
+
   server.get('/veroeffentlichung/:id/', (req, res) => {
     const queryParams = {
       id: req.params.id,

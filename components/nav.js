@@ -54,11 +54,11 @@ class Nav extends React.Component {
             </div>
 
             <div className="navbar-end">
-              <a className="navbar-item" href="/suche">
+              <a className="navbar-item" href="/veroeffentlichung">
                 Veröffentlichungen
               </a>
-              <a className="navbar-item" href="/forderungen">
-                Über
+              <a className="navbar-item" href="/ueber">
+                Warum?
               </a>
               <a className="navbar-item is-hidden-desktop	" href="/kontakt">
                 Kontakt
