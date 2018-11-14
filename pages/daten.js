@@ -6,7 +6,7 @@ import BaseContent from '../components/base-content';
 
 const Api = () => (
   <BaseContent title="API und Bulk Downloads">
-    <h1 className="title">API und Bulk Downloads</h1>
+    <h1 className="title">Daten zum Download und per API</h1>
     <h2 className="subtitle">API</h2>
     <p>Es steht eine API zur Verfügung unter:</p>
     <p>

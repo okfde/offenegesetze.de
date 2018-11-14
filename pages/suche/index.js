@@ -82,7 +82,7 @@ class Search extends React.Component {
 
     window.location.assign(
       `/suche${
-        query ? `?q=${query}${arrStr}` : arrStr ? `?${  arrStr.substr(1)}` : ''
+        query ? `?q=${query}${arrStr}` : arrStr ? `?${arrStr.substr(1)}` : ''
       }`
     );
   };
@@ -100,7 +100,7 @@ class Search extends React.Component {
 
     return (
       <BaseContent hideSearch hideFooter>
-        <h1 className="title is-2">In Veröffentlichungen Suchen</h1>
+        <h1 className="title is-2">In Veröffentlichungen suchen</h1>
         <SearchBox q={query} />
         <br />
         <div>
@@ -114,9 +114,9 @@ class Search extends React.Component {
           value={dateRange}
           min={firstYear}
           max={lastYear}
-          bars={facets.date}
-          beforeBars={facets.beforeDate}
-          afterBars={facets.afterDate}
+          bars={facets != null ? facets.date : []}
+          beforeBars={facets != null ? facets.beforeDate : []}
+          afterBars={facets != null ? facets.afterDate : []}
           onChange={this._onDateRangeChange}
           onChangeComplete={this._onDateRangeChangeFinal}
           containerStyle={{ marginBottom: '1rem' }}
@@ -171,26 +171,27 @@ class Search extends React.Component {
           </small>
         </div>
         <div className="field is-grouped" style={{ margin: '1rem 0' }}>
-          {facets.kind.map(x => (
-            <p className="control" key={x.value}>
-              <label>
-                <input
-                  name={x.value}
-                  type="checkbox"
-                  checked={x.selected}
-                  onChange={this._onSelect}
-                />
-                {` ${KINDS[x.value].name}`}
-                <small> ({x.count})</small>
-              </label>
-            </p>
-          ))}
+          {facets != null &&
+            facets.kind.map(x => (
+              <p className="control" key={x.value}>
+                <label>
+                  <input
+                    name={x.value}
+                    type="checkbox"
+                    checked={x.selected}
+                    onChange={this._onSelect}
+                  />
+                  {` ${KINDS[x.value].name}`}
+                  <small> ({x.count})</small>
+                </label>
+              </p>
+            ))}
         </div>
 
         <InfiniteScroll
           pageStart={0}
           loadMore={this.loadFunc}
-          hasMore={!!items.length && next !== null}
+          hasMore={items != null && !!items.length && next !== null}
           loader={
             <div className="loader" style={{ margin: '0 auto' }} key={0} />
           }
@@ -337,6 +338,10 @@ Search.getInitialProps = async ({ query }) => {
     lastYear,
     kind,
   };
+};
+
+Search.defaultProps = {
+  initialItems: [],
 };
 
 export default Search;

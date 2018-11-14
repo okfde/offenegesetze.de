@@ -12,7 +12,7 @@ class PublicationIndex extends React.Component {
 
     return (
       <BaseContent>
-        <h1 className="title">Alle Veröffentlichen</h1>
+        <h1 className="title">Alle Veröffentlichungen</h1>
         <p>Alle Veröffentlichen werden fortlaufend numeriert.</p>
 
         <div className="tabs">
