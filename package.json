@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "rm -rf .next && node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,8 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",
@@ -49,6 +52,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
+    "jest": "^23.6.0",
     "prettier": "^1.13.7"
   },
   "prettier": {
