@@ -65,6 +65,21 @@ const Footer = () => (
           </a>
         </div>
       </div>
+      <div>
+        <p className="has-text-grey-light">
+          okfn.de nutzt statt den üblichen externen Dienstleistern die
+          datenschutzfreundlichere Technologie von{' '}
+          <a href="https://matomo.org">Matomo</a>, um statistische
+          Auswertungen der Seitennutzung zu erhalten. Wenn sie dies nicht
+          wollen,{' '}
+          <a href="https://traffic.okfn.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=de">
+            klicken Sie bitte hier und entfernen Sie den Haken
+          </a>. Näheres in{' '}
+          <a href="https://okfn.de/impressum/#datenschutzerklaerung">
+            unserer Datenschutzerklärung
+          </a>.
+        </p>
+      </div>
     </div>
   </footer>
 );
