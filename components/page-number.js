@@ -9,7 +9,14 @@ import React from 'react';
 // already rendered.
 const PageNumber = ({ numPage, text }) => (
   <div id={`page=${numPage}`} className="page-number">
-    <div className="page-number-no">Seite {numPage}</div>
+    <div className="page-number-no">
+      <a
+        style={{ textDecoration: 'underline', color: 'inherit' }}
+        href={`#page=${numPage}`}
+      >
+        Seite {numPage}
+      </a>
+    </div>
     <div className="page-number-title">{text || ''}</div>
   </div>
 );
