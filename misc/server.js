@@ -13,15 +13,26 @@ const ssrCache = new LRUCache({
   maxAge: 1000 * 60 * 60, // 1 hour
 });
 
+const cacheSites = [
+  '/',
+  '/daten',
+  '/datenschutz',
+  '/feeds',
+  '/kontakt',
+  '/uber',
+  '/mitmachen',
+];
+
 app.prepare().then(() => {
   const server = express();
 
   server.use(express.static('static/favicons'));
 
-  // Use the `renderAndCache` utility defined below to serve pages
-  server.get('/', (req, res) => {
-    renderAndCache(req, res, '/');
-  });
+  cacheSites.forEach(x =>
+    server.get(x, (req, res) => {
+      renderAndCache(req, res, x);
+    })
+  );
 
   server.get('/veroeffentlichung', (req, res) => {
     renderAndCache(req, res, '/publicationIndex');
@@ -35,9 +46,11 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/publication', queryParams);
   });
 
-  server.get('*', (req, res) => {
-    return handle(req, res);
+  server.get('/suche', (req, res) => {
+    renderAndCache(req, res, '/suche', req.query);
   });
+
+  server.get('*', (req, res) => handle(req, res));
 
   server.listen(port, err => {
     if (err) throw err;
