@@ -19,15 +19,15 @@ class Publication extends React.Component {
 
   render() {
     const {
-      content,
       kind,
       year,
       number,
       date,
       toc,
-      document_url,
+      documentUrl,
       page,
       q,
+      contentList,
     } = this.props;
     const { viewPdf, truncateToc } = this.state;
 
@@ -53,7 +53,7 @@ class Publication extends React.Component {
       </div>,
       <div className="navbar-item" key="pdf-download">
         <a
-          href={document_url}
+          href={documentUrl}
           className="button is-primary"
           target="_blank"
           rel="noopener noreferrer"
@@ -73,11 +73,7 @@ class Publication extends React.Component {
             <h2 className="subtitle">
               {titleDate},&nbsp;
               <small>
-                <a
-                  href={document_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={documentUrl} target="_blank" rel="noopener noreferrer">
                   PDF downloaden.
                 </a>
               </small>
@@ -130,9 +126,9 @@ class Publication extends React.Component {
         </div>
         <div id="pdfViewer">
           <PDFViewer
-            document_url={document_url}
+            documentUrl={documentUrl}
             viewPdf={viewPdf}
-            content={content}
+            contentList={contentList}
             maxPages={maxPages}
             q={q}
             page={page}
@@ -141,10 +137,10 @@ class Publication extends React.Component {
         </div>
         <noscript>
           <div>
-            {content.map((x, index) => (
-              <div key={x}>
-                <PageNumber numPage={index + 1} />
-                {x}
+            {contentList.map((content, pageno) => (
+              <div key={pageno}>
+                <PageNumber numPage={pageno + 1} />
+                {content}
               </div>
             ))}
           </div>
@@ -155,19 +151,18 @@ class Publication extends React.Component {
 }
 
 Publication.getInitialProps = async ({ query }) => {
+  const [kind, year, number] = query.id.split('-');
+
   const res = await fetch(
-    `https://api.offenegesetze.de/v1/veroeffentlichung/${query.id}/`
+    `https://api.offenegesetze.de/v1/veroeffentlichung/?year=${year}
+    &number=${number}&kind=${kind}`
   );
   const json = await res.json();
+  const item = json.results[0];
 
-  const res2 = await fetch(
-    `https://api.offenegesetze.de/v1/veroeffentlichung/?year=${json.year}-${
-      json.year
-    }&number=${json.number}-${json.number}&kind=${json.kind}`
-  );
-  const json2 = await res2.json();
+  const contentList = [].concat(...json.results.map(x => x.content));
 
-  const toc = json2.results.map(
+  const toc = json.results.map(
     ({ title, order, pdf_page: pdfPage, num_pages: numPages }) => ({
       title,
       order,
@@ -176,7 +171,17 @@ Publication.getInitialProps = async ({ query }) => {
     })
   );
 
-  return { ...json, q: query.q, toc, page: query.page };
+  return {
+    q: query.q,
+    toc,
+    page: query.page,
+    kind,
+    year,
+    number,
+    contentList,
+    date: item.date,
+    documentUrl: item.document_url,
+  };
 };
 
 export default Publication;

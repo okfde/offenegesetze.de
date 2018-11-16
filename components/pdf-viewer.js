@@ -17,7 +17,7 @@ class PDFViewer extends React.Component {
 
   render() {
     const { numPages } = this.state;
-    const { document_url, viewPdf, content, q, toc, maxPages } = this.props;
+    const { documentUrl, viewPdf, contentList, q, toc, maxPages } = this.props;
 
     const onDocumentLoadSuccess = ({ numPages: num }) => {
       this.setState({ numPages: num });
@@ -30,7 +30,7 @@ class PDFViewer extends React.Component {
         {
           <div style={{ display: viewPdf ? 'block' : 'none' }}>
             <Document
-              file={document_url}
+              file={documentUrl}
               onLoadSuccess={onDocumentLoadSuccess}
               loading={renderLoader(maxPages)}
             >
@@ -82,7 +82,7 @@ class PDFViewer extends React.Component {
                                       ? [...strArray, currentValue]
                                       : [
                                           ...strArray,
-                                          <mark key={currentIndex}>{q}</mark>,
+                                        <mark key={currentIndex}>{q}</mark>,
                                           currentValue,
                                         ],
                                   []
@@ -99,14 +99,14 @@ class PDFViewer extends React.Component {
           </div>
         }
         <div style={{ display: viewPdf ? 'none' : 'block' }}>
-          {[...Array(numPages || maxPages).keys()].map(x => (
-            <div key={x}>
-              <PageNumber numPage={x + 1} />
-              <div style={{ lineHeight: 1.1 }}>
-                <small>{content[x]}</small>
+          <div>
+            {contentList.map((content, pageno) => (
+              <div key={pageno}>
+                <PageNumber numPage={pageno + 1} />
+                {content}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     );

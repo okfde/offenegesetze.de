@@ -16,6 +16,9 @@ const ListItem = ({
   content__highlight: results,
 }) => {
   let titleDate = '';
+  const ids = id.split('-');
+  ids.pop();
+  const urlId = ids.join('-');
   const pubDate = dayjs(date);
   const now = dayjs();
   const dateDiff = now.diff(pubDate, 'days');
@@ -29,7 +32,7 @@ const ListItem = ({
   return (
     <div className="box" key={number + year + kind}>
       <Link
-        href={`/veroeffentlichung/${id}/${q ? `?q=${q}` : ''}#page=${pdfPage}`}
+        href={`/veroeffentlichung/${urlId}/${q ? `?q=${q}` : ''}#page=${pdfPage}`}
       >
         <a>
           <div>{title}</div>
