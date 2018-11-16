@@ -5,6 +5,7 @@ import { relative } from 'path';
 import BaseIndex from '../components/base-index';
 import Recent from '../components/recent';
 import PricingTable from '../components/pricing-table';
+import Substancials from '../components/index/substancials';
 
 const IndexPage = ({ items }) => (
   <BaseIndex>
@@ -174,45 +175,15 @@ const IndexPage = ({ items }) => (
       </div>
     </div>
 
-    <div className="section">
-      <div className="container">
-        <h3 className="is-size-3 has-text-center">
-          Berühmte Veröffentlichungen
-        </h3>
-        <div className="columns is-desktop">
-          <div className="column">
-            <ul>
-              <li>
-                {' '}
-                <a href="/veroeffentlichung/bgbl1-1949-1-1/">
-                  Das Grundgesetz 1949
-                </a>
-              </li>
-              <li>
-                <a href="/veroeffentlichung/bgbl1-1949-1-1/">
-                  Vergewaltigung in der Ehe ist strafbar
-                </a>
-              </li>
-              <li>
-                <a href="veroeffentlichung/bgbl1-1974-63-1/#page=1">
-                  Abtreibung ist nicht per se strafbar
-                </a>
-              </li>
-              <li>Homo-Ehe 1</li>
-              <li>Homo-Ehe 2</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Substancials />
 
-    <div className="section">
+    <div className="section content is-normal">
       <div className="container">{<Recent items={items} />}</div>
     </div>
   </BaseIndex>
 );
 
-IndexPage.getInitialProps = async ({ req }) => {
+IndexPage.getInitialProps = async () => {
   try {
     const res = await fetch(
       'https://api.offenegesetze.de/v1/veroeffentlichung/'
