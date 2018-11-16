@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import ListItem from '../list-item';
 
@@ -11,9 +12,11 @@ const Recent = ({ items }) => (
         <ul style={{ paddingBottom: '2rem' }}>
           {items.map(x => <ListItem key={x.id} {...x} />)}
         </ul>
-        <a className="button is-primary" href="/suche">
-          Mehr Veröffentlichungen ansehen
-        </a>
+        <Link prefetch href="/suche">
+          <a className="button is-primary" href="/suche">
+            Mehr Veröffentlichungen ansehen
+          </a>
+        </Link>
       </div>
     </div>
   </div>

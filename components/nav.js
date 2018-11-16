@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import '@fortawesome/fontawesome-free/css/all.css';
 import SearchBox from '../components/search-box';
@@ -18,10 +19,12 @@ class Nav extends React.Component {
       <nav className="navbar is-fixed-top" style={{ zIndex: '1000' }}>
         <div className="container">
           <div className="navbar-brand">
-            <a className="navbar-item" href="/">
-              <span style={{ marginRight: '0.5rem' }}>⚖️</span>{' '}
-              <b>OffeneGesetze.de</b>
-            </a>
+            <Link prefetch href="/">
+              <a className="navbar-item" href="/">
+                <span style={{ marginRight: '0.5rem' }}>⚖️</span>{' '}
+                <b>OffeneGesetze.de</b>
+              </a>
+            </Link>
             <div
               className={
                 isActive
@@ -54,15 +57,21 @@ class Nav extends React.Component {
             </div>
 
             <div className="navbar-end">
-              <a className="navbar-item" href="/veroeffentlichung">
-                Veröffentlichungen
-              </a>
-              <a className="navbar-item" href="/ueber">
-                Warum?
-              </a>
-              <a className="navbar-item is-hidden-desktop	" href="/kontakt">
-                Kontakt
-              </a>
+              <Link prefetch href="/veroeffentlichung">
+                <a className="navbar-item" href="/veroeffentlichung">
+                  Veröffentlichungen
+                </a>
+              </Link>
+              <Link prefetch href="/ueber">
+                <a className="navbar-item" href="/ueber">
+                  Warum?
+                </a>
+              </Link>
+              <Link prefetch href="/kontakt">
+                <a className="navbar-item is-hidden-desktop	" href="/kontakt">
+                  Kontakt
+                </a>
+              </Link>
             </div>
           </div>
         </div>

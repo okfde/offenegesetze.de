@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import '@fortawesome/fontawesome-free/css/all.css';
 
@@ -31,13 +32,19 @@ const Footer = () => (
           <div className="menu">
             <ul className="menu-list">
               <li>
-                <a href="/ueber">Über OffeneGesetze.de</a>
+                <Link prefetch href="/ueber">
+                  <a href="/ueber">Über OffeneGesetze.de</a>
+                </Link>
               </li>
               <li>
-                <a href="/kontakt">Kontakt</a>
+                <Link prefetch href="/kontakt">
+                  <a href="/kontakt">Kontakt</a>
+                </Link>
               </li>
               <li>
-                <a href="/datenschutz">Datenschutz</a>
+                <Link href="/datenschutz">
+                  <a href="/Datenschutz">Datenschutz</a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -45,13 +52,19 @@ const Footer = () => (
         <div className="column">
           <ul className="menu-list">
             <li>
-              <a href="/daten">Daten (API)</a>
+              <Link href="/daten">
+                <a href="/daten">Daten (API)</a>
+              </Link>
             </li>
             <li>
-              <a href="/feeds">RSS-Feeds</a>
+              <Link href="/feeds">
+                <a href="/feeds">RSS-Feeds</a>
+              </Link>
             </li>
             <li>
-              <a href="/unterstuetzen">Unterstützen</a>
+              <Link href="/unterstuetzen">
+                <a href="/unterstuetzen">Unterstützen</a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -67,17 +80,16 @@ const Footer = () => (
       </div>
       <div>
         <p className="has-text-grey-light">
-          okfn.de nutzt statt den üblichen externen Dienstleistern die
+          Wir benutzen statt den üblichen externen Dienstleistern die
           datenschutzfreundlichere Technologie von{' '}
-          <a href="https://matomo.org">Matomo</a>, um statistische
-          Auswertungen der Seitennutzung zu erhalten. Wenn sie dies nicht
-          wollen,{' '}
+          <a href="https://matomo.org">Matomo</a>, um statistische Auswertungen
+          der Seitennutzung zu erhalten. Wenn Sie dies nicht wollen,{' '}
           <a href="https://traffic.okfn.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=de">
             klicken Sie bitte hier und entfernen Sie den Haken
           </a>. Näheres in{' '}
-          <a href="https://okfn.de/impressum/#datenschutzerklaerung">
-            unserer Datenschutzerklärung
-          </a>.
+          <Link href="/datenschutz">
+            <a href="/datenschutz">unseren Datenschutzerklärungen</a>
+          </Link>.
         </p>
       </div>
     </div>

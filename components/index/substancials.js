@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const data = [
   {
@@ -66,12 +67,14 @@ const Substancials = () => (
               width: 'auto',
             }}
           >
-            <a href={x.url}>
-              <h4 className="is-size-4">{x.title}</h4>
-              <figure className="image is-4by3">
-                <img style={{ width: '100%' }} src={x.imageSrc} />
-              </figure>
-            </a>
+            <Link prefetch href={x.url}>
+              <a href={x.url}>
+                <h4 className="is-size-4">{x.title}</h4>
+                <figure className="image is-4by3">
+                  <img style={{ width: '100%' }} src={x.imageSrc} />
+                </figure>
+              </a>
+            </Link>
           </div>
         ))}
       </div>

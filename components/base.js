@@ -1,6 +1,6 @@
 import React from 'react';
 import ScrollToTop from 'react-scroll-up';
-
+import Link from 'next/link';
 import Head from 'next/head';
 
 import Footer from './footer';
@@ -21,13 +21,15 @@ const Base = ({ title, navItems, children, hideSearch, hideFooter }) => (
 
     {!hideFooter && <Footer />}
     {hideFooter && (
-      <a
-        className="is- is-hidden-touch"
-        style={{ position: 'fixed', bottom: 10, right: 10, color: 'inherit' }}
-        href="/kontakt"
-      >
-        <small>Kontakt</small>
-      </a>
+      <Link prefetch href="/kontakt">
+        <a
+          href="/kontakt"
+          className="is- is-hidden-touch"
+          style={{ position: 'fixed', bottom: 10, right: 10, color: 'inherit' }}
+        >
+          <small>Kontakt</small>
+        </a>
+      </Link>
     )}
     <ScrollToTop
       showUnder={160}
