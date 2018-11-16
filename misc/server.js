@@ -16,6 +16,8 @@ const ssrCache = new LRUCache({
 app.prepare().then(() => {
   const server = express();
 
+  server.use(express.static('static/favicons'));
+
   // Use the `renderAndCache` utility defined below to serve pages
   server.get('/', (req, res) => {
     renderAndCache(req, res, '/');
