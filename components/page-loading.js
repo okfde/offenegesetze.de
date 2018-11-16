@@ -2,6 +2,7 @@ import React from 'react';
 import ReactLoading from 'react-loading';
 
 import PageNumber from './page-number';
+import { PRIMARY_COLOR } from '../misc/config';
 
 const renderLoader = maxPages =>
   [...Array(maxPages).keys()].map(x => {
@@ -22,7 +23,7 @@ function PageLoading({ page }) {
           >
             <ReactLoading
               type="spin"
-              color="#0069d0"
+              color={PRIMARY_COLOR}
               height="20%"
               width="20%"
             />

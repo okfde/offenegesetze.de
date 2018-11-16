@@ -3,7 +3,7 @@ import InputRange from 'react-input-range';
 
 import 'react-input-range/lib/css/index.css';
 
-import { MAX_YEAR, MIN_YEAR } from '../config';
+import { PRIMARY_COLOR, MAX_YEAR, MIN_YEAR } from '../misc/config';
 
 const YearRangeFacet = ({
   value,
@@ -43,7 +43,7 @@ const YearRangeFacet = ({
               height: `${(x.count / maxValue) * 50}px`,
               backgroundColor:
                 x.year >= value.min && x.year <= value.max
-                  ? '#00d1b2'
+                  ? PRIMARY_COLOR
                   : '#aaaaaa',
               width: 1,
               flexGrow: 1,
