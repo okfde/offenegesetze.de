@@ -26,5 +26,13 @@ KIND_LIST.forEach(x => {
 });
 
 const PRIMARY_COLOR = '#00d1b2';
+const PRIMARY_COLOR_DARK = '#1ba0ab';
 
-export { MIN_YEAR, MAX_YEAR, KIND_LIST, KINDS, PRIMARY_COLOR };
+export {
+  MIN_YEAR,
+  MAX_YEAR,
+  KIND_LIST,
+  KINDS,
+  PRIMARY_COLOR,
+  PRIMARY_COLOR_DARK,
+};

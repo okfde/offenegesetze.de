@@ -1,12 +1,26 @@
 @import '~bulma/css/bulma.css';
 
+a {
+  color: inherit;
+  /* text-decoration: underline; */
+  /* text-decoration-color: #1ba0ab; */
+}
+
+.content a:not(.button):hover {
+  text-decoration: underline !important;
+}
+
 .is-primary {
   background-color: #00d1b2 !important;
 }
 
+.input-range__track--active {
+  background-color: #1ba0ab !important;
+}
+
 .input-range__slider {
-  background-color: #00d1b2 !important;
-  border: 1px solid #00d1b2;
+  background-color: #1ba0ab !important;
+  border: 1px solid #1ba0ab;
 }
 
 a.button.is-primary:hover,

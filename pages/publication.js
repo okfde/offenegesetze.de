@@ -65,7 +65,7 @@ class Publication extends React.Component {
 
     return (
       <Base navItems={comp}>
-        <div className="columns" style={{ padding: '1rem 0' }}>
+        <div className="content columns" style={{ padding: '1rem 0' }}>
           <div className="column is-offset-1-mobile is-10-mobile is-half-desktop is-offset-one-quarter-desktop is-three-fifths-tablet is-offset-one-fifth-tablet">
             <h1 className="title is-2">
               {KINDS[kind].name}: Nr. {number} ({year})
