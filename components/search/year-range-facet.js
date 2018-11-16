@@ -3,7 +3,7 @@ import InputRange from 'react-input-range';
 
 import 'react-input-range/lib/css/index.css';
 
-import { PRIMARY_COLOR_DARK, MAX_YEAR, MIN_YEAR } from '../misc/config';
+import { PRIMARY_COLOR_DARK, MAX_YEAR, MIN_YEAR } from '../../misc/config';
 
 const YearRangeFacet = ({
   value,

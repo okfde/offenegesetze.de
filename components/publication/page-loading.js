@@ -2,7 +2,7 @@ import React from 'react';
 import ReactLoading from 'react-loading';
 
 import PageNumber from './page-number';
-import { PRIMARY_COLOR } from '../misc/config';
+import { PRIMARY_COLOR } from '../../misc/config';
 
 const renderLoader = maxPages =>
   [...Array(maxPages).keys()].map(x => {

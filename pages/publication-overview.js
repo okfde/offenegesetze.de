@@ -2,7 +2,7 @@ import React from 'react';
 
 import { KIND_LIST } from '../misc/config';
 
-import BaseContent from '../components/base-content';
+import BaseContent from '../components/layout/base-content';
 
 class PublicationIndex extends React.Component {
   state = { activeTab: 1, drop: true };

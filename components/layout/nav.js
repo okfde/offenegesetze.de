@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import '@fortawesome/fontawesome-free/css/all.css';
-import SearchBox from '../components/search-box';
+import SearchBox from '../search/search-box';
 
 class Nav extends React.Component {
   constructor(props) {

@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Footer from './footer';
 import Nav from './nav';
 
-import './styles.css';
+import '../styles.css';
 
 const BaseIndex = ({ navItems, children, hideSearch, hideFooter }) => (
   <div>

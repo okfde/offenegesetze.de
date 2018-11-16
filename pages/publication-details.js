@@ -3,9 +3,9 @@ import fetch from 'isomorphic-unfetch';
 import dynamic from 'next/dynamic';
 import dayjs from 'dayjs';
 
-import Base from '../components/base';
-import PageNumber from '../components/page-number';
-import { renderLoader } from '../components/page-loading';
+import Base from '../components/layout/base';
+import PageNumber from '../components/publication/page-number';
+import { renderLoader } from '../components/publication/page-loading';
 
 import { KINDS } from '../misc/config';
 
@@ -36,7 +36,7 @@ class Publication extends React.Component {
     const lastToc = toc[toc.length - 1];
     const maxPages = lastToc.pdfPage + lastToc.numPages;
 
-    const PDFViewer = dynamic(import('../components/pdf-viewer'), {
+    const PDFViewer = dynamic(import('../components/publication/pdf-viewer'), {
       ssr: false,
       loading: () => renderLoader(maxPages),
     });

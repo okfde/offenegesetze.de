@@ -2,9 +2,9 @@ import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 
-import BaseIndex from '../components/base-index';
+import BaseIndex from '../components/layout/base-index';
 import Recent from '../components/index/recent';
-import PricingTable from '../components/pricing-table';
+import PricingTable from '../components/index/pricing-table';
 import Substancials from '../components/index/substancials';
 
 const IndexPage = ({ items }) => (

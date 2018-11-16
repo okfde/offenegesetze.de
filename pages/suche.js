@@ -2,12 +2,12 @@ import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import YearRangeFacet from '../../components/year-range-facet';
-import ListItem from '../../components/list-item';
-import SearchBox from '../../components/search-box';
-import BaseContent from '../../components/base-content';
+import YearRangeFacet from '../components/search/year-range-facet';
+import ListItem from '../components/list-item';
+import SearchBox from '../components/search/search-box';
+import BaseContent from '../components/layout/base-content';
 
-import { MAX_YEAR, MIN_YEAR, KINDS } from '../../misc/config';
+import { MAX_YEAR, MIN_YEAR, KINDS } from '../misc/config';
 
 class Search extends React.Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import BaseContent from '../components/base-content';
-import PricingTable from '../components/pricing-table';
+import BaseContent from '../components/layout/base-content';
+import PricingTable from '../components/index/pricing-table';
 
 const Ueber = () => (
   <BaseContent>

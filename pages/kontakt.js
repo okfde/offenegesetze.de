@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BaseContent from '../components/base-content';
+import BaseContent from '../components/layout/base-content';
 
 const Ueber = () => (
   <BaseContent>

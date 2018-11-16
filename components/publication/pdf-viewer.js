@@ -1,8 +1,8 @@
 import { Document, Page, pdfjs } from 'react-pdf';
-
 import React from 'react';
 import LazyLoad from 'react-lazyload';
 import { StickyContainer, Sticky } from 'react-sticky';
+
 import PageNumber from './page-number';
 import { renderLoader, PageLoading } from './page-loading';
 
@@ -82,7 +82,7 @@ class PDFViewer extends React.Component {
                                       ? [...strArray, currentValue]
                                       : [
                                           ...strArray,
-                                        <mark key={currentIndex}>{q}</mark>,
+                                          <mark key={currentIndex}>{q}</mark>,
                                           currentValue,
                                         ],
                                   []
