@@ -2,7 +2,7 @@ import React from 'react';
 import dayjs from 'dayjs';
 import Link from 'next/link';
 
-import { KINDS } from '../config';
+import { KINDS } from '../misc/config';
 
 const ListItem = ({
   date,
@@ -32,7 +32,9 @@ const ListItem = ({
   return (
     <div className="box" key={number + year + kind}>
       <Link
-        href={`/veroeffentlichung/${urlId}/${q ? `?q=${q}` : ''}#page=${pdfPage}`}
+        href={`/veroeffentlichung/${urlId}/${
+          q ? `?q=${q}` : ''
+        }#page=${pdfPage}`}
       >
         <a>
           <div>{title}</div>
