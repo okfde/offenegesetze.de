@@ -14,7 +14,7 @@ const Ueber = () => (
       Auftrag zum Betrieb von anderen staatlichen Plattformen. Das
       Bundesgesetzblatt ist für den Bundesanzeiger-Verlag lukrativ. Er verlangt
       für grundlegende Funktionen, zum Beispiel die Durchsuchbarkeit oder das
-      Drucken von Gesetzblättern Gebühren.
+      Drucken von Gesetzblätter, Gebühren.
       <br /> <br />
       Mit dieser Plattform ändern wir das.
       <br /> <br />
