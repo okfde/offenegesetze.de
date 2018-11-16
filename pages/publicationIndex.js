@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { KIND_LIST } from '../config';
+import { KIND_LIST } from '../misc/config';
 
 import BaseContent from '../components/base-content';
 

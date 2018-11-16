@@ -25,4 +25,6 @@ KIND_LIST.forEach(x => {
   KINDS[x.id] = x;
 });
 
-export { MIN_YEAR, MAX_YEAR, KIND_LIST, KINDS };
+const PRIMARY_COLOR = '#00d1b2';
+
+export { MIN_YEAR, MAX_YEAR, KIND_LIST, KINDS, PRIMARY_COLOR };

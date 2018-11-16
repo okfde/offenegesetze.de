@@ -7,7 +7,7 @@ import Base from '../components/base';
 import PageNumber from '../components/page-number';
 import { renderLoader } from '../components/page-loading';
 
-import { KINDS } from '../config';
+import { KINDS } from '../misc/config';
 
 const maxTocItems = 5;
 

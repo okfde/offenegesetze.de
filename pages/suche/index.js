@@ -7,7 +7,7 @@ import ListItem from '../../components/list-item';
 import SearchBox from '../../components/search-box';
 import BaseContent from '../../components/base-content';
 
-import { MAX_YEAR, MIN_YEAR, KINDS } from '../../config';
+import { MAX_YEAR, MIN_YEAR, KINDS } from '../../misc/config';
 
 class Search extends React.Component {
   constructor(props) {
