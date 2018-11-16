@@ -1,9 +1,8 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
 
-import { relative } from 'path';
 import BaseIndex from '../components/base-index';
-import Recent from '../components/recent';
+import Recent from '../components/index/recent';
 import PricingTable from '../components/pricing-table';
 import Substancials from '../components/index/substancials';
 
@@ -176,10 +175,7 @@ const IndexPage = ({ items }) => (
     </div>
 
     <Substancials />
-
-    <div className="section content is-normal">
-      <div className="container">{<Recent items={items} />}</div>
-    </div>
+    <Recent items={items} />
   </BaseIndex>
 );
 
