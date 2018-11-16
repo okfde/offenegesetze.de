@@ -35,7 +35,7 @@ app.prepare().then(() => {
   );
 
   server.get('/veroeffentlichung', (req, res) => {
-    renderAndCache(req, res, '/publicationIndex');
+    renderAndCache(req, res, '/publication-overview');
   });
 
   server.get('/veroeffentlichung/:id/', (req, res) => {
@@ -43,7 +43,7 @@ app.prepare().then(() => {
       id: req.params.id,
       q: req.query.q,
     };
-    renderAndCache(req, res, '/publication', queryParams);
+    renderAndCache(req, res, '/publication-details', queryParams);
   });
 
   server.get('/suche', (req, res) => {
