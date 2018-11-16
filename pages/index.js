@@ -1,5 +1,6 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
+import Link from 'next/link';
 
 import BaseIndex from '../components/base-index';
 import Recent from '../components/index/recent';
@@ -24,6 +25,8 @@ const IndexPage = ({ items }) => (
                 Ein privater Verlag bestimmt darüber, wie unsere Gesetze in
                 Kraft treten. Eine moderne Webseite ist{' '}
                 <a
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{ textDecoration: 'underline' }}
                   href="https://www.bgbl.de/"
                 >
@@ -39,13 +42,15 @@ const IndexPage = ({ items }) => (
             </div>
             <div className="column hero-image-column">
               <div className="hero-image-wrapper">
-                <a href="/veroeffentlichung/bgbl1-1949-1-1/">
-                  <img
-                    className="hero-image"
-                    src="/static/bgbl1_1949.png"
-                    alt="Ausschnitt der 1. Ausgabe des BGBl Teil 1 vom 23. Mai 2949"
-                  />
-                </a>
+                <Link href="/veroeffentlichung/bgbl1-1949-1/#page=1">
+                  <a href="/veroeffentlichung/bgbl1-1949-1/#page=1">
+                    <img
+                      className="hero-image"
+                      src="/static/bgbl1_1949.png"
+                      alt="Ausschnitt der 1. Ausgabe des BGBl Teil 1 vom 23. Mai 2949"
+                    />
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

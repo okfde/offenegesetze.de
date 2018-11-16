@@ -43,7 +43,7 @@ const Footer = () => (
               </li>
               <li>
                 <Link href="/datenschutz">
-                  <a href="/Datenschutz">Datenschutz</a>
+                  <a href="/datenschutz">Datenschutz</a>
                 </Link>
               </li>
             </ul>
@@ -62,8 +62,8 @@ const Footer = () => (
               </Link>
             </li>
             <li>
-              <Link href="/unterstuetzen">
-                <a href="/unterstuetzen">Unterstützen</a>
+              <Link href="/mitmachen">
+                <a href="/mitmachen">Mitmachen</a>
               </Link>
             </li>
           </ul>

@@ -10,6 +10,10 @@ a {
   text-decoration: underline !important;
 }
 
+a.highlight {
+  text-decoration: underline;
+}
+
 .is-primary {
   background-color: #00d1b2 !important;
 }

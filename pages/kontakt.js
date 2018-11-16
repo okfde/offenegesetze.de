@@ -7,13 +7,20 @@ const Ueber = () => (
     <h1 className="title">Kontakt</h1>
     <p>
       Für Fragen errricht man uns am Besten per E-Mail{' '}
-      <a>info@offenegesetze.de</a>.<br />
+      <a className="highlight" href="mailto:info@offenegesetze.de">
+        info@offenegesetze.de
+      </a>.<br />
     </p>
     <br />
     <p>
       Man kann uns auf{' '}
-      <a href="https://twitter.com/offenegesetze">Twitter folgen</a> und{' '}
-      <a href="https://www.facebook.com/fragdenstaat.de/">Facebook liken</a>.
+      <a className="highlight" href="https://twitter.com/offenegesetze">
+        Twitter folgen
+      </a>{' '}
+      und{' '}
+      <a className="highlight" href="https://www.facebook.com/fragdenstaat.de/">
+        Facebook liken
+      </a>.
     </p>
     <h2>Impressum</h2>
     <br />
