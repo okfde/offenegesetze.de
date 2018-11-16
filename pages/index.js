@@ -18,16 +18,22 @@ const IndexPage = ({ items }) => (
         <div className="container">
           <div className="columns is-desktop">
             <div className="column content is-large">
-              <h2 className="subtitle">Wir öffnen das Bundesgesetzblatt.</h2>
+              <h2 className="subtitle">Freier Zugang zu unseren Gesetzen.</h2>
 
               <p className="content">
                 Ein privater Verlag bestimmt darüber, wie unsere Gesetze in
-                Kraft treten. Wer die Gesetze durchsuchen, kopieren oder
-                ausdrucken will, wird zur Kasse gebeten.
+                Kraft treten. Eine moderne Webseite ist{' '}
+                <a
+                  style={{ textDecoration: 'underline' }}
+                  href="https://www.bgbl.de/"
+                >
+                  Fehlanzeige
+                </a>. Und: Wer die Gesetze durchsuchen, kopieren oder ausdrucken
+                will, wird zur Kasse gebeten.
               </p>
-              <p className="title is-2">Schluss damit!</p>
+              <p className="title is-2">Digitalisierung jetzt!</p>
               <p className="content">
-                Wir stellen das Bundesgesetzblatt in moderner Form kostenfrei
+                Wir stellen das Bundesgesetzblatt in digitaler Form kostenfrei
                 zur Verfügung.
               </p>
             </div>
@@ -52,10 +58,10 @@ const IndexPage = ({ items }) => (
           <div className="column">
             <h3 className="subtitle">Das Bundesgesetzblatt</h3>
             <p>
-              Im Bundesgesetzblatt (BGBl) werden alle Gesetze der Bundesrepublik
-              Deutschland veröffentlicht. Gesetze treten erst in Kraft, wenn sie
-              dort erscheinen. Herausgeber ist der Bundesanzeiger-Verlag, der
-              2006 privatisiert wurde.
+              Im Bundesgesetzblatt (BGBl.) werden alle Gesetze der
+              Bundesrepublik Deutschland veröffentlicht. Gesetze treten erst in
+              Kraft, wenn sie dort erscheinen. Herausgeber ist der
+              Bundesanzeiger-Verlag, der 2006 privatisiert wurde.
             </p>
           </div>
           <div className="column">
