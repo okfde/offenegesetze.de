@@ -20,10 +20,11 @@ class PublicationIndex extends React.Component {
           <h1 className="title">Veröffentlichungen</h1>
           <h2 className="is-2">Das Bundesgesetzblatt</h2>
           <p>
-            Das Bundesgesetzblatt unterscheidet sich in Teil I, den normalen
-            Teil und Teil II, für internationale Abkommen. Alle Veröffentlichen
-            werden pro Jahr fortlaufend numeriert. In jedem Amtsblatt gibt es
-            meherer Veröffetlcihgne. Check it out.
+            Das Bundesgesetzblatt besteht aus zwei Teilen. In Teil I werden Rechtsvorschriften
+            wie Gesetze und Verordnungen veröffentlicht. Teil II enthält völkerrechtliche 
+            und andere internationale Abkommen. Neue Ausgaben des Gesetzblatts erscheinen 
+            durchschnittlich ein bis zweimal wöchentlich und werden pro Jahr fortlaufend nummeriert. 
+            Jede Ausgabe enthält mehrere Veröffentlichungen.
           </p>
 
           <p>
