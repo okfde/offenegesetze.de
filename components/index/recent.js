@@ -10,7 +10,7 @@ const Recent = ({ items }) => (
         <br />
         <h3 className="is-size-3">Neueste Veröffentlichungen</h3>
         <ul style={{ paddingBottom: '2rem' }}>
-          {items.map(x => <ListItem key={x.id} {...x} />)}
+          {items.map(x => <ListItem key={x.id} item={x} />)}
         </ul>
         <Link prefetch href="/suche">
           <a className="button is-primary" href="/suche">

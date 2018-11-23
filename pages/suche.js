@@ -198,7 +198,7 @@ class Search extends React.Component {
         >
           {(items || initialItems).map(x => (
             <ul style={{ paddingBottom: '2rem' }} key={x.id}>
-              <ListItem {...x} q={query} />
+              <ListItem item={x} q={query} />
             </ul>
           ))}
         </InfiniteScroll>

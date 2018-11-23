@@ -42,8 +42,8 @@ const IndexPage = ({ items }) => (
             </div>
             <div className="column hero-image-column">
               <div className="hero-image-wrapper">
-                <Link href="/veroeffentlichung/bgbl1-1949-1/#page=1">
-                  <a href="/veroeffentlichung/bgbl1-1949-1/#page=1">
+                <Link href="/veroeffentlichung/bgbl1/1949/1/#page=1">
+                  <a href="/veroeffentlichung/bgbl1/1949/1/#page=1">
                     <img
                       className="hero-image"
                       src="/static/bgbl1_1949.png"

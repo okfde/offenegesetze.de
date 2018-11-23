@@ -4,21 +4,19 @@ import Link from 'next/link';
 
 import { KINDS } from '../misc/config';
 
-const ListItem = ({
-  date,
-  number,
-  year,
-  kind,
-  title,
-  id,
-  q,
-  pdf_page: pdfPage,
-  content__highlight: results,
-}) => {
+const ListItem = ({ item, q }) => {
+  const {
+    date,
+    number,
+    year,
+    kind,
+    title,
+    url,
+    pdf_page: pdfPage,
+    content__highlight: results,
+  } = item;
+
   let titleDate = '';
-  const ids = id.split('-');
-  ids.pop();
-  const urlId = ids.join('-');
   const pubDate = dayjs(date);
   const now = dayjs();
   const dateDiff = now.diff(pubDate, 'days');
@@ -31,14 +29,8 @@ const ListItem = ({
   }
   return (
     <div className="box" key={number + year + kind}>
-      <Link
-        href={`/veroeffentlichung/${urlId}/${
-          q ? `?q=${q}` : ''
-        }#page=${pdfPage}`}
-      >
-        <a>
-          <div>{title}</div>
-        </a>
+      <Link href={`${url}${q ? `?q=${q}` : ''}#page=${pdfPage}`}>
+        <h5>{title}</h5>
       </Link>
       <p>
         <small className="has-text-grey">

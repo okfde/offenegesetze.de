@@ -3,52 +3,52 @@ import Link from 'next/link';
 
 const data = [
   {
-    url: '/veroeffentlichung/bgbl1-1949-1-1/',
+    url: '/veroeffentlichung/bgbl1/1949/1/',
     title: 'Das Grundgesetz',
     imageSrc: '/static/index-preview/gg.png',
   },
   {
-    url: '/veroeffentlichung/bgbl1-1974-63-1/#page=1',
+    url: '/veroeffentlichung/bgbl1/1974/63/#page=1',
     title: 'Teilweise Legalisierung der Abtreibung',
     imageSrc: '/static/index-preview/gg.png',
   },
   {
-    url: '/veroeffentlichung/bgbl1-2017-52-9/#page=59',
+    url: '/veroeffentlichung/bgbl1/2017/52/#page=59',
     title: 'Ehe für alle',
     imageSrc: '/static/index-preview/gg.png',
   },
   {
-    url: '/veroeffentlichung/bgbl1-2005-57-1/#page=2',
+    url: '/veroeffentlichung/bgbl1/2005/57/#page=2',
     title: 'Informationsfreiheitsgesetz',
     imageSrc: '/static/index-preview/gg.png',
   },
   {
-    url: '/veroeffentlichung/bgbl1-1965-51-1/#page=1',
+    url: '/veroeffentlichung/bgbl1/1965/51/#page=1',
     title: 'Urheberrecht',
     imageSrc: '/static/index-preview/gg.png',
   },
   {
-    url: '/veroeffentlichung/bgbl1-1998-6-5/#page=24)',
+    url: '/veroeffentlichung/bgbl1/1998/6/#page=24)',
     title: 'Strafbarkeit von Vergewaltigung in der Ehe',
     imageSrc: '/static/index-preview/gg.png',
   },
   {
-    url: '/veroeffentlichung/bgbl1-1972-74-1/#page=1',
+    url: '/veroeffentlichung/bgbl1/1972/74/#page=1',
     title: 'Das Tierschutzgesetz',
     imageSrc: '/static/index-preview/gg.png',
   },
   {
-    url: '/veroeffentlichung/bgbl2-1990-35-1/#page=1',
+    url: '/veroeffentlichung/bgbl2/1990/35/#page=1',
     title: 'Wiedervereinigung',
     imageSrc: '/static/index-preview/gg.png',
   },
   {
-    url: '/veroeffentlichung/bgbl1-1993-41-1/#page=1',
+    url: '/veroeffentlichung/bgbl1/1993/41/#page=1',
     title: 'Ayslkompromiss: Neufassung des Asylverfahrensgesetzes',
     imageSrc: '/static/index-preview/gg.png',
   },
   {
-    url: '/veroeffentlichung/bgbl1-1969-52-1/#page=9',
+    url: '/veroeffentlichung/bgbl1/1969/52/#page=9',
     title: 'Paragraph 175: Teilweise Legalisierung von Homosexälität',
     imageSrc: '/static/index-preview/gg.png',
   },
