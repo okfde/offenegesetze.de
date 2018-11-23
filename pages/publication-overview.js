@@ -98,7 +98,7 @@ class PublicationIndex extends React.Component {
             </AnimateOnChange>
           </div>
           <h2 id="bedeutende" name="bedeutende">
-            Bedeutende Anfragen
+            Bedeutende Gesetze
           </h2>
           <Substantials />
         </div>
