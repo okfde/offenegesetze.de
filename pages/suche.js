@@ -69,16 +69,21 @@ class Search extends React.Component {
   _onDateRangeChangeFinal = dateRange => {
     let { kind } = this.props;
     if (kind != null && !Array.isArray(kind)) kind = [kind];
-    this._updateFilters(kind, dateRange.min, dateRange.max);
+    let year;
+    if (dateRange.min === dateRange.max) {
+      year = dateRange.min;
+    } else {
+      year = `${dateRange.min}-${dateRange.max}`;
+    }
+    this._updateFilters(kind, year);
   };
 
-  _updateFilters = (bgblArr = [], from = null, to = null) => {
+  _updateFilters = (bgblArr = [], year = '') => {
     const { query } = this.props;
 
     let arrStr = bgblArr.map(x => `&kind=${x}`).join('');
 
-    if (from != null) arrStr += `&from=${from}`;
-    if (to != null) arrStr += `&to=${to}`;
+    if (year) arrStr += `&year=${year}`;
 
     window.location.assign(
       `/suche${
@@ -207,12 +212,28 @@ class Search extends React.Component {
   }
 }
 
+const splitFromTo = year => {
+  if (year.indexOf('-') === -1) {
+    const parsedYear = parseInt(year, 10);
+    if (Number.isNaN(parsedYear)) {
+      return [null, null];
+    }
+    return [parsedYear, parsedYear];
+  }
+  const parts = year.split('-');
+  let from = parseInt(parts[0], 10);
+  from = Number.isNaN(from) ? null : from;
+  let to = parseInt(parts[1], 10);
+  to = Number.isNaN(to) ? null : to;
+  return [from, to];
+};
+
 const addMissingValues = (array, from, to) => {
   const years = array.map(x => x.year);
   const res = array;
   let year = parseInt(from, 10);
 
-  while (year <= parseInt(to)) {
+  while (year <= parseInt(to, 10)) {
     if (!years.includes(year)) {
       res.push({ year, count: 0 });
     }
@@ -223,7 +244,7 @@ const addMissingValues = (array, from, to) => {
 };
 
 Search.getInitialProps = async ({ query }) => {
-  const { q, kind, from, to } = query;
+  const { q, kind, year } = query;
 
   let paramsStringBase = '';
   const params = {};
@@ -238,9 +259,8 @@ Search.getInitialProps = async ({ query }) => {
       params.kind = kind;
     }
   }
-
-  if (from != null && to != null) {
-    params.year = `${from}-${to}`;
+  if (year) {
+    params.year = year;
   }
 
   let paramsString =
@@ -255,7 +275,9 @@ Search.getInitialProps = async ({ query }) => {
   const { results: initialItems, count, next, facets } = await res.json();
 
   // ugly code start
-  if (from != null && from != MIN_YEAR) {
+  const [from, to] = splitFromTo(params.year);
+
+  if (from != null && from !== MIN_YEAR) {
     const fromFixed = Math.max(parseInt(from, 10) - 1, MIN_YEAR);
     params.year = `-${fromFixed}`;
 
@@ -275,7 +297,7 @@ Search.getInitialProps = async ({ query }) => {
       } = jsres;
       facets.beforeDate = beforeDate;
       facets.beforeDate.forEach(x => {
-        x.year = parseInt(x.value.split('-')[0]);
+        x.year = parseInt(x.value.split('-')[0], 10);
       });
       facets.beforeDate = addMissingValues(
         facets.beforeDate,
@@ -287,7 +309,7 @@ Search.getInitialProps = async ({ query }) => {
     }
   }
 
-  if (to != null && to != MAX_YEAR) {
+  if (to != null && to !== MAX_YEAR) {
     const toFixed = Math.min(parseInt(to, 10) + 1, MAX_YEAR);
     params.year = `${toFixed}-`;
 
@@ -309,7 +331,7 @@ Search.getInitialProps = async ({ query }) => {
 
       facets.afterDate = afterDate;
       facets.afterDate.forEach(x => {
-        x.year = parseInt(x.value.split('-')[0]);
+        x.year = parseInt(x.value.split('-')[0], 10);
       });
       facets.afterDate = addMissingValues(facets.afterDate, toFixed, MAX_YEAR);
     } else {
@@ -320,13 +342,13 @@ Search.getInitialProps = async ({ query }) => {
   // ugly code end
 
   facets.date.forEach(x => {
-    x.year = parseInt(x.value.split('-')[0]);
+    x.year = parseInt(x.value.split('-')[0], 10);
   });
 
   facets.date = addMissingValues(facets.date, from || MIN_YEAR, to || MAX_YEAR);
 
-  const firstYear = (from && parseInt(from)) || MIN_YEAR;
-  const lastYear = (to && parseInt(to)) || MAX_YEAR;
+  const firstYear = from || MIN_YEAR;
+  const lastYear = to || MAX_YEAR;
 
   return {
     initialItems,
