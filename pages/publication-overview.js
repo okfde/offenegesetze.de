@@ -1,13 +1,10 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
+import AnimateOnChange from 'react-animate-on-change';
 
 import { CURRENT_YEAR } from '../misc/config';
-
 import BaseContent from '../components/layout/base-content';
-import { Z_ASCII } from 'zlib';
-
-import AnimateOnChange from 'react-animate-on-change';
 import Substancials from '../components/index/substancials';
 
 class PublicationIndex extends React.Component {
@@ -80,22 +77,23 @@ class PublicationIndex extends React.Component {
               animationClassName="year-bounce"
               animate={year}
             >
-              {[
-                ...Array(
-                  items.filter(x => x.kind === bgbl && x.year === year)[0]
-                    .max_number
-                ).keys(),
-              ].map(x => (
-                <Link href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}>
-                  <a
-                    href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}
-                    className="button"
-                    style={{ width: '4rem', margin: '.5rem' }}
-                  >
-                    {x + 1}
-                  </a>
-                </Link>
-              ))}
+              {items.length &&
+                [
+                  ...Array(
+                    items.filter(x => x.kind === bgbl && x.year === year)[0]
+                      .max_number
+                  ).keys(),
+                ].map(x => (
+                  <Link href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}>
+                    <a
+                      href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}
+                      className="button"
+                      style={{ width: '4rem', margin: '.5rem' }}
+                    >
+                      {x + 1}
+                    </a>
+                  </Link>
+                ))}
             </AnimateOnChange>
           </p>
           <h2 id="bedeutende" name="bedeutende">
@@ -117,6 +115,10 @@ PublicationIndex.getInitialProps = async () => {
   return {
     items,
   };
+};
+
+PublicationIndex.defaultProps = {
+  items: [],
 };
 
 export default PublicationIndex;

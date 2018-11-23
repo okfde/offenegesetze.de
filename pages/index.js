@@ -14,12 +14,12 @@ const IndexPage = ({ items }) => (
         <div className="container">
           <div className="columns is-desktop">
             <div className="column content is-large">
-              <h2 className="subtitle">Freier Zugang zu unseren Gesetzen.</h2>
+              <h1 className="title">Freier Zugang zu unseren Gesetzen.</h1>
 
               <p className="content">
                 Ein privater Verlag bestimmt darüber, wie unsere Gesetze in
-                Kraft treten. Wer deutsche Gesetzesblätter durchsuchen, kopieren oder ausdrucken
-                will, wird zur Kasse gebeten.
+                Kraft treten. Wer deutsche Gesetzesblätter durchsuchen, kopieren
+                oder ausdrucken will, wird zur Kasse gebeten.
               </p>
               <p className="title is-2">Das ändern wir!</p>
               <p className="content">
@@ -53,17 +53,19 @@ const IndexPage = ({ items }) => (
               Im Bundesgesetzblatt (BGBl.) werden alle Gesetze der
               Bundesrepublik Deutschland veröffentlicht. Gesetze treten erst in
               Kraft, wenn sie dort erscheinen. Herausgeber ist der
-              Bundesanzeiger Verlag, der 2006 privatisiert wurde. 
-              Er gehört zur Dumont-Verlagsgruppe.
+              Bundesanzeiger Verlag, der 2006 privatisiert wurde. Er gehört zur
+              Dumont-Verlagsgruppe.
             </p>
           </div>
           <div className="column">
             <h3 className="subtitle">Der Bundesanzeiger Verlag</h3>
-            Der Verlag erhebt Urheberrecht auf die Datenbank der Gesetzblätter. Diese sind
-            zwar <a href="https://www.bgbl.de/">online einzeln einsehbar</a>, aber können nicht
-            gedruckt, durchsucht oder kopiert werden. Der Bundesanzeiger Verlag
-            verbietet die Weiterverwendung. Wer die Gesetzblätter des Staates
-            nutzen will, muss dem privaten Verlag Abo-Gebühren zahlen.
+            Der Verlag erhebt Urheberrecht auf die Datenbank der Gesetzblätter.
+            Diese sind zwar{' '}
+            <a href="https://www.bgbl.de/">online einzeln einsehbar</a>, aber
+            können nicht gedruckt, durchsucht oder kopiert werden. Der
+            Bundesanzeiger Verlag verbietet die Weiterverwendung. Wer die
+            Gesetzblätter des Staates nutzen will, muss dem privaten Verlag
+            Abo-Gebühren zahlen.
           </div>
           <div className="column">
             <h3 className="subtitle">Offene Gesetze</h3>
@@ -81,9 +83,8 @@ const IndexPage = ({ items }) => (
         <div className="columns is-desktop content is-medium">
           <div className="column">
             Alle Gesetzesblätter auf einer Website. Kostenlos, digital, offen.
-            
-            BUTTON: Gesetze entdecken, Link zu Veröffentlichung
-            BUTTON: Mehr erfahren, Link zu Warum?
+            BUTTON: Gesetze entdecken, Link zu Veröffentlichung BUTTON: Mehr
+            erfahren, Link zu Warum?
           </div>
         </div>
       </div>
@@ -107,7 +108,8 @@ const IndexPage = ({ items }) => (
             <h3>1. Gesetzgebungsinitiative</h3>
           </div>
           <div className="column is-half">
-            Die Bundesregierung, der Bundestag oder der Bundesrat starten eine Initiative für ein neues Gesetz.
+            Die Bundesregierung, der Bundestag oder der Bundesrat starten eine
+            Initiative für ein neues Gesetz.
           </div>
         </div>
         <div className="columns is-mobile">
@@ -115,7 +117,8 @@ const IndexPage = ({ items }) => (
             <h3>2. Beratung und Zustimmung</h3>
           </div>
           <div className="column is-half">
-            Der Bundestag und der Bunderat beraten über den Gesetzentwurf und verabschieden ihn, meist mit Änderungen.
+            Der Bundestag und der Bunderat beraten über den Gesetzentwurf und
+            verabschieden ihn, meist mit Änderungen.
           </div>
         </div>
         <div className="columns is-mobile">
@@ -123,7 +126,7 @@ const IndexPage = ({ items }) => (
             <h3>3. Gegenzeichnung</h3>
           </div>
           <div className="column is-half">
-            Die Bundesregierung zeichnet den Gesetzentwurf gegen. 
+            Die Bundesregierung zeichnet den Gesetzentwurf gegen.
           </div>
         </div>
         <div className="columns is-mobile">
@@ -139,7 +142,9 @@ const IndexPage = ({ items }) => (
             <h3>5. Verkündung</h3>
           </div>
           <div className="column is-half">
-            Das Gesetz wird im Bundesgesetzblatt verkündet. Der zuständige Bundesanzeiger Verlag ist ein privater Verlag. Er verbietet die Weiterverwendung der Gesetzesblätter online.
+            Das Gesetz wird im Bundesgesetzblatt verkündet. Der zuständige
+            Bundesanzeiger Verlag ist ein privater Verlag. Er verbietet die
+            Weiterverwendung der Gesetzesblätter online.
           </div>
         </div>
       </div>

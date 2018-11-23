@@ -3,7 +3,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import PublicationIndex from '../pages/publicationIndex';
+import PublicationIndex from '../pages/publication-overview';
 
 describe('With Enzyme', () => {
   it('App shows "Hello world!"', () => {
