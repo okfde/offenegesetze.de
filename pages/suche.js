@@ -71,7 +71,7 @@ class Search extends React.Component {
       arr = [name];
     }
 
-    this._updateFilters(arr, firstYear, lastYear);
+    this._updateFilters(arr, `${firstYear}-${lastYear}`);
   };
 
   _onDateRangeChange = dateRange => {
@@ -276,7 +276,7 @@ Search.getInitialProps = async ({ query }) => {
   let paramsStringBase = '';
   const params = {};
 
-  if (q != null) params.q = q;
+  if (q !== null) params.q = q;
 
   if (kind) {
     if (Array.isArray(kind)) {
