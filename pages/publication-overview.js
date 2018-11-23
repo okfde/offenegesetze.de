@@ -1,110 +1,105 @@
 import React from 'react';
+import fetch from 'isomorphic-unfetch';
 
-import { KIND_LIST } from '../misc/config';
+import { CURRENT_YEAR } from '../misc/config';
 
 import BaseContent from '../components/layout/base-content';
+import { Z_ASCII } from 'zlib';
+
+import AnimateOnChange from 'react-animate-on-change';
 
 class PublicationIndex extends React.Component {
-  state = { activeTab: 1, drop: true };
+  state = { bgbl: 'bgbl1', year: CURRENT_YEAR };
 
   render() {
-    const { activeTab, drop } = this.state;
+    const { bgbl, year } = this.state;
+    const { items } = this.props;
 
     return (
       <BaseContent>
         <h1 className="title">Alle Veröffentlichungen</h1>
         <p>Alle Veröffentlichen werden fortlaufend numeriert.</p>
 
-        <div className="tabs">
-          <ul>
-            <li className={activeTab === 1 ? 'is-active' : ''}>
-              <a onClick={() => this.setState({ activeTab: 1 })}>
-                BGBl. Teil I
-              </a>
-            </li>
-            <li className={activeTab === 2 ? 'is-active' : ''}>
-              <a onClick={() => this.setState({ activeTab: 2 })}>
-                BGBl. Teil II
-              </a>
-            </li>
-          </ul>
-        </div>
+        <p>
+          <h2>1. Art</h2>
+          {/* <div className="buttons has-addons"> */}
+          <span
+            style={{ margin: '.5rem' }}
+            className={
+              bgbl === 'bgbl1' ? 'button is-info is-selected' : 'button'
+            }
+            onClick={() => this.setState({ bgbl: 'bgbl1' })}
+          >
+            BGBl. Teil I
+          </span>
+          <span
+            style={{ margin: '.5rem' }}
+            onClick={() => this.setState({ bgbl: 'bgbl2' })}
+            className={
+              bgbl === 'bgbl2' ? 'button is-info is-selected' : 'button'
+            }
+          >
+            BGBl. Teil II
+          </span>
+          {/* </div> */}
+        </p>
 
-        <div>
-          <table>
-            {KIND_LIST[activeTab - 1].years
-              .sort()
-              .reverse()
-              .map(year => (
-                <div key={`${KIND_LIST[activeTab - 1].id}-${year}`}>
-                  <tr>
-                    <td>{year}</td>
-                    {[...Array(5).keys()].map(x => (
-                      <td>
-                        <div
-                          className={`dropdown ${
-                            drop === `${year}-${x}` ? 'is-active' : ''
-                          }`}
-                        >
-                          <div className="dropdown-trigger">
-                            <button
-                              className="button"
-                              aria-haspopup="true"
-                              aria-controls="dropdown-menu6"
-                              type="button"
-                              onClick={() =>
-                                this.setState({
-                                  drop:
-                                    drop === `${year}-${x}`
-                                      ? null
-                                      : `${year}-${x}`,
-                                })
-                              }
-                            >
-                              <span>
-                                {x}0-{x}9
-                              </span>
-                            </button>
-                          </div>
-                          <div
-                            className="dropdown-menu"
-                            id="dropdown-menu6"
-                            role="menu"
-                          >
-                            <div className="dropdown-content">
-                              <div className="dropdown-item">
-                                <p>
-                                  <a> {x} </a>
-                                  <a> {x} </a>
-                                  <a> {x} </a>
-                                  <a> {x} </a>
-                                  <a> {x} </a>
-                                  <a> {x} </a>
-                                  <a> {x} </a>
-                                  <a> {x} </a>
-                                  <a> {x} </a>
-                                  <a> {x} </a>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    ))}
-                  </tr>
-                  {parseInt(year, 10) % 10 === 0 && (
-                    <tr>
-                      <br />
-                      <br />
-                    </tr>
-                  )}
-                </div>
-              ))}
-          </table>
-        </div>
+        <p>
+          <h2>2. Jahr</h2>
+
+          {items
+            .filter(x => x.kind === bgbl)
+            .sort((x, y) => x.year < y.year)
+            .map(x => (
+              <button
+                onClick={() => this.setState({ year: x.year })}
+                className={
+                  year === x.year ? 'button is-info is-selected' : 'button'
+                }
+                style={{ width: '4rem', margin: '.5rem' }}
+              >
+                {x.year}
+              </button>
+            ))}
+        </p>
+
+        <p>
+          <h2>3. Nummer</h2>
+          <AnimateOnChange
+            baseClassName="year"
+            animationClassName="year-bounce"
+            animate={year}
+          >
+            {[
+              ...Array(
+                items.filter(x => x.kind === bgbl && x.year === year)[0]
+                  .max_number
+              ).keys(),
+            ].map(x => (
+              <a
+                href={x + 1}
+                className="button"
+                style={{ width: '4rem', margin: '.5rem' }}
+              >
+                {x + 1}
+              </a>
+            ))}
+          </AnimateOnChange>
+        </p>
       </BaseContent>
     );
   }
 }
+
+PublicationIndex.getInitialProps = async () => {
+  const res = await fetch(
+    'https://api.offenegesetze.de/v1/veroeffentlichung/overview/'
+  );
+  const items = await res.json();
+
+  return {
+    items,
+  };
+};
 
 export default PublicationIndex;

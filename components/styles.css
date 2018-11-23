@@ -163,3 +163,22 @@ em {
 .input-range__label-container {
   background-color: #fff;
 }
+.year {
+  background-color: #fff;
+}
+
+.year-bounce {
+  animation: colorchange 0.2s linear;
+}
+
+@keyframes colorchange {
+  0% {
+    background: white;
+  }
+  50% {
+    background: linear-gradient(#fff, #eee, #fff);
+  }
+  100% {
+    background: white;
+  }
+}
