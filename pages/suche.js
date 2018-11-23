@@ -213,18 +213,21 @@ class Search extends React.Component {
 }
 
 const splitFromTo = year => {
+  if (!year) {
+    return [MIN_YEAR, MAX_YEAR];
+  }
   if (year.indexOf('-') === -1) {
     const parsedYear = parseInt(year, 10);
     if (Number.isNaN(parsedYear)) {
-      return [null, null];
+      return [MIN_YEAR, MAX_YEAR];
     }
     return [parsedYear, parsedYear];
   }
   const parts = year.split('-');
   let from = parseInt(parts[0], 10);
-  from = Number.isNaN(from) ? null : from;
+  from = Number.isNaN(from) ? MIN_YEAR : from;
   let to = parseInt(parts[1], 10);
-  to = Number.isNaN(to) ? null : to;
+  to = Number.isNaN(to) ? MAX_YEAR : to;
   return [from, to];
 };
 
