@@ -1,4 +1,4 @@
-# OffeneGesetze.de [![Build Status](https://travis-ci.com/jfilter/split-folders.svg?branch=master)](https://travis-ci.com/jfilter/split-folders)
+# OffeneGesetze.de [![Build Status](https://travis-ci.com/okfde/offenegesetze.de.svg?branch=master)](https://travis-ci.com/okfde/offenegesetze.de)
 
 ## dev
 
