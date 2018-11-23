@@ -75,6 +75,16 @@ class SearchBox extends React.Component {
                   'Suche in über 8000 Amtsblättern. Zum Beispiel "Drogen", "Münzen", "Geld"',
               }}
               wrapperStyle={{ display: 'inline' }}
+              menuStyle={{
+                borderRadius: '3px',
+                boxShadow: '0 2px 12px rgba(0, 0, 0, 0.05)',
+                background: 'rgba(255, 255, 255, 0.98)',
+                padding: '5px',
+                fontSize: '90%',
+                position: 'fixed',
+                overflow: 'auto',
+                maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
+              }}
             />
           </div>
           <div className="control">
