@@ -1,5 +1,6 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
+import Link from 'next/link';
 
 import { CURRENT_YEAR } from '../misc/config';
 
@@ -26,7 +27,7 @@ class PublicationIndex extends React.Component {
           <span
             style={{ margin: '.5rem' }}
             className={
-              bgbl === 'bgbl1' ? 'button is-info is-selected' : 'button'
+              bgbl === 'bgbl1' ? 'button is-primary is-selected' : 'button'
             }
             onClick={() => this.setState({ bgbl: 'bgbl1' })}
           >
@@ -36,7 +37,7 @@ class PublicationIndex extends React.Component {
             style={{ margin: '.5rem' }}
             onClick={() => this.setState({ bgbl: 'bgbl2' })}
             className={
-              bgbl === 'bgbl2' ? 'button is-info is-selected' : 'button'
+              bgbl === 'bgbl2' ? 'button is-primary is-selected' : 'button'
             }
           >
             BGBl. Teil II
@@ -54,7 +55,7 @@ class PublicationIndex extends React.Component {
               <button
                 onClick={() => this.setState({ year: x.year })}
                 className={
-                  year === x.year ? 'button is-info is-selected' : 'button'
+                  year === x.year ? 'button is-primary is-selected' : 'button'
                 }
                 style={{ width: '4rem', margin: '.5rem' }}
               >
@@ -76,13 +77,15 @@ class PublicationIndex extends React.Component {
                   .max_number
               ).keys(),
             ].map(x => (
-              <a
-                href={x + 1}
-                className="button"
-                style={{ width: '4rem', margin: '.5rem' }}
-              >
-                {x + 1}
-              </a>
+              <Link href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}>
+                <a
+                  href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}
+                  className="button"
+                  style={{ width: '4rem', margin: '.5rem' }}
+                >
+                  {x + 1}
+                </a>
+              </Link>
             ))}
           </AnimateOnChange>
         </p>
