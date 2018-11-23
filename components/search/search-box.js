@@ -30,7 +30,7 @@ class SearchBox extends React.Component {
         )
       )
       .filter(x => x !== null)
-      .map(x => x[1]);
+      .map(x => x[1].replace(/<\/?em>/g, ''));
     suggestions = Array.from(new Set(suggestions));
 
     if (suggestions.length > 0) {
@@ -46,7 +46,10 @@ class SearchBox extends React.Component {
         <div className="field has-addons">
           <div className="control is-expanded">
             <ReactAutocomplete
-              items={this.state.suggestions.map(x => ({ id: x, label: x }))}
+              items={this.state.suggestions.map(x => ({
+                id: x,
+                label: x,
+              }))}
               shouldItemRender={(item, value) =>
                 item.label.toLowerCase().indexOf(value.toLowerCase()) > -1
               }
