@@ -18,7 +18,6 @@ export default class MyDocument extends Document {
       <html className="has-navbar-fixed-top">
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-
           <link
             rel="apple-touch-icon"
             sizes="152x152"
@@ -40,6 +39,28 @@ export default class MyDocument extends Document {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00d1b2" />
           <meta name="msapplication-TileColor" content="#00d1b2" />
           <meta name="theme-color" content="#ffffff" />
+
+          <meta
+            name="description"
+            content="This is an example of a meta description. This will often show up in search results."
+          />
+          <meta
+            property="og:description"
+            content="Freier Zugang zu unseren Gesetzen. Wir stellen das Bundesgesetzblatt in digitaler Form kostenfrei zur Verfügung."
+          />
+          <meta
+            property="og:image"
+            content="https://offenegesetze.de/static/preview.jpg"
+          />
+          <meta property="og:url" content="https://offenegesetze.de" />
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="OffeneGesetze.de" />
+          <meta
+            property="article:author"
+            content="https://www.facebook.com/offenegesetze"
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:creator" content="@offenegesetze" />
         </Head>
         <body>
           <Main />
