@@ -58,26 +58,30 @@ const Substancials = () => (
   <div className="section">
     <div className="container content is-normal">
       <h3 className="is-size-3 has-text-center">Bedeutende Amtsblätter</h3>
-      <div style={{ display: 'flex', margin: '-1rem', flexWrap: 'wrap' }}>
-        {data.map(x => (
-          <div
-            style={{
-              margin: '1em',
-              height: 'auto',
-              width: 'auto',
-            }}
-          >
-            <Link prefetch href={x.url}>
-              <a href={x.url}>
-                <h4 className="is-size-4">{x.title}</h4>
-                <figure className="image is-4by3">
-                  <img style={{ width: '100%' }} src={x.imageSrc} />
-                </figure>
-              </a>
-            </Link>
-          </div>
-        ))}
-      </div>
+      {/* <div style={{ display: 'flex', margin: '-1rem', flexWrap: 'wrap' }}> */}
+      {data.map(x => (
+        <div
+          style={{
+            display: 'inline-block',
+            margin: '1em',
+            height: 'auto',
+            width: '15rem',
+          }}
+        >
+          <Link prefetch href={x.url}>
+            <a href={x.url}>
+              <h4 className="is-size-4">{x.title}</h4>
+              <figure className="image is-4by3">
+                <img
+                  style={{ width: '10rem', height: '10rem' }}
+                  src={x.imageSrc}
+                />
+              </figure>
+            </a>
+          </Link>
+        </div>
+      ))}
+      {/* </div> */}
     </div>
   </div>
 );
