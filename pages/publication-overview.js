@@ -58,7 +58,8 @@ class PublicationIndex extends React.Component {
 
             {items
               .filter(x => x.kind === bgbl)
-              .sort((x, y) => x.year < y.year)
+              .sort((x, y) => x.year - y.year)
+              .reverse()
               .map(x => (
                 <button
                   onClick={() => this.setState({ year: x.year })}
