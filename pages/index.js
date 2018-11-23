@@ -85,7 +85,6 @@ const IndexPage = ({ items }) => (
             BUTTON: Gesetze entdecken, Link zu Veröffentlichung
             BUTTON: Mehr erfahren, Link zu Warum?
           </div>
-          </div>
         </div>
       </div>
     </div>
