@@ -5,7 +5,7 @@ import React from 'react';
 
 import Ueber from '../pages/ueber';
 import Kontakt from '../pages/kontakt';
-import Mitmachen from '../pages/mitmachen';
+import Presse from '../pages/presse';
 import Daten from '../pages/daten';
 import Datenschutz from '../pages/datenschutz';
 import Feeds from '../pages/feeds';
@@ -23,10 +23,10 @@ describe('With Enzyme', () => {
     expect(app.find('h1').text()).toEqual(expect.stringContaining('Kontakt'));
   });
 
-  it('test Mitmachen', () => {
-    const app = shallow(<Mitmachen />);
+  it('test Presse', () => {
+    const app = shallow(<Presse />);
 
-    expect(app.find('h1').text()).toEqual(expect.stringContaining('Mitmachen'));
+    expect(app.find('h1').text()).toEqual(expect.stringContaining('Presse'));
   });
 
   it('test daten', () => {

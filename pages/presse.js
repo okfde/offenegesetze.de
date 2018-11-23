@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 import BaseContent from '../components/layout/base-content';
 
-const Mitmachen = () => (
+const Presse = () => (
   <BaseContent>
-    <h1 className="title">Mitmachen</h1>
+    <h1 className="title">Presse</h1>
     <p>
       Diese Webseite wurde ehrematlich entwickelt und wir freuen uns immer über
       Mitstreitende. Direkt an der technischen Entwicklung kann man auf{' '}
@@ -25,4 +25,4 @@ const Mitmachen = () => (
   </BaseContent>
 );
 
-export default Mitmachen;
+export default Presse;

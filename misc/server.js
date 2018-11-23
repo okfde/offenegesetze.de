@@ -20,7 +20,7 @@ const cacheSites = [
   '/feeds',
   '/kontakt',
   '/uber',
-  '/mitmachen',
+  '/presse',
 ];
 
 app.prepare().then(() => {
