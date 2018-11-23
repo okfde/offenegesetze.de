@@ -72,7 +72,7 @@ class SearchBox extends React.Component {
                 className: 'input',
                 type: 'text',
                 placeholder:
-                  'Suche in über 8000 Amtsblättern. Zum Beispiel "Drogen", "Münzen", "Geld"',
+                  'Suche in über 8000 Veröffentlichungen. Zum Beispiel "Asyl" oder "Münzen"',
               }}
               wrapperStyle={{ display: 'inline' }}
               menuStyle={{
