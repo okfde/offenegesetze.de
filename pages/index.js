@@ -83,8 +83,8 @@ const IndexPage = ({ items }) => (
         <div className="columns is-desktop content is-medium">
           <div className="column">
             Alle Gesetzesblätter auf einer Website. Kostenlos, digital, offen.
-            BUTTON: Gesetze entdecken, Link zu Veröffentlichung 
-            BUTTON: Mehr erfahren, Scroll-Link runter
+            BUTTON: Gesetze entdecken, Link zu Veröffentlichung BUTTON: Mehr
+            erfahren, Scroll-Link runter
           </div>
         </div>
       </div>
@@ -99,31 +99,43 @@ const IndexPage = ({ items }) => (
         <div className="columns is-desktop content is-medium">
           <div className="column">
             DIESEN TEXT ANTEASERN, ausklappen lassen
-            Im Jahr 2006 wurde der staatliche Bundesanzeiger Verlag privatisiert. In
-      einem umstrittenen Verfahren sicherte sich der Dumont-Verlag das
-      Unternehmen und damit die Veröffentlichung aller Gesetze im
-      Bundesgesetzblatt. Seither erhielt der Verlag ohne Ausschreibung auch den
-      Auftrag zum Betrieb von anderen staatlichen Plattformen, {' '}
-      <a href="https://www.stern.de/politik/deutschland/tillack/das-neue-transparenzregister-ist-selbst-wenig-transparent-7929378.html">zum Beispiel dem Transparenzregister. 
-      Die Herausgabe des Bundesgesetzblatts ist für den Bundesanzeiger Verlag lukrativ. Er verlangt
-      für grundlegende Funktionen, zum Beispiel die Durchsuchbarkeit oder das
-      Drucken von Gesetzblätter, Gebühren.
-      <br /> <br />
-      Der Bund verfügt noch nicht einmal über die Rohdaten des Bundesgesetzblatts,
-      die alle vom Bundesanzeiger Verlag verwaltet werden. Die genauen Bedingungen 
-      der Kooperation des Bundes mit dem privatem Verlag {' '}
-      <a href="https://fragdenstaat.de/anfrage/vereinbarungen-mit-bundesanzeiger-verlag/">hält das zuständige Justizministerium 
-      geheim</a>. Den Kooperationsvertrag zur Herausgabe des Bundesgesetzblatts schwärzte
-      das Ministerium auf Betreiben des Verlags.
-      <br /> <br />
-      Alle Gesetzblätter sind jetzt auf offenegesetze.de frei zugänglich. 
-      Das Grundproblem aber bleibt: 
-      Die Bundesregierung muss dafür sorgen, dass private Verlage nicht das
-      Urheberrecht auf staatliche Dokumente beanspruchen dürfen. Amtliche
-      Dokumente müssen frei und kostenlos online für die gesamte Öffentlichkeit
-      zugänglich sein! Monopolisten dürfen nicht für den Zugang zu staatlichen
-      Daten zur Kasse bitten! Das Urheberrecht muss geändert werden, damit
-      zentrale Dokumente der Demokratie offen bereitstehen!
+            <p>
+              Im Jahr 2006 wurde der staatliche Bundesanzeiger Verlag
+              privatisiert. In einem umstrittenen Verfahren sicherte sich der
+              Dumont-Verlag das Unternehmen und damit die Veröffentlichung aller
+              Gesetze im Bundesgesetzblatt. Seither erhielt der Verlag ohne
+              Ausschreibung auch den Auftrag zum Betrieb von anderen staatlichen
+              Plattformen,{' '}
+              <a href="https://www.stern.de/politik/deutschland/tillack/das-neue-transparenzregister-ist-selbst-wenig-transparent-7929378.html">
+                zum Beispiel dem Transparenzregister.
+              </a>{' '}
+              Die Herausgabe des Bundesgesetzblatts ist für den Bundesanzeiger
+              Verlag lukrativ. Er verlangt für grundlegende Funktionen, zum
+              Beispiel die Durchsuchbarkeit oder das Drucken von Gesetzblätter,
+              Gebühren.
+            </p>
+            <p>
+              Der Bund verfügt noch nicht einmal über die Rohdaten des
+              Bundesgesetzblatts, die alle vom Bundesanzeiger Verlag verwaltet
+              werden. Die genauen Bedingungen der Kooperation des Bundes mit dem
+              privatem Verlag{' '}
+              <a href="https://fragdenstaat.de/anfrage/vereinbarungen-mit-bundesanzeiger-verlag/">
+                hält das zuständige Justizministerium
+              </a>. Den Kooperationsvertrag zur Herausgabe des
+              Bundesgesetzblatts schwärzte das Ministerium auf Betreiben des
+              Verlags.
+            </p>
+            <p>
+              Alle Gesetzblätter sind jetzt auf offenegesetze.de frei
+              zugänglich. Das Grundproblem aber bleibt: Die Bundesregierung muss
+              dafür sorgen, dass private Verlage nicht das Urheberrecht auf
+              staatliche Dokumente beanspruchen dürfen. Amtliche Dokumente
+              müssen frei und kostenlos online für die gesamte Öffentlichkeit
+              zugänglich sein! Monopolisten dürfen nicht für den Zugang zu
+              staatlichen Daten zur Kasse bitten! Das Urheberrecht muss geändert
+              werden, damit zentrale Dokumente der Demokratie offen
+              bereitstehen!
+            </p>
           </div>
         </div>
       </div>
