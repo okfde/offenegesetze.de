@@ -210,12 +210,29 @@ class Search extends React.Component {
                       onChange={this._onSelect}
                     />
                     {` ${KINDS[x.value].name}`}
-                    <small> ({x.count})</small>
+                    <small> ({thousandSep(x.count)})</small>
                   </label>
                 </p>
               ))}
           </div>
         )}
+
+        {query != null &&
+          query !== '' && (
+            <div className="is-clearfix">
+              <a
+                className="button is-pulled-right"
+                href={`https://api.offenegesetze.de/v1/veroeffentlichung/?format=rss&q=${query}${facets.kind
+                  .filter(x => x.selected)
+                  .map(x => `&kind=${x.value}`)}`}
+              >
+                <span className="icon is-small">
+                  <i className="fas fa-rss" />
+                </span>
+                <span>als Feed abonnieren</span>
+              </a>
+            </div>
+          )}
 
         <InfiniteScroll
           pageStart={0}
