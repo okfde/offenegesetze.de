@@ -163,6 +163,12 @@ em {
 .input-range__label-container {
   background-color: #fff;
 }
+
+.card {
+  display: block;
+  height: 100%;
+}
+
 .year {
   background-color: #fff;
 }

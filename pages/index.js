@@ -5,7 +5,7 @@ import Link from 'next/link';
 import BaseIndex from '../components/layout/base-index';
 import Recent from '../components/index/recent';
 import PricingTable from '../components/index/pricing-table';
-import Substancials from '../components/index/substancials';
+import Substantials from '../components/index/substantials';
 
 const IndexPage = ({ items }) => (
   <BaseIndex>
@@ -201,7 +201,7 @@ const IndexPage = ({ items }) => (
         <h3 className="is-size-3 has-text-center">
           Bedeutende Veröffentlichungen
         </h3>
-        <Substancials highlight />
+        <Substantials highlight />
 
         <Link href="/veroeffentlichung/#bedeutende">
           <a className="button is-primary">

@@ -58,8 +58,8 @@ const data = [
   },
 ];
 
-const Substancials = ({ highlight }) => (
-  <div>
+const Substantials = ({ highlight }) => (
+  <div className="columns is-multiline">
     {data
       .filter(
         x =>
@@ -67,23 +67,23 @@ const Substancials = ({ highlight }) => (
           !highlight
       )
       .map(x => (
-        <div
-          style={{
-            display: 'inline-block',
-            margin: '1em',
-            height: 'auto',
-            width: '15rem',
-          }}
-        >
+        <div className="column" key={x.url}>
           <Link prefetch href={x.url}>
-            <a href={x.url}>
-              <h4 className="is-size-4">{x.title}</h4>
-              <figure className="image is-4by3">
-                <img
-                  style={{ width: '10rem', height: '10rem' }}
-                  src={x.imageSrc}
-                />
-              </figure>
+            <a href={x.url} className="card">
+              <div className="card-image">
+                <figure className="image">
+                  <img
+                    style={{ width: '10rem', height: '10rem' }}
+                    src={x.imageSrc}
+                    alt={x.title}
+                  />
+                </figure>
+              </div>
+              <div className="card-content">
+                <div className="content">
+                  <h6>{x.title}</h6>
+                </div>
+              </div>
             </a>
           </Link>
         </div>
@@ -91,8 +91,8 @@ const Substancials = ({ highlight }) => (
   </div>
 );
 
-Substancials.defaultProps = {
+Substantials.defaultProps = {
   highlight: false,
 };
 
-export default Substancials;
+export default Substantials;

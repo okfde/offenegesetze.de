@@ -5,7 +5,7 @@ import AnimateOnChange from 'react-animate-on-change';
 
 import { CURRENT_YEAR } from '../misc/config';
 import BaseContent from '../components/layout/base-content';
-import Substancials from '../components/index/substancials';
+import Substantials from '../components/index/substantials';
 
 class PublicationIndex extends React.Component {
   state = { bgbl: 'bgbl1', year: CURRENT_YEAR };
@@ -27,8 +27,8 @@ class PublicationIndex extends React.Component {
             Jede Ausgabe enthält mehrere Veröffentlichungen.
           </p>
 
-          <p>
-            <h2>1. Art</h2>
+          <div>
+            <h2>Art</h2>
             {/* <div className="buttons has-addons"> */}
             <span
               style={{ margin: '.5rem' }}
@@ -49,10 +49,10 @@ class PublicationIndex extends React.Component {
               BGBl. Teil II
             </span>
             {/* </div> */}
-          </p>
+          </div>
 
-          <p>
-            <h2>2. Jahr</h2>
+          <div>
+            <h2>Jahr</h2>
 
             {items
               .filter(x => x.kind === bgbl)
@@ -69,10 +69,10 @@ class PublicationIndex extends React.Component {
                   {x.year}
                 </button>
               ))}
-          </p>
+          </div>
 
-          <p>
-            <h2>3. Nummer</h2>
+          <div>
+            <h2>Nummer</h2>
             <AnimateOnChange
               baseClassName="year"
               animationClassName="year-bounce"
@@ -96,11 +96,11 @@ class PublicationIndex extends React.Component {
                   </Link>
                 ))}
             </AnimateOnChange>
-          </p>
+          </div>
           <h2 id="bedeutende" name="bedeutende">
             Bedeutende Anfragen
           </h2>
-          <Substancials />
+          <Substantials />
         </div>
       </BaseContent>
     );
