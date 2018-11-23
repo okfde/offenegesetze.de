@@ -10,11 +10,6 @@ import Substancials from '../components/index/substancials';
 const IndexPage = ({ items }) => (
   <BaseIndex>
     <div className="hero is-medium is-primary">
-      <div className="container">
-        <h1 className="title">
-          Offene Gesetze<br />für eine offene Gesellschaft
-        </h1>
-      </div>
       <div className="hero-body">
         <div className="container">
           <div className="columns is-desktop">
@@ -23,18 +18,10 @@ const IndexPage = ({ items }) => (
 
               <p className="content">
                 Ein privater Verlag bestimmt darüber, wie unsere Gesetze in
-                Kraft treten. Eine moderne Webseite ist{' '}
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: 'underline' }}
-                  href="https://www.bgbl.de/"
-                >
-                  Fehlanzeige
-                </a>. Und: Wer die Gesetze durchsuchen, kopieren oder ausdrucken
+                Kraft treten. Wer deutsche Gesetzesblätter durchsuchen, kopieren oder ausdrucken
                 will, wird zur Kasse gebeten.
               </p>
-              <p className="title is-2">Digitalisierung jetzt!</p>
+              <p className="title is-2">Das ändern wir!</p>
               <p className="content">
                 Wir stellen das Bundesgesetzblatt in digitaler Form kostenfrei
                 zur Verfügung.
@@ -66,15 +53,15 @@ const IndexPage = ({ items }) => (
               Im Bundesgesetzblatt (BGBl.) werden alle Gesetze der
               Bundesrepublik Deutschland veröffentlicht. Gesetze treten erst in
               Kraft, wenn sie dort erscheinen. Herausgeber ist der
-              Bundesanzeiger-Verlag, der 2006 privatisiert wurde.
+              Bundesanzeiger Verlag, der 2006 privatisiert wurde. 
+              Er gehört zur Dumont-Verlagsgruppe.
             </p>
           </div>
           <div className="column">
             <h3 className="subtitle">Der Bundesanzeiger Verlag</h3>
-            Der Bundesanzeiger-Verlag gehört der Dumont-Verlagsgruppe. Er erhebt
-            Urheberrecht auf die Dokumente des Bundesgesetzblatts. Diese sind
-            zwar online auf bgbl.de einzeln einsehbar, aber können nicht
-            gedruckt, durchsucht oder kopiert werden. Der Bundesanzeiger-Verlag
+            Der Verlag erhebt Urheberrecht auf die Datenbank der Gesetzblätter. Diese sind
+            zwar <a href="https://www.bgbl.de/">online einzeln einsehbar</a>, aber können nicht
+            gedruckt, durchsucht oder kopiert werden. Der Bundesanzeiger Verlag
             verbietet die Weiterverwendung. Wer die Gesetzblätter des Staates
             nutzen will, muss dem privaten Verlag Abo-Gebühren zahlen.
           </div>
@@ -93,22 +80,11 @@ const IndexPage = ({ items }) => (
       <div className="container">
         <div className="columns is-desktop content is-medium">
           <div className="column">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus blanditiis ex aut minima dolore voluptate exercitationem
-            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
-            mollitia vitae officiis.
+            Alle Gesetzesblätter auf einer Website. Kostenlos, digital, offen.
+            
+            BUTTON: Gesetze entdecken, Link zu Veröffentlichung
+            BUTTON: Mehr erfahren, Link zu Warum?
           </div>
-          <div className="column">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus blanditiis ex aut minima dolore voluptate exercitationem
-            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
-            mollitia vitae officiis.
-          </div>
-          <div className="column">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus blanditiis ex aut minima dolore voluptate exercitationem
-            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
-            mollitia vitae officiis.
           </div>
         </div>
       </div>
@@ -132,10 +108,7 @@ const IndexPage = ({ items }) => (
             <h3>1. Gesetzgebungsinitiative</h3>
           </div>
           <div className="column is-half">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus blanditiis ex aut minima dolore voluptate exercitationem
-            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
-            mollitia vitae officiis.
+            Die Bundesregierung, der Bundestag oder der Bundesrat starten eine Initiative für ein neues Gesetz.
           </div>
         </div>
         <div className="columns is-mobile">
@@ -143,10 +116,7 @@ const IndexPage = ({ items }) => (
             <h3>2. Beratung und Zustimmung</h3>
           </div>
           <div className="column is-half">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus blanditiis ex aut minima dolore voluptate exercitationem
-            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
-            mollitia vitae officiis.
+            Der Bundestag und der Bunderat beraten über den Gesetzentwurf und verabschieden ihn, meist mit Änderungen.
           </div>
         </div>
         <div className="columns is-mobile">
@@ -154,10 +124,7 @@ const IndexPage = ({ items }) => (
             <h3>3. Gegenzeichnung</h3>
           </div>
           <div className="column is-half">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus blanditiis ex aut minima dolore voluptate exercitationem
-            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
-            mollitia vitae officiis.
+            Die Bundesregierung zeichnet den Gesetzentwurf gegen. 
           </div>
         </div>
         <div className="columns is-mobile">
@@ -165,10 +132,7 @@ const IndexPage = ({ items }) => (
             <h3>4. Ausfertigung</h3>
           </div>
           <div className="column is-half">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus blanditiis ex aut minima dolore voluptate exercitationem
-            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
-            mollitia vitae officiis.
+            Der Bundespräsident fertigt das Gesetz aus und unterzeichnet es.
           </div>
         </div>
         <div className="columns is-mobile">
@@ -176,10 +140,7 @@ const IndexPage = ({ items }) => (
             <h3>5. Verkündung</h3>
           </div>
           <div className="column is-half">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus blanditiis ex aut minima dolore voluptate exercitationem
-            nihil fuga nostrum et beatae, saepe dolorem iure veritatis alias
-            mollitia vitae officiis.
+            Das Gesetz wird im Bundesgesetzblatt verkündet. Der zuständige Bundesanzeiger Verlag ist ein privater Verlag. Er verbietet die Weiterverwendung der Gesetzesblätter online.
           </div>
         </div>
       </div>
