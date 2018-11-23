@@ -7,20 +7,9 @@ const Presse = () => (
   <BaseContent>
     <h1 className="title">Presse</h1>
     <p>
-      Diese Webseite wurde ehrematlich entwickelt und wir freuen uns immer über
-      Mitstreitende. Direkt an der technischen Entwicklung kann man auf{' '}
-      <a className="highlight" href="https://github.com/topics/offene-gesetze">
-        Github
-      </a>{' '}
-      einsteigen.
-    </p>
-    <p>
-      Wir feuen uns auch über Mitarbeit am Design, Texten und
-      Öffentlichkeitsarbeit. Bitte nehmt hierfür{' '}
-      <Link prefetch href="/kontakt">
-        <a className="highlight">Kontakt</a>
-      </Link>{' '}
-      mit uns auf.
+      OffeneGesetze.de ist ein ehrenamtliches, gemeinnütziges Projekt des Open Knowledge Foundation Deutschland e.V. 
+  
+      Wenden Sie sich bei Presseanfragen bitte an Arne Semsrott unter {' '}arne.semsrott@okfn.de oder +49 30 57703666 0. Richten Sie allgemeine Anfragen bitte an {' '}info@offenegesetze.de.
     </p>
   </BaseContent>
 );
