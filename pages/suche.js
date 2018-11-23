@@ -9,6 +9,18 @@ import BaseContent from '../components/layout/base-content';
 
 import { MAX_YEAR, MIN_YEAR, KINDS } from '../misc/config';
 
+// https://stackoverflow.com/a/13162319/4028896
+function thousandSep(val) {
+  return String(val)
+    .split('')
+    .reverse()
+    .join('')
+    .replace(/(\d{3}\B)/g, '$1.')
+    .split('')
+    .reverse()
+    .join('');
+}
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -110,88 +122,100 @@ class Search extends React.Component {
         <br />
         <div>
           <small>
-            Insgesamt gibt es {count} Ergebnisse. Suche nach
-            Veröffentlichungsjahr einschränken:
+            {count > 1 &&
+              `Insgesamt gibt es ${thousandSep(
+                count
+              )} Ergebnisse. Suche nach Veröffentlichungsjahr einschränken:`}
+            {count === 1 && `Es gibt ein Ergebnis`}
+            {count === 0 && 'Zu der Suche gibt es keine Treffer.'}
           </small>
         </div>
         <br />
-        <YearRangeFacet
-          value={dateRange}
-          min={firstYear}
-          max={lastYear}
-          bars={facets != null ? facets.date : []}
-          beforeBars={facets != null ? facets.beforeDate : []}
-          afterBars={facets != null ? facets.afterDate : []}
-          onChange={this._onDateRangeChange}
-          onChangeComplete={this._onDateRangeChangeFinal}
-          containerStyle={{ marginBottom: '1rem' }}
-        />
+        {count > 1 && (
+          <YearRangeFacet
+            value={dateRange}
+            min={firstYear}
+            max={lastYear}
+            bars={facets != null ? facets.date : []}
+            beforeBars={facets != null ? facets.beforeDate : []}
+            afterBars={facets != null ? facets.afterDate : []}
+            onChange={this._onDateRangeChange}
+            onChangeComplete={this._onDateRangeChangeFinal}
+            containerStyle={{ marginBottom: '1rem' }}
+          />
+        )}
         <br />
-        <div>
-          <small>Auf ein Jahr beschränken</small>
-          <div className="select is-small" style={{ paddingLeft: '1rem' }}>
-            <select
-              value={dateRange.min === dateRange.max ? dateRange.min : ''}
-              onChange={event =>
-                this._onDateRangeChangeFinal({
-                  min: parseInt(event.target.value),
-                  max: parseInt(event.target.value),
-                })
-              }
-            >
-              <option value="" />
-              {Array.from(
-                { length: MAX_YEAR - MIN_YEAR },
-                (_, i) => MAX_YEAR - i
-              ).map(x => (
-                <option value={x} key={x}>
-                  {x}
-                </option>
-              ))}
-            </select>
+        {count > 1 && (
+          <div>
+            <small>Auf ein Jahr beschränken</small>
+            <div className="select is-small" style={{ paddingLeft: '1rem' }}>
+              <select
+                value={dateRange.min === dateRange.max ? dateRange.min : ''}
+                onChange={event =>
+                  this._onDateRangeChangeFinal({
+                    min: parseInt(event.target.value),
+                    max: parseInt(event.target.value),
+                  })
+                }
+              >
+                <option value="" />
+                {Array.from(
+                  { length: MAX_YEAR - MIN_YEAR },
+                  (_, i) => MAX_YEAR - i
+                ).map(x => (
+                  <option value={x} key={x}>
+                    {x}
+                  </option>
+                ))}
+              </select>
+            </div>
+            {dateRange.min === dateRange.max && (
+              <button
+                type="reset"
+                className="button is-small"
+                style={{ marginLeft: '1rem' }}
+                onClick={x => {
+                  this._onDateRangeChangeFinal({ min: null, max: null });
+                }}
+              >
+                <span className="icon is-small">
+                  <i className="fas fa-times" />
+                </span>
+              </button>
+            )}
           </div>
-          {dateRange.min === dateRange.max && (
-            <button
-              type="reset"
-              className="button is-small"
-              style={{ marginLeft: '1rem' }}
-              onClick={x => {
-                this._onDateRangeChangeFinal({ min: null, max: null });
-              }}
-            >
-              <span className="icon is-small">
-                <i className="fas fa-times" />
-              </span>
-            </button>
-          )}
-        </div>
+        )}
 
         <br />
-        <div>
-          <small>
-            Suche nach Art einschränken.{' '}
-            <a href="https://de.wikipedia.org/wiki/Bundesgesetzblatt_(Deutschland)#Teil_I">
-              Mehr Infos zu den Unterschieden
-            </a>:
-          </small>
-        </div>
-        <div className="field is-grouped" style={{ margin: '1rem 0' }}>
-          {facets != null &&
-            facets.kind.map(x => (
-              <p className="control" key={x.value}>
-                <label>
-                  <input
-                    name={x.value}
-                    type="checkbox"
-                    checked={x.selected}
-                    onChange={this._onSelect}
-                  />
-                  {` ${KINDS[x.value].name}`}
-                  <small> ({x.count})</small>
-                </label>
-              </p>
-            ))}
-        </div>
+        {count > 1 && (
+          <div>
+            <small>
+              Suche nach Art einschränken.{' '}
+              <a href="https://de.wikipedia.org/wiki/Bundesgesetzblatt_(Deutschland)#Teil_I">
+                Mehr Infos zu den Unterschieden
+              </a>:
+            </small>
+          </div>
+        )}
+        {count > 1 && (
+          <div className="field is-grouped" style={{ margin: '1rem 0' }}>
+            {facets != null &&
+              facets.kind.map(x => (
+                <p className="control" key={x.value}>
+                  <label>
+                    <input
+                      name={x.value}
+                      type="checkbox"
+                      checked={x.selected}
+                      onChange={this._onSelect}
+                    />
+                    {` ${KINDS[x.value].name}`}
+                    <small> ({x.count})</small>
+                  </label>
+                </p>
+              ))}
+          </div>
+        )}
 
         <InfiniteScroll
           pageStart={0}
