@@ -185,7 +185,20 @@ const IndexPage = ({ items }) => (
       </div>
     </div>
 
-    <Substancials />
+    <div className="section">
+      <div className="container content is-normal">
+        <h3 className="is-size-3 has-text-center">
+          Bedeutende Veröffentlichungen
+        </h3>
+        <Substancials highlight />
+
+        <Link href="/veroeffentlichung/#bedeutende">
+          <a className="button is-primary">
+            Alle Bedeutende Veröffentlichungen ansehen
+          </a>
+        </Link>
+      </div>
+    </div>
     <Recent items={items} />
   </BaseIndex>
 );

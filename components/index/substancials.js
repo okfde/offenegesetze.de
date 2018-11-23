@@ -6,6 +6,7 @@ const data = [
     url: '/veroeffentlichung/bgbl1/1949/1/',
     title: 'Das Grundgesetz',
     imageSrc: '/static/index-preview/gg.png',
+    highlight: true,
   },
   {
     url: '/veroeffentlichung/bgbl1/1974/63/#page=1',
@@ -16,6 +17,7 @@ const data = [
     url: '/veroeffentlichung/bgbl1/2017/52/#page=59',
     title: 'Ehe für alle',
     imageSrc: '/static/index-preview/gg.png',
+    highlight: true,
   },
   {
     url: '/veroeffentlichung/bgbl1/2005/57/#page=2',
@@ -26,6 +28,7 @@ const data = [
     url: '/veroeffentlichung/bgbl1/1965/51/#page=1',
     title: 'Urheberrecht',
     imageSrc: '/static/index-preview/gg.png',
+    highlight: true,
   },
   {
     url: '/veroeffentlichung/bgbl1/1998/6/#page=24)',
@@ -36,6 +39,7 @@ const data = [
     url: '/veroeffentlichung/bgbl1/1972/74/#page=1',
     title: 'Das Tierschutzgesetz',
     imageSrc: '/static/index-preview/gg.png',
+    highlight: true,
   },
   {
     url: '/veroeffentlichung/bgbl2/1990/35/#page=1',
@@ -54,12 +58,15 @@ const data = [
   },
 ];
 
-const Substancials = () => (
-  <div className="section">
-    <div className="container content is-normal">
-      <h3 className="is-size-3 has-text-center">Bedeutende Amtsblätter</h3>
-      {/* <div style={{ display: 'flex', margin: '-1rem', flexWrap: 'wrap' }}> */}
-      {data.map(x => (
+const Substancials = ({ highlight }) => (
+  <div>
+    {data
+      .filter(
+        x =>
+          (x.hasOwnProperty('highlight') && x.highlight === highlight) ||
+          !highlight
+      )
+      .map(x => (
         <div
           style={{
             display: 'inline-block',
@@ -81,9 +88,11 @@ const Substancials = () => (
           </Link>
         </div>
       ))}
-      {/* </div> */}
-    </div>
   </div>
 );
+
+Substancials.defaultProps = {
+  highlight: false,
+};
 
 export default Substancials;

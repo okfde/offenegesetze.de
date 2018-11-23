@@ -14,7 +14,7 @@ const Recent = ({ items }) => (
         </ul>
         <Link prefetch href="/suche">
           <a className="button is-primary" href="/suche">
-            Mehr Veröffentlichungen ansehen
+            Mehr Neueste Veröffentlichungen ansehen
           </a>
         </Link>
       </div>
