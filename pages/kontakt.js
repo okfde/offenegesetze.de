@@ -6,8 +6,12 @@ const Ueber = () => (
   <BaseContent>
     <h1 className="title">Kontakt</h1>
     <p>
-      Für Fragen errricht man uns am Besten per E-Mail{' '}
+      Offene Gesetze ist ein ehrenamtliches Projekt des gemeinnützigen Open Knowledge Foundation Deutschland e.V.
+      
+  Das Projekt wurde entwickelt von {' '}<a href="https://johannesfilter.com">Johannes Filter</a>, {' '}<a href="https://stefanwehrmeyer.com">Stefan Wehrmeyer</a> und {' '}<a href="https://twitter.com/arnesemsrott">Arne Semsrott</a>. Das Team ist erreichbar unter {' '}
       <a className="highlight" href="mailto:info@offenegesetze.de">
+       und{' '}
+      
         info@offenegesetze.de
       </a>.<br />
     </p>
@@ -18,7 +22,7 @@ const Ueber = () => (
         Twitter folgen
       </a>{' '}
       und{' '}
-      <a className="highlight" href="https://www.facebook.com/fragdenstaat.de/">
+      <a className="highlight" href="https://www.facebook.com/offenegesetze/">
         Facebook liken
       </a>.
     </p>
