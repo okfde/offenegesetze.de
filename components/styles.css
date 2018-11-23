@@ -159,3 +159,7 @@ em {
   left: 0;
   right: 0;
 }
+
+.input-range__label-container {
+  background-color: #fff;
+}
