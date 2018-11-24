@@ -3,7 +3,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import Ueber from '../pages/ueber';
+import Faq from '../pages/faq';
 import Kontakt from '../pages/kontakt';
 import Presse from '../pages/presse';
 import Daten from '../pages/daten';
@@ -11,10 +11,10 @@ import Datenschutz from '../pages/datenschutz';
 import Feeds from '../pages/feeds';
 
 describe('With Enzyme', () => {
-  it('test Ueber', () => {
-    const app = shallow(<Ueber />);
+  it('test Faq', () => {
+    const app = shallow(<Faq />);
 
-    expect(app.find('h1').text()).toEqual(expect.stringContaining('Warum'));
+    expect(app.find('h1').text()).toEqual(expect.stringContaining('FAQ'));
   });
 
   it('test kontakt', () => {

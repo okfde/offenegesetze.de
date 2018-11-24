@@ -62,11 +62,6 @@ class Nav extends React.Component {
                   Veröffentlichungen
                 </a>
               </Link>
-              <Link prefetch href="/ueber">
-                <a className="navbar-item" href="/ueber">
-                  Warum?
-                </a>
-              </Link>
               <Link prefetch href="/kontakt">
                 <a className="navbar-item is-hidden-desktop	" href="/kontakt">
                   Kontakt

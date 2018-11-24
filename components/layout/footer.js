@@ -8,8 +8,8 @@ const Footer = () => (
     <div className="container">
       <div className="columns is-desktop">
         <div className="column">
-          OffeneGesetze.de ist eine zivilgesellschaftliche Plattform 
-          für amtliche Gesetzesblätter.
+          OffeneGesetze.de ist eine zivilgesellschaftliche Plattform für
+          amtliche Gesetzesblätter.
           <br />
           <br />
           <a href="https://twitter.com/offenegesetze">
@@ -17,7 +17,7 @@ const Footer = () => (
               <i className="fab has-text-black fa-2x fa-twitter" />
             </span>
           </a>
-          <a href="https://twitter.com/offenegesetze">
+          <a href="https://www.facebook.com/offenegesetze">
             <span className="icon is-large">
               <i className="fab has-text-black fa-2x fa-facebook" />
             </span>
@@ -32,8 +32,8 @@ const Footer = () => (
           <div className="menu">
             <ul className="menu-list">
               <li>
-                <Link prefetch href="/ueber">
-                  <a href="/ueber">Über</a>
+                <Link prefetch href="/faq">
+                  <a href="/faq">FAQ</a>
                 </Link>
               </li>
               <li>
