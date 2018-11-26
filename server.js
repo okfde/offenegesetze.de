@@ -38,19 +38,19 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/publication-overview');
   });
 
-  server.get('/veroeffentlichung/:kind/', (req, res) => {
-    res.redirect(`/suche/?kind=${encodeURIComponent(req.params.kind)}`);
+  server.get('/veroeffentlichung/:kind', (req, res) => {
+    res.redirect(`/suche?kind=${encodeURIComponent(req.params.kind)}`);
   });
 
-  server.get('/veroeffentlichung/:kind/:year/', (req, res) => {
+  server.get('/veroeffentlichung/:kind/:year', (req, res) => {
     res.redirect(
-      `/suche/?kind=${encodeURIComponent(
+      `/suche?kind=${encodeURIComponent(
         req.params.kind
       )}&year=${encodeURIComponent(req.params.year)}`
     );
   });
 
-  server.get('/veroeffentlichung/:kind/:year/:number/', (req, res) => {
+  server.get('/veroeffentlichung/:kind/:year/:number', (req, res) => {
     const queryParams = {
       id: `${req.params.kind}-${req.params.year}-${req.params.number}`,
       q: req.query.q,
@@ -58,7 +58,7 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/publication-details', queryParams);
   });
 
-  server.get('/suche/', (req, res) => {
+  server.get('/suche', (req, res) => {
     renderAndCache(req, res, '/suche', req.query);
   });
 
