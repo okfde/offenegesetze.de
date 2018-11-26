@@ -21,6 +21,7 @@ const cacheSites = [
   '/kontakt',
   '/uber',
   '/presse',
+  '/veroeffentlichung',
 ];
 
 app.prepare().then(() => {
@@ -33,10 +34,6 @@ app.prepare().then(() => {
       renderAndCache(req, res, x);
     })
   );
-
-  server.get('/veroeffentlichung', (req, res) => {
-    renderAndCache(req, res, '/publication-overview');
-  });
 
   server.get('/veroeffentlichung/:kind', (req, res) => {
     res.redirect(`/suche?kind=${encodeURIComponent(req.params.kind)}`);
