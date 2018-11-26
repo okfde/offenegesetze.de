@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "rm -rf .next && node misc/server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node misc/server.js",
+    "start": "NODE_ENV=production node server.js",
     "test": "jest"
   },
   "repository": {
