@@ -26,7 +26,7 @@ const cacheSites = [
 app.prepare().then(() => {
   const server = express();
 
-  server.use(express.static('static/favicons'));
+  // server.use(express.static('static/favicons'));
 
   cacheSites.forEach(x =>
     server.get(x, (req, res) => {
