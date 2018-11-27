@@ -274,11 +274,15 @@ em {
   }
 }
 
-#mehr {
+#information {
   a {
     &:hover,
     &:active {
       color: white;
     }
+  }
+
+  h4 {
+    color: white;
   }
 }

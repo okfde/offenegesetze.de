@@ -114,32 +114,45 @@ class IndexPage extends React.Component {
               <div className="column">
                 <Link prefetch href="/veroeffentlichung">
                   <a
-                    className="button is-primary is-inverted is-outlined"
+                    className="button is-primary is-inverted is-outlined is-large"
                     href="/veroeffentlichung"
-                    style={{ marginRight: '1rem' }}
+                    style={{ marginRight: '1rem', marginBottom: '1rem' }}
                   >
                     Gesetze entdecken
                   </a>
                 </Link>
-                <a
-                  className="button is-primary is-inverted is-outlined"
-                  href="#mehr"
+                <button
+                  className="button is-primary is-inverted is-outlined is-large"
+                  onClick={() => {
+                    this.setState({ more: false });
+                    document
+                      .getElementById('scroll-to-information')
+                      .scrollIntoView({ block: 'start', behavior: 'smooth' });
+                  }}
                 >
                   Mehr erfahren
-                </a>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div className="section section-comparison">
-          <div className="container">
+          <div className="container" id="price">
             <PricingTable />
           </div>
         </div>
-        <div className="section section-action">
+        <div className="section section-action" id="information">
           <div className="container">
             <div className="columns is-desktop content is-medium">
-              <div className="column" id="mehr">
+              <div className="column">
+                <div
+                  id="scroll-to-information"
+                  style={{ position: 'absolute', top: -100, left: 0 }}
+                />
+                <h4>
+                  <i className="fas fa-info" style={{ marginRight: '1rem' }} />{' '}
+                  Hintergrund
+                </h4>
                 <p>
                   Im Jahr 2006 wurde der staatliche Bundesanzeiger Verlag
                   privatisiert. In einem umstrittenen Verfahren sicherte sich
@@ -167,35 +180,62 @@ class IndexPage extends React.Component {
                       Bundesanzeiger Verlag lukrativ. Er verlangt für
                       grundlegende Funktionen, zum Beispiel die Durchsuchbarkeit
                       oder das Drucken von Gesetzblätter, Gebühren.
+                      <br />
+                      <br />
                     </span>
                   )}
                 </p>
                 {!this.state.more && (
-                  <p>
-                    Der Bund verfügt noch nicht einmal über die Rohdaten des
-                    Bundesgesetzblatts, die alle vom Bundesanzeiger Verlag
-                    verwaltet werden. Die genauen Bedingungen der Kooperation
-                    des Bundes mit dem privatem Verlag{' '}
-                    <a href="https://fragdenstaat.de/anfrage/vereinbarungen-mit-bundesanzeiger-verlag/">
-                      hält das zuständige Justizministerium
-                    </a>
-                    . Den Kooperationsvertrag zur Herausgabe des
-                    Bundesgesetzblatts schwärzte das Ministerium auf Betreiben
-                    des Verlags.
-                  </p>
+                  <div>
+                    <h4>
+                      <i
+                        className="fas fa-eye-slash"
+                        style={{ marginRight: '1rem' }}
+                      />
+                      Intransparenz
+                    </h4>
+                    <p>
+                      Der Bund verfügt noch nicht einmal über die Rohdaten des
+                      Bundesgesetzblatts, die alle vom Bundesanzeiger Verlag
+                      verwaltet werden. Die genauen Bedingungen der Kooperation
+                      des Bundes mit dem privatem Verlag{' '}
+                      <a
+                        className="highlight"
+                        href="https://fragdenstaat.de/anfrage/vereinbarungen-mit-bundesanzeiger-verlag/"
+                      >
+                        hält das zuständige Justizministerium
+                      </a>
+                      . Den Kooperationsvertrag zur Herausgabe des
+                      Bundesgesetzblatts schwärzte das Ministerium auf Betreiben
+                      des Verlags.
+                      <br />
+                      <br />
+                    </p>
+                  </div>
                 )}
                 {!this.state.more && (
-                  <p>
-                    Alle Gesetzblätter sind jetzt auf offenegesetze.de frei
-                    zugänglich. Das Grundproblem aber bleibt: Die
-                    Bundesregierung muss dafür sorgen, dass private Verlage
-                    nicht das Urheberrecht auf staatliche Dokumente beanspruchen
-                    dürfen. Amtliche Dokumente müssen frei und kostenlos online
-                    für die gesamte Öffentlichkeit zugänglich sein! Monopolisten
-                    dürfen nicht für den Zugang zu staatlichen Daten zur Kasse
-                    bitten! Das Urheberrecht muss geändert werden, damit
-                    zentrale Dokumente der Demokratie offen bereitstehen!
-                  </p>
+                  <div>
+                    <br />
+                    <h4>
+                      <i
+                        className="fas fa-bullhorn"
+                        style={{ marginRight: '1rem' }}
+                      />
+                      Forderungen
+                    </h4>
+                    <p>
+                      Alle Gesetzblätter sind jetzt auf{' '}
+                      <a href="/">OffeneGesetze.de</a> frei zugänglich. Das
+                      Grundproblem aber bleibt: Die Bundesregierung muss dafür
+                      sorgen, dass private Verlage nicht das Urheberrecht auf
+                      staatliche Dokumente beanspruchen dürfen. Amtliche
+                      Dokumente müssen frei und kostenlos online für die gesamte
+                      Öffentlichkeit zugänglich sein! Monopolisten dürfen nicht
+                      für den Zugang zu staatlichen Daten zur Kasse bitten! Das
+                      Urheberrecht muss geändert werden, damit zentrale
+                      Dokumente der Demokratie offen bereitstehen!
+                    </p>
+                  </div>
                 )}
               </div>
             </div>
@@ -269,7 +309,7 @@ class IndexPage extends React.Component {
                 href="/veroeffentlichung#bedeutende"
                 className="button is-primary"
               >
-                Mehr Veröffentlichungen ansehen
+                Mehr beudeutende Veröffentlichungen ansehen
               </a>
             </Link>
           </div>
