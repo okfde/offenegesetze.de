@@ -15,7 +15,7 @@ class PublicationIndex extends React.Component {
     const { items } = this.props;
 
     return (
-      <BaseContent>
+      <BaseContent title="Veröffentlichungen">
         <div className="section">
           <h1 className="title">Veröffentlichungen</h1>
           <h2 className="is-2">Das Bundesgesetzblatt</h2>

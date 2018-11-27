@@ -124,7 +124,7 @@ class Search extends React.Component {
     const { items, next, dateRange } = this.state;
 
     return (
-      <BaseContent hideSearch hideFooter>
+      <BaseContent hideSearch hideFooter title="Suche">
         <h1 className="title is-2">In Veröffentlichungen suchen</h1>
         <form action="/suche" style={{ width: '100%' }}>
           <SearchBox q={query} />
@@ -201,7 +201,8 @@ class Search extends React.Component {
                 Suche nach Art einschränken.{' '}
                 <a href="https://de.wikipedia.org/wiki/Bundesgesetzblatt_(Deutschland)#Teil_I">
                   Mehr Infos zu den Unterschieden
-                </a>:
+                </a>
+                :
               </small>
             </div>
           )}
@@ -227,22 +228,21 @@ class Search extends React.Component {
           )}
         </form>
 
-        {query != null &&
-          query !== '' && (
-            <div className="is-clearfix">
-              <a
-                className="button is-pulled-right"
-                href={`https://api.offenegesetze.de/v1/veroeffentlichung/?format=rss&q=${query}${facets.kind
-                  .filter(x => x.selected)
-                  .map(x => `&kind=${x.value}`)}`}
-              >
-                <span className="icon is-small">
-                  <i className="fas fa-rss" />
-                </span>
-                <span>als Feed abonnieren</span>
-              </a>
-            </div>
-          )}
+        {query != null && query !== '' && (
+          <div className="is-clearfix">
+            <a
+              className="button is-pulled-right"
+              href={`https://api.offenegesetze.de/v1/veroeffentlichung/?format=rss&q=${query}${facets.kind
+                .filter(x => x.selected)
+                .map(x => `&kind=${x.value}`)}`}
+            >
+              <span className="icon is-small">
+                <i className="fas fa-rss" />
+              </span>
+              <span>als Feed abonnieren</span>
+            </a>
+          </div>
+        )}
 
         <InfiniteScroll
           pageStart={0}

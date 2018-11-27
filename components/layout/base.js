@@ -11,7 +11,10 @@ import '../styles.scss';
 const Base = ({ title, navItems, children, hideSearch, hideFooter }) => (
   <div>
     <Head>
-      <title>{title && `${title} - `}OffeneGesetze.de</title>
+      <title>
+        {title && `${title} - `}OffeneGesetze.de – Freier Zugang zu unseren
+        Gesetzen
+      </title>
     </Head>
 
     <Nav hideSearch={hideSearch} navItems={navItems} />
