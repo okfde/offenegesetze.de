@@ -87,10 +87,12 @@ a.highlight {
   border: 1px solid $secondary;
 }
 
-.is-primary:active,
-.is-primary:hover {
-  filter: brightness(110%);
-  color: #fff !important;
+a, button {
+  &.is-primary:active,
+  &.is-primary:hover {
+    filter: brightness(110%);
+    color: #fff !important;
+  }
 }
 
 em {
