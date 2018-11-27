@@ -10,8 +10,6 @@ const Ueber = () => (
       
   Das Projekt wurde entwickelt von {' '}<a href="https://johannesfilter.com">Johannes Filter</a>, {' '}<a href="https://stefanwehrmeyer.com">Stefan Wehrmeyer</a> und {' '}<a href="https://twitter.com/arnesemsrott">Arne Semsrott</a>. Das Team ist erreichbar unter {' '}
       <a className="highlight" href="mailto:info@offenegesetze.de">
-       und{' '}
-      
         info@offenegesetze.de
       </a>.<br />
     </p>
