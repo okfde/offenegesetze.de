@@ -332,3 +332,10 @@ em {
 .field.is-grouped {
   flex-wrap: wrap;
 }
+
+@media all and (max-width: $tablet) {
+  .pricing-table > h3,
+  .pricing-title {
+    text-align: center !important;
+  }
+}

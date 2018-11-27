@@ -8,7 +8,10 @@ const Recent = ({ items }) => (
     <div className="container">
       <div style={{ paddingBottom: '2rem' }}>
         <br />
-        <h3 className="is-size-3">Neueste Veröffentlichungen</h3>
+        <h3 className="is-size-3">
+          Neueste <wbr />
+          Veröffentlichungen
+        </h3>
         <ul style={{ paddingBottom: '2rem' }}>
           {items.map(x => (
             <ListItem key={x.id} item={x} />

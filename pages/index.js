@@ -300,7 +300,8 @@ class IndexPage extends React.Component {
         <div className="section">
           <div className="container content is-normal">
             <h3 className="is-size-3 has-text-center">
-              Bedeutende Veröffentlichungen
+              Bedeutende <wbr />
+              Veröffentlichungen
             </h3>
             <Substantials highlight />
 

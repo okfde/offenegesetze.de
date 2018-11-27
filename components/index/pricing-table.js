@@ -74,7 +74,7 @@ const comparison = [
 ];
 
 const PricingTable = () => (
-  <div className="content is-medium">
+  <div className="content is-medium pricing-table">
     <h3>Vergleich</h3>
     <table className="table">
       <thead>
@@ -91,7 +91,7 @@ const PricingTable = () => (
       <tbody>
         {comparison.map(row => (
           <tr key={row.title}>
-            <td>{row.title}</td>
+            <td className="pricing-title">{row.title}</td>
             <td>
               <span className="cell-label">Bundes&shy;anzeiger Verlag</span>
               <div className="cell-content">
