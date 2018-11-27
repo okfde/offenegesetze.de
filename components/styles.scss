@@ -69,6 +69,7 @@ $navbar-breakpoint: $tablet !default;
 
 body {
   hyphens: auto;
+  word-wrap: break-word;
 }
 
 a {
