@@ -19,9 +19,8 @@ const Ueber = () => (
     </p>
     <br />
     <p>
-      Bitte
+      Bitte{' '}
       <a className="highlight" href="https://twitter.com/offenegesetze">
-        {' '}
         folg uns auf Twitter
       </a>{' '}
       und{' '}

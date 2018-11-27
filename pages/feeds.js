@@ -7,7 +7,7 @@ const Feeds = () => (
   <BaseContent>
     <h1 className="title">Feeds</h1>
     <p>
-      Um auf dem Neusten Stand zu bleiben, kannst du unsere{' '}
+      Um auf dem neustem Stand zu bleiben, kannst du unsere{' '}
       <a href="https://de.wikipedia.org/wiki/RSS_(Web-Feed)">RSS-Feeds</a>{' '}
       abbonieren.
     </p>
