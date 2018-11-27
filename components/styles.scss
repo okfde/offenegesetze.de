@@ -133,6 +133,14 @@ em {
   padding-bottom: 3rem !important;
 }
 
+@media all and (max-width: $desktop) {
+  .hero-body {
+    padding-top: 0rem !important;
+    // padding-bottom: 10rem !important;
+    margin-bottom: 10rem !important;
+  }
+}
+
 .hero-image-column {
   position: relative;
   text-align: center;
@@ -285,4 +293,8 @@ em {
   h4 {
     color: white;
   }
+}
+
+.content.recent ul {
+  margin: 0 !important;
 }

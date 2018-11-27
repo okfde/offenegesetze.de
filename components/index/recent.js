@@ -4,7 +4,7 @@ import Link from 'next/link';
 import ListItem from '../list-item';
 
 const Recent = ({ items }) => (
-  <div className="section content is-normal">
+  <div className="section content is-normal recent">
     <div className="container">
       <div style={{ paddingBottom: '2rem' }}>
         <br />
@@ -16,7 +16,7 @@ const Recent = ({ items }) => (
         </ul>
         <Link prefetch href="/suche">
           <a className="button is-primary" href="/suche">
-            Mehr Veröffentlichungen ansehen
+            Mehr Veröffentlichungen
           </a>
         </Link>
       </div>

@@ -244,13 +244,13 @@ class IndexPage extends React.Component {
 
         <div className="section section-process">
           <div className="container content is-normal">
-            <div className="columns is-mobile">
+            <div className="columns is-tablet">
               <div className="column is-full">
                 <h2>Wie tritt ein Gesetz in Kraft?</h2>
               </div>
             </div>
 
-            <div className="columns is-mobile">
+            <div className="columns is-tablet">
               <div className="column is-half">
                 <h3>1. Gesetzgebungs&shy;initiative</h3>
               </div>
@@ -259,7 +259,7 @@ class IndexPage extends React.Component {
                 eine Initiative für ein neues Gesetz.
               </div>
             </div>
-            <div className="columns is-mobile">
+            <div className="columns is-tablet">
               <div className="column is-half">
                 <h3>2. Beratung und Zustimmung</h3>
               </div>
@@ -268,7 +268,7 @@ class IndexPage extends React.Component {
                 und verabschieden ihn, meist mit Änderungen.
               </div>
             </div>
-            <div className="columns is-mobile">
+            <div className="columns is-tablet">
               <div className="column is-half">
                 <h3>3. Gegen&shy;zeichnung</h3>
               </div>
@@ -276,7 +276,7 @@ class IndexPage extends React.Component {
                 Die Bundesregierung zeichnet den Gesetzentwurf gegen.
               </div>
             </div>
-            <div className="columns is-mobile">
+            <div className="columns is-tablet">
               <div className="column is-half">
                 <h3>4. Ausfertigung</h3>
               </div>
@@ -284,7 +284,7 @@ class IndexPage extends React.Component {
                 Der Bundespräsident fertigt das Gesetz aus und unterzeichnet es.
               </div>
             </div>
-            <div className="columns is-mobile">
+            <div className="columns is-tablet">
               <div className="column is-half">
                 <h3>5. Verkündung</h3>
               </div>
@@ -309,7 +309,7 @@ class IndexPage extends React.Component {
                 href="/veroeffentlichung#bedeutende"
                 className="button is-primary"
               >
-                Mehr beudeutende Veröffentlichungen ansehen
+                Mehr beudeutende Veröffentlichungen
               </a>
             </Link>
           </div>
