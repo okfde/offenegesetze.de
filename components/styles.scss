@@ -323,3 +323,8 @@ em {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
+
+// make form fields wrap if needed
+.field.is-grouped {
+  flex-wrap: wrap;
+}
