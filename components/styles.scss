@@ -25,6 +25,7 @@ $navbar-breakpoint: $tablet !default;
 
 @import '~bulma/sass/components/navbar.sass';
 @import '~bulma/sass/components/card.sass';
+@import '~bulma/sass/components/menu.sass';
 
 @import '~bulma/sass/layout/_all.sass';
 
@@ -44,7 +45,7 @@ $navbar-breakpoint: $tablet !default;
     min-height: 3.25rem;
     width: 100%;
     margin: 0 auto;
-    padding: 0 $gap*0.25;
+    padding: 0 $gap * 0.25;
   }
 }
 
@@ -101,7 +102,8 @@ a.highlight {
   border: 1px solid $secondary;
 }
 
-a, button {
+a,
+button {
   &.is-primary:active,
   &.is-primary:hover {
     filter: brightness(110%);
