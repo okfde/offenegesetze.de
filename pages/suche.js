@@ -253,7 +253,11 @@ class Search extends React.Component {
           }
         >
           {(items || initialItems).map(x => (
-            <ul style={{ paddingBottom: '2rem' }} key={x.id}>
+            <ul
+              className="no-margin"
+              style={{ paddingBottom: '2rem' }}
+              key={x.id}
+            >
               <ListItem item={x} q={query} />
             </ul>
           ))}
