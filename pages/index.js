@@ -193,7 +193,7 @@ class IndexPage extends React.Component {
 
             <div className="columns is-mobile">
               <div className="column is-half">
-                <h3>1. Gesetzgebungsinitiative</h3>
+                <h3>1. Gesetzgebungs&shy;initiative</h3>
               </div>
               <div className="column is-half">
                 Die Bundesregierung, der Bundestag oder der Bundesrat starten
@@ -211,7 +211,7 @@ class IndexPage extends React.Component {
             </div>
             <div className="columns is-mobile">
               <div className="column is-half">
-                <h3>3. Gegenzeichnung</h3>
+                <h3>3. Gegen&shy;zeichnung</h3>
               </div>
               <div className="column is-half">
                 Die Bundesregierung zeichnet den Gesetzentwurf gegen.
@@ -250,7 +250,7 @@ class IndexPage extends React.Component {
                 href="/veroeffentlichung#bedeutende"
                 className="button is-primary"
               >
-                Mehr bedeutende Veröffentlichungen ansehen
+                Mehr Veröffentlichungen ansehen
               </a>
             </Link>
           </div>
