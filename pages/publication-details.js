@@ -69,7 +69,7 @@ class Publication extends React.Component {
         title={`${KINDS[kind].name}: Nr. ${number} (${year})`}
       >
         <div className="content columns" style={{ padding: '1rem 0' }}>
-          <div className="column is-offset-1-mobile is-10-mobile is-half-desktop is-offset-one-quarter-desktop is-three-fifths-tablet is-offset-one-fifth-tablet">
+          <div className="column is-offset-1-mobile is-12-mobile is-half-desktop is-offset-one-quarter-desktop is-three-fifths-tablet is-offset-one-fifth-tablet">
             <h1 className="title is-2">
               {KINDS[kind].name}: Nr. {number} ({year})
             </h1>
