@@ -20,16 +20,16 @@ class PublicationIndex extends React.Component {
           <h1 className="title">Veröffentlichungen</h1>
           <h2 className="is-2">Das Bundesgesetzblatt</h2>
           <p>
-            Das Bundesgesetzblatt besteht aus zwei Teilen. In Teil I werden Rechtsvorschriften
-            wie Gesetze und Verordnungen veröffentlicht. Teil II enthält völkerrechtliche 
-            und andere internationale Abkommen. Neue Ausgaben des Gesetzblatts erscheinen 
-            durchschnittlich ein bis zweimal wöchentlich und werden pro Jahr fortlaufend nummeriert. 
-            Jede Ausgabe enthält mehrere Veröffentlichungen.
+            Das Bundesgesetzblatt besteht aus zwei Teilen. In Teil I werden
+            Rechtsvorschriften wie Gesetze und Verordnungen veröffentlicht. Teil
+            II enthält völkerrechtliche und andere internationale Abkommen. Neue
+            Ausgaben des Gesetzblatts erscheinen durchschnittlich ein bis
+            zweimal wöchentlich und werden pro Jahr fortlaufend nummeriert. Jede
+            Ausgabe enthält mehrere Veröffentlichungen.
           </p>
-
+          <br />
           <div>
             <h2>Art</h2>
-            {/* <div className="buttons has-addons"> */}
             <span
               style={{ margin: '.5rem' }}
               className={
@@ -48,8 +48,8 @@ class PublicationIndex extends React.Component {
             >
               BGBl. Teil II
             </span>
-            {/* </div> */}
           </div>
+          <br />
 
           <div>
             <h2>Jahr</h2>
@@ -71,6 +71,7 @@ class PublicationIndex extends React.Component {
                 </button>
               ))}
           </div>
+          <br />
 
           <div>
             <h2>Nummer</h2>
@@ -86,7 +87,10 @@ class PublicationIndex extends React.Component {
                       .max_number
                   ).keys(),
                 ].map(x => (
-                  <Link href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`} key={x}>
+                  <Link
+                    href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}
+                    key={x}
+                  >
                     <a
                       href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}
                       className="button"
@@ -101,6 +105,7 @@ class PublicationIndex extends React.Component {
           <h2 id="bedeutende" name="bedeutende">
             Bedeutende Gesetze
           </h2>
+          <br />
           <Substantials />
         </div>
       </BaseContent>
