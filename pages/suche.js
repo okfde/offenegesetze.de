@@ -293,7 +293,9 @@ Search.getInitialProps = async ({ query }) => {
   let paramsStringBase = '';
   const params = {};
 
-  if (q !== null) params.q = q;
+  if (q) {
+    params.q = q;
+  }
 
   if (kind) {
     if (Array.isArray(kind)) {
