@@ -63,9 +63,34 @@ class Nav extends React.Component {
                   Veröffentlichungen
                 </a>
               </Link>
+              <Link prefetch href="/faq">
+                <a className="navbar-item is-hidden-tablet	" href="/faq">
+                  FAQ
+                </a>
+              </Link>
               <Link prefetch href="/kontakt">
                 <a className="navbar-item" href="/kontakt">
                   Kontakt
+                </a>
+              </Link>
+              <Link prefetch href="/datenschutz">
+                <a className="navbar-item is-hidden-tablet	" href="/datenschutz">
+                  Datenschutz
+                </a>
+              </Link>
+              <Link prefetch href="/daten">
+                <a className="navbar-item is-hidden-tablet	" href="/daten">
+                  Download & API
+                </a>
+              </Link>
+              <Link prefetch href="/feeds">
+                <a className="navbar-item is-hidden-tablet	" href="/feeds">
+                  RSS-Feeds
+                </a>
+              </Link>
+              <Link prefetch href="/presse">
+                <a className="navbar-item is-hidden-tablet	" href="/presse">
+                  Presse
                 </a>
               </Link>
             </div>
