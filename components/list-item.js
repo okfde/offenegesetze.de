@@ -40,8 +40,10 @@ const ListItem = ({ item, q }) => {
         </small>
       </p>
       {results &&
-        results.map(x => (
-          <div key={x}>
+        results.map((x, i) => (
+          // there is no ohter way because it sometimes contains duplicates
+          // eslint-disable-next-line react/no-array-index-key
+          <div key={i}>
             <small
               className="content"
               dangerouslySetInnerHTML={{ __html: x }}
