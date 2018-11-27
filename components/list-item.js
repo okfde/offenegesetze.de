@@ -29,8 +29,8 @@ const ListItem = ({ item, q }) => {
   }
   return (
     <div className="box" key={number + year + kind}>
-      <Link href={`${url}${q ? `?q=${q}` : ''}#page=${pdfPage}`}>
-        <a href={`${url}${q ? `?q=${q}` : ''}#page=${pdfPage}`}>
+      <Link href={`${url}${q ? `?q=${q}` : ''}`}>
+        <a href={`${url}${q ? `?q=${q}` : ''}`}>
           <h5>{title}</h5>
         </a>
       </Link>
