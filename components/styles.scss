@@ -89,6 +89,10 @@ a.highlight {
   background-color: $primary !important;
 }
 
+.is-primary-color {
+  color: $primary !important;
+}
+
 .input-range__track--active {
   background-color: $secondary !important;
 }
