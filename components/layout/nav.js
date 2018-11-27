@@ -20,7 +20,12 @@ class Nav extends React.Component {
           <div className="navbar-brand">
             <Link prefetch href="/">
               <a className="navbar-item" href="/">
-                <span style={{ marginRight: '0.5rem' }}>⚖️</span>{' '}
+                <img
+                  src="/static/logo_small.jpg"
+                  width="28"
+                  height="28"
+                  style={{ marginRight: '0.5rem' }}
+                />
                 <b>OffeneGesetze.de</b>
               </a>
             </Link>
