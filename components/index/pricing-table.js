@@ -16,6 +16,13 @@ const comparison = [
     ogLabel: 'Ja',
   },
   {
+    title: 'Text in älteren Ausgaben',
+    bgblIcon: 'fa-times-circle',
+    bgblLabel: 'Nein',
+    ogIcon: 'fa-check',
+    ogLabel: 'Ja',
+  },
+  {
     title: 'Gesamt-Download',
     bgblIcon: 'fa-times-circle',
     bgblLabel: 'Nein',
