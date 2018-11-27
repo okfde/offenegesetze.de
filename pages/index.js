@@ -310,7 +310,7 @@ class IndexPage extends React.Component {
                 href="/veroeffentlichung#bedeutende"
                 className="button is-primary"
               >
-                Mehr beudeutende Veröffentlichungen
+                Mehr bedeutende Veröffentlichungen
               </a>
             </Link>
           </div>
