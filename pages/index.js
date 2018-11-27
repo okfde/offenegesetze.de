@@ -121,7 +121,7 @@ class IndexPage extends React.Component {
         <div className="section section-action">
           <div className="container">
             <div className="columns is-desktop content is-medium">
-              <div className="column" id="#mehr">
+              <div className="column" id="mehr">
                 <p>
                   Im Jahr 2006 wurde der staatliche Bundesanzeiger Verlag
                   privatisiert. In einem umstrittenen Verfahren sicherte sich

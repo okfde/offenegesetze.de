@@ -255,3 +255,12 @@ em {
     background: white;
   }
 }
+
+#mehr {
+  a {
+    &:hover,
+    &:active {
+      color: white;
+    }
+  }
+}
