@@ -11,11 +11,12 @@ const YearRangeFacet = ({
   max,
   onChange,
   onChangeComplete,
-  beforeBars,
-  afterBars,
-  bars,
+  facet,
   containerStyle,
 }) => {
+  const bars = facet.filter(x => x.year >= min && x.year <= max);
+  const beforeBars = facet.filter(x => x.year < min);
+  const afterBars = facet.filter(x => x.year > max);
   const maxValue = Math.max(
     ...[...bars, ...beforeBars, ...afterBars].map(x => x.count)
   );
@@ -69,8 +70,8 @@ const YearRangeFacet = ({
       <br />
 
       <InputRange
-        maxValue={Math.max(MAX_YEAR, parseInt(max))}
-        minValue={Math.min(MIN_YEAR, parseInt(min))}
+        maxValue={Math.max(MAX_YEAR, max)}
+        minValue={Math.min(MIN_YEAR, min)}
         value={value}
         onChange={onChange}
         onChangeComplete={onChangeComplete}
@@ -78,11 +79,6 @@ const YearRangeFacet = ({
       />
     </div>
   );
-};
-
-YearRangeFacet.defaultProps = {
-  beforeBars: [],
-  afterBars: [],
 };
 
 export default YearRangeFacet;

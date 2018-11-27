@@ -136,9 +136,7 @@ class Search extends React.Component {
             value={dateRange}
             min={firstYear}
             max={lastYear}
-            bars={facets != null ? facets.date : []}
-            beforeBars={facets != null ? facets.beforeDate : []}
-            afterBars={facets != null ? facets.afterDate : []}
+            facet={facets.date}
             onChange={this._onDateRangeChange}
             onChangeComplete={this._onDateRangeChangeFinal}
             containerStyle={{ marginBottom: '1rem' }}
@@ -275,9 +273,9 @@ const splitFromTo = year => {
 const addMissingValues = (array, from, to) => {
   const years = array.map(x => x.year);
   const res = array;
-  let year = parseInt(from, 10);
+  let year = from;
 
-  while (year <= parseInt(to, 10)) {
+  while (year <= to) {
     if (!years.includes(year)) {
       res.push({ year, count: 0 });
     }
@@ -309,10 +307,10 @@ Search.getInitialProps = async ({ query }) => {
     params.year = year;
   }
 
-  let paramsString =
+  const paramsString =
     paramsStringBase +
     Object.keys(params)
-      .map(x => `&${x}=${params[x]}`)
+      .map(x => `&${x}=${encodeURIComponent(params[x])}`)
       .join('');
 
   const res = await fetch(
@@ -320,81 +318,14 @@ Search.getInitialProps = async ({ query }) => {
   );
   const { results: initialItems, count, next, facets } = await res.json();
 
-  // ugly code start
   const [from, to] = splitFromTo(params.year);
 
-  if (from != null && from !== MIN_YEAR) {
-    const fromFixed = Math.max(parseInt(from, 10) - 1, MIN_YEAR);
-    params.year = `-${fromFixed}`;
+  facets.date = facets.date.map(x => ({
+    year: parseInt(x.value.split('-')[0], 10),
+    ...x,
+  }));
 
-    paramsString =
-      paramsStringBase +
-      Object.keys(params)
-        .map(x => `&${x}=${params[x]}`)
-        .join('');
-    const res2 = await fetch(
-      `https://api.offenegesetze.de/v1/veroeffentlichung/?limit=10${paramsString}`
-    );
-
-    const jsres = await res2.json();
-    if ('facets' in jsres) {
-      const {
-        facets: { date: beforeDate },
-      } = jsres;
-      facets.beforeDate = beforeDate;
-      facets.beforeDate.forEach(x => {
-        x.year = parseInt(x.value.split('-')[0], 10);
-      });
-      facets.beforeDate = addMissingValues(
-        facets.beforeDate,
-        MIN_YEAR,
-        fromFixed
-      );
-    } else {
-      facets.beforeDate = addMissingValues([], MIN_YEAR, fromFixed);
-    }
-  }
-
-  if (to != null && to !== MAX_YEAR) {
-    const toFixed = Math.min(parseInt(to, 10) + 1, MAX_YEAR);
-    params.year = `${toFixed}-`;
-
-    paramsString =
-      paramsStringBase +
-      Object.keys(params)
-        .map(x => `&${x}=${params[x]}`)
-        .join('');
-
-    const res3 = await fetch(
-      `https://api.offenegesetze.de/v1/veroeffentlichung/?limit=10${paramsString}`
-    );
-
-    const jsres = await res3.json();
-    if ('facets' in jsres) {
-      const {
-        facets: { date: afterDate },
-      } = jsres;
-
-      facets.afterDate = afterDate;
-      facets.afterDate.forEach(x => {
-        x.year = parseInt(x.value.split('-')[0], 10);
-      });
-      facets.afterDate = addMissingValues(facets.afterDate, toFixed, MAX_YEAR);
-    } else {
-      facets.afterDate = addMissingValues([], toFixed, MAX_YEAR);
-    }
-  }
-
-  // ugly code end
-
-  facets.date.forEach(x => {
-    x.year = parseInt(x.value.split('-')[0], 10);
-  });
-
-  facets.date = addMissingValues(facets.date, from || MIN_YEAR, to || MAX_YEAR);
-
-  const firstYear = from || MIN_YEAR;
-  const lastYear = to || MAX_YEAR;
+  facets.date = addMissingValues(facets.date, from, to);
 
   return {
     initialItems,
@@ -402,8 +333,8 @@ Search.getInitialProps = async ({ query }) => {
     next,
     query: q,
     facets,
-    firstYear,
-    lastYear,
+    firstYear: from,
+    lastYear: to,
     kind,
   };
 };
