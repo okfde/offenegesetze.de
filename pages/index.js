@@ -106,8 +106,9 @@ class IndexPage extends React.Component {
             <div className="columns is-desktop content is-medium">
               <div className="column">
                 <h3 style={{ color: 'white' }}>
-                  Alle Gesetzesblätter auf einer Website.<br />Kostenlos,
-                  digital, offen.
+                  Alle Gesetzesblätter auf einer Website.
+                  <br />
+                  Kostenlos, digital, offen.
                 </h3>
               </div>
               <div className="column">
@@ -177,7 +178,8 @@ class IndexPage extends React.Component {
                     des Bundes mit dem privatem Verlag{' '}
                     <a href="https://fragdenstaat.de/anfrage/vereinbarungen-mit-bundesanzeiger-verlag/">
                       hält das zuständige Justizministerium
-                    </a>. Den Kooperationsvertrag zur Herausgabe des
+                    </a>
+                    . Den Kooperationsvertrag zur Herausgabe des
                     Bundesgesetzblatts schwärzte das Ministerium auf Betreiben
                     des Verlags.
                   </p>

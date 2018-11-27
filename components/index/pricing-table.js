@@ -81,7 +81,8 @@ const PricingTable = () => (
         <tr>
           <th />
           <th>
-            „Kostenloser Bürgerzugang“<br />
+            „Kostenloser Bürgerzugang“
+            <br />
             des Bundes&shy;anzeiger Verlags
           </th>
           <th>Offene&shy;Gesetze.de</th>

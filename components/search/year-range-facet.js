@@ -13,7 +13,7 @@ const YearRangeFacet = ({
   onChangeComplete,
   facet,
   containerStyle,
-  setYear
+  setYear,
 }) => {
   const bars = facet.filter(x => x.year >= min && x.year <= max);
   const beforeBars = facet.filter(x => x.year < min);

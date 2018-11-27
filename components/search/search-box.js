@@ -117,9 +117,7 @@ class SearchBox extends React.Component {
               <div
                 key={`${item.id}_${highlighted}`}
                 style={{
-                  backgroundColor: highlighted
-                    ? PRIMARY_COLOR
-                    : 'transparent',
+                  backgroundColor: highlighted ? PRIMARY_COLOR : 'transparent',
                 }}
               >
                 {item.label}

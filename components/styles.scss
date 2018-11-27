@@ -1,9 +1,9 @@
 @charset "utf-8";
 
-$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free/scss/solid.scss";
-@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
 
 $bgbl-1: #00d1b2;
 $bgbl-2: #1ba0ab;
@@ -16,27 +16,26 @@ $secondary: $bgbl-2;
 // $link: $pink;
 
 // Import only what you need from Bulma
-@import "~bulma/sass/utilities/_all.sass";
-
+@import '~bulma/sass/utilities/_all.sass';
 
 $navbar-breakpoint: $tablet !default;
 
-@import "~bulma/sass/base/_all.sass";
-@import "~bulma/sass/grid/columns.sass";
+@import '~bulma/sass/base/_all.sass';
+@import '~bulma/sass/grid/columns.sass';
 
-@import "~bulma/sass/components/navbar.sass";
-@import "~bulma/sass/components/card.sass";
+@import '~bulma/sass/components/navbar.sass';
+@import '~bulma/sass/components/card.sass';
 
-@import "~bulma/sass/layout/_all.sass";
+@import '~bulma/sass/layout/_all.sass';
 
-@import "~bulma/sass/elements/button.sass";
-@import "~bulma/sass/elements/container.sass";
-@import "~bulma/sass/elements/form.sass";
-@import "~bulma/sass/elements/title.sass";
-@import "~bulma/sass/elements/table.sass";
-@import "~bulma/sass/elements/content.sass";
-@import "~bulma/sass/elements/box.sass";
-@import "~bulma/sass/elements/icon.sass";
+@import '~bulma/sass/elements/button.sass';
+@import '~bulma/sass/elements/container.sass';
+@import '~bulma/sass/elements/form.sass';
+@import '~bulma/sass/elements/title.sass';
+@import '~bulma/sass/elements/table.sass';
+@import '~bulma/sass/elements/content.sass';
+@import '~bulma/sass/elements/box.sass';
+@import '~bulma/sass/elements/icon.sass';
 
 @media screen and (min-width: $tablet) {
   .navbar > .container {

@@ -84,10 +84,12 @@ const Footer = () => (
           der Seitennutzung zu erhalten. Wenn Sie dies nicht wollen,{' '}
           <a href="https://traffic.okfn.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=de">
             klicken Sie bitte hier und entfernen Sie den Haken
-          </a>. Näheres in{' '}
+          </a>
+          . Näheres in{' '}
           <Link href="/datenschutz">
             <a href="/datenschutz">unseren Datenschutzerklärungen</a>
-          </Link>.
+          </Link>
+          .
         </p>
       </div>
     </div>
