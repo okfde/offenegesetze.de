@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 
-import '@fortawesome/fontawesome-free/css/all.css';
 import SearchBox from '../search/search-box';
 
 class Nav extends React.Component {
@@ -50,7 +49,9 @@ class Nav extends React.Component {
             >
               {!hideSearch && (
                 <div className="navbar-item is-expanded">
-                  <SearchBox />
+                  <form action="/suche" style={{ width: '100%' }}>
+                    <SearchBox />
+                  </form>
                 </div>
               )}
               {navItems}
@@ -63,7 +64,7 @@ class Nav extends React.Component {
                 </a>
               </Link>
               <Link prefetch href="/kontakt">
-                <a className="navbar-item is-hidden-desktop	" href="/kontakt">
+                <a className="navbar-item" href="/kontakt">
                   Kontakt
                 </a>
               </Link>

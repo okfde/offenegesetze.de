@@ -1,8 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 
-import '@fortawesome/fontawesome-free/css/all.css';
-
 const Footer = () => (
   <footer className="footer" style={{ minHeight: '50vh' }}>
     <div className="container">

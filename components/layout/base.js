@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Footer from './footer';
 import Nav from './nav';
 
-import '../styles.css';
+import '../styles.scss';
 
 const Base = ({ title, navItems, children, hideSearch, hideFooter }) => (
   <div>

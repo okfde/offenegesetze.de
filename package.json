@@ -22,6 +22,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.5.0",
     "@zeit/next-css": "^1.0.0",
+    "@zeit/next-sass": "^1.0.1",
     "bulma": "^0.7.2",
     "dayjs": "^1.7.7",
     "express": "^4.16.4",
@@ -30,6 +31,7 @@
     "next": "^7.0.2",
     "next-fonts": "^0.10.0",
     "next-images": "^0.10.6",
+    "node-sass": "^4.10.0",
     "react": "^16.6.3",
     "react-animate-on-change": "^2.1.1",
     "react-autocomplete": "^1.8.1",
