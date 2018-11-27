@@ -45,16 +45,16 @@ class Search extends React.Component {
       );
   };
 
-  _onSelect = event => {
+  _onKindSelect = event => {
     const { kind, firstYear, lastYear } = this.props;
-    const { name } = event.target;
+    const { value } = event.target;
 
     let arr = [];
     if (kind) {
       if (Array.isArray(kind)) {
-        if (kind.includes(name)) {
+        if (kind.includes(value)) {
           // remove
-          arr = kind.filter(x => x !== name);
+          arr = kind.filter(x => x !== value);
         } else {
           // add
           arr.push(kind);
@@ -62,13 +62,13 @@ class Search extends React.Component {
       } else {
         // remove
         arr = [];
-        if (name !== kind) {
+        if (value !== kind) {
           // add
-          arr = [name, kind];
+          arr = [value, kind];
         }
       }
     } else {
-      arr = [name];
+      arr = [value];
     }
 
     this._updateFilters(arr, `${firstYear}-${lastYear}`);
@@ -118,102 +118,106 @@ class Search extends React.Component {
     return (
       <BaseContent hideSearch hideFooter>
         <h1 className="title is-2">In Veröffentlichungen suchen</h1>
-        <SearchBox q={query} />
-        <br />
-        <div>
-          <small>
-            {count > 1 &&
-              `Insgesamt gibt es ${thousandSep(
-                count
-              )} Ergebnisse. Suche nach Veröffentlichungsjahr einschränken:`}
-            {count === 1 && `Es gibt ein Ergebnis`}
-            {count === 0 && 'Zu der Suche gibt es keine Treffer.'}
-          </small>
-        </div>
-        <br />
-        {count > 1 && (
-          <YearRangeFacet
-            value={dateRange}
-            min={firstYear}
-            max={lastYear}
-            facet={facets.date}
-            onChange={this._onDateRangeChange}
-            onChangeComplete={this._onDateRangeChangeFinal}
-            containerStyle={{ marginBottom: '1rem' }}
-          />
-        )}
-        <br />
-        {count > 1 && (
-          <div>
-            <small>Auf ein Jahr beschränken</small>
-            <div className="select is-small" style={{ paddingLeft: '1rem' }}>
-              <select
-                value={dateRange.min === dateRange.max ? dateRange.min : ''}
-                onChange={event =>
-                  this._onDateRangeChangeFinal({
-                    min: parseInt(event.target.value),
-                    max: parseInt(event.target.value),
-                  })
-                }
-              >
-                <option value="" />
-                {Array.from(
-                  { length: MAX_YEAR - MIN_YEAR },
-                  (_, i) => MAX_YEAR - i
-                ).map(x => (
-                  <option value={x} key={x}>
-                    {x}
-                  </option>
-                ))}
-              </select>
-            </div>
-            {dateRange.min === dateRange.max && (
-              <button
-                type="reset"
-                className="button is-small"
-                style={{ marginLeft: '1rem' }}
-                onClick={x => {
-                  this._onDateRangeChangeFinal({ min: null, max: null });
-                }}
-              >
-                <span className="icon is-small">
-                  <i className="fas fa-times" />
-                </span>
-              </button>
-            )}
-          </div>
-        )}
-
-        <br />
-        {count > 1 && (
+        <form action="/suche" style={{ width: '100%' }}>
+          <SearchBox q={query} />
+          <br />
           <div>
             <small>
-              Suche nach Art einschränken.{' '}
-              <a href="https://de.wikipedia.org/wiki/Bundesgesetzblatt_(Deutschland)#Teil_I">
-                Mehr Infos zu den Unterschieden
-              </a>:
+              {count > 1 &&
+                `Insgesamt gibt es ${thousandSep(
+                  count
+                )} Ergebnisse. Suche nach Veröffentlichungsjahr einschränken:`}
+              {count === 1 && `Es gibt ein Ergebnis`}
+              {count === 0 && 'Zu der Suche gibt es keine Treffer.'}
             </small>
           </div>
-        )}
-        {count > 1 && (
-          <div className="field is-grouped" style={{ margin: '1rem 0' }}>
-            {facets != null &&
-              facets.kind.map(x => (
-                <p className="control" key={x.value}>
-                  <label>
-                    <input
-                      name={x.value}
-                      type="checkbox"
-                      checked={x.selected}
-                      onChange={this._onSelect}
-                    />
-                    {` ${KINDS[x.value].name}`}
-                    <small> ({thousandSep(x.count)})</small>
-                  </label>
-                </p>
-              ))}
-          </div>
-        )}
+          <br />
+          {count > 1 && (
+            <YearRangeFacet
+              value={dateRange}
+              min={firstYear}
+              max={lastYear}
+              facet={facets.date}
+              setYear={this.setYear}
+              onChange={this._onDateRangeChange}
+              onChangeComplete={this._onDateRangeChangeFinal}
+              containerStyle={{ marginBottom: '1rem' }}
+            />
+          )}
+          <br />
+          {count > 1 && (
+            <div>
+              <small>Auf ein Jahr beschränken</small>
+              <div className="select is-small" style={{ paddingLeft: '1rem' }}>
+                <select
+                  value={dateRange.min === dateRange.max ? dateRange.min : ''}
+                  onChange={event =>
+                    this._onDateRangeChangeFinal({
+                      min: parseInt(event.target.value),
+                      max: parseInt(event.target.value),
+                    })
+                  }
+                >
+                  <option value="" />
+                  {Array.from(
+                    { length: MAX_YEAR - MIN_YEAR },
+                    (_, i) => MAX_YEAR - i
+                  ).map(x => (
+                    <option value={x} key={x}>
+                      {x}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {dateRange.min === dateRange.max && (
+                <button
+                  type="reset"
+                  className="button is-small"
+                  style={{ marginLeft: '1rem' }}
+                  onClick={x => {
+                    this._onDateRangeChangeFinal({ min: null, max: null });
+                  }}
+                >
+                  <span className="icon is-small">
+                    <i className="fas fa-times" />
+                  </span>
+                </button>
+              )}
+            </div>
+          )}
+
+          <br />
+          {count > 1 && (
+            <div>
+              <small>
+                Suche nach Art einschränken.{' '}
+                <a href="https://de.wikipedia.org/wiki/Bundesgesetzblatt_(Deutschland)#Teil_I">
+                  Mehr Infos zu den Unterschieden
+                </a>:
+              </small>
+            </div>
+          )}
+          {count > 1 && (
+            <div className="field is-grouped" style={{ margin: '1rem 0' }}>
+              {facets != null &&
+                facets.kind.map(x => (
+                  <p className="control" key={x.value}>
+                    <label>
+                      <input
+                        name="kind"
+                        value={x.value}
+                        type="checkbox"
+                        checked={x.selected}
+                        onChange={this._onKindSelect}
+                      />
+                      {` ${KINDS[x.value].name}`}
+                      <small> ({thousandSep(x.count)})</small>
+                    </label>
+                  </p>
+                ))}
+            </div>
+          )}
+        </form>
 
         {query != null &&
           query !== '' && (

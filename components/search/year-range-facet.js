@@ -22,14 +22,18 @@ const YearRangeFacet = ({
   );
   return (
     <div style={containerStyle}>
+      <input type="hidden" name="year" value={`${min}-${max}`} />
       <div style={{ display: 'flex', alignItems: 'flex-end' }}>
         {beforeBars.map(x => (
-          <div
+          <a
             key={x.year}
             title={`${x.year}: ${x.count}`}
+            href={`/suche?year=${x.year}`}
+            onClick={setYear(x.year)}
             style={{
               height: `${(x.count / maxValue) * 50}px`,
-              backgroundColor: '#aaaaaa',
+              backgroundColor:
+                x.year > value.min ? PRIMARY_COLOR_DARK : '#aaaaaa',
               width: 1,
               flexGrow: 1,
               transition: 'background-color 500ms linear',

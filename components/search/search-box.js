@@ -104,60 +104,58 @@ class SearchBox extends React.Component {
     }
 
     return (
-      <form action="/suche" style={{ width: '100%' }}>
-        <div className="field has-addons">
-          <div className="control is-expanded">
-            <ReactAutocomplete
-              items={items}
-              shouldItemRender={(item, value) =>
-                item.label.toLowerCase().indexOf(value.toLowerCase()) > -1 ||
-                item.hasOwnProperty('special')
-              }
-              getItemValue={item => item.label}
-              renderItem={(item, highlighted) => (
-                <div
-                  key={`${item.id}_${highlighted}`}
-                  style={{
-                    backgroundColor: highlighted
-                      ? PRIMARY_COLOR
-                      : 'transparent',
-                  }}
-                >
-                  {item.label}
-                </div>
-              )}
-              value={this.state.value}
-              onChange={this._onChange}
-              onSelect={this._onSelect}
-              inputProps={{
-                name: 'q',
-                className: 'input',
-                type: 'text',
-                placeholder:
-                  'Suche in über 8000 Veröffentlichungen. Zum Beispiel "Asyl", "Münzen" oder "27. Februar 2007 (BGBl. I S. 221)"',
-              }}
-              wrapperStyle={{ display: 'inline' }}
-              menuStyle={{
-                borderRadius: '3px',
-                boxShadow: '0 2px 12px rgba(0, 0, 0, 0.05)',
-                background: 'rgba(255, 255, 255, 0.98)',
-                padding: '5px',
-                fontSize: '90%',
-                position: 'fixed',
-                overflow: 'auto',
-                maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
-              }}
-            />
-          </div>
-          <div className="control">
-            <button type="submit" className="button is-primary">
-              <span className="icon is-small">
-                <i className="fas fa-search" />
-              </span>
-            </button>
-          </div>
+      <div className="field has-addons">
+        <div className="control is-expanded">
+          <ReactAutocomplete
+            items={items}
+            shouldItemRender={(item, value) =>
+              item.label.toLowerCase().indexOf(value.toLowerCase()) > -1 ||
+              item.hasOwnProperty('special')
+            }
+            getItemValue={item => item.label}
+            renderItem={(item, highlighted) => (
+              <div
+                key={`${item.id}_${highlighted}`}
+                style={{
+                  backgroundColor: highlighted
+                    ? PRIMARY_COLOR
+                    : 'transparent',
+                }}
+              >
+                {item.label}
+              </div>
+            )}
+            value={this.state.value}
+            onChange={this._onChange}
+            onSelect={this._onSelect}
+            inputProps={{
+              name: 'q',
+              className: 'input',
+              type: 'text',
+              placeholder:
+                'Suche nach "Asyl", "Münzen" oder "27. Februar 2007 (BGBl. I S. 221)"',
+            }}
+            wrapperStyle={{ display: 'inline' }}
+            menuStyle={{
+              borderRadius: '3px',
+              boxShadow: '0 2px 12px rgba(0, 0, 0, 0.05)',
+              background: 'rgba(255, 255, 255, 0.98)',
+              padding: '5px',
+              fontSize: '90%',
+              position: 'fixed',
+              overflow: 'auto',
+              maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
+            }}
+          />
         </div>
-      </form>
+        <div className="control">
+          <button type="submit" className="button is-primary">
+            <span className="icon is-small">
+              <i className="fas fa-search" />
+            </span>
+          </button>
+        </div>
+      </div>
     );
   }
 }
