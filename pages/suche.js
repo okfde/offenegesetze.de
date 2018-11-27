@@ -327,6 +327,8 @@ Search.getInitialProps = async ({ query }) => {
 
   facets.date = addMissingValues(facets.date, from, to);
 
+  facets.kind = facets.kind.sort((a, b) => (a.value < b.value ? -1 : 1));
+
   return {
     initialItems,
     count,
