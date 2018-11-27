@@ -16,98 +16,96 @@ class PublicationIndex extends React.Component {
 
     return (
       <BaseContent title="Veröffentlichungen">
-        <div className="section">
-          <h1 className="title">Veröffentlichungen</h1>
-          <h2 className="is-2">Das Bundesgesetzblatt</h2>
-          <p>
-            Das Bundesgesetzblatt besteht aus zwei Teilen. In Teil I werden
-            Rechtsvorschriften wie Gesetze und Verordnungen veröffentlicht. Teil
-            II enthält völkerrechtliche und andere internationale Abkommen. Neue
-            Ausgaben des Gesetzblatts erscheinen durchschnittlich ein bis
-            zweimal wöchentlich und werden pro Jahr fortlaufend nummeriert. Jede
-            Ausgabe enthält mehrere Veröffentlichungen.
-          </p>
-          <br />
-          <div>
-            <h2>Art</h2>
-            <span
-              style={{ margin: '.5rem' }}
-              className={
-                bgbl === 'bgbl1' ? 'button is-primary is-selected' : 'button'
-              }
-              onClick={() => this.setState({ bgbl: 'bgbl1' })}
-            >
-              BGBl. Teil I
-            </span>
-            <span
-              style={{ margin: '.5rem' }}
-              onClick={() => this.setState({ bgbl: 'bgbl2' })}
-              className={
-                bgbl === 'bgbl2' ? 'button is-primary is-selected' : 'button'
-              }
-            >
-              BGBl. Teil II
-            </span>
-          </div>
-          <br />
-
-          <div>
-            <h2>Jahr</h2>
-
-            {items
-              .filter(x => x.kind === bgbl)
-              .sort((x, y) => x.year - y.year)
-              .reverse()
-              .map(x => (
-                <button
-                  key={x.year}
-                  onClick={() => this.setState({ year: x.year })}
-                  className={
-                    year === x.year ? 'button is-primary is-selected' : 'button'
-                  }
-                  style={{ width: '4rem', margin: '.5rem' }}
-                >
-                  {x.year}
-                </button>
-              ))}
-          </div>
-          <br />
-
-          <div>
-            <h2>Nummer</h2>
-            <AnimateOnChange
-              baseClassName="year"
-              animationClassName="year-bounce"
-              animate={year}
-            >
-              {items.length &&
-                [
-                  ...Array(
-                    items.filter(x => x.kind === bgbl && x.year === year)[0]
-                      .max_number
-                  ).keys(),
-                ].map(x => (
-                  <Link
-                    href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}
-                    key={x}
-                  >
-                    <a
-                      href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}
-                      className="button"
-                      style={{ width: '4rem', margin: '.5rem' }}
-                    >
-                      {x + 1}
-                    </a>
-                  </Link>
-                ))}
-            </AnimateOnChange>
-          </div>
-          <h2 id="bedeutende" name="bedeutende">
-            Bedeutende Gesetze
-          </h2>
-          <br />
-          <Substantials />
+        <h1 className="title">Veröffentlichungen</h1>
+        <h2 className="is-2">Das Bundesgesetzblatt</h2>
+        <p>
+          Das Bundesgesetzblatt besteht aus zwei Teilen. In Teil I werden
+          Rechtsvorschriften wie Gesetze und Verordnungen veröffentlicht. Teil
+          II enthält völkerrechtliche und andere internationale Abkommen. Neue
+          Ausgaben des Gesetzblatts erscheinen durchschnittlich ein bis zweimal
+          wöchentlich und werden pro Jahr fortlaufend nummeriert. Jede Ausgabe
+          enthält mehrere Veröffentlichungen.
+        </p>
+        <br />
+        <div>
+          <h2>Art</h2>
+          <span
+            style={{ margin: '.5rem' }}
+            className={
+              bgbl === 'bgbl1' ? 'button is-primary is-selected' : 'button'
+            }
+            onClick={() => this.setState({ bgbl: 'bgbl1' })}
+          >
+            BGBl. Teil I
+          </span>
+          <span
+            style={{ margin: '.5rem' }}
+            onClick={() => this.setState({ bgbl: 'bgbl2' })}
+            className={
+              bgbl === 'bgbl2' ? 'button is-primary is-selected' : 'button'
+            }
+          >
+            BGBl. Teil II
+          </span>
         </div>
+        <br />
+
+        <div>
+          <h2>Jahr</h2>
+
+          {items
+            .filter(x => x.kind === bgbl)
+            .sort((x, y) => x.year - y.year)
+            .reverse()
+            .map(x => (
+              <button
+                key={x.year}
+                onClick={() => this.setState({ year: x.year })}
+                className={
+                  year === x.year ? 'button is-primary is-selected' : 'button'
+                }
+                style={{ width: '4rem', margin: '.5rem' }}
+              >
+                {x.year}
+              </button>
+            ))}
+        </div>
+        <br />
+
+        <div>
+          <h2>Nummer</h2>
+          <AnimateOnChange
+            baseClassName="year"
+            animationClassName="year-bounce"
+            animate={year}
+          >
+            {items.length &&
+              [
+                ...Array(
+                  items.filter(x => x.kind === bgbl && x.year === year)[0]
+                    .max_number
+                ).keys(),
+              ].map(x => (
+                <Link
+                  href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}
+                  key={x}
+                >
+                  <a
+                    href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}
+                    className="button"
+                    style={{ width: '4rem', margin: '.5rem' }}
+                  >
+                    {x + 1}
+                  </a>
+                </Link>
+              ))}
+          </AnimateOnChange>
+        </div>
+        <h2 id="bedeutende" name="bedeutende">
+          Bedeutende Gesetze
+        </h2>
+        <br />
+        <Substantials />
       </BaseContent>
     );
   }
