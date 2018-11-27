@@ -33,6 +33,14 @@ class Search extends React.Component {
     };
   }
 
+  setYear = year => e => {
+    let { kind } = this.props;
+    if (kind != null && !Array.isArray(kind)) kind = [kind];
+
+    e.preventDefault();
+    this._updateFilters(kind, year);
+  };
+
   loadFunc = () => {
     const { next } = this.props;
     fetch(next)

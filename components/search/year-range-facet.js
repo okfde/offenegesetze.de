@@ -13,6 +13,7 @@ const YearRangeFacet = ({
   onChangeComplete,
   facet,
   containerStyle,
+  setYear
 }) => {
   const bars = facet.filter(x => x.year >= min && x.year <= max);
   const beforeBars = facet.filter(x => x.year < min);
@@ -38,12 +39,16 @@ const YearRangeFacet = ({
               flexGrow: 1,
               transition: 'background-color 500ms linear',
             }}
-          />
+          >
+            <span className="is-sr-only">{x.year}</span>
+          </a>
         ))}
         {bars.map(x => (
-          <div
+          <a
             key={x.year}
             title={`${x.year}: ${x.count}`}
+            onClick={setYear(x.year)}
+            href={`/suche?year=${x.year}`}
             style={{
               height: `${(x.count / maxValue) * 50}px`,
               backgroundColor:
@@ -54,20 +59,27 @@ const YearRangeFacet = ({
               flexGrow: 1,
               transition: 'background-color 500ms linear',
             }}
-          />
+          >
+            <span className="is-sr-only">{x.year}</span>
+          </a>
         ))}
         {afterBars.map(x => (
-          <div
+          <a
             key={x.year}
             title={`${x.year}: ${x.count}`}
+            href={`/suche?year=${x.year}`}
+            onClick={setYear(x.year)}
             style={{
               height: `${(x.count / maxValue) * 50}px`,
-              backgroundColor: '#aaaaaa',
+              backgroundColor:
+                x.year < value.max ? PRIMARY_COLOR_DARK : '#aaaaaa',
               width: 1,
               flexGrow: 1,
               transition: 'background-color 500ms linear',
             }}
-          />
+          >
+            <span className="is-sr-only">{x.year}</span>
+          </a>
         ))}
       </div>
 

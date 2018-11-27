@@ -188,3 +188,15 @@ em {
     background: white;
   }
 }
+
+
+.is-sr-only{
+  border: none !important;
+  clip: rect(0,0,0,0) !important;
+  height: .01em !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: .01em !important
+}
