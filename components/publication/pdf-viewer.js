@@ -65,7 +65,7 @@ class PDFViewer extends React.Component {
                       <div>
                         <LazyLoad
                           once
-                          offset={[200, 200]}
+                          offset={[0, 0]}
                           resize
                           placeholder={<PageLoading page={x + 1} />}
                         >
