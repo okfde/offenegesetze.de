@@ -5,46 +5,67 @@ import { KIND_LIST } from '../misc/config';
 import BaseContent from '../components/layout/base-content';
 
 const Api = () => (
-  <BaseContent title="API und Bulk Downloads">
-    <h1 className="title">Daten zum Download und per API</h1>
-    <h2 className="subtitle">API</h2>
-    <p>Es steht eine API zur Verfügung unter:</p>
+  <BaseContent title="Download & API">
+    <h1 className="title">Download und API</h1>
+
     <p>
-      <code>https://api.offenegesetze.de/v1/</code>
+      Zur weiteren Verwendung der Daten bieten wir eine{' '}
+      <a
+        className="highlight"
+        href="https://de.wikipedia.org/wiki/Programmierschnittstelle"
+      >
+        API
+      </a>{' '}
+      an: <br />
+      <br />
+      <a href="https://api.offenegesetze.de/v1/">
+        <code>https://api.offenegesetze.de/v1/</code>
+      </a>
     </p>
 
-    <h2 className="subtitle">Bulk Downloads</h2>
+    <h2 className="subtitle">Downloads</h2>
     <p>
-      Wir stellen die bereinigten, druckbaren und kopierbaren PDFs des
-      Bundesgesetzblatts als Bulk Download für Teil&nbsp;I&nbsp;&amp;&nbsp;II
-      und für die einzelnen Jahre zur Verfügung:
+      Neben der API stellen wir die bereinigten, druckbaren und kopierbaren PDFs
+      auch als Download zur Verfügung. Dafür bündelt wir sie für BGBl.
+      Teil&nbsp;I&nbsp;&amp;&nbsp;II komplett und jeweils pro einzelnes Jahr.
+      Zum Entpacken der .tar.bz2-Archive brauchen sie ggfs. ein Extra-Programm.
+      Für Windows empfiehlt sich{' '}
+      <a className="highlight" href="https://www.7-zip.org/">
+        7-Zip
+      </a>
+      :
     </p>
-
     <ul>
       {KIND_LIST.map(kind => (
-        <li key={`${kind.id}`}>
-          <a href={`https://media.offenegesetze.de/${kind.id}.tar.bz2`}>
-            Download {kind.name} komplett ({kind.size})
-          </a>
-          <ul
-            style={{
-              marginLeft: '1em',
-              listStyleType: 'disc',
-            }}
-          >
-            {kind.years.reverse().map(year => (
-              <li key={`${kind.id}-${year}`}>
-                <a
-                  href={`https://media.offenegesetze.de/${
-                    kind.id
-                  }/${year}.tar.bz2`}
-                >
-                  Download Jahr {year}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </li>
+        <div>
+          <br />
+          <h3 className="is-3">{kind.name}</h3>
+          <li key={`${kind.id}`}>
+            <a href={`https://media.offenegesetze.de/${kind.id}.tar.bz2`}>
+              Download {kind.name} komplett ({kind.size})
+            </a>
+            <ul
+              style={{
+                marginLeft: '1em',
+                listStyleType: 'disc',
+              }}
+            >
+              {kind.years
+                .sort((x, y) => y - x)
+                .map(year => (
+                  <li key={`${kind.id}-${year}`}>
+                    <a
+                      href={`https://media.offenegesetze.de/${
+                        kind.id
+                      }/${year}.tar.bz2`}
+                    >
+                      Download Jahr {year}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </li>
+        </div>
       ))}
     </ul>
   </BaseContent>
