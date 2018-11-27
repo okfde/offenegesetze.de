@@ -32,7 +32,7 @@ describe('With Enzyme', () => {
   it('test daten', () => {
     const app = shallow(<Daten />);
 
-    expect(app.find('h1').text()).toEqual(expect.stringContaining('Daten'));
+    expect(app.find('h1').text()).toEqual(expect.stringContaining('Download'));
   });
 
   it('test datenschutz', () => {
