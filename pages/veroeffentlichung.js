@@ -60,6 +60,7 @@ class PublicationIndex extends React.Component {
               .reverse()
               .map(x => (
                 <button
+                  key={x.year}
                   onClick={() => this.setState({ year: x.year })}
                   className={
                     year === x.year ? 'button is-primary is-selected' : 'button'
@@ -85,7 +86,7 @@ class PublicationIndex extends React.Component {
                       .max_number
                   ).keys(),
                 ].map(x => (
-                  <Link href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}>
+                  <Link href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`} key={x}>
                     <a
                       href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}
                       className="button"
