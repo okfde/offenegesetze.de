@@ -41,7 +41,7 @@ class Publication extends React.Component {
       loading: () => renderLoader(maxPages),
     });
 
-    const titleDate = `veröffentlicht am ${pubDate.format('DD.MM.YYYY')}`;
+    const titleDate = `Veröffentlicht am ${pubDate.format('DD.MM.YYYY')}`;
     const comp = [
       <div className="navbar-item" key="doc-switch">
         <a
@@ -73,15 +73,19 @@ class Publication extends React.Component {
             <h1 className="title is-2">
               {KINDS[kind].name}: Nr. {number} ({year})
             </h1>
-            <h2 className="subtitle">
-              {titleDate},&nbsp;
-              <small>
-                <a href={documentUrl} target="_blank" rel="noopener noreferrer">
-                  PDF downloaden.
-                </a>
-              </small>
-            </h2>
             <div>
+              <p>
+                {titleDate},&nbsp;{' '}
+                <a
+                  href={documentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="highlight"
+                >
+                  PDF downloaden
+                </a>
+              </p>
+              <br />
               <p>
                 Eine Übersicht über alle Veröffentlichungen in diesem Blatt:
               </p>
