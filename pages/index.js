@@ -53,7 +53,11 @@ class IndexPage extends React.Component {
           <div className="container">
             <div className="columns is-desktop content is-normal">
               <div className="column">
-                <h3 className="subtitle">Das Bundesgesetzblatt</h3>
+                <div className="has-text-centered">
+                  <i className="is-primary-color fas fa-scroll fa-3x" />
+                  <h3 className="subtitle">Das Bundesgesetzblatt</h3>
+                </div>
+                <br />
                 <p>
                   Im Bundesgesetzblatt (BGBl.) werden alle Gesetze der
                   Bundesrepublik Deutschland veröffentlicht. Gesetze treten erst
@@ -63,23 +67,36 @@ class IndexPage extends React.Component {
                 </p>
               </div>
               <div className="column">
-                <h3 className="subtitle">Der Bundesanzeiger Verlag</h3>
-                Der Verlag erhebt Urheberrecht auf die Datenbank der
-                Gesetzblätter. Diese sind zwar{' '}
-                <a className="highlight" href="https://www.bgbl.de/">
-                  online einzeln einsehbar
-                </a>, aber können nicht gedruckt, durchsucht oder kopiert
-                werden. Der Bundesanzeiger Verlag verbietet die
-                Weiterverwendung. Wer die Gesetzblätter des Staates nutzen will,
-                muss dem privaten Verlag Abo-Gebühren zahlen.
+                <div className="has-text-centered">
+                  <i className="is-primary-color fas fa-euro-sign fa-3x" />
+                  <h3 className="subtitle">Der Bundesanzeiger Verlag</h3>
+                </div>
+                <br />
+                <p>
+                  Der Verlag erhebt Urheberrecht auf die Datenbank der
+                  Gesetzblätter. Diese sind zwar{' '}
+                  <a className="highlight" href="https://www.bgbl.de/">
+                    online einzeln einsehbar
+                  </a>
+                  , aber können nicht gedruckt, durchsucht oder kopiert werden.
+                  Der Bundesanzeiger Verlag verbietet die Weiterverwendung. Wer
+                  die Gesetzblätter des Staates nutzen will, muss dem privaten
+                  Verlag Abo-Gebühren zahlen.
+                </p>
               </div>
               <div className="column">
-                <h3 className="subtitle">Offene Gesetze</h3>
-                Zentrale Dokumente der Demokratie müssen offen für alle
-                bereitstehen. Das Urheberrecht darf der Demokratie nicht im Wege
-                stehen. Deswegen stellen wir auf dieser Seite sämtliche
-                Bundesgesetzblätter seit 1949 frei, offen und kostenlos zur
-                Verfügung.
+                <div className="has-text-centered">
+                  <i className="is-primary-color fas fa-balance-scale fa-3x" />
+                  <h3 className="subtitle">Offene Gesetze</h3>
+                </div>
+                <br />
+                <p>
+                  Zentrale Dokumente der Demokratie müssen offen für alle
+                  bereitstehen. Das Urheberrecht darf der Demokratie nicht im
+                  Wege stehen. Deswegen stellen wir auf dieser Seite sämtliche
+                  Bundesgesetzblätter seit 1949 frei, offen und kostenlos zur
+                  Verfügung.
+                </p>
               </div>
             </div>
           </div>
