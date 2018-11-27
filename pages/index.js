@@ -179,7 +179,7 @@ class IndexPage extends React.Component {
                       Die Herausgabe des Bundesgesetzblatts ist für den
                       Bundesanzeiger Verlag lukrativ. Er verlangt für
                       grundlegende Funktionen, zum Beispiel die Durchsuchbarkeit
-                      oder das Drucken von Gesetzblätter, Gebühren.
+                      oder das Drucken von Gesetzblättern, Gebühren.
                       <br />
                       <br />
                     </span>
@@ -203,7 +203,7 @@ class IndexPage extends React.Component {
                         className="highlight"
                         href="https://fragdenstaat.de/anfrage/vereinbarungen-mit-bundesanzeiger-verlag/"
                       >
-                        hält das zuständige Justizministerium
+                        hält das zuständige Justizministerium geheim
                       </a>
                       . Den Kooperationsvertrag zur Herausgabe des
                       Bundesgesetzblatts schwärzte das Ministerium auf Betreiben
@@ -226,11 +226,11 @@ class IndexPage extends React.Component {
                     <p>
                       Alle Gesetzblätter sind jetzt auf{' '}
                       <a href="/">OffeneGesetze.de</a> frei zugänglich. Das
-                      Grundproblem aber bleibt: Die Bundesregierung muss dafür
-                      sorgen, dass private Verlage nicht das Urheberrecht auf
-                      staatliche Dokumente beanspruchen dürfen. Amtliche
-                      Dokumente müssen frei und kostenlos online für die gesamte
-                      Öffentlichkeit zugänglich sein! Monopolisten dürfen nicht
+                      Grundproblem aber bleibt: Der Gesetzgeber muss dafür
+                      sorgen, dass private Verlage nicht Rechte an
+                      staatlichen Dokumente beanspruchen dürfen. Amtliche
+                      Dokumente müssen kostenfrei und uneingeschränkt online
+                      für die Öffentlichkeit zugänglich sein. Monopolisten dürfen nicht
                       für den Zugang zu staatlichen Daten zur Kasse bitten! Das
                       Urheberrecht muss geändert werden, damit zentrale
                       Dokumente der Demokratie offen bereitstehen!
