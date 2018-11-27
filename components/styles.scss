@@ -45,19 +45,30 @@ $navbar-breakpoint: $tablet !default;
     min-height: 3.25rem;
     width: 100%;
     margin: 0 auto;
-    max-width: $tablet;
+    padding: 0 $gap*0.25;
   }
 }
 
 @media screen and (min-width: $desktop) {
   .navbar > .container {
-    align-items: stretch;
-    display: flex;
-    min-height: 3.25rem;
-    width: 100%;
-    margin: 0 auto;
     max-width: $desktop;
   }
+}
+
+@media screen and (min-width: $widescreen) {
+  .navbar > .container {
+    max-width: $widescreen;
+  }
+}
+
+@media screen and (min-width: $fullhd) {
+  .navbar > .container {
+    max-width: $fullhd;
+  }
+}
+
+body {
+  hyphens: auto;
 }
 
 a {
