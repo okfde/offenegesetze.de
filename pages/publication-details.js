@@ -69,65 +69,70 @@ class Publication extends React.Component {
         title={`${KINDS[kind].name}: Nr. ${number} (${year})`}
       >
         <div className="content columns" style={{ padding: '1rem 0' }}>
-          <div className="column is-offset-1-mobile is-12-mobile is-half-desktop is-offset-one-quarter-desktop is-three-fifths-tablet is-offset-one-fifth-tablet">
-            <h1 className="title is-2">
-              {KINDS[kind].name}: Nr. {number} ({year})
-            </h1>
-            <div>
-              <p>
-                {titleDate},&nbsp;{' '}
-                <a
-                  href={documentUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="highlight"
-                >
-                  PDF downloaden
-                </a>
-              </p>
-              <br />
-              <p>
-                Eine Übersicht über alle Veröffentlichungen in diesem Blatt:
-              </p>
-              {toc
-                .filter((_, index) => !truncateToc || index < maxTocItems)
-                .map((x, index) => (
-                  <div key={x.order}>
-                    <div style={{ display: 'table-row' }}>
-                      <div
-                        style={{ display: 'table-cell', paddingRight: '1rem' }}
-                      >
-                        {`${index + 1}.`}
-                      </div>
-                      <div className="display: 'table-cell'">
-                        <small>
-                          <a key={x.order} href={`#page=${x.pdfPage}`}>
-                            {`${x.title}`}
-                          </a>{' '}
-                          (Seite {x.pdfPage})
-                        </small>
-                      </div>
-                      <br />
-                    </div>
-                    {truncateToc &&
-                      toc.length > maxTocItems &&
-                      index === maxTocItems - 1 && (
-                        <div style={{ textAlign: 'center' }}>
-                          <button
-                            type="button"
-                            className="button is-small"
-                            onClick={() =>
-                              this.setState({ truncateToc: false })
-                            }
-                          >
-                            Zeige alle {toc.length} Einträge
-                          </button>
-                          <br />
-                          <br />
+          <div className="column is-12-mobile is-half-desktop is-offset-one-quarter-desktop is-three-fifths-tablet is-offset-one-fifth-tablet">
+            <div className="section">
+              <h1 className="title is-2">
+                {KINDS[kind].name}: Nr. {number} ({year})
+              </h1>
+              <div>
+                <p>
+                  {titleDate},&nbsp;{' '}
+                  <a
+                    href={documentUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="highlight"
+                  >
+                    PDF downloaden
+                  </a>
+                </p>
+                <br />
+                <p>
+                  Eine Übersicht über alle Veröffentlichungen in diesem Blatt:
+                </p>
+                {toc
+                  .filter((_, index) => !truncateToc || index < maxTocItems)
+                  .map((x, index) => (
+                    <div key={x.order}>
+                      <div style={{ display: 'table-row' }}>
+                        <div
+                          style={{
+                            display: 'table-cell',
+                            paddingRight: '1rem',
+                          }}
+                        >
+                          {`${index + 1}.`}
                         </div>
-                      )}
-                  </div>
-                ))}
+                        <div className="display: 'table-cell'">
+                          <small>
+                            <a key={x.order} href={`#page=${x.pdfPage}`}>
+                              {`${x.title}`}
+                            </a>{' '}
+                            (Seite {x.pdfPage})
+                          </small>
+                        </div>
+                        <br />
+                      </div>
+                      {truncateToc &&
+                        toc.length > maxTocItems &&
+                        index === maxTocItems - 1 && (
+                          <div style={{ textAlign: 'center' }}>
+                            <button
+                              type="button"
+                              className="button is-small"
+                              onClick={() =>
+                                this.setState({ truncateToc: false })
+                              }
+                            >
+                              Zeige alle {toc.length} Einträge
+                            </button>
+                            <br />
+                            <br />
+                          </div>
+                        )}
+                    </div>
+                  ))}
+              </div>
             </div>
           </div>
         </div>
