@@ -16,8 +16,11 @@ class SearchBox extends React.Component {
 
   _onSelect = (value, item) => {
     console.log(value, item);
-    if (item.hasOwnProperty('special')) window.location.assign(item.id);
-    else window.location.assign(`/suche?q=${value}`);
+    if (item.special) {
+      window.location.assign(item.url);
+    } else {
+      window.location.assign(`/suche?q=${value}`);
+    }
   };
 
   //  5. September 2005 (BGBl. I S. 2722),
@@ -116,6 +119,7 @@ class SearchBox extends React.Component {
         items.push({
           special: true,
           id: item.url + item.title,
+          url: item.url,
           label: `Veröffentlichung Jahr ${item.year} ${
             KINDS[item.kind].name
           } Seite ${item.page}: ${item.title}`,
@@ -130,7 +134,7 @@ class SearchBox extends React.Component {
             items={items}
             shouldItemRender={(item, value) =>
               item.label.toLowerCase().indexOf(value.toLowerCase()) > -1 ||
-              item.hasOwnProperty('special')
+              item.special
             }
             getItemValue={item => item.label}
             renderItem={(item, highlighted) => (
