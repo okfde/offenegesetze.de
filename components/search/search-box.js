@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactAutocomplete from 'react-autocomplete';
 
-import { PRIMARY_COLOR } from '../../misc/config';
+import { KINDS, PRIMARY_COLOR } from '../../misc/config';
 
 class SearchBox extends React.Component {
   constructor(props) {
@@ -21,50 +21,68 @@ class SearchBox extends React.Component {
   };
 
   //  5. September 2005 (BGBl. I S. 2722),
-  _checkForCitation = async text => {
+  _checkForCitation = text => {
     const re = /.*(19[4-9]\d|20\d{2})\s.*bgbl.*(i|ii)\D*(\d+)\D*/i;
     const groups = text.match(re);
 
     if (groups !== null && groups.length === 4) {
       const year = groups[1];
-      const kind = groups[2];
+      const kindMatch = groups[2];
 
-      let kindFixed = 'bgbl';
-      if (kind.toLowerCase() === 'i') {
-        kindFixed += '1';
+      let kind = 'bgbl';
+      if (kindMatch.toLowerCase() === 'i') {
+        kind += '1';
       }
-      if (kind.toLowerCase() === 'ii') {
-        kindFixed += '2';
+      if (kindMatch.toLowerCase() === 'ii') {
+        kind += '2';
       }
 
       const page = groups[3];
 
-      const res = await fetch(
-        `https://api.offenegesetze.de/v1/veroeffentlichung/?page=${page}&kind=${kindFixed}&year=${year}`
-      );
-      const jres = await res.json();
-
-      if (jres.count === 1) {
-        this.setState({
-          seriousNLP: {
-            year,
-            kind,
-            page,
-            url: jres.results[0].url,
-            title: jres.results[0].title,
-          },
-        });
-      } else this.setState({ seriousNLP: null });
-    } else {
-      this.setState({ seriousNLP: null });
+      return {
+        page,
+        kind,
+        year,
+      };
     }
+    return null;
+  };
+
+  _loadCitation = async params => {
+    const { page, kind, year } = params;
+    const res = await fetch(
+      `https://api.offenegesetze.de/v1/veroeffentlichung/?page=${page}&kind=${kind}&year=${year}`
+    );
+    const jres = await res.json();
+
+    if (jres.count !== 0) {
+      // Jump to first page of result, which is fine
+      this.setState({
+        seriousNLP: jres.results.map(item => ({
+          year,
+          kind,
+          page,
+          url: item.url,
+          title: item.title,
+        })),
+      });
+      return true;
+    }
+    this.setState({ seriousNLP: null });
+    return false;
   };
 
   _onChange = async e => {
     const { value } = e.target;
     this.setState({ value });
 
-    this._checkForCitation(value);
+    const citation = this._checkForCitation(value);
+    if (citation !== null) {
+      const found = await this._loadCitation(citation);
+      if (found) {
+        return;
+      }
+    }
 
     const res = await fetch(
       `https://api.offenegesetze.de/v1/veroeffentlichung/?q=${value}`
@@ -93,13 +111,15 @@ class SearchBox extends React.Component {
       id: x,
       label: x,
     }));
-    if (this.state.seriousNLP != null) {
-      items.push({
-        special: true,
-        id: this.state.seriousNLP.url,
-        label: `Veröffentlichung aus Jahr ${this.state.seriousNLP.year} BGBl. ${
-          this.state.seriousNLP.kind
-        } Seite ${this.state.seriousNLP.page}: ${this.state.seriousNLP.title}`,
+    if (this.state.seriousNLP !== null) {
+      this.state.seriousNLP.forEach(item => {
+        items.push({
+          special: true,
+          id: item.url + item.title,
+          label: `Veröffentlichung Jahr ${item.year} ${
+            KINDS[item.kind].name
+          } Seite ${item.page}: ${item.title}`,
+        });
       });
     }
 
