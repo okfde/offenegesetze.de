@@ -15,7 +15,7 @@ const ListItem = ({ item, q }) => {
     pdf_page: pdfPage,
     content__highlight: results,
   } = item;
-
+  let searchUrl = url;
   let titleDate = '';
   const pubDate = dayjs(date);
   const now = dayjs();
@@ -27,10 +27,14 @@ const ListItem = ({ item, q }) => {
   } else {
     titleDate = `am ${pubDate.format('DD.MM.YYYY')}`;
   }
+  if (q && searchUrl.indexOf('#') !== -1) {
+    const parts = searchUrl.split('#');
+    searchUrl = `${parts[0]}?q=${q}#${parts[1]}`;
+  }
   return (
     <div className="box" key={number + year + kind}>
-      <Link href={`${url}${q ? `?q=${q}` : ''}`}>
-        <a href={`${url}${q ? `?q=${q}` : ''}`}>
+      <Link href={searchUrl}>
+        <a href={searchUrl}>
           <h5>{title}</h5>
         </a>
       </Link>
