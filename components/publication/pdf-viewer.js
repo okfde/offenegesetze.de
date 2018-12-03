@@ -19,6 +19,8 @@ class PDFViewer extends React.Component {
     const { numPages } = this.state;
     const { documentUrl, viewPdf, contentList, q, toc, maxPages } = this.props;
 
+    const query = q.replace(/[^\-\w ]/g, '');
+
     const onDocumentLoadSuccess = ({ numPages: num }) => {
       this.setState({ numPages: num });
     };
@@ -75,14 +77,14 @@ class PDFViewer extends React.Component {
                             pageNumber={x + 1}
                             customTextRenderer={textItem =>
                               textItem.str
-                                .split(q)
+                                .split(query)
                                 .reduce(
                                   (strArray, currentValue, currentIndex) =>
                                     currentIndex === 0
                                       ? [...strArray, currentValue]
                                       : [
                                           ...strArray,
-                                          <mark key={currentIndex}>{q}</mark>,
+                                          <mark key={currentIndex}>{query}</mark>,
                                           currentValue,
                                         ],
                                   []
