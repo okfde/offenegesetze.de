@@ -22,8 +22,6 @@ const Ueber = () => (
       <dl>
         <dt>Vereinsregister Nr:</dt>
         <dd>VR 30468 B</dd>
-        <dt>Umsatzsteuernummer:</dt>
-        <dd>DE278022128</dd>
       </dl>
       <dl>
         <dt>E-Mail:</dt>
@@ -76,19 +74,6 @@ const Ueber = () => (
         inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete
         Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden
         von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
-      </p>
-      <h3>Urheberrecht</h3>
-      <p>
-        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
-        Seiten unterliegen dem deutschen Urheberrecht. Sie sind mit einer
-        Creative Commons Lizenz urheberrechtlich geschützt. Sofern nicht anders
-        angegeben, stehen die Inhalte dieser Seite unter der Creative Commons
-        Namensnennung 3.0 DE Lizenz. Soweit die Inhalte auf dieser Seite nicht
-        vom Betreiber erstellt wurden, werden die Urheberrechte Dritter
-        beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet.
-        Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden,
-        bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von
-        Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
       </p>
       <h2 id="datenschutzerklaerung">Datenschutzerklärung</h2>
       <p>
@@ -412,7 +397,7 @@ const Ueber = () => (
         Ihrer Daten. Ihre Fragen und Kommentare zum Datenschutz sind uns
         willkommen, schreiben Sie einfach eine Mail an info@okfn.de.
       </p>
-      <p>Berlin, November 2018</p>
+      <p>Berlin, Dezember 2018</p>
     </div>
   </BaseContent>
 );
