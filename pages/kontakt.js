@@ -26,7 +26,7 @@ const Ueber = () => (
       und{' '}
       <a className="highlight" href="https://www.facebook.com/offenegesetze/">
         like uns auf Facebook
-      </a>{' '}
+      </a>,{' '}
       um auf dem Laufendem zu bleiben.
     </p>
     <h2>Impressum</h2>
@@ -47,8 +47,6 @@ const Ueber = () => (
     </dl>
     <dl>
       Vereinsregister Nr: VR 30468 B <br />
-      <br />
-      Umsatzsteuernummer: DE278022128 <br />
       <br />
       E-Mail: <a href="mailto:info@okfn.de">info@okfn.de</a> (
       <a href="https://pgp.mit.edu/pks/lookup?op=get&amp;search=0xFE54F46F21DDAED1">
