@@ -195,9 +195,7 @@ class IndexPage extends React.Component {
                       Intransparenz
                     </h4>
                     <p>
-                      Der Bund verfügt noch nicht einmal über die Rohdaten des
-                      Bundesgesetzblatts, die alle vom Bundesanzeiger Verlag
-                      verwaltet werden. Die genauen Bedingungen der Kooperation
+                      Die genauen Bedingungen der Kooperation
                       des Bundes mit dem privatem Verlag{' '}
                       <a
                         className="highlight"
@@ -205,7 +203,8 @@ class IndexPage extends React.Component {
                       >
                         hält das zuständige Justizministerium geheim
                       </a>
-                      . Den Kooperationsvertrag zur Herausgabe des
+                      . Die Begründung: Betriebs- und Geschäftsgeheimnisse
+                      des Bundesanzeiger Verlags. Den Kooperationsvertrag zur Herausgabe des
                       Bundesgesetzblatts schwärzte das Ministerium auf Betreiben
                       des Verlags.
                       <br />
