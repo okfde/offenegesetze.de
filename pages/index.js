@@ -211,6 +211,7 @@ class IndexPage extends React.Component {
                         href="https://fragdenstaat.de/anfrage/vereinbarungen-mit-bundesanzeiger-verlag/109774/anhang/bmjv-bundesanzeiger-verlag.pdf"
                       >{' '}
                       schwärzte das Ministerium auf Betreiben des Verlags.
+                      </a>
                       <br />
                       <br />
                     </p>
