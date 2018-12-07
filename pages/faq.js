@@ -20,23 +20,23 @@ const Faq = () => (
     </p>
     <h3>Wer steckt hinter dem Projekt?</h3>
     <p>
-      Die gemeinnützige{' '}
-      <a href="http://okfn.de/">Open Knowledge Foundation Deutschland</a>.
+      Der gemeinnützige{' '}
+      <a href="http://okfn.de/">Open Knowledge Foundation Deutschland e.V.</a>.
     </p>
     <h3>Wollt ihr damit Geld verdienen?</h3>
     <p>
-      Nein, wir wollen <i>nur</i>, dass Bürger digitalen Zugang zu ihren Gesetzen haben.
+      Nein. Die Plattform dient dazu, allen Menschen freien Zugang zu Bundesgesetzblättern zu verschaffen.
     </p>
     <br />
     <br />
     <p>
-      Bei weiteren Fragen bitte{' '}
+      Bei weiteren Fragen können Sie{' '}
       <Link prefetch href="/kontakt">
         <a href="/kontakt" className="highlight">
           Kontakt
         </a>
       </Link>{' '}
-      zu uns aufnehmen
+      zu uns aufnehmen.
     </p>
   </BaseContent>
 );
