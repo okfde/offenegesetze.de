@@ -176,7 +176,7 @@ class IndexPage extends React.Component {
                       >
                         zum Beispiel dem Transparenzregister.
                       </a>{' '}
-                      Die Herausgabe des Bundesgesetzblatts ist für den
+                      Der Vertrieb des Bundesgesetzblatts ist für den
                       Bundesanzeiger Verlag lukrativ. Er verlangt für
                       grundlegende Funktionen, zum Beispiel die Durchsuchbarkeit
                       oder das Drucken von Gesetzblättern, Gebühren.
@@ -204,9 +204,13 @@ class IndexPage extends React.Component {
                         hält das zuständige Justizministerium geheim
                       </a>
                       . Die Begründung: Betriebs- und Geschäftsgeheimnisse
-                      des Bundesanzeiger Verlags. Den Kooperationsvertrag zur Herausgabe des
-                      Bundesgesetzblatts schwärzte das Ministerium auf Betreiben
-                      des Verlags.
+                      des Bundesanzeiger Verlags. Den Kooperationsvertrag zum Vertrieb des
+                      Bundesgesetzblatts{' '}
+                      <a
+                        className="highlight"
+                        href="https://fragdenstaat.de/anfrage/vereinbarungen-mit-bundesanzeiger-verlag/109774/anhang/bmjv-bundesanzeiger-verlag.pdf"
+                      >{' '}
+                      schwärzte das Ministerium auf Betreiben des Verlags.
                       <br />
                       <br />
                     </p>
