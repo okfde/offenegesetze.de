@@ -14,7 +14,8 @@ const PageNumber = ({ numPage, text }) => (
         style={{ textDecoration: 'underline', color: 'inherit' }}
         href={`#page=${numPage}`}
       >
-        Seite {numPage}
+        <span className="page-number-label-large">Seite&nbsp;{numPage}</span>
+        <span className="page-number-label-small">S.&nbsp;{numPage}</span>
       </a>
     </div>
     <div className="page-number-title">{text || ''}</div>
