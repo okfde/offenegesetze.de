@@ -19,7 +19,10 @@ class PDFViewer extends React.Component {
     const { numPages } = this.state;
     const { documentUrl, viewPdf, contentList, q, toc, maxPages } = this.props;
 
-    const query = q.replace(/[^\-\w ]/g, '');
+    let query = q || '';
+    if (q) {
+      query = q.replace(/[^\-\w ]/g, '');
+    }
 
     const onDocumentLoadSuccess = ({ numPages: num }) => {
       this.setState({ numPages: num });
