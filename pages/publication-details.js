@@ -139,6 +139,17 @@ class Publication extends React.Component {
             </div>
           </div>
         </div>
+        <noscript>
+          <embed src={documentUrl} width="100%" height="2000px" />
+          <div>
+            {contentList.map((content, pageno) => (
+              <div key={pageno}>
+                <PageNumber numPage={pageno + 1} />
+                {content}
+              </div>
+            ))}
+          </div>
+        </noscript>
         <div id="pdfViewer">
           <PDFViewer
             documentUrl={documentUrl}
@@ -150,16 +161,6 @@ class Publication extends React.Component {
             toc={toc}
           />
         </div>
-        <noscript>
-          <div>
-            {contentList.map((content, pageno) => (
-              <div key={pageno}>
-                <PageNumber numPage={pageno + 1} />
-                {content}
-              </div>
-            ))}
-          </div>
-        </noscript>
       </Base>
     );
   }
