@@ -33,6 +33,14 @@ class PDFViewer extends React.Component {
       );
   };
 
+  _text = x => {
+    const { toc } = this.props;
+    const entry = toc.find(
+      t => x + 1 < t.pdfPage + t.numPages && x + 1 >= t.pdfPage
+    );
+    return entry != null && toc[0].pdfPage <= x + 1 ? entry.title : '';
+  };
+
   render() {
     const { numPages } = this.state;
     const { documentUrl, viewPdf, contentList, toc, maxPages } = this.props;
@@ -62,19 +70,7 @@ class PDFViewer extends React.Component {
                           ...style,
                         }}
                       >
-                        <PageNumber
-                          numPage={x + 1}
-                          text={(() => {
-                            const entry = toc.find(
-                              t =>
-                                x + 1 < t.pdfPage + t.numPages &&
-                                x + 1 >= t.pdfPage
-                            );
-                            return entry != null && toc[0].pdfPage <= x + 1
-                              ? entry.title
-                              : '';
-                          })()}
-                        />
+                        <PageNumber numPage={x + 1} text={this._text(x)} />
                       </header>
                     )}
                   </Sticky>
