@@ -12,7 +12,7 @@ class PDFViewer extends React.Component {
   };
 
   componentDidMount() {
-    pdfjs.GlobalWorkerOptions.workerSrc = '/static/pdf.worker.js';
+    pdfjs.GlobalWorkerOptions.workerSrc = '/static/pdf.worker.min.js';
   }
 
   _customTextRenderer = textItem => {
