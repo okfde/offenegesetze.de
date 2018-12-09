@@ -175,8 +175,8 @@ class SearchBox extends React.Component {
           <button type="submit" className="button is-primary">
             <span className="icon is-small">
               <i className="fas fa-search" />
+              <span className="is-sr-only">Suchen</span>
             </span>
-            <span className="is-sr-only">Suchen</span>
           </button>
         </div>
       </div>
