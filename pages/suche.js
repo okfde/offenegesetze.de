@@ -149,7 +149,7 @@ class Search extends React.Component {
             </small>
           </div>
           <br />
-          {
+          {facets != null && (
             <YearRangeFacet
               value={dateRange}
               min={firstYear}
@@ -160,7 +160,7 @@ class Search extends React.Component {
               onChangeComplete={this._onDateRangeChangeFinal}
               containerStyle={{ marginBottom: '1rem' }}
             />
-          }
+          )}
           <br />
           {
             <div>
