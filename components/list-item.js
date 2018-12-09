@@ -4,6 +4,8 @@ import Link from 'next/link';
 
 import { KINDS } from '../misc/config';
 
+const PRODUCTION = process.env.NODE_ENV === 'production';
+
 const ListItem = ({ item, q }) => {
   const {
     date,
@@ -31,6 +33,11 @@ const ListItem = ({ item, q }) => {
     const parts = searchUrl.split('#');
     searchUrl = `${parts[0]}?q=${q}#${parts[1]}`;
   }
+
+  if (!PRODUCTION) {
+    searchUrl = searchUrl.replace('https://offenegesetze.de/', '/');
+  }
+
   return (
     <li className="box" key={number + year + kind}>
       <Link href={searchUrl}>
