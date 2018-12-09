@@ -79,20 +79,27 @@ class PDFViewer extends React.Component {
                       <div>
                         <LazyLoad
                           once
-                          offset={[500, 500]}
+                          offset={pageWidth > 600 ? [500, 500] : [100, 100]}
                           resize
                           placeholder={<PageLoading page={x + 1} />}
                         >
-                          <Page
-                            width={pageWidth}
-                            loading={<PageLoading page={x + 1} />}
-                            pageNumber={x + 1}
-                            renderTextLayer={q != null}
-                            renderAnnotationLayer={false}
-                            customTextRenderer={
-                              q != null && this._customTextRenderer
-                            }
-                          />
+                          {q != null && q !== '' ? (
+                            <Page
+                              width={pageWidth}
+                              loading={<PageLoading page={x + 1} />}
+                              pageNumber={x + 1}
+                              renderAnnotationLayer={false}
+                              customTextRenderer={this._customTextRenderer}
+                            />
+                          ) : (
+                            <Page
+                              width={pageWidth}
+                              loading={<PageLoading page={x + 1} />}
+                              pageNumber={x + 1}
+                              renderTextLayer={false}
+                              renderAnnotationLayer={false}
+                            />
+                          )}
                         </LazyLoad>
                       </div>
                     </div>
