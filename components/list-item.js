@@ -32,7 +32,7 @@ const ListItem = ({ item, q }) => {
     searchUrl = `${parts[0]}?q=${q}#${parts[1]}`;
   }
   return (
-    <div className="box" key={number + year + kind}>
+    <li className="box" key={number + year + kind}>
       <Link href={searchUrl}>
         <a href={searchUrl}>
           <h5>{title}</h5>
@@ -54,7 +54,7 @@ const ListItem = ({ item, q }) => {
             />
           </div>
         ))}
-    </div>
+    </li>
   );
 };
 

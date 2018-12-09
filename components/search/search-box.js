@@ -176,6 +176,7 @@ class SearchBox extends React.Component {
             <span className="icon is-small">
               <i className="fas fa-search" />
             </span>
+            <span className="is-sr-only">Suchen</span>
           </button>
         </div>
       </div>

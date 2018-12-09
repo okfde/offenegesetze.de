@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
       g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
     })();`;
     return (
-      <html className="has-navbar-fixed-top">
+      <html className="has-navbar-fixed-top" lang="de">
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link

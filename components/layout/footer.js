@@ -14,16 +14,19 @@ const Footer = () => (
             <span className="icon is-large">
               <i className="fab has-text-black fa-2x fa-twitter" />
             </span>
+            <span className="is-sr-only">Twitter</span>
           </a>
           <a href="https://www.facebook.com/offenegesetze">
             <span className="icon is-large">
               <i className="fab has-text-black fa-2x fa-facebook" />
             </span>
+            <span className="is-sr-only">Facebook</span>
           </a>
           <a href="https://github.com/topics/offene-gesetze">
             <span className="icon is-large">
               <i className="fab has-text-black fa-2x fa-github" />
             </span>
+            <span className="is-sr-only">GitHub</span>
           </a>
         </div>
         <div className="column">
