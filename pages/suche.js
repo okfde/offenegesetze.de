@@ -7,7 +7,7 @@ import ListItem from '../components/list-item';
 import SearchBox from '../components/search/search-box';
 import BaseContent from '../components/layout/base-content';
 
-import { MAX_YEAR, MIN_YEAR, KINDS } from '../misc/config';
+import { MAX_YEAR, MIN_YEAR, KIND_LIST } from '../misc/config';
 
 // https://stackoverflow.com/a/13162319/4028896
 function thousandSep(val) {
@@ -117,11 +117,20 @@ class Search extends React.Component {
       query,
       initialItems,
       count,
+      kind,
       facets,
       firstYear,
       lastYear,
     } = this.props;
     const { items, next, dateRange } = this.state;
+
+    const getKindFacet = (value, attr, defaultValue) => {
+      const item = facets.kind.filter(x => x.value === value)[0];
+      if (item !== undefined) {
+        return item[attr];
+      }
+      return defaultValue;
+    };
 
     return (
       <BaseContent hideSearch hideFooter title="Suche">
@@ -135,12 +144,12 @@ class Search extends React.Component {
                 `Insgesamt gibt es ${thousandSep(
                   count
                 )} Ergebnisse. Suche nach Veröffentlichungsjahr einschränken:`}
-              {count === 1 && `Es gibt ein Ergebnis`}
+              {count === 1 && `Es gibt ein Ergebnis.`}
               {count === 0 && 'Zu der Suche gibt es keine Treffer.'}
             </small>
           </div>
           <br />
-          {count > 1 && (
+          {
             <YearRangeFacet
               value={dateRange}
               min={firstYear}
@@ -151,9 +160,9 @@ class Search extends React.Component {
               onChangeComplete={this._onDateRangeChangeFinal}
               containerStyle={{ marginBottom: '1rem' }}
             />
-          )}
+          }
           <br />
-          {count > 1 && (
+          {
             <div>
               <small>Auf ein Jahr beschränken</small>
               <div className="select is-small" style={{ paddingLeft: '1rem' }}>
@@ -179,10 +188,10 @@ class Search extends React.Component {
               </div>
               {dateRange.min === dateRange.max && (
                 <button
-                  type="reset"
+                  type="button"
                   className="button is-small"
                   style={{ marginLeft: '1rem' }}
-                  onClick={x => {
+                  onClick={() => {
                     this._onDateRangeChangeFinal({ min: null, max: null });
                   }}
                 >
@@ -192,10 +201,10 @@ class Search extends React.Component {
                 </button>
               )}
             </div>
-          )}
+          }
 
           <br />
-          {count > 1 && (
+          {
             <div>
               <small>
                 Suche nach Art einschränken.{' '}
@@ -205,27 +214,30 @@ class Search extends React.Component {
                 :
               </small>
             </div>
-          )}
-          {count > 1 && (
+          }
+          {
             <div className="field is-grouped" style={{ margin: '1rem 0' }}>
               {facets != null &&
-                facets.kind.map(x => (
-                  <p className="control" key={x.value}>
+                KIND_LIST.map(k => (
+                  <p className="control" key={k.id}>
                     <label>
                       <input
                         name="kind"
-                        value={x.value}
+                        value={k.id}
                         type="checkbox"
-                        checked={x.selected}
+                        checked={kind && kind.includes(k.id)}
                         onChange={this._onKindSelect}
                       />
-                      {` ${KINDS[x.value].name}`}
-                      <small> ({thousandSep(x.count)})</small>
+                      {` ${k.name}`}
+                      <small>
+                        {' '}
+                        ({thousandSep(getKindFacet(k.id, 'count', 0))})
+                      </small>
                     </label>
                   </p>
                 ))}
             </div>
-          )}
+          }
         </form>
 
         {query != null && query !== '' && (
