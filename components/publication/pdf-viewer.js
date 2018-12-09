@@ -27,7 +27,7 @@ class PDFViewer extends React.Component {
       .reduce(
         (strArray, currentValue, currentIndex) =>
           currentIndex === 0
-            ? [...strArray, currentValue]
+            ? [...strArray]
             : [...strArray, <mark key={currentIndex}>{q}</mark>, currentValue],
         []
       );
@@ -43,7 +43,7 @@ class PDFViewer extends React.Component {
 
   render() {
     const { numPages } = this.state;
-    const { documentUrl, viewPdf, contentList, toc, maxPages } = this.props;
+    const { documentUrl, viewPdf, contentList, q, maxPages } = this.props;
 
     const onDocumentLoadSuccess = ({ numPages: num }) => {
       this.setState({ numPages: num });
@@ -87,7 +87,11 @@ class PDFViewer extends React.Component {
                             width={pageWidth}
                             loading={<PageLoading page={x + 1} />}
                             pageNumber={x + 1}
-                            customTextRenderer={this._customTextRenderer}
+                            renderTextLayer={q != null}
+                            renderAnnotationLayer={false}
+                            customTextRenderer={
+                              q != null && this._customTextRenderer
+                            }
                           />
                         </LazyLoad>
                       </div>
