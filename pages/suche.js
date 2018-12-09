@@ -341,7 +341,7 @@ Search.getInitialProps = async ({ query }) => {
     ...x,
   }));
 
-  facets.date = addMissingValues(facets.date, from, to);
+  facets.date = addMissingValues(facets.date, MIN_YEAR, MAX_YEAR);
 
   facets.kind = facets.kind.sort((a, b) => (a.value < b.value ? -1 : 1));
 
