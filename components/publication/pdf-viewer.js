@@ -15,14 +15,27 @@ class PDFViewer extends React.Component {
     pdfjs.GlobalWorkerOptions.workerSrc = '/static/pdf.worker.js';
   }
 
+  _customTextRenderer = textItem => {
+    let { q } = this.props;
+
+    if (q) {
+      q = q.replace(/[^\-\w ]/g, '');
+    }
+
+    return textItem.str
+      .split(q)
+      .reduce(
+        (strArray, currentValue, currentIndex) =>
+          currentIndex === 0
+            ? [...strArray, currentValue]
+            : [...strArray, <mark key={currentIndex}>{q}</mark>, currentValue],
+        []
+      );
+  };
+
   render() {
     const { numPages } = this.state;
-    const { documentUrl, viewPdf, contentList, q, toc, maxPages } = this.props;
-
-    let query = q || '';
-    if (q) {
-      query = q.replace(/[^\-\w ]/g, '');
-    }
+    const { documentUrl, viewPdf, contentList, toc, maxPages } = this.props;
 
     const onDocumentLoadSuccess = ({ numPages: num }) => {
       this.setState({ numPages: num });
@@ -78,21 +91,7 @@ class PDFViewer extends React.Component {
                             width={pageWidth}
                             loading={<PageLoading page={x + 1} />}
                             pageNumber={x + 1}
-                            customTextRenderer={textItem =>
-                              textItem.str
-                                .split(query)
-                                .reduce(
-                                  (strArray, currentValue, currentIndex) =>
-                                    currentIndex === 0
-                                      ? [...strArray, currentValue]
-                                      : [
-                                          ...strArray,
-                                          <mark key={currentIndex}>{query}</mark>,
-                                          currentValue,
-                                        ],
-                                  []
-                                )
-                            }
+                            customTextRenderer={this._customTextRenderer}
                           />
                         </LazyLoad>
                       </div>
@@ -117,5 +116,9 @@ class PDFViewer extends React.Component {
     );
   }
 }
+
+PDFViewer.defaultProps = {
+  q: '',
+};
 
 export default PDFViewer;
