@@ -59,6 +59,7 @@ export default class MyDocument extends Document {
             property="article:author"
             content="https://www.facebook.com/offenegesetze"
           />
+          <meta property="og:title" content="OffeneGesetze.de" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:creator" content="@offenegesetze" />
         </Head>
