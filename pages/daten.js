@@ -26,9 +26,9 @@ const Api = () => (
     <h2 className="subtitle">Downloads</h2>
     <p>
       Neben der API stellen wir die bereinigten, druckbaren und kopierbaren PDFs
-      auch als Download zur Verfügung. Dafür bündelt wir sie für BGBl.
+      auch als Download zur Verfügung. Dafür bündeln wir sie für BGBl.
       Teil&nbsp;I&nbsp;&amp;&nbsp;II komplett und jeweils pro einzelnes Jahr.
-      Zum Entpacken der .tar.bz2-Archive brauchen sie ggfs. ein Extra-Programm.
+      Zum Entpacken der .tar.bz2-Archive brauchen Sie ggfs. ein Extra-Programm.
       Für Windows empfiehlt sich{' '}
       <a className="highlight" href="https://www.7-zip.org/">
         7-Zip
