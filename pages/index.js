@@ -195,22 +195,23 @@ class IndexPage extends React.Component {
                       Intransparenz
                     </h4>
                     <p>
-                      Die genauen Bedingungen der Kooperation
-                      des Bundes mit dem privatem Verlag{' '}
+                      Die genauen Bedingungen der Kooperation des Bundes mit dem
+                      privatem Verlag{' '}
                       <a
                         className="highlight"
                         href="https://fragdenstaat.de/anfrage/vereinbarungen-mit-bundesanzeiger-verlag/"
                       >
                         hält das zuständige Justizministerium geheim
                       </a>
-                      . Die Begründung: Betriebs- und Geschäftsgeheimnisse
-                      des Bundesanzeiger Verlags. Den Kooperationsvertrag zum Vertrieb des
-                      Bundesgesetzblatts{' '}
+                      . Die Begründung: Betriebs- und Geschäftsgeheimnisse des
+                      Bundesanzeiger Verlags. Den Kooperationsvertrag zum
+                      Vertrieb des Bundesgesetzblatts{' '}
                       <a
                         className="highlight"
                         href="https://fragdenstaat.de/anfrage/vereinbarungen-mit-bundesanzeiger-verlag/109774/anhang/bmjv-bundesanzeiger-verlag.pdf"
-                      >{' '}
-                      schwärzte das Ministerium auf Betreiben des Verlags.
+                      >
+                        {' '}
+                        schwärzte das Ministerium auf Betreiben des Verlags.
                       </a>
                       <br />
                       <br />
@@ -231,10 +232,10 @@ class IndexPage extends React.Component {
                       Alle Gesetzblätter sind jetzt auf{' '}
                       <a href="/">OffeneGesetze.de</a> frei zugänglich. Das
                       Grundproblem aber bleibt: Der Gesetzgeber muss dafür
-                      sorgen, dass private Verlage nicht Rechte an
-                      staatlichen Dokumente beanspruchen dürfen. Amtliche
-                      Dokumente müssen kostenfrei und uneingeschränkt online
-                      für die Öffentlichkeit zugänglich sein. Monopolisten dürfen nicht
+                      sorgen, dass private Verlage nicht Rechte an staatlichen
+                      Dokumente beanspruchen dürfen. Amtliche Dokumente müssen
+                      kostenfrei und uneingeschränkt online für die
+                      Öffentlichkeit zugänglich sein. Monopolisten dürfen nicht
                       für den Zugang zu staatlichen Daten zur Kasse bitten! Das
                       Urheberrecht muss geändert werden, damit zentrale
                       Dokumente der Demokratie offen bereitstehen!
