@@ -174,7 +174,7 @@ class IndexPage extends React.Component {
                         className="highlight"
                         href="https://www.stern.de/politik/deutschland/tillack/das-neue-transparenzregister-ist-selbst-wenig-transparent-7929378.html"
                       >
-                        zum Beispiel dem Transparenzregister.
+                        zum Beispiel des Transparenzregisters.
                       </a>{' '}
                       Der Vertrieb des Bundesgesetzblatts ist für den
                       Bundesanzeiger Verlag lukrativ. Er verlangt für
