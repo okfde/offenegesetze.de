@@ -23,7 +23,7 @@ class IndexPage extends React.Component {
 
                   <p className="content">
                     Ein privater Verlag bestimmt darüber, wie unsere Gesetze in
-                    Kraft treten. Wer deutsche Gesetzesblätter durchsuchen,
+                    Kraft treten. Wer Gesetzesblätter des Bundes durchsuchen,
                     kopieren oder ausdrucken will, wird zur Kasse gebeten.
                   </p>
                   <p className="title is-2">Das ändern wir!</p>
