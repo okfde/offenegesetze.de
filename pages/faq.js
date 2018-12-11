@@ -18,21 +18,21 @@ const Faq = () => (
     </p>
     <h3>Erlaubt bgbl.de nicht schon einen kostenfreien Zugang?</h3>
     <p>
-      Es gibt einen „Kostenlosen Bürgerzugang“, aber mit ihm kann man z.B. nicht
-      in Dokumenten suchen. Über{' '}
+      Auf bgbl.de gibt es einen sogenannten „kostenlosen Bürgerzugang“. Dort gibt es aber keine Such- oder Druckfunktion.
+      . Eine Suche über {' '}
       <a
         className="highlight"
         href="https://www.google.de/search?q=site%3Abgbl.de&oq=site%3Abgbl.de"
       >
         Google
       </a>{' '}
-      kann man dies umgehen. Die Recherchiermöglichkeiten sind aber beschränkt,
-      da man z.B. nicht Jahr filtern kann. Die{' '}
+      ist teilweise möglich, aber sehr beschränkt, da z.B. keine Filtermöglichkeit nach Jahr möglich ist.
+      Die{' '}
       <a
         className="highlight"
         href="https://www.sueddeutsche.de/digital/offene-daten-aktivisten-stellen-alle-bundesgesetzblaetter-ins-netz-1.4246682"
       >
-        Süddeutschen Zeitung geht in ihrem Artikel
+        Süddeutsche Zeitung geht in ihrem Artikel
       </a>{' '}
       näher auf die unterschiedliche Versionen von bgbl.de ein.
     </p>
