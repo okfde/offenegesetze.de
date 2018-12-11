@@ -9,7 +9,8 @@ const Faq = () => (
     <h3>Kann ich mir auf dieser Seite die aktuell gültigen Gesetze ansehen?</h3>
     <p>
       Nein, <a href="https://de.wikipedia.org/wiki/Amtsblatt">Amtsblätter</a>{' '}
-      enthalten nur die Änderungen an den Gesetzen. Für die konsolidierte Fassung der Gesetze gibt es z.B.{' '}
+      enthalten nur die Änderungen an den Gesetzen. Für die konsolidierte
+      Fassung der Gesetze gibt es z.B.{' '}
       <a href="https://www.gesetze-im-internet.de/">Gesetze im Internet</a>.
     </p>
     <h3>Was ist der Unterschied zwischen BGBl. Teil I und Teil II?</h3>
