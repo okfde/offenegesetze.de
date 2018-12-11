@@ -11,7 +11,30 @@ const Faq = () => (
       Nein, <a href="https://de.wikipedia.org/wiki/Amtsblatt">Amtsblätter</a>{' '}
       enthalten nur die Änderungen an den Gesetzen. Für die konsolidierte
       Fassung der Gesetze gibt es z.B.{' '}
-      <a href="https://www.gesetze-im-internet.de/">Gesetze im Internet</a>.
+      <a className="highlight" href="https://www.gesetze-im-internet.de/">
+        Gesetze im Internet
+      </a>
+      .
+    </p>
+    <h3>Erlaubt bgbl.de nicht schon einen kostenfreien Zugang?</h3>
+    <p>
+      Es gibt einen „Kostenlosen Bürgerzugang“, aber mit ihm kann man z.B. nicht
+      in Dokumenten suchen. Über{' '}
+      <a
+        className="highlight"
+        href="https://www.google.de/search?q=site%3Abgbl.de&oq=site%3Abgbl.de"
+      >
+        Google
+      </a>{' '}
+      kann man dies umgehen. Die Recherchiermöglichkeiten sind aber beschränkt,
+      da man z.B. nicht Jahr filtern kann. Die{' '}
+      <a
+        className="highlight"
+        href="https://www.sueddeutsche.de/digital/offene-daten-aktivisten-stellen-alle-bundesgesetzblaetter-ins-netz-1.4246682"
+      >
+        Süddeutschen Zeitung geht in ihrem Artikel
+      </a>{' '}
+      näher auf die unterschiedliche Versionen von bgbl.de ein.
     </p>
     <h3>Was ist der Unterschied zwischen BGBl. Teil I und Teil II?</h3>
     <p>
