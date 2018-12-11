@@ -240,6 +240,32 @@ class IndexPage extends React.Component {
                       Urheberrecht muss geändert werden, damit zentrale
                       Dokumente der Demokratie offen bereitstehen!
                     </p>
+                    <br />
+                    <p>
+                      Weitere Informationen zu OffeneGesetze.de finden Sie in
+                      Artikeln der{' '}
+                      <a
+                        className="highlight"
+                        href="https://www.sueddeutsche.de/digital/offene-daten-aktivisten-stellen-alle-bundesgesetzblaetter-ins-netz-1.4246682"
+                      >
+                        Süddeutschen Zeitung
+                      </a>
+                      ,{' '}
+                      <a
+                        className="highlight"
+                        href="https://netzpolitik.org/2018/offenegesetze-bundesgesetzblaetter-erstmals-frei-zugaenglich/"
+                      >
+                        Netzpolitik.org
+                      </a>{' '}
+                      und in einem Radio-Interview mit{' '}
+                      <a
+                        className="highlight"
+                        href="https://detektor.fm/politik/frag-den-staat-offene-gesetze"
+                      >
+                        detektor.fm
+                      </a>
+                      .
+                    </p>
                   </div>
                 )}
               </div>
