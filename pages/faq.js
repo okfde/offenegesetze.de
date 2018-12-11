@@ -18,16 +18,16 @@ const Faq = () => (
     </p>
     <h3>Erlaubt bgbl.de nicht schon einen kostenfreien Zugang?</h3>
     <p>
-      Auf bgbl.de gibt es einen sogenannten „kostenlosen Bürgerzugang“. Dort gibt es aber keine Such- oder Druckfunktion.
-      . Eine Suche über {' '}
+      Auf bgbl.de gibt es einen sogenannten „kostenlosen Bürgerzugang“. Dort
+      gibt es aber keine Such- oder Druckfunktion. . Eine Suche über{' '}
       <a
         className="highlight"
         href="https://www.google.de/search?q=site%3Abgbl.de&oq=site%3Abgbl.de"
       >
         Google
       </a>{' '}
-      ist teilweise möglich, aber sehr beschränkt, da z.B. keine Filtermöglichkeit nach Jahr möglich ist.
-      Die{' '}
+      ist teilweise möglich, aber sehr beschränkt, da z.B. keine
+      Filtermöglichkeit nach Jahr möglich ist. Die{' '}
       <a
         className="highlight"
         href="https://www.sueddeutsche.de/digital/offene-daten-aktivisten-stellen-alle-bundesgesetzblaetter-ins-netz-1.4246682"
@@ -45,7 +45,10 @@ const Faq = () => (
     <h3>Wer steckt hinter dem Projekt?</h3>
     <p>
       Der gemeinnützige{' '}
-      <a href="http://okfn.de/">Open Knowledge Foundation Deutschland e.V.</a>.
+      <a className="highlight" href="http://okfn.de/">
+        Open Knowledge Foundation Deutschland e.V.
+      </a>
+      .
     </p>
     <h3>Wollt ihr damit Geld verdienen?</h3>
     <p>
@@ -57,7 +60,7 @@ const Faq = () => (
       Ja. Unter{' '}
       <Link prefetch href="/daten">
         <a href="/daten" className="highlight">
-          offenegesetze.de/daten
+          OffeneGesetze.de/daten
         </a>
       </Link>{' '}
       kann man sämtliche Gesetzblätter oder auch die Gesetzblätter pro Jahr
