@@ -64,6 +64,19 @@ const Faq = () => (
       herunterladen. Es gibt auch eine Programmierschnittstelle (API), um auf
       die Dokumente zuzgreifen.{' '}
     </p>
+    <h3>Warum ist der Text so komisch wenn ich ihn aus dem PDF kopiere?</h3>
+    <p>
+      Wir benutzen die Open Source Texterkennungssoftware{' '}
+      <a
+        className="highlight"
+        href="https://github.com/tesseract-ocr/tesseract"
+      >
+        Tesseract
+      </a>{' '}
+      um den Text aus den alten Dokumenten extrahieren. Aktuell funktioniert es
+      ganz okay um einzelne Wörter zu erkennen, hat aber Probleme mit dem
+      Spalten-Layout. Wir sind dabei dies noch zu verbessern.
+    </p>
     <br />
     <br />
     <p>
