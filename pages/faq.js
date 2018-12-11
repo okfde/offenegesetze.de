@@ -25,7 +25,20 @@ const Faq = () => (
     </p>
     <h3>Wollt ihr damit Geld verdienen?</h3>
     <p>
-      Nein. Die Plattform dient dazu, allen Menschen freien Zugang zu Bundesgesetzblättern zu verschaffen.
+      Nein. Die Plattform dient dazu, allen Menschen freien Zugang zu
+      Bundesgesetzblättern zu verschaffen.
+    </p>
+    <h3>Kann ich die Dokumente gesammelt herunterladen?</h3>
+    <p>
+      Ja. Unter{' '}
+      <Link prefetch href="/daten">
+        <a href="/daten" className="highlight">
+          offenegesetze.de/daten
+        </a>
+      </Link>{' '}
+      kann man sämtliche Gesetzblätter oder auch die Gesetzblätter pro Jahr
+      herunterladen. Es gibt auch eine Programmierschnittstelle (API), um auf
+      die Dokumente zuzgreifen.{' '}
     </p>
     <br />
     <br />
