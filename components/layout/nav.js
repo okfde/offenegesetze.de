@@ -26,6 +26,7 @@ class Nav extends React.Component {
                   width="28"
                   height="28"
                   style={{ marginRight: '0.5rem' }}
+                  alt="OffeneGesetze"
                 />
                 <b>OffeneGesetze.de</b>
               </a>
