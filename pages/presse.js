@@ -3,6 +3,29 @@ import Link from 'next/link';
 
 import BaseContent from '../components/layout/base-content';
 
+const articles = [
+  'https://www.sueddeutsche.de/digital/offene-daten-aktivisten-stellen-alle-bundesgesetzblaetter-ins-netz-1.4246682',
+  'https://netzpolitik.org/2018/offenegesetze-bundesgesetzblaetter-erstmals-frei-zugaenglich/',
+  'https://www.deutschlandfunkkultur.de/stiftung-veroeffentlicht-alle-bundesgesetze.265.de.html?drn:news_id=954611',
+  'https://www.handelsblatt.com/dpa/wirtschaft-handel-und-finanzen-streit-um-urheberrecht-stiftung-veroeffentlicht-alle-bundesgesetze/23740910.html',
+  'https://www.golem.de/news/open-data-okfn-befreit-bundesgesetzblaetter-1812-138167.html',
+  'https://www.heise.de/newsticker/meldung/Urheberrecht-Open-Knowledge-Foundation-veroeffentlicht-alle-Bundesgesetze-4246696.html',
+  'https://www.t-online.de/digital/id_84923282/open-knowledge-foundation-veroeffentlicht-alle-bundesgesetze.html',
+  'https://www.chip.de/news/Neue-Plattform-veroeffentlicht-alle-neuen-Gesetze-Darum-machen-sich-die-Betreiber-damit-strafbar_155078480.html',
+  'https://www.lawblog.de/index.php/archives/2018/12/10/bundesgesetzblatt-fuer-alle/',
+  'http://blog.fefe.de/?ts=a2f0bcc2',
+  'https://www.mydealz.de/deals/bundesgesetze-kostenlos-im-vollzugriff-1294111',
+  'https://www.reddit.com/r/de/duplicates/a4v44e/offene_daten_aktivisten_stellen_alle/',
+  'https://rivva.de/300714106',
+  'https://www.die-stiftung.de/nachrichten-service/kurzmeldungen/open-knowledge-foundation-veroeffentlicht-alle-bundesgesetze-81135/',
+  'https://www.saarbruecker-zeitung.de/sz-spezial/internet/stiftung-veroeffentlicht-alle-bundesgesetze-frei-zugaenglich-im-internet_aid-35037183',
+  'https://www.pfaelzischer-merkur.de/ratgeber/stiftung-veroeffentlicht-alle-bundesgesetze-frei-zugaenglich-im-internet_aid-35039221',
+  'http://www.digitalfernsehen.de/Urheberrechtsstreit-Stiftung-veroeffentlicht-alle-Bundesgesetze.172755.0.html',
+  'https://www.finanzen.net/nachricht/aktien/wdh-streit-um-urheberrecht-stiftung-veroeffentlicht-alle-bundesgesetze-6921724',
+  'https://osterreich-nachrichten.eu/nachrichten/streit-um-urheberrecht-stiftung-veroffentlicht-alle-bundesgesetze',
+  'https://www.judid.de/bundesgesetzblatt-open-data-aktivisten-provozieren-dumont-verlagsgruppe/',
+];
+
 const Presse = () => (
   <BaseContent>
     <h1 className="title">Presse</h1>
@@ -13,6 +36,15 @@ const Presse = () => (
     <p>Arne Semsrott, Projektleiter Open Knowledge Foundation Deutschland: “Das Urheberrecht darf der Demokratie nicht im Wege stehen. Daten und Dokumente des Staates müssen frei für alle Menschen zugänglich sein. Wenn das Justizministerium nicht dafür sorgt, muss eben die Zivilgesellschaft einspringen.”</p>
     <p>Der vormals staatliche Bundesanzeiger Verlag wurde 2006 privatisiert. In einem umstrittenen Verfahren sicherte sich der Dumont-Verlag das Unternehmen. Die genauen Bedingungen der Kooperation des Bundes mit dem Verlag hält das zuständige Justizministerium geheim. Neben dem Vertrieb des Bundesgesetzblatts erhielt der Verlag ohne Ausschreibung auch den Auftrag zum Betrieb von anderen staatlichen Plattformen, zum Beispiel dem Transparenzregister.</p>
     <p>Durch die Funktionen von OffeneGesetze.de, etwa den Gesamt-Download aller Bundesgesetzblätter seit 1949, wird es erstmals möglich, den Textbestand der Gesetzblätter zu analysieren und Veränderungen in Gesetzen der letzten Jahrzehnte nachzuvollziehen. Außerdem können anders als bisher einzelne Dokumente verlinkt und durchsucht werden. Auf der offiziellen Seite des Bundesanzeiger Verlags ist hingegen zum Beispiel das erste Bundesgesetzblatt, die Verkündung des Grundgesetzes 1949, nur als schiefer Bilderscan vorhanden.</p>
+    <h2>
+      Presse-Artikel, Blog-Beiträge und Posts in Link-Aggregator über
+      OffeneGesetze.de
+    </h2>
+    {articles.map(x => (
+      <p>
+        <a href={x}>{x}</a>
+      </p>
+    ))}
   </BaseContent>
 );
 
