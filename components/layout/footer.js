@@ -80,19 +80,22 @@ const Footer = () => (
         </div>
       </div>
       <div>
-        <p className="has-text-grey-light">
-          Wir benutzen statt den üblichen externen Dienstleistern die
-          datenschutzfreundlichere Technologie von{' '}
-          <a href="https://matomo.org">Matomo</a>, um statistische Auswertungen
-          der Seitennutzung zu erhalten. Wenn Sie dies nicht wollen,{' '}
-          <a href="https://traffic.okfn.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=de">
-            klicken Sie bitte hier und entfernen Sie den Haken
-          </a>
-          . Näheres in{' '}
-          <Link href="/datenschutz">
-            <a href="/datenschutz">unseren Datenschutzerklärungen</a>
-          </Link>
-          .
+        <p>
+          <small>
+            Wir benutzen statt den üblichen externen Dienstleistern die
+            datenschutzfreundlichere Technologie von{' '}
+            <a href="https://matomo.org">Matomo</a>, um statistische
+            Auswertungen der Seitennutzung zu erhalten. Wenn Sie dies nicht
+            wollen,{' '}
+            <a href="https://traffic.okfn.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=de">
+              klicken Sie bitte hier und entfernen Sie den Haken
+            </a>
+            . Näheres in{' '}
+            <Link href="/datenschutz">
+              <a href="/datenschutz">unseren Datenschutzerklärungen</a>
+            </Link>
+            .
+          </small>
         </p>
       </div>
     </div>
