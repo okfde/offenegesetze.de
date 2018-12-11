@@ -32,7 +32,7 @@ const data = [
   },
   {
     url: '/veroeffentlichung/bgbl1/1998/6#page=24',
-    title: 'Abschaffung der Strafbarkeit von Vergewaltigung in der Ehe (1998)',
+    title: 'Abschaffung der Straffreiheit von Vergewaltigung in der Ehe (1998)',
     imageSrc: '/static/index-preview/abstrstrafehe.png',
   },
   {
