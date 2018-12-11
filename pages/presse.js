@@ -12,7 +12,7 @@ const articles = [
   'https://www.t-online.de/digital/id_84923282/open-knowledge-foundation-veroeffentlicht-alle-bundesgesetze.html',
   'https://www.chip.de/news/Neue-Plattform-veroeffentlicht-alle-neuen-Gesetze-Darum-machen-sich-die-Betreiber-damit-strafbar_155078480.html',
   'https://www.lawblog.de/index.php/archives/2018/12/10/bundesgesetzblatt-fuer-alle/',
-  'http://blog.fefe.de/?ts=a2f0bcc2',
+  'https://blog.fefe.de/?ts=a2f0bcc2',
   'https://www.mydealz.de/deals/bundesgesetze-kostenlos-im-vollzugriff-1294111',
   'https://www.reddit.com/r/de/duplicates/a4v44e/offene_daten_aktivisten_stellen_alle/',
   'https://rivva.de/300714106',
@@ -23,6 +23,8 @@ const articles = [
   'https://www.finanzen.net/nachricht/aktien/wdh-streit-um-urheberrecht-stiftung-veroeffentlicht-alle-bundesgesetze-6921724',
   'https://osterreich-nachrichten.eu/nachrichten/streit-um-urheberrecht-stiftung-veroffentlicht-alle-bundesgesetze',
   'https://www.judid.de/bundesgesetzblatt-open-data-aktivisten-provozieren-dumont-verlagsgruppe/',
+  'https://beck-online.beck.de/Dokument?vpath=bibdata%2Freddok%2Fbecklink%2F2011697.htm',
+  'https://einspruch.faz.net/recht-und-steuern/2018-12-12/06d0a3c13ff477193ed599fd21a5ad9a/',
 ];
 
 const Presse = () => (
