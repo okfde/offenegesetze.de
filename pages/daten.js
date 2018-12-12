@@ -16,10 +16,29 @@ const Api = () => (
       >
         API
       </a>{' '}
-      an: <br />
-      <br />
-      <a href="https://api.offenegesetze.de/v1/">
-        <code>https://api.offenegesetze.de/v1/</code>
+      an. Anbei ein paar Beispiel-Anfragen.
+    </p>
+
+    <h4 className="is-4">Neueste Veröffentlichungen:</h4>
+    <p>
+      <a href="https://api.offenegesetze.de/v1/veroeffentlichung/">
+        <code>https://api.offenegesetze.de/v1/veroeffentlichung/</code>
+      </a>
+    </p>
+    <h4 className="is-4">Details zu einer Ausgabe:</h4>
+    <p>
+      <a href="https://api.offenegesetze.de/v1/veroeffentlichung/?year=2018&number=40&kind=bgbl1">
+        <code>
+          https://api.offenegesetze.de/v1/veroeffentlichung/?year=2018&number=40&kind=bgbl1
+        </code>
+      </a>
+    </p>
+    <h4 className="is-4">Suche:</h4>
+    <p>
+      <a href="https://api.offenegesetze.de/v1/veroeffentlichung/?year=2018&q=Mord">
+        <code>
+          https://api.offenegesetze.de/v1/veroeffentlichung/?year=2018&q=Mord
+        </code>
       </a>
     </p>
 
