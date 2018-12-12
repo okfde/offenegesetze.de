@@ -256,6 +256,13 @@ class IndexPage extends React.Component {
                         href="https://netzpolitik.org/2018/offenegesetze-bundesgesetzblaetter-erstmals-frei-zugaenglich/"
                       >
                         Netzpolitik.org
+                      </a>
+                      ,{' '}
+                      <a
+                        className="highlight"
+                        href="https://www.lto.de/recht/hintergruende/h/offene-gesetze-inhalt-bundesgesetzblatt-datenbankschutz-urheberrecht/"
+                      >
+                        LTO.de
                       </a>{' '}
                       und in einem Radio-Interview mit{' '}
                       <a

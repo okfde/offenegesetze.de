@@ -5,6 +5,7 @@ import BaseContent from '../components/layout/base-content';
 const articles = [
   'https://www.sueddeutsche.de/digital/offene-daten-aktivisten-stellen-alle-bundesgesetzblaetter-ins-netz-1.4246682',
   'https://netzpolitik.org/2018/offenegesetze-bundesgesetzblaetter-erstmals-frei-zugaenglich/',
+  'https://www.lto.de/recht/hintergruende/h/offene-gesetze-inhalt-bundesgesetzblatt-datenbankschutz-urheberrecht/',
   'https://www.deutschlandfunkkultur.de/stiftung-veroeffentlicht-alle-bundesgesetze.265.de.html?drn:news_id=954611',
   'https://www.handelsblatt.com/dpa/wirtschaft-handel-und-finanzen-streit-um-urheberrecht-stiftung-veroeffentlicht-alle-bundesgesetze/23740910.html',
   'https://www.golem.de/news/open-data-okfn-befreit-bundesgesetzblaetter-1812-138167.html',
@@ -25,6 +26,8 @@ const articles = [
   'https://www.judid.de/bundesgesetzblatt-open-data-aktivisten-provozieren-dumont-verlagsgruppe/',
   'https://beck-online.beck.de/Dokument?vpath=bibdata%2Freddok%2Fbecklink%2F2011697.htm',
   'https://einspruch.faz.net/recht-und-steuern/2018-12-12/06d0a3c13ff477193ed599fd21a5ad9a/',
+  'https://blogs.faz.net/einspruch/2018/12/12/wie-weiter-mit-may-428/',
+  'http://www.urheberrecht.org/news/6141/',
 ];
 
 const Presse = () => (
