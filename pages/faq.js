@@ -76,9 +76,9 @@ const Faq = () => (
     </h3>
     <p>
       Wir nutzen eine Texterkennungssoftware, um den Text aus den alten
-      Dokumenten extrahieren. Aktuell funktioniert das ganz okay um einzelne
+      Dokumenten zu extrahieren. Aktuell funktioniert das ganz okay um einzelne
       Wörter zu erkennen, hat aber Probleme mit dem Spalten-Layout. Wir sind
-      dabei dies noch zu verbessern.
+      dabei dies zu verbessern.
     </p>
     <br />
     <br />
