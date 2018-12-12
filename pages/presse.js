@@ -28,6 +28,7 @@ const articles = [
   'https://einspruch.faz.net/recht-und-steuern/2018-12-12/06d0a3c13ff477193ed599fd21a5ad9a/',
   'https://blogs.faz.net/einspruch/2018/12/12/wie-weiter-mit-may-428/',
   'http://www.urheberrecht.org/news/6141/',
+  'https://www.wbs-law.de/urheberrecht/stiftung-stellt-bundesgesetzblatt-online-ist-das-erlaubt-78954/',
 ];
 
 const Presse = () => (
