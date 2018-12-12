@@ -72,13 +72,12 @@ const Faq = () => (
       </i>
     </p>
     <h3>
-      Warum ist der Text so komisch wenn ich ihn aus älteren PDFs kopiere?
+      Warum ist der Text so komisch, wenn ich ihn aus älteren PDFs kopiere?
     </h3>
     <p>
-      Wir nutzen eine Texterkennungssoftware, um den Text aus den alten
-      Dokumenten zu extrahieren. Aktuell funktioniert das ganz okay um einzelne
-      Wörter zu erkennen, hat aber Probleme mit dem Spalten-Layout. Wir sind
-      dabei dies zu verbessern.
+      Bei älteren Dokumenten gibt es derzeit noch Probleme mit der Texterkennungssoftware, 
+      um den Text zu extrahieren. Insbesondere mit dem Spalten-Layout gibt es Probleme. 
+      Wir arbeiten an einer Lösung und freuen uns über Hinweise.
     </p>
     <br />
     <br />
