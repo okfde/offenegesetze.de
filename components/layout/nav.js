@@ -21,12 +21,11 @@ class Nav extends React.Component {
             <Link prefetch href="/">
               <a className="navbar-item" href="/">
                 <img
-                  alt="Scale"
                   src="/static/logo_small.jpg"
                   width="28"
                   height="28"
                   style={{ marginRight: '0.5rem' }}
-                  alt="OffeneGesetze"
+                  alt="Waage als Logo"
                 />
                 <b>OffeneGesetze.de</b>
               </a>
