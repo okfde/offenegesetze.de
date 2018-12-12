@@ -19,10 +19,10 @@ const Faq = () => (
     <h3>Erlaubt bgbl.de nicht schon einen kostenfreien Zugang?</h3>
     <p>
       Auf bgbl.de gibt es einen sogenannten „kostenlosen Bürgerzugang“. Dort
-      gibt es aber keine Such- oder Druckfunktion. . Eine Suche über{' '}
+      gibt es aber keine Such- oder Druckfunktion. Eine Suche über{' '}
       <a
         className="highlight"
-        href="https://www.google.de/search?q=site%3Abgbl.de&oq=site%3Abgbl.de"
+        href="https://www.google.de/search?q=site%3Abgbl.de&amp;oq=site%3Abgbl.de"
       >
         Google
       </a>{' '}
@@ -45,7 +45,7 @@ const Faq = () => (
     <h3>Wer steckt hinter dem Projekt?</h3>
     <p>
       Der gemeinnützige{' '}
-      <a className="highlight" href="http://okfn.de/">
+      <a className="highlight" href="https://okfn.de/">
         Open Knowledge Foundation Deutschland e.V.
       </a>
       .
@@ -66,19 +66,19 @@ const Faq = () => (
       kann man sämtliche Gesetzblätter oder auch die Gesetzblätter pro Jahr
       herunterladen. Es gibt auch eine Programmierschnittstelle (API), um auf
       die Dokumente zuzgreifen.{' '}
+      <i>
+        Momentan fehlen vollständige Dokumente für einige Jahrgänge. Wir
+        arbeiten daran, diese auch verfügbar zu machen.
+      </i>
     </p>
-    <h3>Warum ist der Text so komisch wenn ich ihn aus dem PDF kopiere?</h3>
+    <h3>
+      Warum ist der Text so komisch wenn ich ihn aus älteren PDFs kopiere?
+    </h3>
     <p>
-      Wir benutzen die Open Source Texterkennungssoftware{' '}
-      <a
-        className="highlight"
-        href="https://github.com/tesseract-ocr/tesseract"
-      >
-        Tesseract
-      </a>{' '}
-      um den Text aus den alten Dokumenten extrahieren. Aktuell funktioniert es
-      ganz okay um einzelne Wörter zu erkennen, hat aber Probleme mit dem
-      Spalten-Layout. Wir sind dabei dies noch zu verbessern.
+      Wir nutzen eine Texterkennungssoftware, um den Text aus den alten
+      Dokumenten extrahieren. Aktuell funktioniert das ganz okay um einzelne
+      Wörter zu erkennen, hat aber Probleme mit dem Spalten-Layout. Wir sind
+      dabei dies noch zu verbessern.
     </p>
     <br />
     <br />
