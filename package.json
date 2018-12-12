@@ -39,9 +39,9 @@
     "react-infinite-scroller": "^1.2.2",
     "react-input-range": "^1.3.0",
     "react-lazyload": "^2.3.0",
-    "react-loading": "^2.0.3",
     "react-pdf": "^4.0.0",
     "react-scroll-up": "^1.3.3",
+    "react-spinners": "^0.4.7",
     "react-sticky": "^6.0.3"
   },
   "devDependencies": {
