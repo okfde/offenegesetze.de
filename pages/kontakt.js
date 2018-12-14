@@ -60,7 +60,11 @@ const Ueber = () => (
       </dd>
     </dl>
     <dl>
-      Vereinsregister Nr: VR 30468 B <br />
+      Vereinsregister Nr: VR 30468 B <br /> <br />
+      Umsatzsteuernummer: DE278022128 <br /> <br />
+      Registergericht: Amtsgericht Berlin <br /> <br />
+      Vertreten durch den Vereinsvorstand: Andreas Pawelke, Claudia Schwegmann,
+      Daniel Dietrich, Jana Wichmann, Kristina Klein, Lucy Chambers <br />{' '}
       <br />
       E-Mail: <a href="mailto:info@okfn.de">info@okfn.de</a> (
       <a href="https://pgp.mit.edu/pks/lookup?op=get&amp;search=0xFE54F46F21DDAED1">

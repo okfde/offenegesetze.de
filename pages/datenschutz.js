@@ -12,10 +12,14 @@ const Ueber = () => (
       <dl>
         <dt>Vereinsadresse:</dt>
         <dd>
-          Open Knowledge Foundation Deutschland e.V.<br />
-          Singerstr. 109<br />
-          10179 Berlin<br />
-          Deutschland<br />
+          Open Knowledge Foundation Deutschland e.V.
+          <br />
+          Singerstr. 109
+          <br />
+          10179 Berlin
+          <br />
+          Deutschland
+          <br />
           <br />
         </dd>
       </dl>
@@ -23,12 +27,19 @@ const Ueber = () => (
         <dt>Vereinsregister Nr:</dt>
         <dd>VR 30468 B</dd>
       </dl>
+      Vereinsregister Nr: VR 30468 B <br /> <br />
+      Umsatzsteuernummer: DE278022128 <br /> <br />
+      Registergericht: Amtsgericht Berlin <br /> <br />
+      Vertreten durch den Vereinsvorstand: Andreas Pawelke, Claudia Schwegmann,
+      Daniel Dietrich, Jana Wichmann, Kristina Klein, Lucy Chambers <br />{' '}
       <dl>
         <dt>E-Mail:</dt>
         <dd>
-          <a href="mailto:info@okfn.de">info@okfn.de</a> (<a href="https://pgp.mit.edu/pks/lookup?op=get&amp;search=0xFE54F46F21DDAED1">
+          <a href="mailto:info@okfn.de">info@okfn.de</a> (
+          <a href="https://pgp.mit.edu/pks/lookup?op=get&amp;search=0xFE54F46F21DDAED1">
             OpenPGP
-          </a>)
+          </a>
+          )
         </dd>
         <dt>Telefon:</dt>
         <dd>
@@ -100,10 +111,14 @@ const Ueber = () => (
       <div>
         <dl>
           <dd>
-            Open Knowledge Foundation Deutschland e.V.<br />
-            Singerstr. 109<br />
-            10179 Berlin<br />
-            Deutschland<br />
+            Open Knowledge Foundation Deutschland e.V.
+            <br />
+            Singerstr. 109
+            <br />
+            10179 Berlin
+            <br />
+            Deutschland
+            <br />
           </dd>
         </dl>
         <dl>
@@ -126,12 +141,16 @@ const Ueber = () => (
       <div>
         <dl>
           <dd>
-            Open Knowledge Foundation Deutschland e.V.<br />
-            - Datenschutzbeauftragter -<br />
-            Singerstr. 109<br />
-            10179 Berlin<br />
+            Open Knowledge Foundation Deutschland e.V.
             <br />
-            Deutschland<br />
+            - Datenschutzbeauftragter -<br />
+            Singerstr. 109
+            <br />
+            10179 Berlin
+            <br />
+            <br />
+            Deutschland
+            <br />
             <br />
             <a href="mailto:datenschutz@okfn.de">datenschutz@okfn.de</a>
           </dd>
