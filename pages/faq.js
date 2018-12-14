@@ -79,6 +79,13 @@ const Faq = () => (
       um den Text zu extrahieren. Insbesondere mit dem Spalten-Layout gibt es Probleme. 
       Wir arbeiten an einer Lösung und freuen uns über Hinweise.
     </p>
+    <h3>
+      Und was ist mit anderen Dokumenten?
+    </h3>
+    <p>
+      Wir bekommen viele Zuschriften von Menschen, die sich auch eine Veröffentlichung von BGBl 
+      Teil III sowie von Normen wünschen. Wir prüfen derzeit, was in dieser Hinsicht machbar ist.
+    </p>
     <br />
     <br />
     <p>
