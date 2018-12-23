@@ -273,6 +273,25 @@ class IndexPage extends React.Component {
                       </a>
                       .
                     </p>
+                    <br />
+                    <h4>
+                      <i
+                        className="fas fa-bell"
+                        style={{ marginRight: '1rem' }}
+                      />
+                      Updates
+                    </h4>
+                    <p>
+                      <div className="marquee">
+                        23.12.2018, FAZ:{' '}
+                        <a
+                          className="highlight"
+                          href="https://www.faz.net/aktuell/wirtschaft/diginomics/justizministerin-barley-nimmt-dumont-verlag-das-gesetzblatt-weg-15957231.html?GEPC=s3"
+                        >
+                          "Barley nimmt Dumont-Verlag das Gesetzblatt weg"
+                        </a>
+                      </div>
+                    </p>
                   </div>
                 )}
               </div>
