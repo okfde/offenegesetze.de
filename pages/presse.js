@@ -2,7 +2,7 @@ import React from 'react';
 
 import BaseContent from '../components/layout/base-content';
 
-const articles = [
+const articlesLaunch = [
   'https://www.sueddeutsche.de/digital/offene-daten-aktivisten-stellen-alle-bundesgesetzblaetter-ins-netz-1.4246682',
   'https://netzpolitik.org/2018/offenegesetze-bundesgesetzblaetter-erstmals-frei-zugaenglich/',
   'https://www.lto.de/recht/hintergruende/h/offene-gesetze-inhalt-bundesgesetzblatt-datenbankschutz-urheberrecht/',
@@ -29,6 +29,13 @@ const articles = [
   'https://blogs.faz.net/einspruch/2018/12/12/wie-weiter-mit-may-428/',
   'http://www.urheberrecht.org/news/6141/',
   'https://www.wbs-law.de/urheberrecht/stiftung-stellt-bundesgesetzblatt-online-ist-das-erlaubt-78954/',
+  'https://www.krz.de/Startseite/OffeneGesetze-de.php?object=tx,2669.73&ModID=7&FID=2669.909.1&NavID=2669.67&NavID=2669.3',
+];
+
+const articlesXmas = [
+  'https://www.faz.net/aktuell/wirtschaft/diginomics/justizministerin-barley-nimmt-dumont-verlag-das-gesetzblatt-weg-15957231.html?GEPC=s3',
+  'https://www.bild.de/politik/inland/politik-inland/justizministerin-barley-schafft-bezahl-gesetzblatt-ab-bald-alles-kostenfrei-onli-59203758.bild.html',
+  'http://www.turi2.de/aktuell/faz-dumont-verliert-den-druckauftrag-fuer-das-bundesgesetzblatt/',
 ];
 
 const Presse = () => (
@@ -38,9 +45,10 @@ const Presse = () => (
       Presseanfragen bitte an Arne Semsrott, info@offenegesetze.de, Telefon: 030
       57703666 0
     </p>
-    <h2>
+    <h2>Pressemittelung</h2>
+    <h3>
       OffeneGesetze - zentrale Dokumente der Demokratie erstmals frei zugänglich
-    </h2>
+    </h3>
     <p>
       Berlin, 10.12.2018 - Die Bundesgesetzblätter sind die zentralen Dokumente
       der deutschen Demokratie. Unter OffeneGesetze.de sind sie jetzt erstmals
@@ -85,7 +93,14 @@ const Presse = () => (
       Presse-Artikel, Blog-Beiträge und Posts in Link-Aggregator über
       OffeneGesetze.de
     </h2>
-    {articles.map(x => (
+    <h3>OffeneGesetze.de Launch: 10.12.2018</h3>
+    {articlesLaunch.map(x => (
+      <p>
+        <a href={x}>{x}</a>
+      </p>
+    ))}
+    <h3>BMJV will eigene Plattform: 23.12.2018</h3>
+    {articlesXmas.map(x => (
       <p>
         <a href={x}>{x}</a>
       </p>
