@@ -6,8 +6,8 @@ const Footer = () => (
     <div className="container">
       <div className="columns is-desktop">
         <div className="column">
-          OffeneGesetze.de ist eine zivilgesellschaftliche Plattform für
-          amtliche Gesetzesblätter.
+          OffeneGesetze.de ist eine zivilgesellschaftliche, ehrenamtliche
+          Plattform für amtliche Gesetzesblätter.
           <br />
           <br />
           <a href="https://twitter.com/offenegesetze">
@@ -27,6 +27,18 @@ const Footer = () => (
               <i className="fab has-text-black fa-2x fa-github" />
             </span>
             <span className="is-sr-only">GitHub</span>
+          </a>
+          <a href="https://www.instagram.com/offenegesetze.de/">
+            <span className="icon is-large">
+              <i className="fab has-text-black fa-2x fa-instagram" />
+            </span>
+            <span className="is-sr-only">Instagram</span>
+          </a>
+          <a href="https://chaos.social/@offenegesetze">
+            <span className="icon is-large">
+              <i className="fab has-text-black fa-2x fa-mastodon" />
+            </span>
+            <span className="is-sr-only">Mastodon</span>
           </a>
         </div>
         <div className="column">
