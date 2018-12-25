@@ -321,7 +321,7 @@ class IndexPage extends React.Component {
                 <h3>2. Beratung und Zustimmung</h3>
               </div>
               <div className="column is-half">
-                Der Bundestag und der Bunderat beraten über den Gesetzentwurf
+                Der Bundestag und der Bundesrat beraten über den Gesetzentwurf
                 und verabschieden ihn, meist mit Änderungen.
               </div>
             </div>
