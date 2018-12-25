@@ -36,6 +36,12 @@ const articlesXmas = [
   'https://www.faz.net/aktuell/wirtschaft/diginomics/justizministerin-barley-nimmt-dumont-verlag-das-gesetzblatt-weg-15957231.html?GEPC=s3',
   'https://www.bild.de/politik/inland/politik-inland/justizministerin-barley-schafft-bezahl-gesetzblatt-ab-bald-alles-kostenfrei-onli-59203758.bild.html',
   'http://www.turi2.de/aktuell/faz-dumont-verliert-den-druckauftrag-fuer-das-bundesgesetzblatt/',
+  'https://www.heise.de/newsticker/meldung/Elektronische-Gesetze-Offenes-Buergerportal-soll-Bundesgesetzblatt-abloesen-4259011.html',
+  'https://www.golem.de/news/bundesjustizministerin-barley-gesetze-sollen-digital-wirksam-werden-1812-138393.html',
+  'https://www.zdf.de/nachrichten/heute/zugriff-auf-gesetzestexte-barley-fuer-bessere-handhabung-100.html',
+  'https://www.zeit.de/news/2018-12/23/buerger-sollen-leichter-digital-auf-gesetze-zugreifen-koennen-181223-99-334216',
+  'https://blog.fefe.de/?ts=a2dfc1b3',
+  'https://www.lto.de/recht/presseschau/p/2018-12-24-digitales-bgbl-gewerkschaftsmitglieder-ss-mann/',
 ];
 
 const Presse = () => (
