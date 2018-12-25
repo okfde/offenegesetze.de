@@ -283,6 +283,8 @@ class IndexPage extends React.Component {
                     </h4>
                     <p>
                       <div className="marquee">
+                        10.12.2018: Launch von OffeneGesetze.de
+                        <br />
                         23.12.2018, FAZ:{' '}
                         <a
                           className="highlight"
