@@ -11,4 +11,4 @@ COPY . .
 RUN node_modules/.bin/next build
 
 EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "production"]
