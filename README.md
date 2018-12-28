@@ -1,10 +1,10 @@
-# OffeneGesetze.de [![Build Status](https://travis-ci.com/okfde/offenegesetze.de.svg?branch=master)](https://travis-ci.com/okfde/offenegesetze.de) [![GitHub license](https://img.shields.io/github/license/okfde/offenegesetze.de.svg)](https://github.com/okfde/offenegesetze.de/blob/master/LICENSE)
+# [OffeneGesetze.de](https://offenegesetze.de/) [![Build Status](https://travis-ci.com/okfde/offenegesetze.de.svg?branch=master)](https://travis-ci.com/okfde/offenegesetze.de) [![GitHub license](https://img.shields.io/github/license/okfde/offenegesetze.de.svg)](https://github.com/okfde/offenegesetze.de/blob/master/LICENSE)
 
-The Federal Law Gazettes freely accessible for the first time. More in our blog post: https://okfn.de/blog/2018/12/opening-laws-in-germany/
+The Federal Law Gazettes freely accessible for the first time. More in our blog post: [okfn.de/blog/2018/12/opening-laws-in-germany/](https://okfn.de/blog/2018/12/opening-laws-in-germany/)
 
 In this repository you can find the frontend based on [Next.js](https://github.com/zeit/next.js/) and [Bulma](https://github.com/jgthms/bulma).
 
-The backend is located at https://github.com/okfde/api.offenegesetze.de.
+The backend is located at [github.com/okfde/api.offenegesetze.de](https://github.com/okfde/api.offenegesetze.de).
 
 ## Development
 
