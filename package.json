@@ -1,24 +1,25 @@
 {
-  "name": "offenegesetze-frontend",
+  "name": "offenegesetze",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "misc/server.js",
   "scripts": {
     "start": "rm -rf .next && node misc/server.js",
     "build": "next build",
     "production": "NODE_ENV=production node misc/server.js",
-    "test": "jest"
+    "test": "jest",
+    "pretty": "prettier --write '**/*.js' && prettier --write '**/*.scss'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jfilter/xyz.git"
+    "url": "git+https://github.com/okfde/offenegesetze.de.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jfilter/xyz/issues"
+    "url": "https://github.com/okfde/offenegesetze.de/issues"
   },
-  "homepage": "https://github.com/jfilter/xyz#readme",
+  "homepage": "https://offenegesetze.de",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.5.0",
     "@zeit/next-css": "^1.0.0",

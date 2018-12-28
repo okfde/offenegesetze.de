@@ -75,16 +75,16 @@ const Faq = () => (
       Warum ist der Text so komisch, wenn ich ihn aus älteren PDFs kopiere?
     </h3>
     <p>
-      Bei älteren Dokumenten gibt es derzeit noch Probleme mit der Texterkennungssoftware, 
-      um den Text zu extrahieren. Insbesondere mit dem Spalten-Layout gibt es Probleme. 
-      Wir arbeiten an einer Lösung und freuen uns über Hinweise.
+      Bei älteren Dokumenten gibt es derzeit noch Probleme mit der
+      Texterkennungssoftware, um den Text zu extrahieren. Insbesondere mit dem
+      Spalten-Layout gibt es Probleme. Wir arbeiten an einer Lösung und freuen
+      uns über Hinweise.
     </p>
-    <h3>
-      Und was ist mit anderen Dokumenten?
-    </h3>
+    <h3>Und was ist mit anderen Dokumenten?</h3>
     <p>
-      Wir bekommen viele Zuschriften von Menschen, die sich auch eine Veröffentlichung von BGBl 
-      Teil III sowie von Normen wünschen. Wir prüfen derzeit, was in dieser Hinsicht machbar ist.
+      Wir bekommen viele Zuschriften von Menschen, die sich auch eine
+      Veröffentlichung von BGBl Teil III sowie von Normen wünschen. Wir prüfen
+      derzeit, was in dieser Hinsicht machbar ist.
     </p>
     <br />
     <br />
