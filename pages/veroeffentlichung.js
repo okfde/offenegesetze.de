@@ -118,6 +118,15 @@ PublicationIndex.getInitialProps = async () => {
   );
   const items = await res.json();
 
+  // hotfix cause years are missing in backend
+  if (!items.some(x => x.year === CURRENT_YEAR && x.kind === 'bgbl1')) {
+    items.push({ year: CURRENT_YEAR, kind: 'bgbl1', max_number: 0 });
+  }
+
+  if (!items.some(x => x.year === CURRENT_YEAR && x.kind === 'bgbl2')) {
+    items.push({ year: CURRENT_YEAR, kind: 'bgbl2', max_number: 0 });
+  }
+
   return {
     items,
   };
