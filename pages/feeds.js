@@ -45,7 +45,17 @@ const Feeds = () => (
           Suche
         </a>
       </Link>{' '}
-      benutzen und dort abbonieren.
+      benutzen und dort abonnieren.
+    </p>
+    <p>
+      Um Updates per E-Mail zu erhalten, kann man sich via z.B. mit{' '}
+      <a
+        className="highlight"
+        href="https://ifttt.com/applets/147561p-rss-feed-to-email"
+      >
+        IFTTT
+      </a>{' '}
+      E-Mails schicken lassen.
     </p>
   </BaseContent>
 );

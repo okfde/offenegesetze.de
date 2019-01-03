@@ -251,7 +251,7 @@ class Search extends React.Component {
               <span className="icon is-small">
                 <i className="fas fa-rss" />
               </span>
-              <span>als Feed abonnieren</span>
+              <span>Feed abonnieren</span>
             </a>
           </div>
         )}

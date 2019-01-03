@@ -83,13 +83,25 @@ const Faq = () => (
     <h3>Und was ist mit anderen Dokumenten?</h3>
     <p>
       Wir bekommen viele Zuschriften von Menschen, die sich auch eine
-      Veröffentlichung von BGBl Teil III sowie von Normen wünschen. Wir prüfen
+      Veröffentlichung von BGBl. Teil III sowie von Normen wünschen. Wir prüfen
       derzeit, was in dieser Hinsicht machbar ist.
+    </p>
+    <h3>Ich benutze kein RSS. Kann ich trotzdem Updates erhalten?</h3>
+    <p>
+      Ja, Sie können sich z.B.{' '}
+      <a
+        className="highlight"
+        href="https://ifttt.com/applets/147561p-rss-feed-to-email"
+      >
+        IFTTT
+      </a>{' '}
+      Updates per E-Mails zuschicken lassen. Dafür einfach die URL des Feeds bei
+      IFTTT eingeben and eine gewünschte E-Mail-Adresse schicken lassen.
     </p>
     <br />
     <br />
     <p>
-      Bei weiteren Fragen können Sie{' '}
+      Bei weiteren Fragen können Sie gerne{' '}
       <Link prefetch href="/kontakt">
         <a href="/kontakt" className="highlight">
           Kontakt
