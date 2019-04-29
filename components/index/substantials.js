@@ -48,7 +48,7 @@ const data = [
   },
   {
     url: '/veroeffentlichung/bgbl1/1993/41#page=1',
-    title: 'Ayslkompromiss: Neufassung des Asylverfahrensgesetzes (1993)',
+    title: 'Asylkompromiss: Neufassung des Asylverfahrensgesetzes (1993)',
     imageSrc: '/static/index-preview/asyl.png',
   },
   {
