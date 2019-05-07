@@ -20,6 +20,9 @@
     "url": "https://github.com/okfde/offenegesetze.de/issues"
   },
   "homepage": "https://offenegesetze.de",
+  "engines": {
+    "node": "^8 || ^10"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.5.0",
     "@zeit/next-css": "^1.0.0",
