@@ -59,7 +59,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^2.7.0",
     "eslint-plugin-react": "^7.14.3",
-    "jest": "^23.6.0",
+    "jest": "^25.0.0",
     "prettier": "^1.18.2"
   },
   "prettier": {
