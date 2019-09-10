@@ -31,7 +31,7 @@ const Feeds = () => (
       <li>
         <a
           className="highlight"
-          href="https://api.offenegesetze.de/v1/veroeffentlichung/?format=rss&kind=bgbl1"
+          href="https://api.offenegesetze.de/v1/veroeffentlichung/?format=rss&kind=bgbl2"
         >
           Nur BGBl. II
         </a>
