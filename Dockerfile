@@ -1,5 +1,7 @@
 FROM node:10-alpine
 
+RUN apk add g++ make python
+
 WORKDIR /code
 
 COPY package*.json ./
