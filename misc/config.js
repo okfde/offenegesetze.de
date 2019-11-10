@@ -8,13 +8,13 @@ const CURRENT_YEAR = new Date().getFullYear();
 
 const KIND_LIST = [
   {
-    name: 'BGBl. Teil 1',
+    name: 'BGBl. Teil I',
     size: '~6 GB',
     id: 'bgbl1',
     years: range(1949, CURRENT_YEAR + 1, 1),
   },
   {
-    name: 'BGBl. Teil 2',
+    name: 'BGBl. Teil II',
     size: '~4 GB',
     id: 'bgbl2',
     years: range(1951, CURRENT_YEAR + 1, 1),

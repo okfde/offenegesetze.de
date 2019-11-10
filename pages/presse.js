@@ -95,10 +95,7 @@ const Presse = () => (
       Bundesgesetzblatt, die Verkündung des Grundgesetzes 1949, nur als schiefer
       Bilderscan vorhanden.
     </p>
-    <h2>
-      Presse-Artikel, Blog-Beiträge und Posts in Link-Aggregator über
-      OffeneGesetze.de
-    </h2>
+    <h2>Presse-Artikel über uns</h2>
     <h3>OffeneGesetze.de Launch: 10.12.2018</h3>
     {articlesLaunch.map(x => (
       <p>
