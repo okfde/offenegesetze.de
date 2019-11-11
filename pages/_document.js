@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
     let title = initialProps.head.filter(x => x.type == 'title');
     if (title && title.length > 0) title = title[0].props.children;
     if (Array.isArray(title)) title = title.join('');
-    return { description: title };
+    return { title };
   }
 
   render() {
@@ -51,10 +51,7 @@ export default class MyDocument extends Document {
 
           <meta
             name="description"
-            content={
-              this.props.description ||
-              'Freier Zugang zu unseren Gesetzen. Wir stellen das Bundesgesetzblatt in digitaler Form kostenfrei zur Verfügung.'
-            }
+            content="Freier Zugang zu unseren Gesetzen. Wir stellen das Bundesgesetzblatt in digitaler Form kostenfrei zur Verfügung."
           />
           <meta
             property="og:image"
@@ -67,7 +64,10 @@ export default class MyDocument extends Document {
             property="article:author"
             content="https://www.facebook.com/offenegesetze"
           />
-          <meta property="og:title" content="OffeneGesetze.de" />
+          <meta
+            property="og:title"
+            content={this.props.title || 'OffeneGesetze.de'}
+          />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:creator" content="@offenegesetze" />
         </Head>
