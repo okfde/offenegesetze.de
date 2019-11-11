@@ -2,6 +2,15 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    // some hack to make the meta tags more dynamic, I couln't make it work otherwise
+    const initialProps = await Document.getInitialProps(ctx);
+    let title = initialProps.head.filter(x => x.type == 'title');
+    if (title && title.length > 0) title = title[0].props.children;
+    if (Array.isArray(title)) title = title.join('');
+    return { description: title };
+  }
+
   render() {
     const tracking = `var _paq = _paq || [];
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
@@ -42,11 +51,10 @@ export default class MyDocument extends Document {
 
           <meta
             name="description"
-            content="Freier Zugang zu unseren Gesetzen. Wir stellen das Bundesgesetzblatt in digitaler Form kostenfrei zur Verfügung."
-          />
-          <meta
-            property="og:description"
-            content="Freier Zugang zu unseren Gesetzen. Wir stellen das Bundesgesetzblatt in digitaler Form kostenfrei zur Verfügung."
+            content={
+              this.props.description ||
+              'Freier Zugang zu unseren Gesetzen. Wir stellen das Bundesgesetzblatt in digitaler Form kostenfrei zur Verfügung.'
+            }
           />
           <meta
             property="og:image"
