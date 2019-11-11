@@ -14,6 +14,11 @@ class IndexPage extends React.Component {
     const { items } = this.props;
     return (
       <BaseIndex>
+        <div className="container">
+          <a href="https://fragdenstaat.de/blog/2019/10/31/neuer-job-bei-fragdenstaat-wir-suchen-jurist-60-100-ab-februar-2020/">
+            🔥 Neuer Job bei FragDenStaat: Wir suchen Jurist*in! 🔥{' '}
+          </a>
+        </div>
         <div className="hero is-medium is-primary">
           <div className="hero-body">
             <div className="container">
