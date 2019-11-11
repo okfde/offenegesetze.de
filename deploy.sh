@@ -1,1 +1,1 @@
-ssh schr 'cd /opt/offenegesetze.de/ && ./update.sh'
+ssh schr 'cd /var/www/offenegesetze.de/ && ./update.sh'
