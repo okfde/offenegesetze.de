@@ -19,6 +19,7 @@ export default class MyDocument extends Document {
     (function() {
       var u="//traffic.okfn.de/";
       _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['disableCookies']);
       _paq.push(['setSiteId', '46']);
       var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
       g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
