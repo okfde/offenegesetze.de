@@ -364,32 +364,11 @@ const Ueber = () => (
         <li>die in unserer Web-Site aufgerufenen Seiten.</li>
       </ul>
       <p>
-        Für die Nutzung von Matomo verwenden wir sogenannte „Cookies“. Hierbei
-        handelt es sich um kleine Textdateien, die ein Webserver an ihren
-        Computer senden kann, um diesen für die Dauer des Besuches zu
-        identifizieren. Wir setzen die beiden Session Cookies pk_ses sowie die
-        persistenten Cookies pk_id und pk_ref ein. Über diese Cookies erfassen
-        wir keine personenbezogenen Daten von Ihnen.
+        Bei der Verwendung von Matomo werden keine Cookies gesetzt.
       </p>
       <p>
-        pk_ses wird grundsätzlich nach dem Beenden Ihrer Browsersitzung
-        gelöscht, lediglich bei pk_id und pk_ref handelt es sich um ein über
-        eine Browsersitzung hinaus bestehendes (sog. persistentes) Cookie,
-        anhand dessen wir erkennen können, wann ein Nutzer unsere Seite erneut
-        besucht. Sofern Sie das Cookie nicht selbst entfernen, löscht es sich
-        nach 1 Jahr bzw. 6 Monaten selbständig.
-      </p>
-      <p>
-        Die Darstellung unserer Internetseite ist auch ohne Speicherung von
-        Cookies möglich. Sie können das Speichern von Cookies in den
-        Einstellungen ihres Browsers deaktivieren oder diesen so einstellen,
-        dass er Sie über die beabsichtigte Speicherung durch eine Internetseite
-        informiert. In diesem Fall entscheiden Sie über die Annahme des Cookies.
-      </p>
-      <p>
-        Zudem können durch die Entfernung des folgenden Hakens verhindern, dass
-        wir mittels Matomo Analyse-Cookies auf Ihrem Endgerät setzen. In diesem
-        Fall wird ein Cookie gesetzt um uns zu signalisieren, dass Sie der
+        Zudem können durch die Entfernung des folgenden Hakens der Nutzung von Matomo widersprechen.
+        In diesem Fall wird ein Cookie gesetzt um uns zu signalisieren, dass Sie der
         Nutzung widersprochen haben.
       </p>
       <p>
@@ -416,7 +395,7 @@ const Ueber = () => (
         Ihrer Daten. Ihre Fragen und Kommentare zum Datenschutz sind uns
         willkommen, schreiben Sie einfach eine Mail an info@okfn.de.
       </p>
-      <p>Berlin, Dezember 2018</p>
+      <p>Berlin, Mai 2020</p>
     </div>
   </BaseContent>
 );
