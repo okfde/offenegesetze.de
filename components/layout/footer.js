@@ -55,8 +55,8 @@ const Footer = () => (
                 </Link>
               </li>
               <li>
-                <Link href="/datenschutz">
-                  <a href="/datenschutz">Datenschutz</a>
+                <Link href="https://okfn.de/impressum/#datenschutzerkl%C3%A4rung">
+                  <a href="https://okfn.de/impressum/#datenschutzerkl%C3%A4rung">Datenschutzerklärung</a>
                 </Link>
               </li>
             </ul>
