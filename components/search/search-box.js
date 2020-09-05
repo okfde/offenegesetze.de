@@ -15,7 +15,6 @@ class SearchBox extends React.Component {
   }
 
   _onSelect = (value, item) => {
-    console.log(value, item);
     if (item.special) {
       window.location.assign(item.url);
     } else {
