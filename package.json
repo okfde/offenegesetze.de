@@ -1,7 +1,7 @@
 {
   "name": "offenegesetze",
   "version": "0.1.0",
-  "description": "",
+  "description": "The Federal Law Gazettes are the central documents of German democracy. To pass a law, it has to be published in the Law Gazette. At OffeneGesetze.de they are now freely accessible for the first time. On the portal we provide the documents free of charge and for free re-use.",
   "main": "misc/server.js",
   "scripts": {
     "start": "rm -rf .next && node misc/server.js",
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/okfde/offenegesetze.de.git"
   },
-  "author": "",
+  "author": "Johannes Filter, Stefan Wehrmeyer, Open Knowledge Foundation Deutschland e. V.",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/okfde/offenegesetze.de/issues"
