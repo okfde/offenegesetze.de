@@ -7,7 +7,6 @@ import Faq from '../pages/faq';
 import Kontakt from '../pages/kontakt';
 import Presse from '../pages/presse';
 import Daten from '../pages/daten';
-import Datenschutz from '../pages/datenschutz';
 import Feeds from '../pages/feeds';
 
 describe('With Enzyme', () => {
@@ -33,14 +32,6 @@ describe('With Enzyme', () => {
     const app = shallow(<Daten />);
 
     expect(app.find('h1').text()).toEqual(expect.stringContaining('Download'));
-  });
-
-  it('test datenschutz', () => {
-    const app = shallow(<Datenschutz />);
-
-    expect(app.find('h1').text()).toEqual(
-      expect.stringContaining('Datenschutz')
-    );
   });
 
   it('test feeds', () => {
