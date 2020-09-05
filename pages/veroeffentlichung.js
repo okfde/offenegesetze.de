@@ -55,10 +55,10 @@ class PublicationIndex extends React.Component {
           <h2>Jahr</h2>
 
           {items
-            .filter(x => x.kind === bgbl)
+            .filter((x) => x.kind === bgbl)
             .sort((x, y) => x.year - y.year)
             .reverse()
-            .map(x => (
+            .map((x) => (
               <button
                 key={x.year}
                 onClick={() => this.setState({ year: x.year })}
@@ -83,10 +83,10 @@ class PublicationIndex extends React.Component {
             {items.length &&
               [
                 ...Array(
-                  items.filter(x => x.kind === bgbl && x.year === year)[0]
+                  items.filter((x) => x.kind === bgbl && x.year === year)[0]
                     .max_number
                 ).keys(),
-              ].map(x => (
+              ].map((x) => (
                 <Link
                   href={`/veroeffentlichung/${bgbl}/${year}/${x + 1}`}
                   key={x}
@@ -119,11 +119,11 @@ PublicationIndex.getInitialProps = async () => {
   const items = await res.json();
 
   // hotfix cause years are missing in backend
-  if (!items.some(x => x.year === CURRENT_YEAR && x.kind === 'bgbl1')) {
+  if (!items.some((x) => x.year === CURRENT_YEAR && x.kind === 'bgbl1')) {
     items.push({ year: CURRENT_YEAR, kind: 'bgbl1', max_number: 0 });
   }
 
-  if (!items.some(x => x.year === CURRENT_YEAR && x.kind === 'bgbl2')) {
+  if (!items.some((x) => x.year === CURRENT_YEAR && x.kind === 'bgbl2')) {
     items.push({ year: CURRENT_YEAR, kind: 'bgbl2', max_number: 0 });
   }
 

@@ -29,7 +29,7 @@ app.prepare().then(() => {
 
   server.use(express.static('static/favicons'));
 
-  cacheSites.forEach(x =>
+  cacheSites.forEach((x) =>
     server.get(x, (req, res) => {
       renderAndCache(req, res, x);
     })
@@ -61,7 +61,7 @@ app.prepare().then(() => {
 
   server.get('*', (req, res) => handle(req, res));
 
-  server.listen(port, err => {
+  server.listen(port, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://localhost:${port}`);
   });

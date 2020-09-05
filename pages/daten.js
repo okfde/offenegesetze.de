@@ -58,7 +58,7 @@ const Api = () => (
         besser komprimiert.
       </small>
     </p>
-    {KIND_LIST.map(kind => (
+    {KIND_LIST.map((kind) => (
       <div>
         <h3 className="is-3">{kind.name}</h3>
         <li key={`${kind.id}`}>
@@ -73,7 +73,7 @@ const Api = () => (
           >
             {kind.years
               .sort((x, y) => y - x)
-              .map(year => (
+              .map((year) => (
                 <li key={`${kind.id}-${year}`}>
                   <a
                     href={`https://media.offenegesetze.de/${kind.id}/${year}.tar.bz2`}

@@ -16,10 +16,10 @@ const Ueber = () => (
       Knowledge Foundation Deutschland e.V. Das Projekt wurde entwickelt von:
       <ul>
         {people
-          .map(a => ({ sort: Math.random(), value: a }))
+          .map((a) => ({ sort: Math.random(), value: a }))
           .sort((a, b) => a.sort - b.sort)
-          .map(a => a.value)
-          .map(x => (
+          .map((a) => a.value)
+          .map((x) => (
             <li>
               <a href={x[1]}>{x[0]}</a>
             </li>

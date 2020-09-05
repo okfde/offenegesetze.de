@@ -62,11 +62,11 @@ const Substantials = ({ highlight }) => (
   <div className="columns is-multiline">
     {data
       .filter(
-        x =>
+        (x) =>
           (x.hasOwnProperty('highlight') && x.highlight === highlight) ||
           !highlight
       )
-      .map(x => (
+      .map((x) => (
         <div className="column" key={x.url}>
           <Link href={x.url}>
             <a href={x.url} className="card">

@@ -13,7 +13,7 @@ const Recent = ({ items }) => (
           Veröffentlichungen
         </h3>
         <ul style={{ paddingBottom: '2rem' }}>
-          {items.map(x => (
+          {items.map((x) => (
             <ListItem key={x.id} item={x} />
           ))}
         </ul>

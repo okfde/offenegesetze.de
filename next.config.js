@@ -6,7 +6,7 @@ module.exports = withFonts(
   withSass(
     withImages({
       inlineImageLimit: 10,
-      webpack: config => {
+      webpack: (config) => {
         // next-fonts does not include SVG fonts which we need for FA
         config.module.rules.push({
           test: /\.(svg)$/,

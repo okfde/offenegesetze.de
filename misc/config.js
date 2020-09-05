@@ -21,7 +21,7 @@ const KIND_LIST = [
   },
 ];
 const KINDS = {};
-KIND_LIST.forEach(x => {
+KIND_LIST.forEach((x) => {
   KINDS[x.id] = x;
 });
 

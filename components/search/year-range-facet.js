@@ -15,17 +15,17 @@ const YearRangeFacet = ({
   containerStyle,
   setYear,
 }) => {
-  const bars = facet.filter(x => x.year >= min && x.year <= max);
-  const beforeBars = facet.filter(x => x.year < min);
-  const afterBars = facet.filter(x => x.year > max);
+  const bars = facet.filter((x) => x.year >= min && x.year <= max);
+  const beforeBars = facet.filter((x) => x.year < min);
+  const afterBars = facet.filter((x) => x.year > max);
   const maxValue = Math.max(
-    ...[...bars, ...beforeBars, ...afterBars].map(x => x.count)
+    ...[...bars, ...beforeBars, ...afterBars].map((x) => x.count)
   );
   return (
     <div style={containerStyle}>
       <input type="hidden" name="year" value={`${min}-${max}`} />
       <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-        {beforeBars.map(x => (
+        {beforeBars.map((x) => (
           <a
             key={x.year}
             title={`${x.year}: ${x.count}`}
@@ -43,7 +43,7 @@ const YearRangeFacet = ({
             <span className="is-sr-only">{x.year}</span>
           </a>
         ))}
-        {bars.map(x => (
+        {bars.map((x) => (
           <a
             key={x.year}
             title={`${x.year}: ${x.count}`}
@@ -63,7 +63,7 @@ const YearRangeFacet = ({
             <span className="is-sr-only">{x.year}</span>
           </a>
         ))}
-        {afterBars.map(x => (
+        {afterBars.map((x) => (
           <a
             key={x.year}
             title={`${x.year}: ${x.count}`}

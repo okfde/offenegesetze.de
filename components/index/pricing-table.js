@@ -89,7 +89,7 @@ const PricingTable = () => (
         </tr>
       </thead>
       <tbody>
-        {comparison.map(row => (
+        {comparison.map((row) => (
           <tr key={row.title}>
             <td className="pricing-title">{row.title}</td>
             <td>

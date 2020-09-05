@@ -176,7 +176,7 @@ Publication.getInitialProps = async ({ query }) => {
   const json = await res.json();
   const item = json.results[0];
 
-  const contentList = [].concat(...json.results.map(x => x.content));
+  const contentList = [].concat(...json.results.map((x) => x.content));
 
   const toc = json.results.map(
     ({ title, order, pdf_page: pdfPage, num_pages: numPages }) => ({

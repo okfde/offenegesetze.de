@@ -33,7 +33,7 @@ class Search extends React.Component {
     };
   }
 
-  setYear = year => e => {
+  setYear = (year) => (e) => {
     let { kind } = this.props;
     if (kind != null && !Array.isArray(kind)) kind = [kind];
 
@@ -44,8 +44,8 @@ class Search extends React.Component {
   loadFunc = () => {
     const { next } = this.props;
     fetch(next)
-      .then(x => x.json())
-      .then(x =>
+      .then((x) => x.json())
+      .then((x) =>
         this.setState({
           next: x.next,
           items: this.state.items.concat(x.results),
@@ -53,7 +53,7 @@ class Search extends React.Component {
       );
   };
 
-  _onKindSelect = event => {
+  _onKindSelect = (event) => {
     const { kind, firstYear, lastYear } = this.props;
     const { value } = event.target;
 
@@ -62,7 +62,7 @@ class Search extends React.Component {
       if (Array.isArray(kind)) {
         if (kind.includes(value)) {
           // remove
-          arr = kind.filter(x => x !== value);
+          arr = kind.filter((x) => x !== value);
         } else {
           // add
           arr.push(kind);
@@ -82,11 +82,11 @@ class Search extends React.Component {
     this._updateFilters(arr, `${firstYear}-${lastYear}`);
   };
 
-  _onDateRangeChange = dateRange => {
+  _onDateRangeChange = (dateRange) => {
     this.setState({ dateRange });
   };
 
-  _onDateRangeChangeFinal = dateRange => {
+  _onDateRangeChangeFinal = (dateRange) => {
     let { kind } = this.props;
     if (kind != null && !Array.isArray(kind)) kind = [kind];
     let year;
@@ -101,7 +101,7 @@ class Search extends React.Component {
   _updateFilters = (bgblArr = [], year = '') => {
     const { query } = this.props;
 
-    let arrStr = bgblArr.map(x => `&kind=${x}`).join('');
+    let arrStr = bgblArr.map((x) => `&kind=${x}`).join('');
 
     if (year) arrStr += `&year=${year}`;
 
@@ -125,7 +125,7 @@ class Search extends React.Component {
     const { items, next, dateRange } = this.state;
 
     const getKindFacet = (value, attr, defaultValue) => {
-      const item = facets.kind.filter(x => x.value === value)[0];
+      const item = facets.kind.filter((x) => x.value === value)[0];
       if (item !== undefined) {
         return item[attr];
       }
@@ -168,7 +168,7 @@ class Search extends React.Component {
               <div className="select is-small" style={{ paddingLeft: '1rem' }}>
                 <select
                   value={dateRange.min === dateRange.max ? dateRange.min : ''}
-                  onChange={event =>
+                  onChange={(event) =>
                     this._onDateRangeChangeFinal({
                       min: parseInt(event.target.value),
                       max: parseInt(event.target.value),
@@ -179,7 +179,7 @@ class Search extends React.Component {
                   {Array.from(
                     { length: MAX_YEAR - MIN_YEAR },
                     (_, i) => MAX_YEAR - i
-                  ).map(x => (
+                  ).map((x) => (
                     <option value={x} key={x}>
                       {x}
                     </option>
@@ -218,7 +218,7 @@ class Search extends React.Component {
           {
             <div className="field is-grouped" style={{ margin: '1rem 0' }}>
               {facets != null &&
-                KIND_LIST.map(k => (
+                KIND_LIST.map((k) => (
                   <p className="control" key={k.id}>
                     <label>
                       <input
@@ -245,8 +245,8 @@ class Search extends React.Component {
             <a
               className="button is-pulled-right"
               href={`https://api.offenegesetze.de/v1/veroeffentlichung/?format=rss&q=${query}${facets.kind
-                .filter(x => x.selected)
-                .map(x => `&kind=${x.value}`)}`}
+                .filter((x) => x.selected)
+                .map((x) => `&kind=${x.value}`)}`}
             >
               <span className="icon is-small">
                 <i className="fas fa-rss" />
@@ -264,7 +264,7 @@ class Search extends React.Component {
             <div className="loader" style={{ margin: '0 auto' }} key={0} />
           }
         >
-          {(items || initialItems).map(x => (
+          {(items || initialItems).map((x) => (
             <ul
               className="no-margin"
               style={{ paddingBottom: '2rem' }}
@@ -279,7 +279,7 @@ class Search extends React.Component {
   }
 }
 
-const splitFromTo = year => {
+const splitFromTo = (year) => {
   if (!year) {
     return [MIN_YEAR, MAX_YEAR];
   }
@@ -299,7 +299,7 @@ const splitFromTo = year => {
 };
 
 const addMissingValues = (array, from, to) => {
-  const years = array.map(x => x.year);
+  const years = array.map((x) => x.year);
   const res = array;
   let year = from;
 
@@ -325,7 +325,7 @@ Search.getInitialProps = async ({ query }) => {
 
   if (kind) {
     if (Array.isArray(kind)) {
-      const arrStr = kind.map(x => `&kind=${x}`).join('');
+      const arrStr = kind.map((x) => `&kind=${x}`).join('');
       paramsStringBase += arrStr;
     } else {
       params.kind = kind;
@@ -338,7 +338,7 @@ Search.getInitialProps = async ({ query }) => {
   const paramsString =
     paramsStringBase +
     Object.keys(params)
-      .map(x => `&${x}=${encodeURIComponent(params[x])}`)
+      .map((x) => `&${x}=${encodeURIComponent(params[x])}`)
       .join('');
 
   const res = await fetch(
@@ -348,7 +348,7 @@ Search.getInitialProps = async ({ query }) => {
 
   const [from, to] = splitFromTo(params.year);
 
-  facets.date = facets.date.map(x => ({
+  facets.date = facets.date.map((x) => ({
     year: parseInt(x.value.split('-')[0], 10),
     ...x,
   }));

@@ -23,7 +23,7 @@ class SearchBox extends React.Component {
   };
 
   //  5. September 2005 (BGBl. I S. 2722),
-  _checkForCitation = text => {
+  _checkForCitation = (text) => {
     const re = /.*(19[4-9]\d|20\d{2})\s.*bgbl.*(i|ii)\D*(\d+)\D*/i;
     const groups = text.match(re);
 
@@ -50,7 +50,7 @@ class SearchBox extends React.Component {
     return null;
   };
 
-  _loadCitation = async params => {
+  _loadCitation = async (params) => {
     const { page, kind, year } = params;
     const res = await fetch(
       `https://api.offenegesetze.de/v1/veroeffentlichung/?page=${page}&kind=${kind}&year=${year}`
@@ -60,7 +60,7 @@ class SearchBox extends React.Component {
     if (jres.count !== 0) {
       // Jump to first page of result, which is fine
       this.setState({
-        seriousNLP: jres.results.map(item => ({
+        seriousNLP: jres.results.map((item) => ({
           year,
           kind,
           page,
@@ -74,7 +74,7 @@ class SearchBox extends React.Component {
     return false;
   };
 
-  _onChange = async e => {
+  _onChange = async (e) => {
     const { value } = e.target;
     this.setState({ value });
 
@@ -92,13 +92,13 @@ class SearchBox extends React.Component {
     const json = await res.json();
 
     let suggestions = json.results
-      .map(x =>
+      .map((x) =>
         ((x.title__highlight && x.title__highlight[0]) || '').match(
           /<em>(.*)<\/em>/
         )
       )
-      .filter(x => x !== null)
-      .map(x => x[1].replace(/<\/?em>/g, ''));
+      .filter((x) => x !== null)
+      .map((x) => x[1].replace(/<\/?em>/g, ''));
     suggestions = Array.from(new Set(suggestions));
 
     if (suggestions.length > 0) {
@@ -109,12 +109,12 @@ class SearchBox extends React.Component {
   };
 
   render() {
-    const items = this.state.suggestions.map(x => ({
+    const items = this.state.suggestions.map((x) => ({
       id: x,
       label: x,
     }));
     if (this.state.seriousNLP !== null) {
-      this.state.seriousNLP.forEach(item => {
+      this.state.seriousNLP.forEach((item) => {
         items.push({
           special: true,
           id: item.url + item.title,
@@ -135,7 +135,7 @@ class SearchBox extends React.Component {
               item.label.toLowerCase().indexOf(value.toLowerCase()) > -1 ||
               item.special
             }
-            getItemValue={item => item.label}
+            getItemValue={(item) => item.label}
             renderItem={(item, highlighted) => (
               <div
                 key={`${item.id}_${highlighted}`}

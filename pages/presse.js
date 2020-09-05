@@ -97,13 +97,13 @@ const Presse = () => (
     </p>
     <h2>Presse-Artikel über uns</h2>
     <h3>OffeneGesetze.de Launch: 10.12.2018</h3>
-    {articlesLaunch.map(x => (
+    {articlesLaunch.map((x) => (
       <p>
         <a href={x}>{x}</a>
       </p>
     ))}
     <h3>BMJV will eigene Plattform: 23.12.2018</h3>
-    {articlesXmas.map(x => (
+    {articlesXmas.map((x) => (
       <p>
         <a href={x}>{x}</a>
       </p>

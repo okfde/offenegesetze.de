@@ -7,8 +7,8 @@ import { PRIMARY_COLOR } from '../../misc/config';
 
 // This is quite hacky but the pager loaders need to rendered right away to
 // determine the appropiate height for the anchor tags.
-const renderLoader = maxPages =>
-  [...Array(maxPages).keys()].map(x => {
+const renderLoader = (maxPages) =>
+  [...Array(maxPages).keys()].map((x) => {
     return <PageLoading page={x + 1} key={x} />;
   });
 

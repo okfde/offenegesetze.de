@@ -15,7 +15,7 @@ class PDFViewer extends React.Component {
     pdfjs.GlobalWorkerOptions.workerSrc = '/static/pdf.worker.min.js';
   }
 
-  _customTextRenderer = textItem => {
+  _customTextRenderer = (textItem) => {
     let { q } = this.props;
 
     if (q) {
@@ -33,10 +33,10 @@ class PDFViewer extends React.Component {
       );
   };
 
-  _text = x => {
+  _text = (x) => {
     const { toc } = this.props;
     const entry = toc.find(
-      t => x + 1 < t.pdfPage + t.numPages && x + 1 >= t.pdfPage
+      (t) => x + 1 < t.pdfPage + t.numPages && x + 1 >= t.pdfPage
     );
     return entry != null && toc[0].pdfPage <= x + 1 ? entry.title : '';
   };
@@ -60,7 +60,7 @@ class PDFViewer extends React.Component {
               onLoadSuccess={onDocumentLoadSuccess}
               loading={renderLoader(maxPages)}
             >
-              {[...Array(numPages || maxPages).keys()].map(x => (
+              {[...Array(numPages || maxPages).keys()].map((x) => (
                 <StickyContainer key={x}>
                   <Sticky>
                     {({ style }) => (
