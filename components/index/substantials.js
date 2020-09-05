@@ -69,7 +69,7 @@ const Substantials = ({ highlight }) => (
       .map((x) => (
         <div className="column" key={x.url}>
           <Link href={x.url}>
-            <a href={x.url} className="card">
+            <a href={x.url} className="card" style={{ minWidth: '10rem' }}>
               <div className="card-image">
                 <figure className="image">
                   <img
