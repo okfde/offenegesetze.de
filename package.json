@@ -35,7 +35,7 @@
     "next": "^9.5.3",
     "next-fonts": "^0.10.0",
     "next-images": "^0.10.6",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.14.1",
     "react": "^16.9.0",
     "react-animate-on-change": "^2.2.0",
     "react-autocomplete": "^1.8.1",
