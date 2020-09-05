@@ -21,7 +21,7 @@
   },
   "homepage": "https://offenegesetze.de",
   "engines": {
-    "node": "^8 || ^10"
+    "node": "^10 || ^12"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.10.2",
