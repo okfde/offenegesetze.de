@@ -1,17 +1,15 @@
-# OffeneGesetze.de [![Build Status](https://travis-ci.com/okfde/offenegesetze.de.svg?branch=master)](https://travis-ci.com/okfde/offenegesetze.de) [![GitHub license](https://img.shields.io/github/license/okfde/offenegesetze.de.svg)](https://github.com/okfde/offenegesetze.de/blob/master/LICENSE)
+# `OffeneGesetze.de` [![Build Status](https://travis-ci.com/okfde/offenegesetze.de.svg?branch=master)](https://travis-ci.com/okfde/offenegesetze.de) [![GitHub license](https://img.shields.io/github/license/okfde/offenegesetze.de.svg)](https://github.com/okfde/offenegesetze.de/blob/master/LICENSE)
 
-The Federal Law Gazettes freely accessible for the first time: [OffeneGesetze.de](https://offenegesetze.de/). More in our blog post: [okfn.de/blog/2018/12/opening-laws-in-germany/](https://okfn.de/blog/2018/12/opening-laws-in-germany/)
+The Federal Law Gazettes are the central documents of German democracy. To pass a law, it has to be published in the Law Gazette. At [OffeneGesetze.de](https://offenegesetze.de/) they are now freely accessible for the first time. On the portal we provide the documents free of charge and for free re-use. [More information in our blog post.](https://okfn.de/blog/2018/12/opening-laws-in-germany/)
 
-In this repository you can find the frontend based on [Next.js](https://github.com/zeit/next.js/) and [Bulma](https://github.com/jgthms/bulma).
-
-The backend is located at [github.com/okfde/api.offenegesetze.de](https://github.com/okfde/api.offenegesetze.de).
+In this repository you can find the frontend based on [Next.js](https://github.com/zeit/next.js/) and [Bulma](https://github.com/jgthms/bulma). The backend is located at [in a different repository](https://github.com/okfde/api.offenegesetze.de).
 
 ## Development
 
 ```bash
-git clone https://github.com/okfde/offenegesetze.de &&
-cd offenegesetze.de &&
-npm install &&
+git clone https://github.com/okfde/offenegesetze.de
+cd offenegesetze.de
+npm install
 npm start
 ```
 
@@ -32,4 +30,4 @@ If you have a **question**, found a **bug** or want to propose a new **feature**
 
 ## License
 
-MIT.
+MIT
