@@ -31,7 +31,7 @@ class PublicationIndex extends React.Component {
         <div>
           <h2>Art</h2>
           <span
-            style={{ margin: '.5rem' }}
+            style={{ margin: '.5rem', fontWeight: 'bold' }}
             className={
               bgbl === 'bgbl1' ? 'button is-primary is-selected' : 'button'
             }
@@ -40,7 +40,7 @@ class PublicationIndex extends React.Component {
             BGBl. Teil I
           </span>
           <span
-            style={{ margin: '.5rem' }}
+            style={{ margin: '.5rem', fontWeight: 'bold' }}
             onClick={() => this.setState({ bgbl: 'bgbl2' })}
             className={
               bgbl === 'bgbl2' ? 'button is-primary is-selected' : 'button'

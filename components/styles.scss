@@ -114,6 +114,11 @@ button {
   }
 }
 
+a,
+button {
+  font-weight: bold;
+}
+
 em {
   background-color: $highlight;
 }
