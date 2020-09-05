@@ -18,7 +18,7 @@ class Nav extends React.Component {
       <nav className="navbar is-fixed-top" style={{ zIndex: '1000' }}>
         <div className="container">
           <div className="navbar-brand">
-            <Link prefetch href="/">
+            <Link href="/">
               <a className="navbar-item" href="/">
                 <img
                   src="/static/logo_small.jpg"
@@ -64,37 +64,37 @@ class Nav extends React.Component {
             </div>
 
             <div className="navbar-end">
-              <Link prefetch href="/veroeffentlichung">
+              <Link href="/veroeffentlichung">
                 <a className="navbar-item" href="/veroeffentlichung">
                   Veröffentlichungen
                 </a>
               </Link>
-              <Link prefetch href="/faq">
+              <Link href="/faq">
                 <a className="navbar-item is-hidden-tablet	" href="/faq">
                   FAQ
                 </a>
               </Link>
-              <Link prefetch href="/kontakt">
+              <Link href="/kontakt">
                 <a className="navbar-item" href="/kontakt">
                   Kontakt
                 </a>
               </Link>
-              <Link prefetch href="/datenschutz">
+              <Link href="/datenschutz">
                 <a className="navbar-item is-hidden-tablet	" href="/datenschutz">
                   Datenschutz
                 </a>
               </Link>
-              <Link prefetch href="/daten">
+              <Link href="/daten">
                 <a className="navbar-item is-hidden-tablet	" href="/daten">
                   Download & API
                 </a>
               </Link>
-              <Link prefetch href="/feeds">
+              <Link href="/feeds">
                 <a className="navbar-item is-hidden-tablet	" href="/feeds">
                   RSS-Feeds
                 </a>
               </Link>
-              <Link prefetch href="/presse">
+              <Link href="/presse">
                 <a className="navbar-item is-hidden-tablet	" href="/presse">
                   Presse
                 </a>

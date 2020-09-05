@@ -24,7 +24,7 @@ const Base = ({ title, navItems, children, hideSearch, hideFooter }) => (
 
     {!hideFooter && <Footer />}
     {hideFooter && (
-      <Link prefetch href="/kontakt">
+      <Link href="/kontakt">
         <a
           href="/kontakt"
           className="is- is-hidden-touch"

@@ -58,7 +58,7 @@ const Faq = () => (
     <h3>Kann ich die Dokumente gesammelt herunterladen?</h3>
     <p>
       Ja. Unter{' '}
-      <Link prefetch href="/daten">
+      <Link href="/daten">
         <a href="/daten" className="highlight">
           OffeneGesetze.de/daten
         </a>
@@ -102,7 +102,7 @@ const Faq = () => (
     <br />
     <p>
       Bei weiteren Fragen können Sie gerne{' '}
-      <Link prefetch href="/kontakt">
+      <Link href="/kontakt">
         <a href="/kontakt" className="highlight">
           Kontakt
         </a>

@@ -112,7 +112,7 @@ class IndexPage extends React.Component {
                 </h3>
               </div>
               <div className="column">
-                <Link prefetch href="/veroeffentlichung">
+                <Link href="/veroeffentlichung">
                   <a
                     className="button is-primary is-inverted is-outlined is-large"
                     href="/veroeffentlichung"

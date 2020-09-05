@@ -45,18 +45,20 @@ const Footer = () => (
           <div className="menu">
             <ul className="menu-list">
               <li>
-                <Link prefetch href="/faq">
+                <Link href="/faq">
                   <a href="/faq">FAQ</a>
                 </Link>
               </li>
               <li>
-                <Link prefetch href="/kontakt">
+                <Link href="/kontakt">
                   <a href="/kontakt">Kontakt & Impressum</a>
                 </Link>
               </li>
               <li>
                 <Link href="https://okfn.de/impressum/#datenschutzerkl%C3%A4rung">
-                  <a href="https://okfn.de/impressum/#datenschutzerkl%C3%A4rung">Datenschutzerklärung</a>
+                  <a href="https://okfn.de/impressum/#datenschutzerkl%C3%A4rung">
+                    Datenschutzerklärung
+                  </a>
                 </Link>
               </li>
             </ul>

@@ -17,7 +17,7 @@ const Recent = ({ items }) => (
             <ListItem key={x.id} item={x} />
           ))}
         </ul>
-        <Link prefetch href="/suche">
+        <Link href="/suche">
           <a className="button is-primary" href="/suche">
             Mehr Veröffentlichungen
           </a>
