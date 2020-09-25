@@ -114,7 +114,7 @@ class PDFViewer extends React.Component {
             {contentList.map((content, pageno) => (
               <div key={pageno}>
                 <PageNumber numPage={pageno + 1} />
-                {content}
+                <pre>{content}</pre>
               </div>
             ))}
           </div>
