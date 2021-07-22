@@ -63,7 +63,7 @@ const Ueber = () => (
       Vereinsregister Nr: VR 30468 B <br /> <br />
       Umsatzsteuernummer: DE278022128 <br /> <br />
       Registergericht: Amtsgericht Berlin <br /> <br />
-      Vertretungsberichtiger Vorstand: Andreas Pawelke, Daniel Dietrich, Jana
+      Vertretungsberechtigter Vorstand: Andreas Pawelke, Daniel Dietrich, Jana
       Wichmann, Kristina Klein, Julia Reda, Lea Gimpel, Gabriele C. Klug, Stefan
       Heumann. <br /> <br />
       E-Mail: <a href="mailto:info@okfn.de">info@okfn.de</a> (
