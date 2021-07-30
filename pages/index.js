@@ -290,7 +290,15 @@ class IndexPage extends React.Component {
                           className="highlight"
                           href="https://www.faz.net/aktuell/wirtschaft/diginomics/justizministerin-barley-nimmt-dumont-verlag-das-gesetzblatt-weg-15957231.html?GEPC=s3"
                         >
-                          "Barley nimmt Dumont-Verlag das Gesetzblatt weg"
+                          „Barley nimmt Dumont-Verlag das Gesetzblatt weg“
+                        </a>
+                        <br />
+                        29.07.2021, netzpolitik.org:{' '}
+                        <a
+                          className="highlight"
+                          href="https://netzpolitik.org/2021/everkuendung-bundesregierung-troedelt-bei-digitaler-veroeffentlichung-von-gesetzen/"
+                        >
+                          „Bundesregierung trödelt bei digitaler Veröffentlichung von Gesetzen“
                         </a>
                       </div>
                     </p>
