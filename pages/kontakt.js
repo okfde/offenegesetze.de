@@ -63,9 +63,9 @@ const Ueber = () => (
       Vereinsregister Nr: VR 30468 B <br /> <br />
       Umsatzsteuernummer: DE278022128 <br /> <br />
       Registergericht: Amtsgericht Berlin <br /> <br />
-      Vertretungsberechtigter Vorstand: Andreas Pawelke, Daniel Dietrich, Jana
-      Wichmann, Kristina Klein, Julia Reda, Lea Gimpel, Gabriele C. Klug, Stefan
-      Heumann. <br /> <br />
+      Vertretungsberechtigter Vorstand: Daniel Dietrich, Lea Gimpel, Stefan
+      Heumann, Kristina Klein, Gabriele C. Klug, Julia Reda, Jana Wichmann.
+      <br /> <br />
       E-Mail: <a href="mailto:info@okfn.de">info@okfn.de</a> (
       <a href="https://pgp.mit.edu/pks/lookup?op=get&amp;search=0xFE54F46F21DDAED1">
         OpenPGP
