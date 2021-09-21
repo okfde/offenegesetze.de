@@ -1,5 +1,5 @@
 import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
   render() {
@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
       g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
     })();`;
     return (
-      <html className="has-navbar-fixed-top" lang="de">
+      <Html className="has-navbar-fixed-top" lang="de">
         <Head />
         <body>
           <Main />
@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
             dangerouslySetInnerHTML={{ __html: tracking }}
           />
         </body>
-      </html>
+      </Html>
     );
   }
 }
