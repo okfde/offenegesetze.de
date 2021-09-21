@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import '../misc/styles.scss';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 
 function MyApp({ Component, pageProps }) {
   return (
