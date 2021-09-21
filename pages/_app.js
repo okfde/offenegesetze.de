@@ -2,7 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 
 import '../misc/styles.scss';
-import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/css/all.css';
+import 'react-input-range/src/scss/index.scss';
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -48,42 +48,14 @@
     "babel-eslint": "^8.2.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^2.7.0",
-    "eslint-plugin-react": "^7.14.3",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
     "jest": "^25.0.0",
+    "postcss": "^8.3.6",
     "prettier": "^2.1.1"
   },
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5"
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": [
-      "airbnb",
-      "prettier"
-    ],
-    "plugins": [
-      "react",
-      "jsx-a11y",
-      "import",
-      "prettier"
-    ],
-    "rules": {
-      "react/jsx-filename-extension": 0,
-      "react/jsx-one-expression-per-line": 0,
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "trailingComma": "es5"
-        }
-      ]
-    }
   }
 }
