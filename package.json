@@ -31,7 +31,7 @@
     "isomorphic-unfetch": "^2.1.1",
     "lru-cache": "^4.1.5",
     "next": "^12.1.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "^8.0.0",
     "react": "^17.0.2",
     "react-animate-on-change": "^2.2.0",
     "react-autocomplete": "^1.8.1",
