@@ -27,7 +27,7 @@
     "@fortawesome/fontawesome-free": "^5.10.2",
     "bulma": "^0.7.4",
     "dayjs": "^1.8.16",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "isomorphic-unfetch": "^2.1.1",
     "lru-cache": "^4.1.5",
     "next": "^12.1.0",
