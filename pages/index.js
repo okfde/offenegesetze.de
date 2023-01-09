@@ -300,6 +300,14 @@ class IndexPage extends React.Component {
                         >
                           „Bundesregierung trödelt bei digitaler Veröffentlichung von Gesetzen“
                         </a>
+                        <br />
+                        01.01.2023:{' '}
+                        <a
+                          className="highlight"
+                          href="https://www.recht.bund.de/"
+                        >
+                          Der Bund startet seine eigene Verkündungsplattform für das Bundesgesetzblatt
+                        </a>
                       </div>
                     </p>
                   </div>
