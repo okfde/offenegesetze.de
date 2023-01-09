@@ -17,6 +17,11 @@ class Nav extends React.Component {
     return (
       <nav className="navbar is-fixed-top" style={{ zIndex: '1000' }}>
         <div className="container">
+          <strong className="text-center">
+            OffeneGesetze.de ist seit 1.1.2023 nicht mehr aktuell. Bitte nutzen Sie die neue <a href="https://www.recht.bund.de/">Verkündungsplattform des Bundes.</a>
+          </strong>
+        </div>
+        <div className="container">
           <div className="navbar-brand">
             <Link href="/">
               <a className="navbar-item" href="/">
