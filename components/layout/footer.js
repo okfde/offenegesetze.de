@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 
 const Footer = () => (
@@ -50,8 +49,10 @@ const Footer = () => (
                 </Link>
               </li>
               <li>
-                <Link href="/kontakt">
-                  <a href="/kontakt">Kontakt & Impressum</a>
+                <Link href="https://okfn.de/impressum/">
+                  <a href="https://okfn.de/impressum/">
+                    Impressum
+                  </a>
                 </Link>
               </li>
               <li>

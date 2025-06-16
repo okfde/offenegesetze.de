@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 
 import BaseContent from '../components/layout/base-content';
@@ -42,7 +41,7 @@ const Faq = () => (
       Rechtsvorschriften wie Gesetze und Verordnungen veröffentlicht. Teil II
       enthält völkerrechtliche und andere internationale Abkommen.
     </p>
-    <h3>Wer steckt hinter dem Projekt?</h3>
+    <h3 id="kontakt">Wer steckt hinter dem Projekt?</h3>
     <p>
       Der gemeinnützige{' '}
       <a className="highlight" href="https://okfn.de/">
@@ -50,6 +49,7 @@ const Faq = () => (
       </a>
       .
     </p>
+    <p>Das Projekt-Team bestand aus Johannes Filter, Stefan Wehrmeyer und Arne Semsrott.</p>
     <h3>Wollt ihr damit Geld verdienen?</h3>
     <p>
       Nein. Die Plattform dient dazu, allen Menschen freien Zugang zu
@@ -97,17 +97,6 @@ const Faq = () => (
       </a>{' '}
       Updates per E-Mails zuschicken lassen. Dafür einfach die URL des Feeds bei
       IFTTT eingeben and eine gewünschte E-Mail-Adresse schicken lassen.
-    </p>
-    <br />
-    <br />
-    <p>
-      Bei weiteren Fragen können Sie gerne{' '}
-      <Link href="/kontakt">
-        <a href="/kontakt" className="highlight">
-          Kontakt
-        </a>
-      </Link>{' '}
-      zu uns aufnehmen.
     </p>
   </BaseContent>
 );

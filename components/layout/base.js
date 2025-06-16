@@ -1,7 +1,5 @@
-import React from 'react';
-import ScrollToTop from 'react-scroll-up';
-import Link from 'next/link';
 import Head from 'next/head';
+import ScrollToTop from 'react-scroll-up';
 
 import Footer from './footer';
 import Nav from './nav';
@@ -21,17 +19,7 @@ const Base = ({ title, navItems, children, hideSearch, hideFooter }) => (
     </main>
 
     {!hideFooter && <Footer />}
-    {hideFooter && (
-      <Link href="/kontakt">
-        <a
-          href="/kontakt"
-          className="is- is-hidden-touch"
-          style={{ position: 'fixed', bottom: 10, right: 10, color: 'inherit' }}
-        >
-          <small>Kontakt</small>
-        </a>
-      </Link>
-    )}
+
     <ScrollToTop
       showUnder={160}
       duration={1000}

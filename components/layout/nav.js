@@ -1,5 +1,5 @@
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
 
 import SearchBox from '../search/search-box';
 
@@ -79,16 +79,12 @@ class Nav extends React.Component {
                   FAQ
                 </a>
               </Link>
-              <Link href="/kontakt">
-                <a className="navbar-item" href="/kontakt">
-                  Kontakt
-                </a>
-              </Link>
-              <Link href="/datenschutz">
-                <a className="navbar-item is-hidden-tablet	" href="/datenschutz">
-                  Datenschutz
-                </a>
-              </Link>
+              <a className="navbar-item" href="https://okfn.de/impressum/">
+                Impressum
+              </a>
+              <a className="navbar-item is-hidden-tablet	" href="https://okfn.de/impressum/#datenschutzerkl%C3%A4rung">
+                Datenschutz
+              </a>
               <Link href="/daten">
                 <a className="navbar-item is-hidden-tablet	" href="/daten">
                   Download & API

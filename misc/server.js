@@ -18,7 +18,6 @@ const cacheSites = [
   '/daten',
   '/datenschutz',
   '/feeds',
-  '/kontakt',
   '/uber',
   '/presse',
   '/veroeffentlichung',
