@@ -1,6 +1,6 @@
-FROM node:14-alpine
+FROM node:14
 
-RUN apk add g++ make python
+RUN apt-get update && apt-get install g++ make python
 
 WORKDIR /code
 

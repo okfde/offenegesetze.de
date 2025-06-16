@@ -1,6 +1,10 @@
+import React from 'react';
 
-import { redirect } from 'next/navigation'
+import BaseContent from '../components/layout/base-content';
 
-export default Kontakt = () => {
-  redirect('/faq#kontakt')
-}
+const Ueber = () => (
+   <BaseContent>
+    <a href="/faq#kontakt">Siehe FAQ</a>
+   </BaseContent>
+)
+export default Ueber;
